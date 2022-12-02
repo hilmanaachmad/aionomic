@@ -1,0 +1,97 @@
+.aio-p2p-content-container {
+    max-width: 941px !important;
+}
+
+.aio-p2p-space-between {
+    justify-content: space-between;
+}
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-p2p-btn-primary {
+    padding: 10px 12px;
+    background: #026CB6;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    color: white;
+    text-transform: initial;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.aio-p2p-btn-outline {
+    border: 1px solid #026CB6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: white;
+    color: #026CB6;
+    padding: 10px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: initial;
+}
+
+.aio-p2p-btn-outline:hover {
+    background-color: #BDBDBD;
+    color: #026CB6;
+}
+
+.aio-p2p-toggle .switch {
+    background-color: white !important;
+    margin-top: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.aio-p2p-modal {
+    min-height: calc(100% - 106px) !important;
+}
+
+/* MODAL */
+.aio-p2p-modal .dialog-heading {
+    color: #404143;
+}
+
+.wm-app .modal-header .modal-title {
+    color: #404143;
+}
+
+.aio-p2p-modal .btn {
+    width: 124px;
+    height: 36px;
+}
+
+.aio-p2p-modal.aio-p2p-modal-delete .btn-primary.ok-action {
+    background: #FF5756;
+    border-color: white;
+}
+
+.aio-p2p-modal .cancel-action {
+    background: #F6F7F8;
+    border-color: white;
+}
+
+/* ERROR MESSAGE */
+.aio-p2p-form-container .aio-p2p-error-message {
+	display: none;
+}
+
+.aio-p2p-form-container.form-error .aio-p2p-error-message {
+	display: block;
+	color: #FF5756;
+	font-size: 12px;
+}
+
+.aio-p2p-form-container.form-error .aio-p2p-form-input {
+    border-color: #FF5756;
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    width: 100%;
+    height: calc(100% - 106px);
+    float: none;
+    margin: auto !important;
+    overflow: hide;
+}

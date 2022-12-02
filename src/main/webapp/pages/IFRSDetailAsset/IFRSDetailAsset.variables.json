@@ -1,0 +1,871 @@
+{
+  "dummyActual" : {
+    "_id" : "wm-dummyActual-wm.Variable-1641788569265",
+    "name" : "dummyActual",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dbb5e0c816ac93c38c56b9",
+      "year" : 2019,
+      "no" : 0,
+      "date" : "04/07/2021",
+      "invoiceNumber" : 2010,
+      "invoiceDate" : "22/11/2016",
+      "GRNumber" : 199359,
+      "GRAmount" : 2017680,
+      "APDoc" : 23,
+      "APAMount" : 2014435,
+      "VAT" : 2010964,
+      "WHTPayable" : "male",
+      "GLBank" : "GLUKGLUK",
+      "bankName" : "Zappix",
+      "bankDate" : "08/56/2021",
+      "paidDate" : "13/09/2021"
+    }, {
+      "_id" : "61dbb5e0ed81db286da78732",
+      "year" : 2012,
+      "no" : 1,
+      "date" : "28/34/2015",
+      "invoiceNumber" : 2014,
+      "invoiceDate" : "09/47/2019",
+      "GRNumber" : 201276,
+      "GRAmount" : 2007564,
+      "APDoc" : 33,
+      "APAMount" : 2017494,
+      "VAT" : 1992966,
+      "WHTPayable" : "male",
+      "GLBank" : "RONBERT",
+      "bankName" : "Namebox",
+      "bankDate" : "16/30/2019",
+      "paidDate" : "07/58/2020"
+    }, {
+      "_id" : "61dbb5e06867b717f0ea96c8",
+      "year" : 2022,
+      "no" : 2,
+      "date" : "16/33/2014",
+      "invoiceNumber" : 2013,
+      "invoiceDate" : "07/31/2014",
+      "GRNumber" : 199667,
+      "GRAmount" : 1992119,
+      "APDoc" : 38,
+      "APAMount" : 2011285,
+      "VAT" : 2006600,
+      "WHTPayable" : "male",
+      "GLBank" : "CYTRAK",
+      "bankName" : "Dogtown",
+      "bankDate" : "31/19/2021",
+      "paidDate" : "21/05/2019"
+    }, {
+      "_id" : "61dbb5e0acf66f0cd8837116",
+      "year" : 2016,
+      "no" : 3,
+      "date" : "09/09/2019",
+      "invoiceNumber" : 2022,
+      "invoiceDate" : "04/22/2018",
+      "GRNumber" : 201638,
+      "GRAmount" : 2021209,
+      "APDoc" : 32,
+      "APAMount" : 2014926,
+      "VAT" : 2012263,
+      "WHTPayable" : "male",
+      "GLBank" : "ZOUNDS",
+      "bankName" : "Enerforce",
+      "bankDate" : "04/16/2017",
+      "paidDate" : "08/36/2014"
+    }, {
+      "_id" : "61dbb5e0aab873492b617206",
+      "year" : 1993,
+      "no" : 4,
+      "date" : "05/13/2016",
+      "invoiceNumber" : 2000,
+      "invoiceDate" : "16/21/2014",
+      "GRNumber" : 199887,
+      "GRAmount" : 2001487,
+      "APDoc" : 31,
+      "APAMount" : 1990085,
+      "VAT" : 1998800,
+      "WHTPayable" : "male",
+      "GLBank" : "GROK",
+      "bankName" : "Pyrami",
+      "bankDate" : "14/10/2020",
+      "paidDate" : "06/17/2018"
+    }, {
+      "_id" : "61dbb5e0f6bf14123b985b78",
+      "year" : 1992,
+      "no" : 5,
+      "date" : "10/54/2018",
+      "invoiceNumber" : 2003,
+      "invoiceDate" : "12/21/2015",
+      "GRNumber" : 201923,
+      "GRAmount" : 2012119,
+      "APDoc" : 40,
+      "APAMount" : 2011553,
+      "VAT" : 1993275,
+      "WHTPayable" : "male",
+      "GLBank" : "GLOBOIL",
+      "bankName" : "Ecrater",
+      "bankDate" : "17/50/2021",
+      "paidDate" : "17/00/2021"
+    }, {
+      "_id" : "61dbb5e09761a2021d0b51d5",
+      "year" : 2006,
+      "no" : 6,
+      "date" : "06/47/2015",
+      "invoiceNumber" : 2016,
+      "invoiceDate" : "01/24/2015",
+      "GRNumber" : 201337,
+      "GRAmount" : 1999750,
+      "APDoc" : 33,
+      "APAMount" : 1994503,
+      "VAT" : 1997146,
+      "WHTPayable" : "male",
+      "GLBank" : "CHORIZON",
+      "bankName" : "Dreamia",
+      "bankDate" : "02/25/2020",
+      "paidDate" : "25/54/2015"
+    }, {
+      "_id" : "61dbb5e0ddaabff2181f1b08",
+      "year" : 2015,
+      "no" : 7,
+      "date" : "03/21/2016",
+      "invoiceNumber" : 2016,
+      "invoiceDate" : "28/52/2021",
+      "GRNumber" : 201805,
+      "GRAmount" : 2000415,
+      "APDoc" : 24,
+      "APAMount" : 2011014,
+      "VAT" : 1991699,
+      "WHTPayable" : "male",
+      "GLBank" : "GENMOM",
+      "bankName" : "Petigems",
+      "bankDate" : "12/41/2021",
+      "paidDate" : "14/11/2020"
+    }, {
+      "_id" : "61dbb5e0323195c61034e962",
+      "year" : 1992,
+      "no" : 8,
+      "date" : "01/44/2020",
+      "invoiceNumber" : 1998,
+      "invoiceDate" : "23/41/2021",
+      "GRNumber" : 200019,
+      "GRAmount" : 1999306,
+      "APDoc" : 26,
+      "APAMount" : 1992684,
+      "VAT" : 1996101,
+      "WHTPayable" : "male",
+      "GLBank" : "HONOTRON",
+      "bankName" : "Xumonk",
+      "bankDate" : "23/51/2020",
+      "paidDate" : "15/09/2015"
+    }, {
+      "_id" : "61dbb5e0ab316f426c71aacd",
+      "year" : 2022,
+      "no" : 9,
+      "date" : "22/18/2017",
+      "invoiceNumber" : 1996,
+      "invoiceDate" : "06/54/2016",
+      "GRNumber" : 200217,
+      "GRAmount" : 1997272,
+      "APDoc" : 23,
+      "APAMount" : 1996556,
+      "VAT" : 2004528,
+      "WHTPayable" : "male",
+      "GLBank" : "GREEKER",
+      "bankName" : "Prosure",
+      "bankDate" : "17/16/2016",
+      "paidDate" : "30/43/2015"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyAttachment" : {
+    "_id" : "wm-dummyAttachment-wm.Variable-1641540216921",
+    "name" : "dummyAttachment",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "filename" : "Brosur.pdf",
+      "filePath" : "https://google.com/assets/favourite.ico"
+    }, {
+      "filename" : "Brosur2.pdf",
+      "filePath" : "https://google.com/assets/favourite.ico"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyContracts" : {
+    "_id" : "wm-dummyContracts-wm.Variable-1641455048503",
+    "name" : "dummyContracts",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61d69d89eab8dc2c22690cfe",
+      "no" : 51,
+      "agreementType" : 763,
+      "noAgreement" : "excepteur",
+      "validOn" : "2016-07-09T08:07:57 -07:00",
+      "expiredOn" : "2017-12-13T03:41:10 -07:00",
+      "action" : "aliqua"
+    }, {
+      "_id" : "61d69d89ddfb3fb2d16c9b93",
+      "no" : 22,
+      "agreementType" : 167,
+      "noAgreement" : "velit",
+      "validOn" : "2018-01-19T12:45:20 -07:00",
+      "expiredOn" : "2021-10-01T09:32:15 -07:00",
+      "action" : "est"
+    }, {
+      "_id" : "61d69d89c90e2ea1838a9558",
+      "no" : 13,
+      "agreementType" : 914,
+      "noAgreement" : "labore",
+      "validOn" : "2017-11-08T10:01:54 -07:00",
+      "expiredOn" : "2014-01-05T12:25:24 -07:00",
+      "action" : "in"
+    }, {
+      "_id" : "61d69d89c3fea952a407a32e",
+      "no" : 32,
+      "agreementType" : 975,
+      "noAgreement" : "sint",
+      "validOn" : "2019-08-08T11:26:55 -07:00",
+      "expiredOn" : "2019-08-24T08:15:51 -07:00",
+      "action" : "cupidatat"
+    }, {
+      "_id" : "61d69d8935961bee048e7402",
+      "no" : 22,
+      "agreementType" : 404,
+      "noAgreement" : "magna",
+      "validOn" : "2021-05-20T09:00:21 -07:00",
+      "expiredOn" : "2015-10-01T01:51:47 -07:00",
+      "action" : "aliqua"
+    }, {
+      "_id" : "61d69d8966643bed186ac60f",
+      "no" : 17,
+      "agreementType" : 997,
+      "noAgreement" : "commodo",
+      "validOn" : "2021-03-27T10:31:23 -07:00",
+      "expiredOn" : "2020-02-19T11:30:08 -07:00",
+      "action" : "exercitation"
+    }, {
+      "_id" : "61d69d89accb74baedd8471d",
+      "no" : 80,
+      "agreementType" : 119,
+      "noAgreement" : "mollit",
+      "validOn" : "2020-01-04T11:30:49 -07:00",
+      "expiredOn" : "2015-09-18T09:02:30 -07:00",
+      "action" : "consectetur"
+    }, {
+      "_id" : "61d69d8971b1522e0596aa16",
+      "no" : 79,
+      "agreementType" : 317,
+      "noAgreement" : "id",
+      "validOn" : "2014-01-23T09:34:18 -07:00",
+      "expiredOn" : "2018-08-22T09:46:46 -07:00",
+      "action" : "nostrud"
+    }, {
+      "_id" : "61d69d892c343cc58df8424b",
+      "no" : 80,
+      "agreementType" : 401,
+      "noAgreement" : "aute",
+      "validOn" : "2015-10-08T01:15:23 -07:00",
+      "expiredOn" : "2015-03-04T12:39:04 -07:00",
+      "action" : "consectetur"
+    }, {
+      "_id" : "61d69d893b83c6f5a46a2a16",
+      "no" : 66,
+      "agreementType" : 335,
+      "noAgreement" : "consectetur",
+      "validOn" : "2017-11-15T01:55:45 -07:00",
+      "expiredOn" : "2017-04-28T04:41:42 -07:00",
+      "action" : "sunt"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyHistory" : {
+    "_id" : "wm-dummyHistory-wm.Variable-1641540895911",
+    "name" : "dummyHistory",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "datetime" : "03/01/2021 16:36:22",
+      "transferType" : "Check In",
+      "username" : "Batista",
+      "department" : "Finance"
+    }, {
+      "datetime" : "04/01/2021 16:36:22",
+      "transferType" : "Check In",
+      "username" : "The Rock",
+      "department" : "Finance"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyLeaseLiability" : {
+    "_id" : "wm-dummyLeaseLiability-wm.Variable-1641547478743",
+    "name" : "dummyLeaseLiability",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    }, {
+      "year" : 2021,
+      "no" : 0,
+      "date" : "01/01/2021",
+      "beginningBalance" : 87635304,
+      "leasePayment" : "-",
+      "interestExpense" : "-",
+      "endingBalance" : 87343023
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyLeasingTerm" : {
+    "_id" : "wm-dummyLeasingTerm-wm.Variable-1641548826000",
+    "name" : "dummyLeasingTerm",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "shortTerm" : 44344321,
+      "longTerm" : 44344321
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyMaintenance" : {
+    "_id" : "wm-dummyMaintenance-wm.Variable-1641457322631",
+    "name" : "dummyMaintenance",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61d6a5fca184b7611ceb6ca3",
+      "taskName" : 15,
+      "workingOrderName" : 382,
+      "AssignedUser" : "amet",
+      "status" : "2017-06-08T09:03:54 -07:00",
+      "maintenanceType" : "2015-07-11T12:03:04 -07:00",
+      "setReminder" : "Lorem",
+      "poMaintenance" : "labore",
+      "vendor" : "amet",
+      "maintenanceCost" : "labore",
+      "maintenanceDate" : "id"
+    }, {
+      "_id" : "61d6a5fcd3acbedfacd6ff72",
+      "taskName" : 67,
+      "workingOrderName" : 737,
+      "AssignedUser" : "eu",
+      "status" : "2019-04-23T02:24:02 -07:00",
+      "maintenanceType" : "2017-03-07T11:31:45 -07:00",
+      "setReminder" : "laboris",
+      "poMaintenance" : "tempor",
+      "vendor" : "ex",
+      "maintenanceCost" : "est",
+      "maintenanceDate" : "ut"
+    }, {
+      "_id" : "61d6a5fc5577ce7b77832d25",
+      "taskName" : 89,
+      "workingOrderName" : 805,
+      "AssignedUser" : "voluptate",
+      "status" : "2018-03-09T06:25:16 -07:00",
+      "maintenanceType" : "2020-11-01T03:45:07 -07:00",
+      "setReminder" : "aliquip",
+      "poMaintenance" : "fugiat",
+      "vendor" : "in",
+      "maintenanceCost" : "veniam",
+      "maintenanceDate" : "sint"
+    }, {
+      "_id" : "61d6a5fcab871a5ec93e2878",
+      "taskName" : 84,
+      "workingOrderName" : 280,
+      "AssignedUser" : "Lorem",
+      "status" : "2019-06-06T08:10:48 -07:00",
+      "maintenanceType" : "2021-05-17T07:33:48 -07:00",
+      "setReminder" : "ea",
+      "poMaintenance" : "mollit",
+      "vendor" : "cupidatat",
+      "maintenanceCost" : "laborum",
+      "maintenanceDate" : "est"
+    }, {
+      "_id" : "61d6a5fcf2506e412c55f09a",
+      "taskName" : 65,
+      "workingOrderName" : 203,
+      "AssignedUser" : "adipisicing",
+      "status" : "2015-09-24T02:21:22 -07:00",
+      "maintenanceType" : "2020-11-14T11:55:02 -07:00",
+      "setReminder" : "nostrud",
+      "poMaintenance" : "non",
+      "vendor" : "irure",
+      "maintenanceCost" : "tempor",
+      "maintenanceDate" : "officia"
+    }, {
+      "_id" : "61d6a5fc8b1c9d8741c6f11c",
+      "taskName" : 43,
+      "workingOrderName" : 791,
+      "AssignedUser" : "dolor",
+      "status" : "2020-10-13T08:17:16 -07:00",
+      "maintenanceType" : "2018-03-06T01:20:52 -07:00",
+      "setReminder" : "proident",
+      "poMaintenance" : "id",
+      "vendor" : "amet",
+      "maintenanceCost" : "sunt",
+      "maintenanceDate" : "nisi"
+    }, {
+      "_id" : "61d6a5fc0db9876460d2f2a9",
+      "taskName" : 93,
+      "workingOrderName" : 464,
+      "AssignedUser" : "est",
+      "status" : "2019-03-26T08:14:19 -07:00",
+      "maintenanceType" : "2021-01-25T07:32:07 -07:00",
+      "setReminder" : "et",
+      "poMaintenance" : "voluptate",
+      "vendor" : "amet",
+      "maintenanceCost" : "dolore",
+      "maintenanceDate" : "officia"
+    }, {
+      "_id" : "61d6a5fc5d9a77e1b9f8ad79",
+      "taskName" : 14,
+      "workingOrderName" : 186,
+      "AssignedUser" : "aliqua",
+      "status" : "2020-12-05T10:51:01 -07:00",
+      "maintenanceType" : "2019-04-25T12:36:51 -07:00",
+      "setReminder" : "sit",
+      "poMaintenance" : "elit",
+      "vendor" : "qui",
+      "maintenanceCost" : "ut",
+      "maintenanceDate" : "quis"
+    }, {
+      "_id" : "61d6a5fc86a5913c48377add",
+      "taskName" : 34,
+      "workingOrderName" : 660,
+      "AssignedUser" : "pariatur",
+      "status" : "2016-08-08T12:43:16 -07:00",
+      "maintenanceType" : "2016-02-14T07:01:33 -07:00",
+      "setReminder" : "sunt",
+      "poMaintenance" : "aliquip",
+      "vendor" : "aliquip",
+      "maintenanceCost" : "do",
+      "maintenanceDate" : "et"
+    }, {
+      "_id" : "61d6a5fc253774a4792f520b",
+      "taskName" : 27,
+      "workingOrderName" : 748,
+      "AssignedUser" : "ad",
+      "status" : "2018-02-24T05:25:48 -07:00",
+      "maintenanceType" : "2016-11-05T07:13:18 -07:00",
+      "setReminder" : "incididunt",
+      "poMaintenance" : "tempor",
+      "vendor" : "sit",
+      "maintenanceCost" : "amet",
+      "maintenanceDate" : "labore"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyROU" : {
+    "_id" : "wm-staticVariable1-wm.Variable-1641782913798",
+    "name" : "dummyROU",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61db9e6ed59bc9c764cc1e9e",
+      "year" : 2016,
+      "no" : 2,
+      "date" : "2020-09-16",
+      "depreciation" : 1690463,
+      "endingBalance" : 1480745
+    }, {
+      "_id" : "61db9e6ec27711966509cdd3",
+      "year" : 2013,
+      "no" : 41,
+      "date" : "2014-07-22",
+      "depreciation" : 514074,
+      "endingBalance" : 1744942
+    }, {
+      "_id" : "61db9e6ed243a9b2112a0ecd",
+      "year" : 2002,
+      "no" : 8,
+      "date" : "2019-08-23",
+      "depreciation" : 502848,
+      "endingBalance" : 226031
+    }, {
+      "_id" : "61db9e6e9694ddd4241cdf23",
+      "year" : 2002,
+      "no" : 85,
+      "date" : "2020-09-03",
+      "depreciation" : 1989654,
+      "endingBalance" : 1485969
+    }, {
+      "_id" : "61db9e6e8098a6d72b880f48",
+      "year" : 2007,
+      "no" : 87,
+      "date" : "2021-03-24",
+      "depreciation" : 1375463,
+      "endingBalance" : 1487078
+    }, {
+      "_id" : "61db9e6e3165bb53c0e1c49f",
+      "year" : 2012,
+      "no" : 82,
+      "date" : "2017-09-30",
+      "depreciation" : 1924454,
+      "endingBalance" : 1541472
+    }, {
+      "_id" : "61db9e6e70e63c67e60fc2b3",
+      "year" : 2020,
+      "no" : 50,
+      "date" : "2020-12-29",
+      "depreciation" : 1823136,
+      "endingBalance" : 1296448
+    }, {
+      "_id" : "61db9e6e2fa2106f30694535",
+      "year" : 2021,
+      "no" : 91,
+      "date" : "2020-11-16",
+      "depreciation" : 586454,
+      "endingBalance" : 812832
+    }, {
+      "_id" : "61db9e6ed8abe66d71200d53",
+      "year" : 2006,
+      "no" : 76,
+      "date" : "2019-01-08",
+      "depreciation" : 526956,
+      "endingBalance" : 1803797
+    }, {
+      "_id" : "61db9e6eacdace62d1aa99f2",
+      "year" : 2003,
+      "no" : 72,
+      "date" : "2017-12-15",
+      "depreciation" : 740938,
+      "endingBalance" : 1755009
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyTaxBsApproach" : {
+    "_id" : "wm-dummyBsApproach-wm.Variable-1641784702146",
+    "name" : "dummyTaxBsApproach",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dba56d7f8803b1d51d2193",
+      "ROUNet" : 68947602,
+      "APLease" : 19115493,
+      "variance" : 15845178
+    }, {
+      "_id" : "61dba56d39f32574c115b1d3",
+      "ROUNet" : 24571584,
+      "APLease" : 31561033,
+      "variance" : 90741724
+    }, {
+      "_id" : "61dba56dc7c6a15f9b189026",
+      "ROUNet" : 6214228,
+      "APLease" : 51841044,
+      "variance" : 7722933
+    }, {
+      "_id" : "61dba56d528c4034b090f129",
+      "ROUNet" : 19434756,
+      "APLease" : 5682595,
+      "variance" : 51844594
+    }, {
+      "_id" : "61dba56d014fc5090bf49c0f",
+      "ROUNet" : 32451232,
+      "APLease" : 44819115,
+      "variance" : 87434388
+    }, {
+      "_id" : "61dba56dda88a563a75b7d14",
+      "ROUNet" : 44221344,
+      "APLease" : 80716669,
+      "variance" : 74715555
+    }, {
+      "_id" : "61dba56de13711b7cacb173f",
+      "ROUNet" : 2560446,
+      "APLease" : 56181031,
+      "variance" : 37560116
+    }, {
+      "_id" : "61dba56d3931b7ad961f3ab9",
+      "ROUNet" : 87562404,
+      "APLease" : 99850578,
+      "variance" : 30597631
+    }, {
+      "_id" : "61dba56d0912ae2202c11445",
+      "ROUNet" : 55749531,
+      "APLease" : 10899672,
+      "variance" : 47717773
+    }, {
+      "_id" : "61dba56dd01d8efcbb648326",
+      "ROUNet" : 19510608,
+      "APLease" : 61484048,
+      "variance" : 4111714
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyTaxPlApproach" : {
+    "_id" : "wm-dummyTaxPlApproach-wm.Variable-1641784404575",
+    "name" : "dummyTaxPlApproach",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dba44058699efe4587a548",
+      "year" : 1993,
+      "no" : 83,
+      "date" : "2018-11-12",
+      "depreciation" : 1101119,
+      "rentalExpense" : 1114763,
+      "variance" : 1332327,
+      "sumVariance" : 960707
+    }, {
+      "_id" : "61dba4409a4d1d343177d8ff",
+      "year" : 2010,
+      "no" : 48,
+      "date" : "2021-12-17",
+      "depreciation" : 1850129,
+      "rentalExpense" : 964277,
+      "variance" : 1209754,
+      "sumVariance" : 1471503
+    }, {
+      "_id" : "61dba440313b244dfbe5a277",
+      "year" : 2012,
+      "no" : 48,
+      "date" : "2018-03-01",
+      "depreciation" : 1389264,
+      "rentalExpense" : 712602,
+      "variance" : 1314320,
+      "sumVariance" : 1393613
+    }, {
+      "_id" : "61dba4408ca3d993e81a0b6a",
+      "year" : 1997,
+      "no" : 63,
+      "date" : "2014-04-24",
+      "depreciation" : 643342,
+      "rentalExpense" : 1902836,
+      "variance" : 1640435,
+      "sumVariance" : 1241869
+    }, {
+      "_id" : "61dba44065fec5b50f575ea3",
+      "year" : 2010,
+      "no" : 17,
+      "date" : "2017-12-01",
+      "depreciation" : 1081179,
+      "rentalExpense" : 1777626,
+      "variance" : 1491923,
+      "sumVariance" : 675988
+    }, {
+      "_id" : "61dba440d446d2bfa13744e4",
+      "year" : 2002,
+      "no" : 73,
+      "date" : "2018-05-30",
+      "depreciation" : 1768311,
+      "rentalExpense" : 1246876,
+      "variance" : 318746,
+      "sumVariance" : 1280673
+    }, {
+      "_id" : "61dba440b450aa7ece666b0e",
+      "year" : 1995,
+      "no" : 53,
+      "date" : "2020-04-15",
+      "depreciation" : 978325,
+      "rentalExpense" : 843478,
+      "variance" : 1205247,
+      "sumVariance" : 731197
+    }, {
+      "_id" : "61dba440a98632274d5fc7bf",
+      "year" : 1997,
+      "no" : 96,
+      "date" : "2014-05-07",
+      "depreciation" : 1079729,
+      "rentalExpense" : 1013858,
+      "variance" : 455545,
+      "sumVariance" : 1814192
+    }, {
+      "_id" : "61dba44027436881b4bb45bc",
+      "year" : 2018,
+      "no" : 82,
+      "date" : "2015-09-28",
+      "depreciation" : 1656437,
+      "rentalExpense" : 1872037,
+      "variance" : 1738169,
+      "sumVariance" : 1931599
+    }, {
+      "_id" : "61dba4404e1ad1ec36f62e1f",
+      "year" : 2000,
+      "no" : 19,
+      "date" : "2014-06-19",
+      "depreciation" : 646917,
+      "rentalExpense" : 1407805,
+      "variance" : 1564500,
+      "sumVariance" : 1710023
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "FileServiceUploadFile" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1641450796486",
+    "name" : "FileServiceUploadFile",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload1.selectedFiles",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadFile1" : {
+    "_id" : "wm-FileServiceUploadFile1-wm.ServiceVariable-1641456722458",
+    "name" : "FileServiceUploadFile1",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload2.selectedFiles",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadFile2" : {
+    "_id" : "wm-FileServiceUploadFile2-wm.ServiceVariable-1641518503214",
+    "name" : "FileServiceUploadFile2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload3.selectedFiles",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  }
+}

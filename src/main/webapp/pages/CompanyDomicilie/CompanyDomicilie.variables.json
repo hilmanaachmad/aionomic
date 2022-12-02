@@ -1,0 +1,20 @@
+{
+  "MODELVendorType" : {
+    "_id" : "wm-MODELVendorType-wm.Variable-1627449386249",
+    "name" : "MODELVendorType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "NPWP",
+      "dataValue" : "NPWP"
+    }, {
+      "name" : "NON NPWP",
+      "dataValue" : "NONNPWP"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

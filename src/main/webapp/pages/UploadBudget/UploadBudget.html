@@ -1,0 +1,141 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.MENU_BUD_UPLOAD_BUDGET" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="uploadBudget" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_UPLOAD_BUDGET" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content">
+                        <wm-container name="container7" class="aio-p2p-ub-main-container">
+                            <wm-container name="container9" width="250" display="inline-block">
+                                <wm-select name="select1" class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_SEARCH_BY" dataset="bind:Variables.vmSearchBy.dataSet" datafield="id" displayfield="title"></wm-select>
+                            </wm-container>
+                            <wm-container width="250" name="container9_1" display="inline-block" margin="unset unset unset 16px">
+                                <wm-text name="searchByYear" class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" show="bind:Widgets.select1.datavalue == 1"></wm-text>
+                                <wm-text class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" name="searchByCompany" show="bind:Widgets.select1.datavalue == 2"></wm-text>
+                                <wm-text class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" name="searchDisabled" show="bind:!Widgets.select1.datavalue" disabled="true"></wm-text>
+                            </wm-container>
+                            <wm-container name="container10" margin="24px unset unset unset" conditionalstyle="bind:{
+    maxWidth: &quot;900px&quot;
+}">
+                                <wm-button class="aio-ptp-button aio-ptp-primary-btn" caption="bind:appLocale.LANG_UPLOAD_BUDGET" type="button" name="button1" on-click="button1Click($event, widget)"></wm-button>
+                                <wm-container name="container11" display="inline-block" conditionalstyle="bind:{
+    float: &quot;right&quot;
+}">
+                                    <wm-button class="aio-ptp-button aio-ptp-secondary-btn" caption="bind:appLocale.LANG_DOWNLOAD_TEMPLATE" type="button" name="button2" iconclass="" iconurl="resources/images/imagelists/download-icon.png" iconwidth="17" iconheight="17"
+                                        on-click="button2Click($event, widget)"></wm-button>
+                                    <wm-button class="aio-ptp-button aio-ptp-secondary-btn" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" iconclass="" iconurl="resources/images/imagelists/export-icon.png" iconwidth="17" iconheight="17"
+                                        name="button3" margin="unset unset unset 16px" on-click="button3Click($event, widget)"></wm-button>
+                                </wm-container>
+                                <wm-container name="container12" class="aio-ptp-table-container" margin="16px unset unset unset">
+                                    <wm-container name="container13" class="aio-ptp-table-row aio-ptp-table-header">
+                                        <wm-container name="container14" class="aio-ptp-table-cell" width="10%">
+                                            <wm-label name="label1" caption="bind:appLocale.LANG_NO"></wm-label>
+                                        </wm-container>
+                                        <wm-container class="aio-ptp-table-cell" width="30%" name="container15">
+                                            <wm-label caption="bind:appLocale.LANG_BUDGET_YEAR" name="label2"></wm-label>
+                                            <wm-picture name="picture3" width="16" height="16" margin="unset unset unset 8px" picturesource="bind:Variables.vdbqBudgetUpload.orderBy == &quot;buYear ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vdbqBudgetUpload.orderBy == &quot;buYear DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;  "
+                                                on-click="picture3Click($event, widget)" cursor="pointer"></wm-picture>
+                                        </wm-container>
+                                        <wm-container class="aio-ptp-table-cell" width="40%" name="container16">
+                                            <wm-label caption="bind:appLocale.LANG_COMPANY" name="label3"></wm-label>
+                                            <wm-picture width="16" height="16" margin="unset unset unset 8px" picturesource="bind:Variables.vdbqBudgetUpload.orderBy == &quot;company ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vdbqBudgetUpload.orderBy == &quot;company DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                on-click="picture4Click($event, widget)" cursor="pointer" name="picture4"></wm-picture>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-list listclass="list-group" itemclass="aio-ptp-table-row" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="none" name="executeGetBudgetUploadListList1"
+                                        dataset="bind:Variables.vdbqBudgetUpload.dataSet" navigation="Basic">
+                                        <wm-listtemplate layout="inline" name="listtemplate1">
+                                            <wm-container class="aio-ptp-table-cell" width="10%" name="container34">
+                                                <wm-label caption="bind:App.getTableNumbering(Variables.vdbqBudgetUpload, Widgets.executeGetBudgetUploadListList1.currentItem, &quot;buId&quot;)" name="label18"></wm-label>
+                                            </wm-container>
+                                            <wm-container class="aio-ptp-table-cell" width="30%" name="container37">
+                                                <wm-label caption="bind:Widgets.executeGetBudgetUploadListList1.currentItem.buYear" name="label21"></wm-label>
+                                            </wm-container>
+                                            <wm-container class="aio-ptp-table-cell" width="40%" name="container38">
+                                                <wm-label caption="bind:Widgets.executeGetBudgetUploadListList1.currentItem.company" name="label22"></wm-label>
+                                            </wm-container>
+                                            <wm-container class="aio-ptp-table-cell" width="20%" padding="6px unset" horizontalalign="right" conditionalstyle="bind:{
+    alignItems: &quot;flex-end&quot;
+}" name="container39">
+                                                <wm-picture width="34" height="34" picturesource="resources/images/logos/icon-eye.png" cursor="pointer" conditionalstyle="bind:{
+    float: &quot;right&quot;
+}" name="picture8" on-click="Widgets.uploadBudgetEdit.open();picture8Click($event, widget, item, currentItemWidgets)"></wm-picture>
+                                                <wm-picture width="34" height="34" picturesource="resources/images/logos/icon-trash.png" margin="unset unset unset 8px" conditionalstyle="bind:{
+    float: &quot;right&quot;
+}" name="picture9" on-click="picture9Click($event, widget, item, currentItemWidgets)" cursor="pointer"></wm-picture>
+                                            </wm-container>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                    <wm-container name="container29" horizontalalign="right" conditionalstyle="bind:{
+    float: &quot;right&quot;
+}" margin="-55px unset unset unset">
+                                        <wm-label padding="unset 0em" name="label13" caption="bind:appLocale.LANG_SHOW" fontsize="13" fontfamily="Inter" color="#404143" conditionalstyle="bind:{
+    fontWeight: &quot;500&quot;
+}" margin="unset 24px unset unset"></wm-label>
+                                        <wm-container name="container31" width="136" display="inline-block">
+                                            <wm-select name="select4" width="136" height="41" dataset="10, 30, 50" datafield="All Fields" datavalue="bind:Variables.vdbqBudgetUpload.pagination.size" color="#333"></wm-select>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+            <wm-spinner show="false" name="spinner1" class="aio-loading"></wm-spinner>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_UPLOAD_BUDGET" iconclass="" name="uploadBudget" class="aio-ptp-dialog" on-opened="uploadBudgetOpened($event, widget)">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="aio-ptp-button aio-ptp-alternate-btn" caption="bind:appLocale.LANG_CANCEL" on-click="closeDialog()" name="button4" width="111"></wm-button>
+            <wm-button class="aio-ptp-button aio-ptp-primary-btn" caption="bind:appLocale.LANG_SAVE" name="uploadBudgetBtn" width="111" margin="unset unset unset 8px" on-click="uploadBudgetBtnClick($event, widget)"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container21" class="aio-input-group" margin="unset unset 24px unset">
+            <wm-label name="label11" caption="bind:appLocale.LANG_YEAR_T"></wm-label>
+            <wm-text name="uploadBudgetYearInp" class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_YEAR" color="#000"></wm-text>
+            <wm-label padding="unset 0.5em" name="label14_1" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" show="false"></wm-label>
+        </wm-container>
+        <wm-container class="aio-input-group" margin="unset unset 24px unset" name="container22">
+            <wm-label caption="bind:appLocale.LANG_COMPANY_V" name="label8"></wm-label>
+            <wm-select name="select2" class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_COMPANY" dataset="bind:Variables.vdbCompany.dataSet" datafield="All Fields" displayfield="ctitle" color="#000"></wm-select>
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" name="label15_1" show="false"></wm-label>
+        </wm-container>
+        <wm-container class="aio-input-group" name="container24">
+            <wm-label caption="bind:appLocale.LANG_UPLOAD_V" name="label20"></wm-label>
+            <wm-container class="aio-input-group" name="container33">
+                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_FILE_XLS" name="label19"></wm-label>
+            </wm-container>
+            <wm-container name="container24_1" content="uploadFile"></wm-container>
+        </wm-container>
+        <wm-label padding="unset 0.5em" name="label21_1" caption="bind:appLocale.LANG_ISREQUIRED" fontstyle="italic" fontweight="bold" margin="23px unset unset unset"></wm-label>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_VIEW_BUDGET" iconclass="" name="uploadBudgetEdit" class="aio-ptp-dialog" on-opened="uploadBudgetEditOpened($event, widget)">
+        <wm-container class="aio-input-group" margin="unset unset 24px unset" name="container25">
+            <wm-label caption="bind:appLocale.LANG_YEAR" name="label14"></wm-label>
+            <wm-text class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_YEAR" name="text5" color="#000" disabled="true"></wm-text>
+        </wm-container>
+        <wm-container class="aio-input-group" margin="unset unset 24px unset" name="container26">
+            <wm-label caption="bind:appLocale.LANG_COMPANY" name="label15"></wm-label>
+            <wm-select class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_COMPANY" dataset="bind:Variables.vdbCompany.dataSet" datafield="ccode" displayfield="ctitle" name="select3" datavalue="bind:Variables.vmBudgetEdit.dataSet.companyId"
+                color="#000" disabled="true"></wm-select>
+        </wm-container>
+        <wm-container class="aio-input-group" name="container27">
+            <wm-label caption="bind:appLocale.LANG_UPLOAD" name="label16"></wm-label>
+            <wm-container content="uploadFile" name="container28">
+                <wm-param name="fileName" value="bind:Variables.vmBudgetEdit.dataSet.fileData.fileName" type="string"></wm-param>
+                <wm-param name="fileUrl" value="bind:Variables.vmBudgetEdit.dataSet.fileData.fileUrl" type="string"></wm-param>
+                <wm-param name="fileSize" value="bind:Variables.vmBudgetEdit.dataSet.fileData.fileSize" type="integer"></wm-param>
+                <wm-param name="disabled" value="true" type="boolean"></wm-param>
+            </wm-container>
+        </wm-container>
+        <wm-dialogactions name="dialogactions4">
+            <wm-button class="aio-ptp-button aio-ptp-alternate-btn" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" width="111" name="button9"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

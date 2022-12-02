@@ -1,0 +1,66 @@
+.aio-p2p-input {
+    border: 1px solid #CBD5E0;
+    padding: 11px 16px;
+    border-radius: 3px;
+    background: #fff;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 137.5%;
+    letter-spacing: 0.25px;
+    color: #8D99A6;
+}
+.aio-p2p-login-btn {
+    background: #026CB6;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    width: 300px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 12px;
+    text-align: center;
+}
+
+.app-spinner .spinner-image {
+    font-size: 18pt;
+}
+
+.app-spinner .spinner-message {
+    background: white;
+    border: 1px solid #eaeaea;
+}
+
+.ivendor-input-form{
+    height: 30px;
+    border-radius: 5px;
+    border: solid #3a8bca;
+    border-width: 1px;
+}
+
+.btn-help {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    z-index: 10000;
+    font-size: 17px;
+    width: 90px;
+    border-radius: 20px;
+    background: #026CB6;
+}
+
+.announcement .modal-content .modal-body{
+    margin: 0!important;
+    padding: 10px!important;
+    width: 100%!important;
+    position: relative!important;
+}
+
+.eye-icon {
+    width: 30px;
+    float: right;
+    margin-top: -30px;
+}

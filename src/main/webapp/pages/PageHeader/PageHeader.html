@@ -1,0 +1,91 @@
+<wm-partial name="partial1">
+    <wm-container name="container1">
+        <wm-layoutgrid name="layoutgrid1" class="aio-p2p-header">
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                    <wm-container name="container6" display="block">
+                        <wm-label padding="unset 0.5em" name="label2" class="aio-p2p-header-title" caption="bind:pageParams.pageTitle"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="8" name="gridcolumn2" horizontalalign="right" class="aio-p2p-header-container">
+                    <wm-container name="container7" margin="-18px unset unset unset">
+                        <wm-container name="container2" display="inline-block" class="aio-p2p-header-component" on-click="container2Click($event, widget)">
+                            <wm-label padding="unset 0.5em" name="label5" caption="bind:Variables.vdbqUnseenNotification.pagination.totalElements" class="aio-p2p-notif-counter" show="bind:Variables.vdbqUnseenNotification.pagination.totalElements > 0"></wm-label>
+                            <wm-picture name="picture1" pictureplaceholder="resources/images/imagelists/notification-bell.png" class="aio-p2p-clickable" picturesource="resources/images/imagelists/icon-notif2.png" height="17"></wm-picture>
+                            <wm-container name="container8" horizontalalign="left" class="aio-p2p-notif-popup" on-click="container8Click($event, widget)">
+                                <wm-label padding="16px 20px" name="label6" fontsize="24" fontweight="bold" caption="bind:appLocale.LANG_NOTIF"></wm-label>
+                                <wm-list listclass="list-group" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="dummyNotifList1" dataset="bind:Variables.vdbqUnseenNotification.dataSet"
+                                    navigation="On-Demand" paginationclass="btn-default" statehandler="none" height="300px">
+                                    <wm-listtemplate layout="inline" name="listtemplate1">
+                                        <wm-container padding="8px 20px" name="container10" horizontalalign="left">
+                                            <wm-container name="container11">
+                                                <wm-label name="notifTitle" caption="bind:Widgets.dummyNotifList1.currentItem.inbSubject.split(&quot;-&quot;)[0].trim()" fontsize="1.143" fontunit="em"></wm-label>
+                                            </wm-container>
+                                            <wm-container name="container10_1" margin="-8px unset unset unset">
+                                                <wm-label name="notifContent" caption="bind:Widgets.dummyNotifList1.currentItem.inbSubject.split(&quot;-&quot;).slice(1).join(&quot;-&quot;)"></wm-label>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-listtemplate>
+                                </wm-list>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container display="inline-block" name="container5" padding="unset 15px">
+                            <wm-label padding="unset 0.5em" caption="|" class="h2" color="#BDBDBD" name="label14" fontsize="20"></wm-label>
+                        </wm-container>
+                        <wm-container display="inline-block" class="aio-p2p-header-component-mail" on-click="container19Click($event, widget)" name="container19" margin="-7px unset unset unset">
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.vdbqUnseenInboxCount.dataSet.result" class="aio-p2p-email-counter" name="label15" show="bind:Variables.vdbqUnseenInboxCount.dataSet.result > 0"></wm-label>
+                            <wm-picture pictureplaceholder="resources/images/imagelists/notification-bell.png" class="aio-p2p-clickable" name="picture3" picturesource="resources/images/imagelists/icon-email2.png" height="26"></wm-picture>
+                            <wm-container horizontalalign="left" class="aio-p2p-notif-popup-mail" name="container20">
+                                <wm-label padding="16px 20px unset 20px" fontsize="16" fontweight="bold" caption="bind:appLocale.LANG_NOTIF" name="label16"></wm-label>
+                                <wm-list listclass="list-group" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.dummyNotif.dataSet" navigation="On-Demand" paginationclass="btn-default"
+                                    statehandler="none" name="list3">
+                                    <wm-listtemplate layout="inline" name="listtemplate3">
+                                        <wm-container padding="8px 20px" horizontalalign="left" name="container21">
+                                            <wm-container name="container22">
+                                                <wm-label caption="bind:Variables.dummyNotif.dataSet[$i].notifTitle" fontsize="1.143" fontunit="em" name="label17"></wm-label>
+                                            </wm-container>
+                                            <wm-container margin="-8px unset unset unset" name="container23">
+                                                <wm-label caption="bind:Variables.dummyNotif.dataSet[$i].notifContent" name="label18"></wm-label>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-listtemplate>
+                                </wm-list>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container display="inline-block" padding="unset 15px" name="container18">
+                            <wm-label padding="unset 0.5em" caption="|" class="h2" color="#BDBDBD" name="label14_1" fontsize="20"></wm-label>
+                        </wm-container>
+                        <wm-container name="container3" display="inline-block" class="aio-p2p-header-component">
+                            <wm-label padding="unset 0.5px unset unset" name="label2_1" caption="bind:Variables.loggedInUserData.dataSet.user_full_name" class="aio-p2p-username aio-p2p-clickable" on-click="Actions.goToPage_UserProfile.invoke()"></wm-label>
+                        </wm-container>
+                        <wm-container name="container4" display="inline-block" class="aio-p2p-header-component" on-click="Actions.goToPage_UserProfile.invoke()">
+                            <wm-label padding="unset 0.5em" name="label3" caption="bind:initial" class="aio-p2p-initialname aio-p2p-clickable" on-click="Actions.goToPage_UserProfile.invoke()"></wm-label>
+                        </wm-container>
+                        <wm-container display="inline-block" padding="unset 10px unset 15px" name="container18_1">
+                            <wm-label padding="unset 0.5em" caption="|" class="h2" color="#BDBDBD" fontsize="20" name="label14_2"></wm-label>
+                        </wm-container>
+                        <wm-container display="inline-block" name="container21_1" horizontalalign="center">
+                            <wm-container name="container20_1" class="aio-p2p-lang aio-p2p-clickable" on-click="container20_1Click($event, widget)">
+                                <wm-picture name="picture3_1" picturesource="resources/images/imagelists/icon-globe.png"></wm-picture>
+                                <wm-label padding="unset 0.7em" name="label16_1" show="true" caption="" fontsize="14" color="#BA0D2B" fontweight="bold"></wm-label>
+                                <wm-picture name="picture4" picturesource="resources/images/imagelists/icon-aio-drop.png" class="aio-p2p-clickable"></wm-picture>
+                            </wm-container>
+                            <wm-container name="containerPopupLang" class="aio-p2p-lang-popup" width="120" show="false">
+                                <wm-label padding="0.5em 0.5em unset 1em" name="label20" class="aio-p2p-clickable" caption="bind:Variables.varLang.dataSet[0].value" on-click="label20Click($event, widget)"></wm-label>
+                                <wm-label padding="0.5em 0.5em 0.5em 1em" class="aio-p2p-clickable" caption="bind:Variables.varLang.dataSet[1].value" name="label21" on-click="label21Click($event, widget)"></wm-label>
+                                <wm-label padding="0.5em 0.5em 0.5em 1em" class="aio-p2p-clickable" caption="bind:Variables.varLang.dataSet[2].value" on-click="label20_1Click($event, widget)" name="label20_1"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container display="inline-block" padding="unset 10px" name="container18_1a">
+                            <wm-label padding="unset 0.5em" caption="|" class="h2" color="#BDBDBD" fontsize="20" name="label14_2a"></wm-label>
+                        </wm-container>
+                        <wm-container display="inline-block" name="container23_1">
+                            <wm-label padding="unset 0.5em unset 0.2em" caption="bind:appLocale.LANG_LOGOUT" class="aio-p2p-clickable" color="#BDBDBD" fontsize="14" name="label19" fontweight="bold" on-click="Actions.logoutAction.invoke()"></wm-label>
+                            <wm-picture name="picture5" picturesource="resources/images/imagelists/icon-signout.png" width="17" class="aio-p2p-clickable" on-click="Actions.logoutAction.invoke()"></wm-picture>
+                        </wm-container>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+</wm-partial>

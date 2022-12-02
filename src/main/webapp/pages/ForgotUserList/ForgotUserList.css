@@ -1,0 +1,64 @@
+.ivendor-status{
+    height: 40px;
+    border-radius: 15px;
+    border: solid #ffffff;
+    background-color: #3a8bca; 
+    border-width: 3px;
+}
+
+.aio-p2p-table-header .app-label{
+    font-weight: 500 !important;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+
+table
+.aio-ptp-table-container {
+    width: 100%;
+}
+
+.aio-ptp-table-row {
+    white-space: nowrap;
+    border-bottom: 1px solid #EDEEEF;
+    display: block;
+}
+
+.aio-ptp-table-header {
+    background: #F6F7F8;
+    border-radius: 2px 2px 0px 0px;
+}
+
+.aio-ptp-table-cell {
+    display: inline-flex;
+    white-space: normal;
+    padding: 12px;
+    vertical-align: top;
+}
+
+.aio-ptp-table-cell label {
+    font-family: Inter;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
+    align-items: center;
+    color: #404143;
+    font-weight: 400;
+}
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    overflow: visible !important;
+}
+.aio-ptp-table-header .aio-ptp-table-cell label{
+    font-weight: 500;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+.aio-p2p-scroll-y {
+    overflow-y: scroll;
+}
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}

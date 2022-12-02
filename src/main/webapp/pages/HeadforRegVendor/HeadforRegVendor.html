@@ -1,0 +1,29 @@
+<wm-partial type="header" name="partial1">
+    <wm-container name="container1" horizontalalign="center" backgroundcolor="#ffffff" padding="10px">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow1">
+                <wm-gridcolumn columnwidth="10" name="gridcolumn1" horizontalalign="center">
+                    <wm-label padding="unset 0.5em 0em 0.5em" name="label1" caption="Welcome to E-Registration Vendor" color="#0072d1" fontweight="bold" fontsize="28" textalign="center" margin="unset 6em 0em 13em"></wm-label>
+                    <wm-label padding="0em 0.5em unset 0.5em" caption="PT. Amerta Indah Otsuka - PT. Otsuka Distribution Indonesia" color="#0072d1" fontweight="bold" fontsize="14" textalign="center" name="label2" margin="unset 7em unset 21em"></wm-label>
+                    <wm-layoutgrid name="layoutgrid2">
+                        <wm-gridrow name="gridrow2" padding="unset 0px unset unset">
+                            <wm-gridcolumn columnwidth="11" name="gridcolumn3" horizontalalign="right">
+                                <wm-container name="container3" width="140" margin="unset unset unset 87%" horizontalalign="left">
+                                    <wm-label name="label3" caption="Select your language" fontsize="14" width="100%" color="#000000" fontunit="px"></wm-label>
+                                </wm-container>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="1" name="gridcolumn7" padding="unset 0px unset unset">
+                                <wm-container name="container4" width="100" horizontalalign="right">
+                                    <wm-select name="select1" height="100%" dataset="bind:Variables.supportedLocale.dataSet" on-change="select1Change($event, widget, newVal, oldVal)"></wm-select>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="2" name="gridcolumn2">
+                    <wm-picture picturesource="resources/images/logos/login-otsuka.png" width="80%" name="picture1"></wm-picture>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-container>
+</wm-partial>

@@ -1,0 +1,2066 @@
+{
+  "FileServiceUploadCatalogue" : {
+    "_id" : "wm-FileServiceUploadCatalogue-wm.ServiceVariable-1623911739990",
+    "name" : "FileServiceUploadCatalogue",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.catUpload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadCatalogueonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
+  "FileServiceUploadNpwp" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1625041874720",
+    "name" : "FileServiceUploadNpwp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.npwpUpload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadNpwponSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadPicture" : {
+    "_id" : "wm-FileServiceUploadFile1-wm.ServiceVariable-1623808824857",
+    "name" : "FileServiceUploadPicture",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.picUpload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadPictureonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadSppkp" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1625042317533",
+    "name" : "FileServiceUploadSppkp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.sppkpUpload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadSppkponSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadSupDoc" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1623997733147",
+    "name" : "FileServiceUploadSupDoc",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.mGetDataSupDocList1.selectedItemWidgets.docSupUpload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadSupDoconSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadSupDocBank" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1624613065448",
+    "name" : "FileServiceUploadSupDocBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.supDocBank.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadSupDocBankonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadTaxCertificate" : {
+    "_id" : "wm-FileServiceUploadFile1-wm.ServiceVariable-1625042741361",
+    "name" : "FileServiceUploadTaxCertificate",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.taxCertificateUpload.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadTaxCertificateonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "getCatalogue" : {
+    "_id" : "wm-getCatalogue-wm.Variable-1623911920215",
+    "name" : "getCatalogue",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getCompanyPic" : {
+    "_id" : "wm-getCompanyPic-wm.Variable-1623826084105",
+    "name" : "getCompanyPic",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getCountry" : {
+    "_id" : "wm-getCountry-wm.Variable-1625473211235",
+    "name" : "getCountry",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Widgets.executeQGetBankInfoKonfTable1.selecteditem.abCoey",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getNpwp" : {
+    "_id" : "wm-getNpwp-wm.Variable-1625042174643",
+    "name" : "getNpwp",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getSppkp" : {
+    "_id" : "wm-getSppkp-wm.Variable-1625042513430",
+    "name" : "getSppkp",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getSupDoc" : {
+    "_id" : "wm-getSupDoc-wm.Variable-1624263082548",
+    "name" : "getSupDoc",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getSupDocBank" : {
+    "_id" : "wm-getSupDocBank-wm.Variable-1624850621314",
+    "name" : "getSupDocBank",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "getTaxCertificate" : {
+    "_id" : "wm-getTaxCertificate-wm.Variable-1625043499531",
+    "name" : "getTaxCertificate",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "pbAtId" : null,
+      "fileName" : null,
+      "pathFile" : null,
+      "status" : null
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetBankNameByCountry" : {
+    "_id" : "wm-mGetBankNameByCountry-wm.Variable-1625474422704",
+    "name" : "mGetBankNameByCountry",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Widgets.executeQGetBankInfoKonfTable1.selecteditem.abBame",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetCountry" : {
+    "_id" : "wm-mGetCountry-wm.Variable-1625205206235",
+    "name" : "mGetCountry",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Widgets.executeQGetBankInfoKonfTable1.selecteditem.countryCode"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetCurrency" : {
+    "_id" : "wm-mGetCurrency-wm.Variable-1625474491024",
+    "name" : "mGetCurrency",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Widgets.executeQGetBankInfoKonfTable1.selecteditem.currency",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetDataBank" : {
+    "_id" : "wm-mGetDataBankKonf-wm.Variable-1626330456109",
+    "name" : "mGetDataBank",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetDataPIC" : {
+    "_id" : "wm-mGetDataPIC-wm.Variable-1623980700238",
+    "name" : "mGetDataPIC",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetDataSupDoc" : {
+    "_id" : "wm-mGetDataSupDOc-wm.Variable-1624009854633",
+    "name" : "mGetDataSupDoc",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetDataTax" : {
+    "_id" : "wm-mGetDataTaxKonf-wm.Variable-1626408592101",
+    "name" : "mGetDataTax",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mGetMaxVendor" : {
+    "_id" : "wm-mGetMaxVendor-wm.Variable-1626151187784",
+    "name" : "mGetMaxVendor",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:(Page.Variables.svMaxVendor.dataSet[$i] + 1)",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "modelCompany" : {
+    "_id" : "wm-modelCompany-wm.Variable-1636014591384",
+    "name" : "modelCompany",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "companyCode" : 1000,
+      "companyName" : "PT Amerta Indah Otsuka"
+    }, {
+      "companyCode" : 2000,
+      "companyName" : "PT Otsuka Distributor Indonesia"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "modelVaer" : {
+    "_id" : "wm-modelVaer-wm.Variable-1635837829302",
+    "name" : "modelVaer",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "value" : 0,
+      "status" : "No"
+    }, {
+      "value" : 1,
+      "status" : "Yes"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "naAddSuccess" : {
+    "_id" : "wm-naInsertBank-wm.NotificationVariable-1624863212398",
+    "name" : "naAddSuccess",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_DATA_ADD_SUCCESS",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naBankNotSelect" : {
+    "_id" : "wm-notificationAction1-wm.NotificationVariable-1626160431638",
+    "name" : "naBankNotSelect",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_BANK_NOT_SELECT",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naDeleteSucces" : {
+    "_id" : "wm-naDeleteSucces-wm.NotificationVariable-1624949501170",
+    "name" : "naDeleteSucces",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.MESSAGE_DELETE_RECORD_SUCCESS",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naEmailFormat" : {
+    "_id" : "wm-notificationAction1-wm.NotificationVariable-1626316147331",
+    "name" : "naEmailFormat",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_EMAIL_FORMAT",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naEmailNotMatch" : {
+    "_id" : "wm-naEmailNotMatch-wm.NotificationVariable-1625624133203",
+    "name" : "naEmailNotMatch",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_EMAIL_MISMATCH",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "3000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naFileNotFound" : {
+    "_id" : "wm-naFileNotFound-wm.NotificationVariable-1637118340799",
+    "name" : "naFileNotFound",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_FILE_NOT_FOUND",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naPasswordNotMatch" : {
+    "_id" : "wm-naPasswordNotMatch-wm.NotificationVariable-1625557947636",
+    "name" : "naPasswordNotMatch",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_PASS_MISMATCH",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naPleaseNpwp" : {
+    "_id" : "wm-naPleaseNpwp-wm.NotificationVariable-1638417975976",
+    "name" : "naPleaseNpwp",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_INSERT_NPWP",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naTickLicense" : {
+    "_id" : "wm-naTickLicense-wm.NotificationVariable-1637919508490",
+    "name" : "naTickLicense",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_TICK_LICENSE",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naUpdateSucces" : {
+    "_id" : "wm-naUpdateSucces-wm.NotificationVariable-1625037904698",
+    "name" : "naUpdateSucces",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_UPDATE_SUCCES",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naWebFormat" : {
+    "_id" : "wm-naWebFormat-wm.NotificationVariable-1630661087819",
+    "name" : "naWebFormat",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_WEB_FORMAT",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "selectAreaPIC" : {
+    "_id" : "wm-mAreaPIC-wm.Variable-1623982748783",
+    "name" : "selectAreaPIC",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Head Office(PHOF)",
+      "dataValue" : "PHOF"
+    }, {
+      "name" : "Pabrik Sukabumi(PSKB)",
+      "dataValue" : "PSKB"
+    }, {
+      "name" : "Pabrik Kejayan(PKJY)",
+      "dataValue" : "PKJY"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectBeneficiary" : {
+    "_id" : "wm-selectBeneficiary-wm.Variable-1624612073344",
+    "name" : "selectBeneficiary",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "type" : "Individual"
+    }, {
+      "type" : "Corporate"
+    }, {
+      "type" : "Goverment"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectBeneficiaryStatus" : {
+    "_id" : "wm-selectBeneficiaryStatus-wm.Variable-1624612452167",
+    "name" : "selectBeneficiaryStatus",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "status" : "Resident"
+    }, {
+      "status" : "Non Residence"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectCountryCodeBank" : {
+    "_id" : "wm-selectCountryCodeBank-wm.Variable-1624523348264",
+    "name" : "selectCountryCodeBank",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Variables.svGetDataBankKonf.dataSet[$i].abCcy"
+    } ],
+    "dataSet" : [ {
+      "dataValue" : "dataValue0"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectLocation" : {
+    "_id" : "wm-selectLocation-wm.Variable-1623836876531",
+    "name" : "selectLocation",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "HO - Pondok Indah",
+      "dataValue" : "Head Office"
+    }, {
+      "name" : "Factory - Sukabumi",
+      "dataValue" : "Sukabumi Factory"
+    }, {
+      "name" : "Factory - Kejayan",
+      "dataValue" : "Kejayan Factory"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectPositionPIC" : {
+    "_id" : "wm-mPositionPIC-wm.Variable-1623982710799",
+    "name" : "selectPositionPIC",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "dataValue" : "Sales"
+    }, {
+      "dataValue" : "Admin"
+    }, {
+      "dataValue" : "FA"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectTitle" : {
+    "_id" : "wm-selectTitle-wm.Variable-1623736186365",
+    "name" : "selectTitle",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "CV",
+      "dataValue" : "CV"
+    }, {
+      "name" : "PT",
+      "dataValue" : "PT"
+    }, {
+      "name" : "UD",
+      "dataValue" : "UD"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectTitleNonNPWP" : {
+    "_id" : "wm-selectTitleNonNPWP-wm.Variable-1627449965256",
+    "name" : "selectTitleNonNPWP",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Mr",
+      "dataValue" : "Mr"
+    }, {
+      "name" : "Ms",
+      "dataValue" : "Ms"
+    }, {
+      "name" : "Mrs",
+      "dataValue" : "Mrs"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectTypeCertificateNpwp" : {
+    "_id" : "wm-selectTypeCertificateNpwp-wm.Variable-1624938437978",
+    "name" : "selectTypeCertificateNpwp",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "type" : "PPH 21"
+    }, {
+      "type" : "PPH 23"
+    }, {
+      "type" : "PPH 4 (2)"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectTypeNpwp" : {
+    "_id" : "wm-selectTypeNpwp-wm.Variable-1624938261840",
+    "name" : "selectTypeNpwp",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "type" : "Pusat",
+      "name" : "Company - Head Office"
+    }, {
+      "type" : "Cabang",
+      "name" : "Company - Branch"
+    }, {
+      "type" : "Perorangan",
+      "name" : "Personal / Individu"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetBankInformation" : {
+    "_id" : "wm-svBankInformation-wm.ServiceVariable-1624593600410",
+    "name" : "svGetBankInformation",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetBankInfoResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetBankInfo",
+    "operationId" : "QueryExecutionController_executeQGetBankInfo",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetBankNamebyCountry" : {
+    "_id" : "wm-getBankNamebyCountry-wm.ServiceVariable-1624844633808",
+    "name" : "svGetBankNamebyCountry",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "countryCode",
+      "value" : "bind:Widgets.sCountryCode.datavalue.trim()",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetBankNameByCountryResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetBankNameByCountry",
+    "operationId" : "QueryExecutionController_executeQGetBankNameByCountry",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 25,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetCountryData" : {
+    "_id" : "wm-svGetCountryData-wm.ServiceVariable-1624594454643",
+    "name" : "svGetCountryData",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetCountyDataResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetCountyData",
+    "operationId" : "QueryExecutionController_executeQGetCountyData",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 275,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetCurrencyData" : {
+    "_id" : "wm-svGetCurrencyData-wm.ServiceVariable-1624611138846",
+    "name" : "svGetCurrencyData",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetCurrencyDataResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetCurrencyData",
+    "operationId" : "QueryExecutionController_executeQGetCurrencyData",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 50,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataBank" : {
+    "_id" : "wm-svGetDataBank-wm.ServiceVariable-1630241424657",
+    "name" : "svGetDataBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetDataBankResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetDataBank",
+    "operationId" : "QueryExecutionController_executeQGetDataBank",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataEmailNotif" : {
+    "_id" : "wm-svGetDataEmailNotif-wm.ServiceVariable-1638319611099",
+    "name" : "svGetDataEmailNotif",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "puon",
+      "value" : "bind:Variables.vdbIVendorData.dataSet[0].puon.trim()",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetEmailListResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetEmailList",
+    "operationId" : "QueryExecutionController_executeGetEmailList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 10000,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataPic" : {
+    "_id" : "wm-svGetDataPic-wm.ServiceVariable-1638846168473",
+    "name" : "svGetDataPic",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetPicResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetPic",
+    "operationId" : "QueryExecutionController_executeGetPic",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataSupDoc" : {
+    "_id" : "wm-svGetDataSupDoc-wm.ServiceVariable-1630165510981",
+    "name" : "svGetDataSupDoc",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetSupDocResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetSupDoc",
+    "operationId" : "QueryExecutionController_executeGetSupDoc",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataTax" : {
+    "_id" : "wm-svGetDataTax-wm.ServiceVariable-1630985528022",
+    "name" : "svGetDataTax",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "vendorCode",
+      "value" : "bind:Widgets.labelVecode.caption",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetTaxResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetTax",
+    "operationId" : "QueryExecutionController_executeGetTax",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDocBank" : {
+    "_id" : "wm-svGetDocBank-wm.ServiceVariable-1631248860996",
+    "name" : "svGetDocBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetDocBankResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetDocBank",
+    "operationId" : "QueryExecutionController_executeQGetDocBank",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetExemptionType" : {
+    "_id" : "wm-svGetExemptionType-wm.ServiceVariable-1635230051731",
+    "name" : "svGetExemptionType",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetTaxTypeResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetTaxType",
+    "operationId" : "QueryExecutionController_executeQGetTaxType",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetRegion" : {
+    "_id" : "wm-svGetRegion-wm.ServiceVariable-1628156683065",
+    "name" : "svGetRegion",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetRegionResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetRegion",
+    "operationId" : "QueryExecutionController_executeQGetRegion",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 1000,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetRegionIndo" : {
+    "_id" : "wm-svGetRegionIndo-wm.ServiceVariable-1631583792356",
+    "name" : "svGetRegionIndo",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetRegIndoResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetRegIndo",
+    "operationId" : "QueryExecutionController_executeQGetRegIndo",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 40,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertDocBank" : {
+    "_id" : "wm-svInsertDocBank-wm.ServiceVariable-1636077408574",
+    "name" : "svInsertDocBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertDocBank",
+    "operationId" : "QueryExecutionController_executeQInsertDocBank",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertExemption" : {
+    "_id" : "wm-svInsertExemption-wm.ServiceVariable-1635228580517",
+    "name" : "svInsertExemption",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertCertificate",
+    "operationId" : "QueryExecutionController_executeQInsertCertificate",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertHistory" : {
+    "_id" : "wm-svInsertHistory-wm.ServiceVariable-1637723832329",
+    "name" : "svInsertHistory",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertHistory",
+    "operationId" : "QueryExecutionController_executeQInsertHistory",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertPIC" : {
+    "_id" : "wm-svInsertPIC-wm.ServiceVariable-1624002959501",
+    "name" : "svInsertPIC",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "selectPositionPIC",
+      "value" : "bind:Widgets.mGetDataPICList1.selectedItemWidgets.selectPositionPIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "namePIC",
+      "value" : "bind:Widgets.mGetDataPICList1.selectedItemWidgets.namePIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "phonePIC",
+      "value" : "bind:Widgets.mGetDataPICList1.selectedItemWidgets.phonePIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "selectAreaPIC",
+      "value" : "bind:Widgets.mGetDataPICList1.selectedItemWidgets.selectAreaPIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "emailPIC",
+      "value" : "bind:Widgets.mGetDataPICList1.selectedItemWidgets.emailPIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passEncrypt.caption",
+      "type" : "string"
+    }, {
+      "target" : "sVeCode",
+      "value" : "bind:Widgets.sVeCodeLocal.query",
+      "type" : "string"
+    }, {
+      "target" : "userName",
+      "value" : "bind:Widgets.labelUme.caption",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertPIC",
+    "operationId" : "QueryExecutionController_executeQInsertPIC",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertPICTemp" : {
+    "_id" : "wm-svInsertPICTemp-wm.ServiceVariable-1633577392329",
+    "name" : "svInsertPICTemp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "selectPositionPIC",
+      "value" : "bind:Widgets.mGetDataPICList1.currentItemWidgets.selectPositionPIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "phonePIC",
+      "value" : "bind:Widgets.mGetDataPICList1.currentItemWidgets.phonePIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "userName",
+      "value" : "bind:Widgets.reCompanyEmail.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "namePIC",
+      "value" : "bind:Widgets.mGetDataPICList1.currentItemWidgets.namePIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passEncryp.caption",
+      "type" : "string"
+    }, {
+      "target" : "emailPIC",
+      "value" : "bind:Widgets.mGetDataPICList1.currentItemWidgets.emailPIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "selectAreaPIC",
+      "value" : "bind:Widgets.mGetDataPICList1.currentItemWidgets.selectAreaPIC.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "vendorCode",
+      "value" : "bind:Variables.vdbIVendorData.dataSet[0].vendorCode",
+      "type" : "string"
+    }, {
+      "target" : "locationFor",
+      "value" : "bind:Widgets.radioLocation.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "inputBy",
+      "value" : "bind:Variables.loggedInUserData.dataSet.user_full_name",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertPicTemp",
+    "operationId" : "QueryExecutionController_executeQInsertPicTemp",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertSppkp" : {
+    "_id" : "wm-svInsertSppkp-wm.ServiceVariable-1635225136613",
+    "name" : "svInsertSppkp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertSppkp",
+    "operationId" : "QueryExecutionController_executeQInsertSppkp",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertSupDoc" : {
+    "_id" : "wm-svInsertSupDoc-wm.ServiceVariable-1624245232616",
+    "name" : "svInsertSupDoc",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "remarkSupDoc",
+      "value" : "bind:Widgets.mGetDataSupDocList1.selectedItemWidgets.remarkSupDoc.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "fileNameSupDoc",
+      "value" : "bind:Widgets.mGetDataSupDocList1.selectedItemWidgets.fileNameSupDoc.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "docSupUpload",
+      "value" : "bind:Variables.getSupDoc.dataSet[0].pathFile",
+      "type" : "string"
+    }, {
+      "target" : "sVeCode",
+      "value" : "bind:Widgets.sVeCodeLocal.query",
+      "type" : "string"
+    }, {
+      "target" : "userName",
+      "value" : "bind:Widgets.labelUme.caption",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertSupDoc",
+    "operationId" : "QueryExecutionController_executeQInsertSupDoc",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertTax" : {
+    "_id" : "wm-svInsertTax-wm.ServiceVariable-1634538952425",
+    "name" : "svInsertTax",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertTax",
+    "operationId" : "QueryExecutionController_executeQInsertTax",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertTaxTemp" : {
+    "_id" : "wm-svInsertTaxTemp-wm.ServiceVariable-1635392563833",
+    "name" : "svInsertTaxTemp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertTaxTemp",
+    "operationId" : "QueryExecutionController_executeQInsertTaxTemp",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Actions.naUpdateSucces.invoke()",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svMaxVendor" : {
+    "_id" : "wm-svMaxVendor-wm.ServiceVariable-1626082244736",
+    "name" : "svMaxVendor",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QmaxVendorResponse",
+    "service" : "AVM2",
+    "operation" : "executeQMaxVendor",
+    "operationId" : "QueryExecutionController_executeQMaxVendor",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svNotifyAdminInsertEmail" : {
+    "_id" : "wm-svNotifyAdminInsertEmail-wm.ServiceVariable-1638328565454",
+    "name" : "svNotifyAdminInsertEmail",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n    \"to\" : [\"driyadi@aio.co.id\"],\n    \"subject\": \"Notification from Admin Otsuka GO\",\n    \"text\": \"Test Body\",\n    \"cc\": null,\n    \"html\": null\n}",
+      "type" : "svNotifyEmailVendor.RootRequest"
+    } ],
+    "type" : "svNotifyEmailVendor.RootResponse",
+    "service" : "svNotifyEmailVendor",
+    "operation" : "invoke",
+    "operationId" : "svNotifyEmailVendor_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svRfusDelPIC" : {
+    "_id" : "wm-svRfusDelPIC-wm.ServiceVariable-1633595669150",
+    "name" : "svRfusDelPIC",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "vendorCode",
+      "value" : "bind:Variables.vdbIVendorData.dataSet[0].vendorCode",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQRfusDelPIC",
+    "operationId" : "QueryExecutionController_executeQRfusDelPIC",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svRfusUpdateBank" : {
+    "_id" : "wm-svRfusUpdateBank-wm.ServiceVariable-1633592314346",
+    "name" : "svRfusUpdateBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "vendorCode",
+      "value" : "bind:Variables.vdbIVendorData.dataSet[0].vendorCode",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQRfusUpdateBank",
+    "operationId" : "QueryExecutionController_executeQRfusUpdateBank",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateBank" : {
+    "_id" : "wm-svUpdateBankKonf-wm.ServiceVariable-1625035460823",
+    "name" : "svUpdateBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "beneficiaryType",
+      "value" : "bind:Widgets.beneficiaryType.displayValue",
+      "type" : "string"
+    }, {
+      "target" : "accountName",
+      "value" : "bind:Widgets.accountName.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "beneficiaryStatus",
+      "value" : "bind:Widgets.beneficiaryStatus.displayValue",
+      "type" : "string"
+    }, {
+      "target" : "accountNumber",
+      "value" : "bind:Widgets.accountNumber.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "branch",
+      "value" : "bind:Widgets.branch.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "bankName",
+      "value" : "bind:Widgets.bankName.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "currency",
+      "value" : "bind:Widgets.currency.displayValue",
+      "type" : "string"
+    }, {
+      "target" : "id",
+      "value" : "bind:Widgets.executeQGetBankInfoKonfTable1.currentItem.idBank",
+      "type" : "string"
+    }, {
+      "target" : "sCountryCode",
+      "value" : "bind:Widgets.sCountryCode.datavalue.abCoey",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateBank",
+    "operationId" : "QueryExecutionController_executeQUpdateBank",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svUpdateBankonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateDataBank" : {
+    "_id" : "wm-svUpdateDataBank-wm.ServiceVariable-1632380590525",
+    "name" : "svUpdateDataBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateDataBank",
+    "operationId" : "QueryExecutionController_executeQUpdateDataBank",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateDataVendor" : {
+    "_id" : "wm-svUpdateDataVendor-wm.ServiceVariable-1629343275756",
+    "name" : "svUpdateDataVendor",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "doi",
+      "value" : "bind:Widgets.doi.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "webCompany",
+      "value" : "bind:Widgets.webCompany.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "kecamatan",
+      "value" : "bind:Widgets.kecamatan.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "mobilePhone",
+      "value" : "bind:Widgets.mobilePhone.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "catUpload",
+      "value" : "bind:(Variables.getCatalogue.dataSet[0].pathFile ? Variables.getCatalogue.dataSet[0].pathFile : Variables.vdbIVendorData.dataSet[0].catalogueUrl)",
+      "type" : "string"
+    }, {
+      "target" : "nameDirector",
+      "value" : "bind:Widgets.nameDirector.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "kelurahan",
+      "value" : "bind:Widgets.kelurahan.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "officeAddress",
+      "value" : "bind:Widgets.officeAddress.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "telephone",
+      "value" : "bind:Widgets.telephone.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "radioLocation",
+      "value" : "bind:Widgets.radioLocation.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "tittle",
+      "value" : "bind:Widgets.selectTitle.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "idDirector",
+      "value" : "bind:Widgets.idDirector.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "catName",
+      "value" : "bind:(Variables.getCatalogue.dataSet[0].fileName ? Variables.getCatalogue.dataSet[0].fileName : Variables.vdbIVendorData.dataSet[0].catalogueName)",
+      "type" : "string"
+    }, {
+      "target" : "picUpload",
+      "value" : "bind:(Variables.getCompanyPic.dataSet[0].pathFile ? Variables.getCompanyPic.dataSet[0].pathFile : Variables.vdbIVendorData.dataSet[0].picUrl)\n",
+      "type" : "string"
+    }, {
+      "target" : "pos",
+      "value" : "bind:Widgets.pos.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "companyEmail",
+      "value" : "bind:Widgets.reCompanyEmail.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "province",
+      "value" : "bind:Widgets.sProvince.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "rtRw",
+      "value" : "bind:Widgets.rtRw.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passEncryp.caption",
+      "type" : "string"
+    }, {
+      "target" : "businessFieldSector",
+      "value" : "bind:Widgets.businessFieldSector.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "picName",
+      "value" : "bind:(Variables.getCompanyPic.dataSet[0].fileName ? Variables.getCompanyPic.dataSet[0].fileName : Variables.vdbIVendorData.dataSet[0].picName)",
+      "type" : "string"
+    }, {
+      "target" : "veName",
+      "value" : "bind:Widgets.veName.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "directorEmail",
+      "value" : "bind:Widgets.directorEmail.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "nib",
+      "value" : "bind:Widgets.nib.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "city",
+      "value" : "bind:Widgets.city.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "vendorCode",
+      "value" : "bind:Variables.vdbIVendorData.dataSet[0].vendorCode",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateVendor",
+    "operationId" : "QueryExecutionController_executeQUpdateVendor",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Actions.naUpdateSucces.invoke();svUpdateDataVendoronSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateDocBank" : {
+    "_id" : "wm-svUpdateDocBank-wm.ServiceVariable-1633339709383",
+    "name" : "svUpdateDocBank",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateDocBank",
+    "operationId" : "QueryExecutionController_executeQUpdateDocBank",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateFileExemption" : {
+    "_id" : "wm-svUpdateFileExemption-wm.ServiceVariable-1633418121886",
+    "name" : "svUpdateFileExemption",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateExemptionFile",
+    "operationId" : "QueryExecutionController_executeQUpdateExemptionFile",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateFileNpwp" : {
+    "_id" : "wm-svUpdateFileNpwp-wm.ServiceVariable-1633395338323",
+    "name" : "svUpdateFileNpwp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "filePath",
+      "value" : "bind:Variables.getNpwp.dataSet[0].pathFile",
+      "type" : "string"
+    }, {
+      "target" : "fileName",
+      "value" : "bind:Variables.getNpwp.dataSet[0].fileName",
+      "type" : "string"
+    }, {
+      "target" : "idFileNpwp",
+      "value" : "bind:Variables.vdbIVendorData.dataSet[0].idNpwp",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateNpwpFile",
+    "operationId" : "QueryExecutionController_executeQUpdateNpwpFile",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateFileSppkp" : {
+    "_id" : "wm-svUpdateFileSppkp-wm.ServiceVariable-1633417952838",
+    "name" : "svUpdateFileSppkp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateSppkp",
+    "operationId" : "QueryExecutionController_executeQUpdateSppkp",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdatePIC" : {
+    "_id" : "wm-svUpdateDataPIC-wm.ServiceVariable-1631257299443",
+    "name" : "svUpdatePIC",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdatePic",
+    "operationId" : "QueryExecutionController_executeQUpdatePic",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svUpdateDataPIConSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svUpdateSupDoc" : {
+    "_id" : "wm-svUpdateSupDoc-wm.ServiceVariable-1633486464689",
+    "name" : "svUpdateSupDoc",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateSupDoc",
+    "operationId" : "QueryExecutionController_executeQUpdateSupDoc",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vdbIVendorData" : {
+    "_id" : "wm-vdbIVendorData-wm.ServiceVariable-1631007336673",
+    "name" : "vdbIVendorData",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "email",
+      "value" : "bind:Variables.loggedInUser.dataSet.name ? Variables.loggedInUser.dataSet.name.split(\"::\")[1] : null",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetIvendorDataResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetIvendorData",
+    "operationId" : "QueryExecutionController_executeGetIvendorData",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "Variables.svGetDataEmailNotif.invoke();vdbIVendorDataonSuccess(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

@@ -1,0 +1,69 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.LANG_SUBMIT_DELEGATION" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="budgetDelegation" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_DELEGATION" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
+                        <wm-container name="background" backgroundcolor="#fff">
+                            <wm-container name="container8" padding="24px" width="500">
+                                <wm-composite name="composite1" captionposition="top">
+                                    <wm-label class="aio-ptp-field-label" name="label1" caption="bind:appLocale.LANG_EMPLOYEE_NAME_V"></wm-label>
+                                    <wm-container class="col-md-9 aio-p2p-form-container" name="container9" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.employeeName ? 'form-error' : ''">
+                                        <wm-search name="searchEmployee" type="autocomplete" dataset="bind:Variables.vdbEmployeeList.dataSet" searchkey="lgName,lgNik" displaylabel="bind:$[lgNik] + &quot; - &quot; + $[lgName]" datafield="All Fields" matchmode="anywhereignorecase"
+                                            placeholder="bind:appLocale.LANG_SEARCH_EMPLOYEE_NAME_OR_NIK" on-select="searchEmployeeSelect($event, widget, selectedValue)" class="aio-p2p-form-field" datavalue="bind:Variables.vmDelegationModel.dataSet.delToUserId ? {&quot;lgNik&quot;: Variables.vmDelegationModel.dataSet.delToUserId,&quot;lgName&quot;: Variables.vmDelegationModel.dataSet.delToUserName} : null"></wm-search>
+                                        <wm-label padding="unset 0.5em" name="label4" class="aio-p2p-error-message" caption="bind:Variables.vmErrorMessage.dataSet.employeeName"></wm-label>
+                                    </wm-container>
+                                </wm-composite>
+                                <wm-container name="container32" margin="16px unset unset unset">
+                                    <wm-label class="aio-ptp-field-label" name="label18" caption="bind:appLocale.LANG_DATE_V"></wm-label>
+                                    <wm-container name="container36" display="block" class="col-md-6" width="96%" show="true">
+                                        <wm-composite name="composite9" captionposition="top">
+                                            <wm-container class="col-md-6 aio-p2p-form-container" name="container38" conditionalclass="bind:Variables.vmErrorMessage.dataSet.date ? 'form-error' : ''">
+                                                <wm-date name="dateFrom" disabled="false" placeholder="bind:appLocale.LANG_SELECT_DATE_FROM" class="aio-p2p-form-field" on-change="dateFromChange($event, widget, newVal, oldVal)" datavalue="bind:Variables.vmDelegationModel.dataSet.delAvailDatetime"></wm-date>
+                                                <wm-label padding="unset 0.5em" name="label7" class="aio-p2p-error-message" caption="bind:Variables.vmErrorMessage.dataSet.date"></wm-label>
+                                            </wm-container>
+                                            <wm-container class="col-md-6 aio-p2p-form-container" name="container39" conditionalclass="bind:Variables.vmErrorMessage.dataSet.date ? 'form-error' : ''">
+                                                <wm-date name="dateTo" disabled="false" placeholder="bind:appLocale.LANG_SELECT_DATE_TO" class="aio-p2p-form-field" on-change="dateToChange($event, widget, newVal, oldVal)" datavalue="bind:Variables.vmDelegationModel.dataSet.delExpDatetime"></wm-date>
+                                            </wm-container>
+                                        </wm-composite>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-composite name="composite6" captionposition="top"></wm-composite>
+                                <wm-container class="col-md-9 aio-p2p-form-container" name="container14" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.reason ? 'form-error' : ''">
+                                    <wm-label padding="unset 0.5em" name="label6_1" class="aio-p2p-error-message" caption="bind:Variables.vmErrorMessage.dataSet.reason"></wm-label>
+                                    <wm-label class="aio-ptp-field-label" name="label6" caption="bind:appLocale.LANG_REASON_V"></wm-label>
+                                    <wm-textarea name="textarea2" placeholder="bind:appLocale.LANG_ENTER_REASON" class="aio-p2p-form-input" on-keyup="textarea2Keyup($event, widget)" datavalue="bind:Variables.vmDelegationModel.dataSet.delReason"></wm-textarea>
+                                </wm-container>
+                                <wm-container name="container12" horizontalalign="left">
+                                    <wm-container name="container18"></wm-container>
+                                </wm-container>
+                                <wm-container name="container16" horizontalalign="right"></wm-container>
+                                <wm-container name="container19" horizontalalign="right">
+                                    <wm-layoutgrid name="layoutgrid1">
+                                        <wm-gridrow name="gridrow1">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="left">
+                                                <wm-label padding="unset 0.5em" name="label7_1" caption="bind:appLocale.LANG_ISREQUIRED" fontweight="bold" fontstyle="italic"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow2">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                                                <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_SUBMIT" type="button" margin="unset 0.5em" name="button1" on-click="button1Click($event, widget)"></wm-button>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

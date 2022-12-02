@@ -1,0 +1,321 @@
+{
+  "username" : "root",
+  "password" : "7b6a43524a17241e6e7e3422205d7670477c612a43",
+  "url" : "jdbc:mysql://202.158.62.54:3307/aio_ptp?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "aio_ptp",
+  "packageName" : "id.co.aio.procure_to_pay.aio_ptp",
+  "dbType" : "MySQL",
+  "host" : "202.158.62.54",
+  "dbName" : "aio_ptp",
+  "port" : "3307",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "rel_del_auth",
+    "schema" : null
+  }, {
+    "table" : "rel_role_auth",
+    "schema" : null
+  }, {
+    "table" : "system_config",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_account_type",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_authorization",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_brand",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_company",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_department",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_department_approval",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_division",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_division_bod",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_doctype",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_emp_price_limit",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_io",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_mat_group_coa",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_mat_vendor",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_organization_map",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_purchase_group",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_reclass_category",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_rfq_parameter",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_role",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_unbudget_cat",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_user_data",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_user_dep",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_user_purchase_group",
+    "schema" : null
+  }, {
+    "table" : "tbl_m_user_role",
+    "schema" : null
+  }, {
+    "table" : "tbl_pb_attachment",
+    "schema" : null
+  }, {
+    "table" : "tbl_sap_return_error",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_additional_attachment",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_additional_history",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_announcement",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_budget_additional",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_budget_details",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_budget_header",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_budget_reclass",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_budget_upload",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_budget_upload_adjustment",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_delegation",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_gr_confirm_line_item",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_gr_line_item",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_inbox",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_po",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_po_acceptance_vendor",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_po_doc",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_po_history",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_po_line_item",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_pr",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_pr_history",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_pr_line_item",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_proposal_budget",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_reclass_attachment",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_reclass_history",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_rfq",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_rfq_li_status",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_rfq_ven_quotation",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_rfq_vendor",
+    "schema" : null
+  }, {
+    "table" : "tbl_t_tasklist",
+    "schema" : null
+  }, {
+    "table" : "tl_ms_ve",
+    "schema" : null
+  }, {
+    "table" : "v_active_budget",
+    "schema" : null
+  }, {
+    "table" : "v_already_in_gr",
+    "schema" : null
+  }, {
+    "table" : "v_bod_dept",
+    "schema" : null
+  }, {
+    "table" : "v_budget_available",
+    "schema" : null
+  }, {
+    "table" : "v_budget_calculate",
+    "schema" : null
+  }, {
+    "table" : "v_budget_detail_2",
+    "schema" : null
+  }, {
+    "table" : "v_budget_details",
+    "schema" : null
+  }, {
+    "table" : "v_goods_rfq",
+    "schema" : null
+  }, {
+    "table" : "v_gr_line_item",
+    "schema" : null
+  }, {
+    "table" : "v_gr_quantity_delivery",
+    "schema" : null
+  }, {
+    "table" : "v_gr_tracking",
+    "schema" : null
+  }, {
+    "table" : "v_gr_tracking_ordered",
+    "schema" : null
+  }, {
+    "table" : "v_gr_tracking_vendor",
+    "schema" : null
+  }, {
+    "table" : "v_item_delivered",
+    "schema" : null
+  }, {
+    "table" : "v_last_budget_detail",
+    "schema" : null
+  }, {
+    "table" : "v_material_group_purchasing",
+    "schema" : null
+  }, {
+    "table" : "v_po_header_to_gr",
+    "schema" : null
+  }, {
+    "table" : "v_po_ready_to_bypass",
+    "schema" : null
+  }, {
+    "table" : "v_po_ready_to_gr",
+    "schema" : null
+  }, {
+    "table" : "v_po_ready_to_gr_user",
+    "schema" : null
+  }, {
+    "table" : "v_po_tracking",
+    "schema" : null
+  }, {
+    "table" : "v_po_vendor_address",
+    "schema" : null
+  }, {
+    "table" : "v_pr_ready_for_purchase",
+    "schema" : null
+  }, {
+    "table" : "v_purchase_order",
+    "schema" : null
+  }, {
+    "table" : "v_purchase_order_line_item",
+    "schema" : null
+  }, {
+    "table" : "v_purchase_request",
+    "schema" : null
+  }, {
+    "table" : "v_purchase_request_header",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_item_quotation",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_quotation_header",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_to_po",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_tracking",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_tracking_sub",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_vendor_quotation",
+    "schema" : null
+  }, {
+    "table" : "v_rfq_vendor_top",
+    "schema" : null
+  }, {
+    "table" : "v_task_list",
+    "schema" : null
+  }, {
+    "table" : "v_tracking_order",
+    "schema" : null
+  }, {
+    "table" : "v_user_role",
+    "schema" : null
+  }, {
+    "table" : "v_vendor_order_list",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : null
+}

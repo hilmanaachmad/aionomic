@@ -1,0 +1,77 @@
+{
+  "displayName" : "AIOPtpSelectSearch",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ ]
+  },
+  "properties" : {
+    "displayvalue" : {
+      "type" : "string",
+      "displayName" : "Displayvalue",
+      "description" : "display value",
+      "bindable" : "in-out-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "datavalue" : {
+      "type" : "string",
+      "displayName" : "Datavalue",
+      "description" : "datavalue",
+      "bindable" : "in-out-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "datavariable" : {
+      "type" : "object",
+      "displayName" : "Datavariable",
+      "description" : "datavariable",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "disabled" : {
+      "type" : "boolean",
+      "displayName" : "Disabled",
+      "description" : "disabled",
+      "bindable" : "in-bound",
+      "value" : false,
+      "widget" : "checkbox",
+      "show" : true,
+      "disabled" : false
+    },
+    "listdisplaykey" : {
+      "type" : "string",
+      "displayName" : "Listdisplaykey",
+      "description" : "listdisplaykey",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "listdatakey" : {
+      "type" : "string",
+      "displayName" : "Listdatakey",
+      "description" : "listdatakey",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "searchkey" : {
+      "type" : "string",
+      "displayName" : "Searchkey",
+      "description" : "searchkey",
+      "bindable" : "in-bound",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  },
+  "events" : { },
+  "methods" : { }
+}

@@ -1,0 +1,301 @@
+<wm-partial name="partial1">
+    <wm-container name="container1" backgroundcolor="#fff">
+        <wm-picture name="picture1" pictureplaceholder="resources/images/logos/logo-otsuka-p2p.png" padding="32px 37px 70px 37px" pictureaspect="None"></wm-picture>
+    </wm-container>
+    <wm-container name="container2" padding="unset 24px" backgroundcolor="#fff" class="aio-ptp-menu-container">
+        <wm-container class="aio-p2p-nav" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'taskListPage' }" on-click="Actions.goToPage_TaskListPage.invoke()" name="container21" show="bind:Variables.loggedInUserData.dataSet.username.includes('emp:') ? true : false">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_TASK_LIST" class="aio-p2p-nav-menu" name="label19"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'taskListCheckerPage' }" on-click="Actions.goToPage_TaskListCheckerPage.invoke()" name="container29" show="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-007&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_TASK_LIST_CHECKER" class="aio-p2p-nav-menu" name="label27"></wm-label>
+        </wm-container>
+        <wm-container name="containerMenuMaster" class="aio-p2p-nav" show="bind:checkUserRole([&quot;MST-001&quot;,&quot;MST-002&quot;,&quot;MST-003&quot;,&quot;MST-004&quot;,&quot;MST-005&quot;])" on-click="containerMenuMasterClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid2">
+                <wm-gridrow name="gridrow2">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                        <wm-label padding="unset 0.5em" name="label1" caption="bind:appLocale.LANG_MASTER" class="aio-p2p-nav-title"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuMaster.dataSet.dataValue == false" name="picture6"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuMaster.dataSet.dataValue == true" name="picture7"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container name="container5" class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'masterRole' }" on-click="Actions.goToPage_MasterRole.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-001&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ROLE" name="label2" class="aio-p2p-nav-menu"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" name="container5_1" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'userMapping' }" on-click="Actions.goToPage_UserMapping.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-002&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_USER_MAPPING" class="aio-p2p-nav-menu" name="label3"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'mapDepartUser' }" on-click="Actions.goToPage_MapDepartUser.invoke()" name="container16_1" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-008') !== -1 ? true : false">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DEPARTMENT_TO_USER" class="aio-p2p-nav-menu" name="label14_1"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" name="container7" on-click="Actions.goToPage_MaterialToVendor.invoke()" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'materialToVendor' }" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-005&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_SKU_MATERIAL_TO_VENDOR" class="aio-p2p-nav-menu" name="label5"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" name="container24" on-click="Actions.goToPage_MappingDeptDivCostCenter.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-006&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_MAPPING_COST_CENTER_DEPARTMENT_DIVISION" class="aio-p2p-nav-menu" name="label22"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" name="container8" on-click="Actions.goToPage_MappingIO.invoke()" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'mappingIO' }" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-007') !== -1 ? true : false">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_IO" class="aio-p2p-nav-menu" name="label6"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'mapPriceLimit' }" on-click="Actions.goToPage_MappingEmployeeLevelPriceLimit.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-009') !== -1 ? true : false"
+            name="container_employetolevel">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_MAPPING_EMPLOYEE_LEVEL_TO_PRICE_LIMIT" class="aio-p2p-nav-menu" name="label_employetolevel"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'mapDivisionToBod' }" on-click="Actions.goToPage_MappingDivisionToBOD.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-010') !== -1 ? true : false"
+            name="container_employetolevel">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DIVISION_TO_BOD" class="aio-p2p-nav-menu" name="label_divisionBod"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'mappingDepartmentToApproval' }" on-click="Actions.goToPage_MappingDepartmentToApproval.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-013') !== -1 ? true : false"
+            name="containerMappingDeptToApproval">
+            <wm-label padding="unset 0.5em" caption="Mapping Department to Approval" class="aio-p2p-nav-menu" name="labelDeptToApproval"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'RFQparameter' }" on-click="Actions.goToPage_MasterRequestForQuotation.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-011') !== -1 ? true : false"
+            name="container27">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RFQ_PARAMETER" class="aio-p2p-nav-menu" name="label25"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'PurchaseGroupUser' }" on-click="Actions.goto_purchaseGroupUser.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-012') !== -1 ? true : false"
+            name="container27">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PURCHASE_GROUP_TO_USER" class="aio-p2p-nav-menu" name="label25"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'MappingAnnouncement' }" on-click="Actions.goToPage_MasterAnnouncement.invoke()" show="bind:Variables.menuMaster.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('MST-014') !== -1 ? true : false"
+            name="containerAnnouncement">
+            <wm-label padding="unset 0.5em" caption="Announcement" class="aio-p2p-nav-menu" name="labelAnnouncement"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" name="containerMenuHistory" show="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-003&quot;) >= 0 || Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-004&quot;) >= 0" on-click="containerMenuHistoryClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid3">
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_HISTORY" class="aio-p2p-nav-title" name="label7"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuHistory.dataSet.dataValue == false" name="picture8"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuHistory.dataSet.dataValue == true" name="picture9"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" name="container11" on-click="Actions.goToPage_UserMapHistory.invoke()" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'userMappingHistory' }" show="bind:Variables.menuHistory.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;MST-003&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_USER_MAPPING_HISTORY" class="aio-p2p-nav-menu" name="label9"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" name="containerMenuBudget" show="bind:checkUserRole([&quot;BUD-001&quot;,&quot;BUD-002&quot;,&quot;BUD-003&quot;,&quot;BUD-004&quot;,&quot;BUD-005&quot;,&quot;BUD-006&quot;,&quot;BUD-007&quot;,&quot;BUD-008&quot;,&quot;BUD-009&quot;,&quot;BUD-010&quot;])"
+            on-click="containerMenuBudgetClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid4">
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7">
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET" class="aio-p2p-nav-title" name="label12_1"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuBudget.dataSet.dataValue == false" name="picture10"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuBudget.dataSet.dataValue == true" name="picture11"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'uploadBudget' }" on-click="Actions.goToPage_UploadBudget.invoke()" name="container15" show="bind:Variables.menuBudget.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;BUD-001&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_UPLOAD_BUDGET" class="aio-p2p-nav-menu" name="label13"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'reclassPage' }" on-click="Actions.goToPage_ReclassPage.invoke()" show="bind:Variables.menuBudget.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('BUD-003') !== -1 ? true : false"
+            name="container19">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RECLASS" class="aio-p2p-nav-menu" name="label17"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'additionalBudgetPage' }" on-click="Actions.goToPage_AdditionalBudgetPage.invoke()" show="bind:Variables.menuBudget.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('BUD-004') !== -1 ? true : false"
+            name="container18">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ADDITIONAL" class="aio-p2p-nav-menu" name="label16"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuBudget.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf('BUD-005') !== -1 ? true : false" name="container44" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'BudgetDetail' }"
+            on-click="Actions.goToPage_BudgetDetail.invoke()">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_DETAIL" class="aio-p2p-nav-menu" name="label42"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'uploadBudgetAdjustment' }" on-click="Actions.goToPage_UploadBudgetAdjustment.invoke()" name="containerbudgetAdjustment" show="bind:Variables.menuBudget.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;BUD-001&quot;) >= 0">
+            <wm-label padding="unset 0.5em" caption="Upload Budget Adjustment" class="aio-p2p-nav-menu" name="label13"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" name="containerMenuPR" show="bind:checkUserRole([&quot;PRS-001&quot;,&quot;PRS-002&quot;,&quot;PRS-003&quot;,&quot;PRS-004&quot;,&quot;PRS-005&quot;,&quot;PRS-006&quot;,&quot;PRS-007&quot;,&quot;PRS-008&quot;])"
+            on-click="containerMenuPRClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid5">
+                <wm-gridrow name="gridrow5">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn9">
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PURCHASE_REQUEST" class="aio-p2p-nav-title" name="label17_1"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn10" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuPR.dataSet.dataValue == false" name="picture12"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuPR.dataSet.dataValue == true" name="picture13"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'proposalBudget' }" on-click="Actions.goToPage_ProposalBudget.invoke()" show="bind:Variables.menuPR.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-001&quot;) >= 0"
+            name="container24_1">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PROPOSAL_BUDGET" class="aio-p2p-nav-menu" name="label22_1"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'proposalBudgetTrackingPage' }" on-click="Actions.goToPage_ProposalBudgetTrackingPage.invoke()" show="bind:Variables.menuPR.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-002&quot;) >= 0"
+            name="container25">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PROPOSAL_BUDGET_TRACKING" class="aio-p2p-nav-menu" name="label23"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'purchaseRequestPage' }" on-click="Actions.goToPage_PurchaseRequestPage.invoke()" show="bind:Variables.menuPR.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-004&quot;) >= 0"
+            name="container20">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PURCHASE_REQUEST" class="aio-p2p-nav-menu" name="label18"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'purchaseRequestTrack' }" on-click="Actions.goToPage_PurchaseRequestTracking.invoke()" show="bind:Variables.menuPR.dataSet.dataValue === true &amp;&amp; (Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-005&quot;) >= 0 || Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-006&quot;) >= 0)"
+            name="container28">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PURCHASE_REQUEST_TRACKING" class="aio-p2p-nav-menu" name="label26"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'purchaseRequestInterface' }" show="bind:Variables.menuPR.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PRS-009&quot;) >= 0"
+            name="menuPRInterface" on-click="Actions.goToPage_PurchaseRequestInterface.invoke()">
+            <wm-label padding="unset 0.5em" caption="Purchase Request Interface" class="aio-p2p-nav-menu" name="labelPRInterface"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" name="containerMenuRFQ" show="bind:checkUserRole([&quot;RFQ-001&quot;,&quot;RFQ-002&quot;,&quot;RFQ-003&quot;,&quot;RFQ-004&quot;]) || (Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false)"
+            on-click="containerMenuRFQClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid6">
+                <wm-gridrow name="gridrow6">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn11">
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_READY_FOR_QUOTATION" class="aio-p2p-nav-title" name="label28"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn12" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuRFQ.dataSet.dataValue == false" name="picture14"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuRFQ.dataSet.dataValue == true" name="picture15"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'RFQPage' }" on-click="Actions.goToPage_RFQlist.invoke()" show="bind:Variables.menuRFQ.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;RFQ-002&quot;) >= 0"
+            name="container34">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_READY_FOR_QUOTATION" class="aio-p2p-nav-menu" name="label32"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'vendorQuotation' }" on-click="Actions.goToPage_VendorQuotationPage.invoke()" show="bind:Variables.menuRFQ.dataSet.dataValue === true &amp;&amp; Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false"
+            name="container31">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_QUOTATION" class="aio-p2p-nav-menu" name="label29"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'quotationTrackingPage' }" on-click="Actions.goTo_RFQTracking.invoke();container32Click($event, widget)" show="bind:Variables.menuRFQ.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;RFQ-004&quot;) >= 0"
+            name="container32">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_QUOTATION_TRACKING" class="aio-p2p-nav-menu" name="label30"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" name="containerMenuReadyPO" show="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;PO-001&quot;) >= 0 || Variables.loggedInUser.dataSet.roles.indexOf(&quot;PO-002&quot;) >= 0" on-click="containerMenuReadyPOClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid7">
+                <wm-gridrow name="gridrow7">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn13">
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LABEL_PURCHASE_ORDER" class="aio-p2p-nav-title" name="labelReadyPO"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn14" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuPO.dataSet.dataValue == false" name="picture16"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuPO.dataSet.dataValue == true" name="picture17"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuPO.dataSet.dataValue == true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PO-001&quot;) >= 0" name="containerReadyPurchase" on-click="Actions.goTo_PRReadyforPurchase.invoke()">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LABEL_READY_FOR_PURCHASE" class="aio-p2p-nav-menu" name="labelReadyPurchase"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuPO.dataSet.dataValue == true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PO-002&quot;) >= 0" name="containerListPO" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'purchaseOrder' }">
+            <wm-label padding="unset 0.5em" caption="Purchase Order" class="aio-p2p-nav-menu" name="labelListPO" on-click="Actions.goto_POList.invoke()"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuPO.dataSet.dataValue == true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;PO-003&quot;) >= 0" name="containerListPO" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'POTracking' }">
+            <wm-label padding="unset 0.5em" caption="PO Tracking" class="aio-p2p-nav-menu" name="labelPOTracking" on-click="Actions.goToPage_POTracking.invoke()"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="bind:Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false" name="container40">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ORDER" class="aio-p2p-nav-title" name="label38"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false" name="container40_1" on-click="container40_1Click($event, widget)" horizontalalign="left" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'order-list' }">
+            <wm-container name="container41" display="inline-block" width="50%">
+                <wm-label padding="unset 0.5em" caption="Order List" class="aio-p2p-nav-menu" name="OrderList"></wm-label>
+            </wm-container>
+            <wm-container display="inline-block" width="50%" name="container42" horizontalalign="right">
+                <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" name="picture3" show="bind:Variables.menuCondition.dataSet[$i].showOrderList == false"></wm-picture>
+                <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuCondition.dataSet[$i].showOrderList == true" name="picture4"></wm-picture>
+            </wm-container>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuCondition.dataSet[$i].showOrderList == true" on-click="container43Click($event, widget)" horizontalalign="left" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'order-list-aio' }"
+            name="container43">
+            <wm-container display="inline-block" width="100%" name="container44_2">
+                <wm-label padding="unset 0.5em" caption="PT. Amerta Indah Otsuka" class="aio-p2p-nav-menu" name="label40" margin="unset unset unset 15px"></wm-label>
+            </wm-container>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuCondition.dataSet[$i].showOrderList == true" on-click="container46Click($event, widget)" horizontalalign="left" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'order-list-odi' }"
+            name="container46">
+            <wm-container display="inline-block" width="100%" name="container47">
+                <wm-label padding="unset 0.5em" caption="PT. Otsuka Distribution Indonesia" class="aio-p2p-nav-menu" name="label41_1" margin="unset unset unset 15px"></wm-label>
+            </wm-container>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="bind:Variables.loggedInUser.dataSet.roles.indexOf(&quot;GR-001&quot;) >= 0 || Variables.loggedInUser.dataSet.roles.indexOf(&quot;GR-002&quot;) >= 0" name="ContainerGoodReceipt" on-click="ContainerGoodReceiptClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                        <wm-label padding="unset 0.5em" caption="Good Receipt" class="aio-p2p-nav-title" name="label38"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuGoodReceipt.dataSet.dataValue == false" name="picture4_1"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuGoodReceipt.dataSet.dataValue == true" name="picture5"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuGoodReceipt.dataSet.dataValue == true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;GR-001&quot;) >= 0" name="container40_1" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'POReadyToGR' }">
+            <wm-label padding="unset 0.5em" caption="PO Ready to GR" class="aio-p2p-nav-menu" name="POReadyToGR" on-click="Actions.goToPage_POReadyForGR.invoke()"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" show="bind:Variables.menuGoodReceipt.dataSet.dataValue === true &amp;&amp; Variables.loggedInUser.dataSet.roles.indexOf(&quot;GR-002&quot;) >= 0" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'GRConfirm' }"
+            name="container45">
+            <wm-label padding="unset 0.5em" caption="GR Confirm" class="aio-p2p-nav-menu" on-click="Actions.goToPage_GRConfirm.invoke()" name="label43"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="bind:checkUserRole([&quot;BUD-002&quot;, &quot;MST-004&quot;, &quot;PRS-003&quot;, &quot;RFQ-001&quot;])" name="ContainerDelegation" on-click="ContainerDelegationClick($event, widget)">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow name="gridrow1">
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1">
+                        <wm-label padding="unset 0.5em" caption="Delegation" class="aio-p2p-nav-title" name="label38"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right">
+                        <wm-picture width="15" picturesource="resources/images/imagelists/right-arrow.png" show="bind:Variables.menuDelegation.dataSet.dataValue == false" name="picture4_1"></wm-picture>
+                        <wm-picture width="15" picturesource="resources/images/imagelists/down-arrow.png" show="bind:Variables.menuDelegation.dataSet.dataValue == true" name="picture5"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'budgetDelegation' }" on-click="Actions.goToPage_DelegationBudget.invoke()" show="bind:Variables.menuDelegation.dataSet.dataValue == true &amp;&amp; checkUserRole([&quot;BUD-002&quot;, &quot;MST-004&quot;, &quot;PRS-003&quot;, &quot;RFQ-001&quot;])
+
+" name="container16">
+            <wm-label padding="unset 0.5em" caption="Delegation Budget" class="aio-p2p-nav-menu" name="label14"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'DelegationPurchaseRequest' }" on-click="Actions.goToPage_DelegationPurchaseRequest.invoke()" show="bind:Variables.menuDelegation.dataSet.dataValue == true &amp;&amp; checkUserRole([&quot;BUD-002&quot;, &quot;MST-004&quot;, &quot;PRS-003&quot;, &quot;RFQ-001&quot;])"
+            name="container44_1">
+            <wm-label padding="unset 0.5em" caption="Delegation PR" class="aio-p2p-nav-menu" name="label41"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'delagationRFQPage' }" on-click="Actions.goToPage_DelegationRFQ.invoke()" show="bind:Variables.menuDelegation.dataSet.dataValue == true &amp;&amp; checkUserRole([&quot;BUD-002&quot;, &quot;MST-004&quot;, &quot;PRS-003&quot;, &quot;RFQ-001&quot;])"
+            name="container33">
+            <wm-label padding="unset 0.5em" caption="Delegation RFQ" class="aio-p2p-nav-menu" name="label31"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav aio-p2p-nav-submenu" name="container10" conditionalclass="bind:{ 'active': pageParams.activeMenu == 'delegationHistory' }" on-click="Actions.goToPage_DelegationHistory.invoke()" show="bind:Variables.menuDelegation.dataSet.dataValue == true &amp;&amp; checkUserRole([&quot;BUD-002&quot;, &quot;MST-004&quot;, &quot;PRS-003&quot;, &quot;RFQ-001&quot;])">
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DELEGATION_HISTORY" class="aio-p2p-nav-menu" name="label8"></wm-label>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="bind:Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false" name="container55_1">
+            <wm-label padding="unset 0.5em" caption="Edit" class="aio-p2p-nav-title" name="label48_1"></wm-label>
+            <wm-container class="aio-p2p-nav" on-click="container55Click($event, widget)" show="true" name="container55">
+                <wm-label padding="unset 0.5em" caption="Edit Data Vendor" class="aio-p2p-nav-menu" name="label48"></wm-label>
+            </wm-container>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="bind:Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false" name="container56">
+            <wm-container class="aio-p2p-nav" show="true" name="container57">
+                <wm-anchor margin="unset 0.5em" iconclass="wi wi-external-link" caption="Go to Invoicing" on-click="anchor2Click($event, widget)" class="no-url" name="anchor2"></wm-anchor>
+            </wm-container>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="false" name="container62">
+            <wm-label padding="unset 0.5em" caption="if you know / have information about fraud in the transaction, please use this Lapor AIO as reporting media" class="aio-p2p-nav-title" show="true" name="label52"></wm-label>
+            <wm-container class="aio-p2p-nav" show="false" name="container63">
+                <form id="billion-form" method="post" action="https://billion.aio.co.id/Auth/ProsesLogin" target="_blank"><input type="hidden" id="billion-username" name="username" value=""><input type="hidden" id="billion-password" name="password" value=""></form>
+                <wm-anchor margin="unset 0.5em" iconclass="wi wi-external-link" caption="Go to Invoicing" target="_blank"
+                    hyperlink="https://billion.aio.co.id/" on-click="anchor1Click($event, widget)" class="no-url" name="anchor3"></wm-anchor>
+            </wm-container>
+            <wm-container class="aio-p2p-nav" show="true" name="container64">
+                <form id="laporaio-form" method="post" action="https://lapor.aio.co.id:12000" target="_blank"><input type="hidden" id="laporaio-source" name="source" value="external"></form>
+                <wm-anchor margin="unset 0.5em" iconclass="wi wi-external-link" caption="Lapor AIO" target="_self" on-click="laporAIOAnchorClick($event, widget)" class="no-url"
+                    name="laporAIOAnchor"></wm-anchor>
+            </wm-container>
+        </wm-container>
+        <wm-container class="aio-p2p-nav" show="bind:Variables.loggedInUserData.dataSet.username.includes('ven:') ? true : false" name="container60"></wm-container>
+        <wm-container class="aio-p2p-nav" show="false" name="container58">
+            <wm-container class="aio-p2p-nav billion-btn" show="true" name="containerBillion" horizontalalign="center" on-click="containerBillionClick($event, widget)">
+                <wm-label padding="unset 0.5em" name="label51" fontweight="bold" caption="Go to Invoicing" class="no-url"></wm-label>
+            </wm-container>
+        </wm-container>
+    </wm-container>
+</wm-partial>

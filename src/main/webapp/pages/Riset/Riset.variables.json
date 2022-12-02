@@ -1,0 +1,25 @@
+{
+  "getMasterRole" : {
+    "_id" : "wm-getMasterRole-wm.ServiceVariable-1616558766820",
+    "name" : "getMasterRole",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.aio_ptp.models.query.GetMasterRoleResponse",
+    "service" : "aio_ptp",
+    "operation" : "executeGetMasterRole",
+    "operationId" : "QueryExecutionController_executeGetMasterRole",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onResult" : "getMasterRoleonResult(variable, data, options)",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

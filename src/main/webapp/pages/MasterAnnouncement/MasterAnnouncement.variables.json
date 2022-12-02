@@ -1,0 +1,333 @@
+{
+  "DBListData" : {
+    "_id" : "wm-DBListData-wm.LiveVariable-1661176873141",
+    "name" : "DBListData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTAnnouncement",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "name",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "startDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "start_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "endDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "end_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "isValid",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "is_valid",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "page",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "page",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "content",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "content",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "type",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "type",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "_desc",
+        "type" : "text",
+        "fullyQualifiedType" : "text",
+        "columnName" : "desc",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 65535,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblTAnnouncement",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTAnnouncement",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "tableName" : "tbl_t_announcement",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "name",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      }, {
+        "target" : "startDate",
+        "type" : "datetime",
+        "matchMode" : "exact",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTAnnouncement"
+  },
+  "FileServiceUploadFile" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1661223906914",
+    "name" : "FileServiceUploadFile",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.file.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadFileonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "FileServiceUploadFileEdit" : {
+    "_id" : "wm-FileServiceUploadFile2-wm.ServiceVariable-1661267506967",
+    "name" : "FileServiceUploadFileEdit",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.file_edit.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadFileEditonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "MLocationPage" : {
+    "_id" : "wm-MScreen-wm.Variable-1661239867026",
+    "name" : "MLocationPage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Dashboard Page",
+      "dataValue" : "dashboard"
+    }, {
+      "name" : "Login Page",
+      "dataValue" : "login"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "MType" : {
+    "_id" : "wm-MType-wm.Variable-1661224898324",
+    "name" : "MType",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "dataValue" : "single_date",
+      "name" : "Single Date"
+    }, {
+      "dataValue" : "date_range",
+      "name" : "Date Range"
+    }, {
+      "dataValue" : "monthly",
+      "name" : "Monthly"
+    }, {
+      "dataValue" : "yearly",
+      "name" : "Yearly"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectedItem" : {
+    "_id" : "wm-selectedItem-wm.Variable-1661264186359",
+    "name" : "selectedItem",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : { },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "sotirNumber" : {
+    "_id" : "wm-sotirNumber-wm.Variable-1606885526861",
+    "name" : "sotirNumber",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "5 Rows",
+      "dataValue" : "5"
+    }, {
+      "name" : "10 Rows",
+      "dataValue" : "10"
+    }, {
+      "name" : "30 Rows",
+      "dataValue" : "30"
+    }, {
+      "name" : "50 Rows",
+      "dataValue" : "50"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmErrorMessage" : {
+    "_id" : "wm-vmErrorMessage-wm.Variable-1608795426298",
+    "name" : "vmErrorMessage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "divisionErrorMessage" : "",
+      "departmentErrorMessage" : "",
+      "costCenterErrorMessage" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchMapping" : {
+    "_id" : "wm-vmSearchMapping-wm.Variable-1606398316276",
+    "name" : "vmSearchMapping",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Name",
+      "dataValue" : "1"
+    }, {
+      "name" : "Date",
+      "dataValue" : "2"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

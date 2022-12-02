@@ -1,0 +1,60 @@
+{
+  "endpointAddress" : "https://myapps.aio.co.id/otsuka-api/api/service/email",
+  "method" : "POST",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "to=ghinakaltsum%40deltadatamandiri.com&cc=iwan%40deltadatamandiri.com%2C%20m.rizky%40deltadatamandiri.com%2C%20joshua%40deltadatamandiri.com&subject=Forgot%20Password&body=%3Chtml%3E%0A%3Clink%20href%3D%22https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DInter%3Awght%40300%3B400%3B500%3B600%3B700%3B800%3B900%26amp%3Bdisplay%3Dswap%22%20rel%3D%22stylesheet%22%20%2F%3E%0A%3Cbody%3E%0A%3Ctable%20style%3D%22%20width%3A%20560px%3B%0A%09%09height%3A%20631px%3B%0A%09%09background%3A%20white%3B%0A%09%09border-radius%3A%2020px%3B%0A%09%09font-family%3A%20Inter%3B%0A%09%09text-align%3A%20center%3B%20%0A%09%09vertical-align%3A%20middle%3B%22%3E%0A%09%3Ctr%3E%0A%09%09%3Cth%3E%0A%09%09%09%3Cimg%20width%3D%22206%22%20height%3D%22103%22%20src%3D%22https%3A%2F%2Fwww.wavemakeronline.com%2Frun-44m0pf1vdy%2Fent125f57eaa343%2FProcure_to_Pay_master%2Fresources%2Fimages%2Flogos%2Flogin-otsuka.png%22%20%2F%3E%0A%09%09%3C%2Fth%3E%0A%09%3C%2Ftr%3E%0A%0A%20%20%3Ctr%20style%3D%22font-weight%3A%20normal%3B%0A%09%09font-size%3A%2016px%3B%0A%09%09line-height%3A%2024px%3B%0A%09%09text-align%3A%20center%3B%0A%09%09color%3A%20%23000000%3B%22%3E%0A%20%20%3Ctd%3E%0A%20%20%20%3Ca%20style%3D%22font-style%3A%20normal%3B%0A%09%09font-weight%3A%20500%3B%0A%09%09font-size%3A%2040px%3B%0A%09%09line-height%3A%2055px%3B%0A%09%09color%3A%20%23262626%3B%22%3EHi%20SARI%20YANTI%20LUBIS%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2C%3C%2Fa%3E%3Cbr%3E%3Cbr%3E%0A%20%20%20%3Ca%20style%3D%22color%3A%20%23262626%3B%22%3EYou%20are%20recently%20requested%20to%20reset%20your%20password%20for%20your%20Procure%20to%20Pay%20account%20here%20is%20your%20new%20password%3Cbr%3E%3Cbr%3E%0A%20%20%20%20your%20password%3A%3C%2Fa%3E%20%3Cbr%3E%0A%20%20%20%20%3Ca%20style%3D%22font-weight%3A%20bold%3B%20color%3A%20%23262626%3B%22%3Ecm%25R56%3C%2Fa%3E%3Cbr%3E%3Cbr%3E%3Cbr%3E%0A%09%3Ca%20href%3D%22https%3A%2F%2Fwww.wavemakeronline.com%2Frun-44m0pf1vdy%2Fent125f57eaa343%2FProcure_to_Pay_master%2F%23%2FLoginAIO%22%20target%3D%22_blank%22%0A%09style%3D%22align-items%3A%20center%3B%0A%09%09padding%3A%2012px%2020px%3B%0A%09%09width%3A%20122px%3B%0A%09%09height%3A%2041px%3B%0A%09%09color%3A%20%23fff%3B%0A%09%09background%3A%20%231861B7%3B%0A%09%09border-radius%3A%204px%3B%0A%09%09text-decoration%3A%20none%3B%22%3ELogin%3C%2Fa%3E%0A%09%3C%2Ftd%3E%0A%20%20%3C%2Ftr%3E%0A%20%20%0A%20%20%20%20%3Ctr%3E%0A%20%20%20%0A%20%20%3C%2Ftr%3E%0A%20%20%0A%20%20%3Ctr%3E%0A%20%20%20%20%3Ctd%20style%3D%22align-items%3A%20center%3B%0A%09%09padding%3A%2012px%2020px%3B%0A%09%09width%3A%20100%25%3B%0A%09%09height%3A%2041px%3B%0A%09%09color%3A%20%23fff%3B%0A%09%09background%3A%20%231861B7%3B%0A%09%09border-radius%3A%200px%200px%2020px%2020px%3B%0A%09%09text-decoration%3A%20none%3B%22%3E%0A%09%09%3Cimg%20width%3D%2220%22%20height%3D%2215%22%20src%3D%22https%3A%2F%2Fwww.wavemakeronline.com%2Frun-44m0pf1vdy%2Fent125f57eaa343%2FProcure_to_Pay_master%2Fresources%2Fimages%2Flogos%2Ficon-footer-mail.png%22%20%2F%3E%0A%09%09%0A%09%3Ca%20style%3D%22align-items%3A%20center%3B%0A%09%09color%3A%20%23fff%3B%0A%09%09background%3A%20%231861B7%3B%0A%09%09text-decoration%3A%20none%3B%22%3ETeam%20Procure%20to%20Pay%3C%2Fa%3E%0A%09%3C%2Ftd%3E%0A%20%20%3C%2Ftr%3E%0A%20%20%0A%3C%2Ftable%3E%0A%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E&text=",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "multipart/form-data",
+  "multiParamInfoList" : [ {
+    "type" : "STRING",
+    "name" : "to",
+    "list" : false,
+    "testValue" : "rbkurniawan@aio.co.id",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "cc",
+    "list" : false,
+    "testValue" : "",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "subject",
+    "list" : false,
+    "testValue" : "sadadad",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "body",
+    "list" : false,
+    "testValue" : "aasdasdasdasdasdadadadad",
+    "contentType" : null
+  }, {
+    "type" : "STRING",
+    "name" : "text",
+    "list" : false,
+    "testValue" : "",
+    "contentType" : null
+  } ],
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Mon, 02 Aug 2021 10:01:11 GMT" ],
+      "Server" : [ "Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2" ],
+      "X-Powered-By" : [ "Express" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Access-Control-Allow-Methods" : [ "GET, POST, OPTIONS, PUT, PATCH, DELETE" ],
+      "Access-Control-Allow-Headers" : [ "authorization, content-type" ],
+      "Access-Control-Allow-Credentials" : [ "true" ],
+      "Content-Type" : [ "application/json; charset=utf-8" ],
+      "Content-Length" : [ "36" ],
+      "ETag" : [ "W/\"24-u0kQ45Nx0dBdvg2zI8hJ7GGQ25o\"" ],
+      "Keep-Alive" : [ "timeout=5, max=100" ],
+      "Connection" : [ "Keep-Alive" ]
+    },
+    "responseBody" : "{\"status\":true,\"data\":\"Email Sent!\"}",
+    "convertedResponse" : null
+  }
+}

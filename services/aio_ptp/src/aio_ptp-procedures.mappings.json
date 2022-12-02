@@ -1,0 +1,396 @@
+{
+  "sp_usage_budgetDetails" : {
+    "procedureString" : "CALL usage_budget_details( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "bh_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "12",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "type_data",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_beginning",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_adjustment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_reserve",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_commitment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_actual",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_start",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_end",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_by",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "coa",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "remarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "docNumber",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "sp_budgetDetail2" : {
+    "procedureString" : "CALL budget_detail2( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "bh_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "419",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "type_data",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_beginning",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_adjustment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_reclass",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_additional",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_start",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_end",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_by",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "coa",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "spBudgetDetail1" : {
+    "procedureString" : "CALL budget_detail1( ?, ?, ?, ?, ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "acc_type",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "comp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "brand",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "dep",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "emp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "emp::3703",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "year",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2021",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "admin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TRUE",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "sp_budgetDetails" : {
+    "procedureString" : "CALL budget_details( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    "parameters" : [ {
+      "name" : "bh_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "12",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "type_data",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_beginning",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_adjustment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_reclass",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_additional",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_start",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_end",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_by",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "coa",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "remarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "docNumber",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  }
+}

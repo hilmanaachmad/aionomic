@@ -1,0 +1,22 @@
+{
+  "endpointAddress" : "http://localhost:3311/api/gr",
+  "method" : "POST",
+  "headers" : {
+    "Content-Type" : [ "application/json" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "{}",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 0,
+    "headers" : {
+      "content-length" : [ "59" ],
+      "content-type" : [ "application/json; charset=utf-8" ]
+    },
+    "responseBody" : "{\"status\":false,\"data\":{\"message\":\"Internal Server Error\"}}",
+    "convertedResponse" : null
+  }
+}

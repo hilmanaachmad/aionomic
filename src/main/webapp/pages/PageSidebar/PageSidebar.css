@@ -1,0 +1,56 @@
+.aio-p2p-nav {
+    padding: 8px;
+    padding-top: 10px;
+}
+
+.aio-p2p-nav.active {
+    background: #F5F6FA;
+    border-radius: 4px;
+}
+
+.aio-p2p-nav.active > .aio-p2p-nav-menu {
+    color: #026CB6;
+}
+
+.aio-p2p-nav-title {
+    font-size: 11px;
+    color: #BDBDBD;
+}
+
+.aio-p2p-nav-menu {
+    font-weight: 500;
+    font-size: 13px;
+    color: #404143;
+    cursor: pointer;
+}
+
+.aio-ptp-menu-container {
+    width: calc(100% + 30px);
+    padding-right: 54px !important;
+    transition: all .3s;
+    height: calc(100% - 205px);
+    overflow: auto;
+}
+
+.aio-ptp-menu-container:hover {
+    width: 100%;
+    padding-right: 24px !important;
+}
+
+.aio-p2p-nav-submenu {
+    margin-left: 12px;
+}
+
+.billion-btn {
+    border-radius: 10px;
+    cursor:pointer;
+    background: -webkit-linear-gradient(right, #C4D1BC, #FAFFF1,#DDEBD3);
+    background: -o-linear-gradient(right, #C4D1BC, #FAFFF1,#DDEBD3);
+    background: -moz-linear-gradient(right, #C4D1BC, #FAFFF1,#DDEBD3);
+    background: linear-gradient(right, #C4D1BC, #FAFFF1,#DDEBD3);
+}
+
+.no-url {
+    cursor:pointer;
+    text-decoration: none;
+}

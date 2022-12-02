@@ -1,0 +1,47 @@
+{
+  "vmPerPage" : {
+    "_id" : "wm-vmPerPage-wm.Variable-1607878196111",
+    "name" : "vmPerPage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "value" : 10
+    }, {
+      "name" : "30 Rows",
+      "value" : 30
+    }, {
+      "name" : "50 Rows",
+      "value" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchCriteria" : {
+    "_id" : "wm-searchCriteria-wm.Variable-1606354489201",
+    "name" : "vmSearchCriteria",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Receive Date",
+      "dataValue" : 4
+    }, {
+      "name" : "Task Type",
+      "dataValue" : 1
+    }, {
+      "name" : "Company",
+      "dataValue" : 2
+    }, {
+      "name" : "Order",
+      "dataValue" : 3
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

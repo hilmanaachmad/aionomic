@@ -1,0 +1,6 @@
+{
+  "id" : "sap_master",
+  "type" : "DataService",
+  "packageNames" : [ "id.co.aio.procure_to_pay.sap_master" ],
+  "title" : "sap_master"
+}

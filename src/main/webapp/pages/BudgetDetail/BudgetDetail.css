@@ -1,0 +1,93 @@
+.app-container {
+    position: relative;
+    /*border-radius: 5px;*/
+}
+
+.aio-ptp-total-box{
+    border-radius: 0;
+    padding-top: 10px;
+    box-shadow: 0px -2px 6px rgb(218 218 218);
+}
+
+
+/*::-webkit-scrollbar {*/
+/*    width: 12px;*/
+/*}*/
+ 
+/*::-webkit-scrollbar-track {*/
+/*    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+/*    border-radius: 10px;*/
+/*}*/
+ 
+/*::-webkit-scrollbar-thumb {*/
+/*    border-radius: 10px;*/
+/*    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+/*}*/
+
+
+.wm-app .modal-header .modal-title {
+    color: #000;
+}
+
+.app-livelist .app-list-item.active.list-group-item .app-label {
+    color: black;
+}
+
+.wm-app .app-list .app-list-item .app-label, .wm-app .app-livelist .app-list-item .app-label {
+    white-space: nowrap;
+    padding-top: 0.5em;
+    color: black;
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    width: 100%;
+    height: calc(100%);
+    float: none;
+    margin: auto !important;
+    overflow: unset;
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li.active > a {
+    background: white;
+    color: #026CB6;
+    border-bottom: 4px solid #026CB6;
+    font-weight: bold;
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li.active > a:hover, .wm-app .app-tabs .nav.nav-tabs > li.active > a:focus {
+     color: #026CB6; 
+     background-color: white; 
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li > a:hover, .wm-app .app-tabs .nav.nav-tabs > li > a:focus {
+    color: #026CB6; 
+    background-color: white; 
+}
+
+.aio-p2p-icon-date {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+}
+
+
+
+/*.app-picture {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    position: absolute;*/
+/*    cursor: default;*/
+/*    width: auto;*/
+/*    height: auto;*/
+    /*bottom: 2px;*/
+    /*right: 5px;*/
+    /*width: 24px;*/
+    /*height: 24px;*/
+/*}*/
+
+
+/*Custom*/
+.aio-p2p-scroll-x {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}

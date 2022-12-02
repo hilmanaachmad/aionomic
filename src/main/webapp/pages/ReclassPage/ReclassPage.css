@@ -1,0 +1,178 @@
+.aio-p2p-content-container {
+    max-width: 941px !important;
+}
+
+.aio-p2p-space-between {
+    justify-content: space-between;
+}
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-p2p-btn-primary {
+    padding: 10px 12px;
+    background: #026CB6;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    color: white;
+    text-transform: initial;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.aio-p2p-btn-outline {
+    border: 1px solid #026CB6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: white;
+    color: #026CB6;
+    padding: 10px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: initial;
+}
+
+.aio-p2p-btn-outline:hover {
+    background-color: #BDBDBD;
+    color: #026CB6;
+}
+
+.aio-p2p-toggle .switch {
+    background-color: white !important;
+    margin-top: 5px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.aio-p2p-employee-list {
+    max-height: 200px;   
+    overflow-y: scroll;
+}
+
+/* MODAL */
+.aio-p2p-modal .dialog-heading {
+    color: #404143;
+}
+
+.aio-p2p-modal .btn {
+    width: 124px;
+    height: 36px;
+}
+
+.aio-p2p-modal.aio-p2p-modal-delete .btn-primary.ok-action {
+    background: #FF5756;
+    border-color: white;
+}
+
+.aio-p2p-modal .cancel-action {
+    background: #F6F7F8;
+    border-color: white;
+}
+
+/* ERROR MESSAGE */
+.aio-p2p-form-container .aio-p2p-error-msg {
+    display: none;
+}
+
+.aio-p2p-form-container.form-error .aio-p2p-form-field {
+    border-color: red;
+}
+
+.aio-p2p-form-container.form-error .aio-p2p-error-msg {
+    display: block;
+}
+
+
+.wm-app .app-list .app-list-item .app-label, .wm-app .app-livelist .app-list-item .app-label {
+    white-space: pre-wrap !important;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+
+.aio-p2p-border-filter{
+    border: 1px solid #E1E4E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 13px;
+}
+
+.aio-p2p-icon-date {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+}
+
+.aio-p2p-icon-down {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: #FFF;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+    border: 1px solid #cacfd3;
+    border-left: 0px;
+}
+
+.aio-p2p-box-filter{
+    background: #FFFFFF;
+    border: 1px solid #E1E4E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 99;
+    box-shadow: 2px 2px 20px;
+}
+
+.aio-p2p-max-height{
+    max-height: 400px;
+}
+
+.aio-p2p-all-checkbox{
+    background-color: #026CB6;
+    color: #FFF;
+}
+
+.wm-app .radio, .wm-app .checkbox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.wm-app .checkbox .caption:before {
+    border-radius: 6px;
+    background-color: #E5F1FF;
+    border: 1px #ccc #E5F1FF;
+}
+
+.wm-app .checkbox input:checked + .caption:before {
+    -moz-box-shadow: inset 0 0 0 13px #E5F1FF;
+    -webkit-box-shadow: inset 0 0 0 13px #E5F1FF;
+    box-shadow: inset 0 0 0 13px #E5F1FF;
+    background-color: #F7F8FA;
+    border-color: #E5F1FF;
+    border-top-style: none;
+    border-right-style: none;
+    padding: 0 1px;
+    color: #026CB6;
+    font-weight: bold;
+    font-family: wavicon;
+    content: "\f1cf";
+    text-shadow: 1px 1px 1px #E5F1FF;
+}
+
+/*dropdown*/
+.aio-ptp-dropdown .aio-ptp-dropdown-menu {
+    display: none;
+}
+
+.aio-ptp-dropdown.active .aio-ptp-dropdown-menu {
+    display: block;
+}

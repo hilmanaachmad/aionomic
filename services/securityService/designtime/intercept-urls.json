@@ -1,0 +1,311 @@
+[ {
+  "urlPattern" : "/pages/CompanyDomicilie/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/footer/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/ForgotPassword/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/ForgotUserList/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/FormNewPassword/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/header/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/HeadforRegVendor/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/LandingPageUser/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Login/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/LoginAIO/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/QuotationFormVendor/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/QuotationFormVendorDone/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/ReclassPage/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/RegistrationVendorLocal/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/RegistrationVendorLocalEdit/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/RegistrationVendorOverseas/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/RegistrationVendorOverseasEdit/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/RegVendorSucces/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/RFQEmailPage/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/**",
+  "permission" : "Authenticated",
+  "roles" : null,
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/AVM2/queryExecutor/queries/qCheckUserEmailVen/export",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/AVM2/queryExecutor/queries/qCheckUserEmailVen",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/AVM2/queryExecutor/queries/qForgotPassVen",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/aioEmailService/api/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/email/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_xspeed_user/queryExecutor/queries/qCheckUserEmailNik",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_xspeed_user/queryExecutor/queries/qForgotPassEmp",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/reminderTasklistQuery",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/aio_employee/Employee/count",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_employee/Employee/filter",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/aio_ptp/TblTRfqVendor",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/TblTRfqVendor/{rfqvId}",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/sap_master/queryExecutor/queries/getCurrencyPRLineItem",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/changeRFQItemQuotation",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/aio_ptp/VRfqItemQuotation/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/sap_master/VPtpTop/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_ptp/TblTRfqVendor/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/file/uploadFile",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/file/file",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "DELETE"
+}, {
+  "urlPattern" : "/services/file/downloadFileAsInline",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/file/downloadFile",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/TblTInbox",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "POST"
+}, {
+  "urlPattern" : "/services/AVM2/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_ptp/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_employee/EmployeeRamco/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/countUnseenInbox",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/getDelegatedRoles",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/getUnseenNotification",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/getUserRole",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/aio_ptp/queryExecutor/queries/tickNotificationLastSeen",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "PUT"
+}, {
+  "urlPattern" : "/services/aio_ptp/TblMUserData/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_ptp/TblMUserDep/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_ptp/TblTInbox/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_xspeed_user/PhpMsLogin/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_xspeed_user/queryExecutor/queries/getEmployeeData",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/file/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_employee/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_xspeed_user/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/svNotifyEmailVendor/api/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/aio_ptp/VRfqQuotationHeader/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/cloudflareIpCheck/trace/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/logAudit/api/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+} ]

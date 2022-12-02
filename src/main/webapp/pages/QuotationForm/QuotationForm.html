@@ -1,0 +1,694 @@
+<wm-page name="mainpage" pagetitle="Quotation Form" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail">
+                        <wm-param name="page" value="reclass" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="row aio-p2p-page-content" horizontalalign="center" padding="unset unset 24px unset">
+                        <wm-container name="formContainer" horizontalalign="center" conditionalclass="bind:Variables.vmShowPdf.dataSet.dataValue ? 'col-md-5 col-md-offset-1 aio-p2p-detail-container2' : 'aio-p2p-detail-container'" padding="unset 8px unset unset">
+                            <wm-container name="container8" horizontalalign="left" padding="24px unset">
+                                <wm-label caption="bind:appLocale.LANG_QUOTATION_FORM" name="label1" fontsize="32" fontweight="bold"></wm-label>
+                            </wm-container>
+                            <wm-container name="vendorInformation" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset">
+                                <wm-container name="container39_1" horizontalalign="left" padding="unset unset 8px unset">
+                                    <wm-label name="label24_1" caption="bind:appLocale.LANG_VENDOR_INFORMATION" fontweight="bold" fontsize="18"></wm-label>
+                                </wm-container>
+                                <wm-container name="container40">
+                                    <wm-composite name="composite6" captionposition="top" horizontalalign="left">
+                                        <wm-label name="label25_1" caption="bind:appLocale.LANG_VENDOR_CODE_VENDOR_NAME"></wm-label>
+                                        <wm-container class="col-md-9" name="container41" width="100%">
+                                            <wm-text name="text5" disabled="true" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvVendorCode ? Variables.modelRfqVendor.dataSet.rfqvVendorCode + &quot; - &quot; + Variables.modelRfqVendor.dataSet.rfqvVendorName : Variables.modelRfqVendor.dataSet.rfqvVendorName"
+                                                placeholder=""></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container42">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite7">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_VENDOR_ADDRESS" name="label26_1"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container43">
+                                            <wm-text disabled="true" name="text6" placeholder="" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvVendorAddress"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="salesInformation" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset">
+                                <wm-container horizontalalign="left" padding="unset unset 8px unset" name="container48">
+                                    <wm-label caption="bind:appLocale.LANG_SALES_INFORMATION" fontweight="bold" fontsize="18" name="label29_1"></wm-label>
+                                </wm-container>
+                                <wm-container name="container49" horizontalalign="left" display="block" class="row">
+                                    <wm-container name="container50" display="inline-block" class="col-md-2">
+                                        <wm-label name="label30_1" caption="bind:appLocale.LANG_RFQ_NUMBER" fontsize="10" color="#666666"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" name="container51" width="30%">
+                                        <wm-label name="label31_1" caption="bind:appLocale.LANG_REQUESTOR" fontsize="10" color="#666666"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" name="container181_1">
+                                        <wm-label caption="bind:appLocale.LANG_COMPANY" fontsize="10" color="#666666" name="label140_2"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" name="container52" margin="unset unset 16px unset" class="row">
+                                    <wm-container display="inline-block" class="col-md-2" name="container53">
+                                        <wm-label name="label32" caption="bind:Variables.modelRfqVendor.dataSet.tblTrfq.rfqRef"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-10" name="container54" width="30%">
+                                        <wm-label name="label33" caption="bind:Variables.modelRfqVendor.dataSet.rfqvCreatedName"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-10" width="30%" name="container183">
+                                        <wm-label caption="bind:Variables.vgetCompanyRfq.dataSet[$i].companySendEmail" name="label142_2"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container name="container55">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite10">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_SALES_PERSON_V" name="label34"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container56" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvSalesPerson ? 'form-error' : ''">
+                                            <wm-text disabled="false" name="textSalesPerson" placeholder="bind:appLocale.LANG_INSERT_SALES_PERSON" maxchars="50" class="aio-p2p-form-input" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvSalesPerson"></wm-text>
+                                            <wm-label padding="unset 0.5em" name="label46_1" caption="bind:Variables.modelErrors.dataSet.rfqvSalesPerson" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container61">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite13">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_MOBILE_NUMBER_V" name="label37"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container62" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvSalesNumber ? 'form-error' : ''">
+                                            <wm-text disabled="false" name="textMobileNumber" placeholder="bind:appLocale.LANG_INSERT_MOBILE_NUMBER" maxchars="15" updateon="default" on-keyup="textMobileNumberKeyup($event, widget)" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvSalesNumber"
+                                                class="aio-p2p-form-input"></wm-text>
+                                            <wm-label padding="unset 0.5em" caption="bind:Variables.modelErrors.dataSet.rfqvSalesNumber" class="aio-p2p-error-message" name="label73"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container63">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite14">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_EMAIL_SALES_V" name="label38"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container64" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvSalesEmail ? 'form-error' : ''">
+                                            <wm-text disabled="false" name="textEmailSales" placeholder="bind:appLocale.LANG_INSERT_SALES_EMAIL" maxchars="50" class="aio-p2p-form-input" regexp=".*" required="false" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvSalesEmail"></wm-text>
+                                            <wm-label padding="unset 0.5em" name="label47" caption="bind:Variables.modelErrors.dataSet.rfqvSalesEmail" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container65">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite15">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_DELIVERY_TERM" name="label39"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container66">
+                                            <wm-text disabled="false" name="textDeliveryTerm" placeholder="bind:appLocale.LANG_INSERT_DELIVERY_TERM" maxchars="3" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvTermDelivery"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container50_1">
+                                    <wm-composite name="composite11" captionposition="top" horizontalalign="left">
+                                        <wm-label class="col-md-3" name="label26_2" caption="bind:appLocale.LANG_DATE_V"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" name="container52_1" width="100%" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvDate ? 'form-error' : ''">
+                                            <wm-date name="date2" placeholder="DD/MM/YYYY" datepattern="dd/MM/yyyy" class="aio-p2p-field-date aio-p2p-form-field" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvDate" on-change="date2Change($event, widget, newVal, oldVal)"></wm-date>
+                                            <wm-label padding="unset 0.5em" name="label48" caption="bind:Variables.modelErrors.dataSet.rfqvDate" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container53_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite12">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_VALID_THRU" name="label27_1"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container54_1">
+                                            <wm-date name="dateValidThru" placeholder="DD/MM/YYYY" datepattern="dd/MM/yyyy" class="aio-p2p-field-date" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvValidThru"></wm-date>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container53_2" horizontalalign="left">
+                                    <wm-composite name="composite11_1" captionposition="top">
+                                        <wm-label class="col-md-3" name="label26_3" caption="* Term of Payment"></wm-label>
+                                        <wm-container class="col-md-9" name="container54_2" width="100%" conditionalclass="bind:Variables.modelErrors.dataSet.selectTop ? 'form-error' : ''" conditionalstyle="bind:{position: &quot;relative&quot;}">
+                                            <wm-select name="selectTop" placeholder="bind:appLocale.LANG_INSERT_TERM_OF_PAYMENT" dataset="bind:Variables.vdbTermPayment.dataSet" datafield="paymentTermCode" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvTermPayment"
+                                                displayexpression="bind:$[paymentTermCode] + &quot; - &quot; + $[text1]"></wm-select>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container55_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite12_1">
+                                        <wm-label caption="bind:appLocale.LANG_DURATION_LEAD_TIME_V" name="label27_2"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container56_1" conditionalstyle="bind:{position: &quot;relative&quot;}" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvDuration ? 'form-error' : ''">
+                                            <wm-label padding="unset 0.5em" name="label28_2" caption="bind:appLocale.LANG_DAYS" conditionalstyle="bind:{position: &quot;absolute&quot;, top: &quot;12px&quot;, right: &quot;12px&quot;, zIndex: &quot;10&quot;, color: &quot;rgba(64, 65, 67, 0.6)&quot;}"></wm-label>
+                                            <wm-text disabled="false" placeholder="insert duration" name="textDuration" class="aio-p2p-lead-time aio-p2p-form-input" maxchars="3" updateon="default" on-keyup="textDurationKeyup($event, widget)"
+                                                datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvDuration ? Variables.modelRfqVendor.dataSet.rfqvDuration : '0'"></wm-text>
+                                            <wm-label padding="unset 0.5em" name="label49" caption="bind:Variables.modelErrors.dataSet.rfqvDuration" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container124_1" horizontalalign="left">
+                                    <wm-label name="label75" caption="bind:appLocale.LANG_CURRENCY_V"></wm-label>
+                                    <wm-container name="container126" conditionalstyle="bind:{position: 'relative'}">
+                                        <wm-picture name="picture6" picturesource="resources/images/logos/icon-chevron-down.png" conditionalstyle="bind:{position: 'absolute', top:'17px', right:'14px', width: '12px', zIndex: '10'}"></wm-picture>
+                                        <wm-search name="search3" type="autocomplete" placeholder="bind:appLocale[&quot;LABEL_SELECT_CURRENCY&quot;] + &quot; (default IDR)&quot;" dataset="bind:Variables.queryGetCurrency.dataSet" searchkey="fromCurrency"
+                                            displaylabel="fromCurrency" datafield="All Fields" on-select="search3Select($event, widget, selectedValue)" datavalue="bind:{&quot;fromCurrency&quot;: Variables.modelRfqVendor.dataSet.rfqvCurrency}"></wm-search>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="itemInformation" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset">
+                                <wm-container horizontalalign="left" padding="unset unset 8px unset" name="container72">
+                                    <wm-label caption="bind:appLocale.LANG_ITEM_INFORMATION" fontweight="bold" fontsize="18" name="label37_1"></wm-label>
+                                </wm-container>
+                                <wm-container name="container73" conditionalstyle="bind:{ overflowX: &quot;scroll&quot; }">
+                                    <wm-container name="container115" width="1200">
+                                        <wm-container name="container102_1" padding="16px" horizontalalign="left" backgroundcolor="#F6F7F8">
+                                            <wm-container name="container104_1" horizontalalign="left" display="inline-block" width="3%">
+                                                <wm-label padding="unset 0.5em" name="label52" caption="bind:appLocale.LANG_NO" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container105_1" width="12%">
+                                                <wm-label padding="unset 0.5em" name="label53" caption="bind:appLocale.LANG_ITEM_DESCRIPTION" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container106" width="6%">
+                                                <wm-label padding="unset 0.5em" name="label54" caption="bind:appLocale.LANG_QUANTITY" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container107" width="5%">
+                                                <wm-label padding="unset 0.5em" name="label55" caption="bind:appLocale.LANG_UOM" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container108" width="8%">
+                                                <wm-label padding="unset 0.5em" name="label56" caption="bind:appLocale.LANG_ETA" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container109" width="8%">
+                                                <wm-label padding="unset 0.5em" name="label57" caption="bind:appLocale.LANG_LEAD_TIME" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container110" width="8%" show="false">
+                                                <wm-label padding="unset 0.5em" name="label58" caption="Currency" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="right" display="inline-block" name="container111" width="10%">
+                                                <wm-label padding="unset 0.5em" name="label59" caption="bind:appLocale.LANG_UNIT_PRICE" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="right" display="inline-block" name="container112" width="14%">
+                                                <wm-label padding="unset 0.5em" name="label60" caption="bind:appLocale.LANG_AMOUNT" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="center" display="inline-block" name="container113" width="7%">
+                                                <wm-label padding="unset 0.5em" name="label61" caption="bind:appLocale.LANG_DISCOUNT" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                            <wm-container horizontalalign="right" display="inline-block" name="container114" width="14%">
+                                                <wm-label padding="unset 0.5em" name="label62" caption="bind:appLocale.LANG_AMOUNT_AFTER_DISCOUNT" class="aio-p2p-header-label"></wm-label>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container name="container103_1">
+                                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" name="listItem"
+                                                dataset="bind:Variables.modelLineItem.dataSet" navigation="None">
+                                                <wm-listtemplate layout="inline" name="listtemplate1">
+                                                    <wm-container name="container104_2" horizontalalign="left">
+                                                        <wm-container name="container105_2" display="inline-block" width="4%" horizontalalign="left">
+                                                            <wm-label padding="unset 0.5em" name="label54_1" caption="bind:Widgets.listItem.currentItem.nomor"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="12%" name="container106_1" horizontalalign="left">
+                                                            <wm-label padding="unset 0.5em" name="label55_1" caption="bind:Widgets.listItem.currentItem.itemDescription" whitespace="normal"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="5%" name="container107_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label56_1" caption="bind:App.formatCurrencyPTP(Widgets.listItem.currentItem.qty)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="5%" name="container108_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label57_1" caption="bind:Widgets.listItem.currentItem.uom"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="8%" name="container109_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label58_1" caption="bind:Widgets.listItem.currentItem.eta | toDate: 'dd/MM/yyyy'"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="8%" name="container110_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label59_1" caption="bind:Widgets.listItem.currentItem.leadTime"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="8%" name="container111_1" horizontalalign="center" show="false">
+                                                            <wm-label padding="unset 0.5em" name="label60_1" caption="bind:Widgets.listItem.currentItem.currency"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="10%" name="container112_1" horizontalalign="right">
+                                                            <wm-label padding="unset 0.5em" name="label61_1" caption="bind:App.formatCurrencyPTP(Widgets.listItem.currentItem.unitPrice)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="14%" name="container113_1" horizontalalign="right">
+                                                            <wm-label padding="unset 0.5em" name="label62_1" caption="bind:App.formatCurrencyPTP(Widgets.listItem.currentItem.amount)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="7%" name="container114_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label63" caption="bind:App.formatCurrencyPTP(Widgets.listItem.currentItem.discount)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="13%" name="container113_2" horizontalalign="right">
+                                                            <wm-label padding="unset 0.5em" name="label63_1" caption="bind:App.formatCurrencyPTP(Widgets.listItem.currentItem.amountAfterDiscount)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="14%" horizontalalign="center" name="container115_1">
+                                                            <wm-picture name="picture1" picturesource="resources/images/logos/icon-pencil.png" on-click="picture1Click($event, widget, item, currentItemWidgets)" class="aio-p2p-clickable"></wm-picture>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-listtemplate>
+                                            </wm-list>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container name="container74" class="row" margin="32px unset 8px unset">
+                                    <wm-container name="container75" class="col-md-7" horizontalalign="right" padding="12px 12px unset unset">
+                                        <wm-label name="label38_1" caption="bind:appLocale.LANG_SUBTOTAL"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" name="container76" padding="unset 8px unset 12px"></wm-container>
+                                    <wm-container class="col-md-3" name="container77" padding="unset unset unset 8px">
+                                        <wm-text disabled="true" placeholder="" name="textSubtotal" datavalue="bind:App.formatCurrencyPTP(calculationSubtotal())" type="text" textalign="right"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" name="container82" margin="unset unset 8px unset">
+                                    <wm-container class="col-md-7" horizontalalign="right" padding="12px 12px unset unset" name="container83">
+                                        <wm-label caption="bind:appLocale.LANG_VAT_RATE" name="label40"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" padding="unset 8px unset 12px" name="container84" conditionalstyle="bind:{position: &quot;relative&quot;}">
+                                        <wm-label padding="unset 0.5em" name="label46" conditionalstyle="bind:{position: &quot;absolute&quot;, top: &quot;14px&quot;, right: &quot;14px&quot;, zIndex: &quot;10&quot;, color: &quot;rgba(64, 65, 67, 0.6)&quot;}"
+                                            caption="%"></wm-label>
+                                        <wm-text disabled="false" placeholder="" name="textVatRate" class="aio-p2p-vat-rate" type="text" maxchars="5" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvVatRate ? App.formatDecimalComma(Variables.modelRfqVendor.dataSet.rfqvVatRate) : '0'"
+                                            textalign="right" updateon="default" on-keyup="textVatRateKeyup($event, widget)"></wm-text>
+                                    </wm-container>
+                                    <wm-container class="col-md-3" padding="unset unset unset 8px" name="container85">
+                                        <wm-text disabled="true" placeholder="" name="textVatRate2" datavalue="bind:App.formatCurrencyPTP(calculationVatrate())" type="text" textalign="right"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" name="container86" margin="unset unset 8px unset">
+                                    <wm-container class="col-md-7" horizontalalign="right" padding="12px 12px unset unset" name="container87">
+                                        <wm-label caption="bind:appLocale.LANG_TOTAL_INCLUDE_TAX" name="label41"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" padding="unset 8px unset 12px" name="container88"></wm-container>
+                                    <wm-container class="col-md-3" padding="unset unset unset 8px" name="container89">
+                                        <wm-text disabled="true" placeholder="" name="textTotalTax" type="text" datavalue="bind:App.formatCurrencyPTP(formatCalaculate(Widgets.textSubtotal.datavalue) + formatCalaculate(Widgets.textVatRate2.datavalue))" textalign="right"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" name="container90" margin="unset unset 8px unset">
+                                    <wm-container class="col-md-7" horizontalalign="right" padding="12px 12px unset unset" name="container91">
+                                        <wm-label caption="bind:appLocale.LANG_PACKING_COST" name="label42"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" padding="unset 8px unset 12px" name="container92"></wm-container>
+                                    <wm-container class="col-md-3" padding="unset unset unset 8px" name="container93">
+                                        <wm-text disabled="false" placeholder="" name="textPackingCost" type="text" datavalue="bind:App.formatCurrencyPTP(Variables.modelRfqVendor.dataSet.rfqvPackingCost)" maxchars="19" updateon="default" textalign="right"
+                                            on-keyup="textPackingCostKeyup($event, widget)"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" name="container94" margin="unset unset 8px unset">
+                                    <wm-container class="col-md-7" horizontalalign="right" padding="12px 12px unset unset" name="container95">
+                                        <wm-label caption="bind:appLocale.LANG_SHIPPING_HANDLING" name="label43"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" padding="unset 8px unset 12px" name="container96"></wm-container>
+                                    <wm-container class="col-md-3" padding="unset unset unset 8px" name="container97">
+                                        <wm-text disabled="false" placeholder="" name="textShipping" datavalue="bind:App.formatCurrencyPTP(Variables.modelRfqVendor.dataSet.rfqvShippingHandling)" type="text" updateon="default" maxchars="19" textalign="right"
+                                            on-keyup="textShippingKeyup($event, widget)"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" name="container98" margin="unset unset 8px unset">
+                                    <wm-container class="col-md-7" horizontalalign="right" padding="12px 12px unset unset" name="container99">
+                                        <wm-label caption="bind:appLocale.LANG_OTHER_COST_INSURANCE_FEE_UNLOADING_STAMP_ETC" name="label44"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" padding="unset 8px unset 12px" name="container100"></wm-container>
+                                    <wm-container class="col-md-3" padding="unset unset unset 8px" name="container101">
+                                        <wm-text disabled="false" placeholder="" name="textOtherCost" datavalue="bind:App.formatCurrencyPTP(Variables.modelRfqVendor.dataSet.rfqvOtherCost) " updateon="default" maxchars="19" textalign="right" on-keyup="textOtherCostKeyup($event, widget)"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" name="container102">
+                                    <wm-container class="col-md-7" horizontalalign="right" padding="8px 12px unset unset" name="container103">
+                                        <wm-label caption="bind:appLocale.LANG_TOTAL" name="label45" fontweight="bold" fontsize="16"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-2" padding="unset 8px unset 12px" name="container104"></wm-container>
+                                    <wm-container class="col-md-3" padding="unset unset unset 8px" name="container105">
+                                        <wm-text disabled="true" placeholder="" name="textTotal" type="text" datavalue="bind:(Widgets.search3.datavalue.fromCurrency == 'IDR' || Widgets.search3.datavalue.fromCurrency == 'JPY') ? App.formatCurrencyPTP((formatCalaculate(Widgets.textTotalTax.datavalue) + formatCalaculate(Widgets.textPackingCost.datavalue) + formatCalaculate(Widgets.textShipping.datavalue) + formatCalaculate(Widgets.textOtherCost.datavalue)).toFixed(0)) :  App.formatCurrencyPTP(formatCalaculate(Widgets.textTotalTax.datavalue) + formatCalaculate(Widgets.textPackingCost.datavalue) + formatCalaculate(Widgets.textShipping.datavalue) + formatCalaculate(Widgets.textOtherCost.datavalue))"
+                                            textalign="right"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="notesContainer" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset">
+                                <wm-container horizontalalign="left" padding="unset unset 8px unset" name="container57">
+                                    <wm-label caption="bind:appLocale.LANG_NOTES" fontweight="bold" fontsize="18" name="label29_2"></wm-label>
+                                </wm-container>
+                                <wm-container name="container58">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite13_1">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_WARRANTY" name="label30_2"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container59" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvWarranty ? 'form-error' : ''">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_WARRANTY" name="textWarranty" maxchars="150" class="aio-p2p-form-input" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvWarranty"></wm-text>
+                                            <wm-label padding="unset 0.5em" name="label50" caption="bind:Variables.modelErrors.dataSet.rfqvWarranty" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container60">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite14_1">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_KURS_ASSUMPTION" name="label31_2"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container61_1" conditionalclass="bind:Variables.modelErrors.dataSet.rfqvKursAssumption ? 'form-error' : ''">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_KURS_ASSUMPTION" name="textKursAssumption" maxchars="150" class="aio-p2p-form-input" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvKursAssumption"></wm-text>
+                                            <wm-label padding="unset 0.5em" name="label51" caption="bind:Variables.modelErrors.dataSet.rfqvKursAssumption" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container62_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite15_1">
+                                        <wm-label caption="bind:appLocale.LANG_BASE_PRICE_IN_ORIGINAL_CURRENCY" name="label32_1"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container63_1">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_BASE_PRICE_IN_ORIFINAL_CURRENCY" name="textBasePrice" maxchars="19" updateon="default" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvBasePrice ? App.formatCurrency(Variables.modelRfqVendor.dataSet.rfqvBasePrice) : '0'"
+                                                on-keyup="textBasePriceKeyup($event, widget)"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container64_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite16">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_PACKING_SIZE" name="label33_1"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container65_1">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_PACKING_SIZE" name="textPackingSize" maxchars="150" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvPackingSize"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container66_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite17">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_ORIGIN_MANUFACTURER" name="label34_1"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container67">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_ORIGIN" name="textManufacturer" maxchars="150" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvOriginManufacturer"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container68">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite18">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_SELF_LIFE_MATERIAL" name="label35"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container69">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_SELF_LIFE_MATERIAL" name="textLifeMaterial" maxchars="150" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvMaterial"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container70">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite19">
+                                        <wm-label class="col-md-3" caption="bind:appLocale.LANG_NOTE_TERM" name="label36"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container71">
+                                            <wm-text disabled="false" placeholder="bind:appLocale.LANG_INSERT_NOTE_TERM" name="textNotes" maxchars="150" datavalue="bind:Variables.modelRfqVendor.dataSet.rfqvNotes"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container22_1" horizontalalign="left">
+                                    <wm-label caption="bind:appLocale.LANG_ATTACHMENT_V" name="label11_1"></wm-label>
+                                    <wm-container name="container26">
+                                        <wm-container name="container27" display="flex" class="aio-p2p-upload-container">
+                                            <wm-button class="btn-default aio-p2p-btn-upload" caption="bind:appLocale.LANG_SELECT_FILE" type="button" name="button6" iconurl="resources/images/logos/icon-file.png" on-click="button6Click($event, widget)" show="true"></wm-button>
+                                            <wm-container name="container28" width="100%"></wm-container>
+                                        </wm-container>
+                                        <wm-container name="container42" margin="5px unset unset unset">
+                                            <wm-layoutgrid name="layoutgrid1">
+                                                <wm-gridrow name="gridrow1">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="left">
+                                                        <wm-label name="label3_1" caption="bind:appLocale.LANG_FILE_FORMAT" color="#666666"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow12_1">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                                        <wm-label caption="bind:appLocale.LANG_WARNING_SPECIAL_CHAR" color="#666666" name="label140_1"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow2">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn3" padding="15px unset unset unset">
+                                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" dataset="bind:Variables.varListFile.dataSet"
+                                                            navigation="None" nodatamessage="" name="list2">
+                                                            <wm-listtemplate layout="inline" name="listtemplate2">
+                                                                <wm-layoutgrid show="true" name="layoutgrid2">
+                                                                    <wm-gridrow name="gridrow3">
+                                                                        <wm-gridcolumn columnwidth="10" name="gridcolumn5">
+                                                                            <wm-label caption="bind:Widgets.list2.currentItem.filename" class="aio-p2p-clickable" on-click="label26_2Click($event, widget, item, currentItemWidgets)" color="#404143" name="label26_2"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="2" horizontalalign="right" name="gridcolumn6">
+                                                                            <wm-picture picturesource="resources/images/logos/icon-eye.png" class="aio-p2p-clickable" show="bind:Widgets.list2.currentItem.filename.indexOf('.pdf') !== -1 || Widgets.list2.currentItem.filename.indexOf('.PDF') !== -1 ? true : false"
+                                                                                name="picture7" margin="unset 8px unset unset" on-click="picture7Click($event, widget, item, currentItemWidgets)"></wm-picture>
+                                                                            <wm-picture picturesource="resources/images/logos/icon-trash.png" class="aio-p2p-clickable" show="bind:Variables.modelRfqVendor.dataSet.rfqvStatus == 'Submitted' ? false : true"
+                                                                                name="picture5" on-click="picture5Click($event, widget, item, currentItemWidgets)"></wm-picture>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-listtemplate>
+                                                        </wm-list>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow11">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn13"></wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                            <wm-label padding="unset 0.5em" name="label142_1" caption="bind:appLocale.LANG_ISREQUIRED" fontweight="bold" fontstyle="italic"></wm-label>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-fileupload name="attachmentUpload" on-select="attachmentUploadSelect($event, widget, selectedFiles)" caption="Select File" iconclass="wi wi-file-text" contenttype=".jpeg .jpg .pdf .docx .doc .xlsx .xls" show="false"></wm-fileupload>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="btnContainer">
+                                <wm-container name="container24_1" class="col-md-3" horizontalalign="left">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="unset 0.5em unset unset" name="buttonExport" iconurl="resources/images/imagelists/export-icon.png" color="#026CB6" fontweight="bold"
+                                        padding="10px 40px" iconwidth="16" on-click="buttonExportClick($event, widget)" show="bind:pageParams.rfqvId"></wm-button>
+                                </wm-container>
+                                <wm-container class="col-md-3" horizontalalign="left" name="container124_1" padding="unset unset unset 16px">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_EXPORT_PDF" type="button" margin="unset 0.5em unset unset" iconurl="resources/images/imagelists/export-icon.png" color="#026CB6" fontweight="bold" padding="10px 40px"
+                                        iconwidth="16" on-click="Widgets.dialogExport.open()" show="bind:pageParams.rfqvId" name="button8"></wm-button>
+                                </wm-container>
+                                <wm-container class="col-md-6" horizontalalign="right" name="container25">
+                                    <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="buttonCancel" color="#BA0D2B" fontweight="bold" on-click="buttonCancelClick($event, widget)" show="false" padding="10px 40px"></wm-button>
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_SUBMIT" type="button" margin="unset unset unset 0.5em" name="buttonSubmit" color="#fff" backgroundcolor="#026CB6" fontweight="bold" on-click="buttonSubmitClick($event, widget)"
+                                        disabled="false" show="bind:pageParams.rfqvId" padding="10px 40px"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="pdfPreview" class="col-md-5 aio-ptp-pdf-viewer" padding="72px unset unset 8px" show="bind:Variables.vmShowPdf.dataSet.dataValue">
+                            <wm-container name="container47" horizontalalign="right" padding="unset 32px 5px unset" conditionalstyle="bind:{
+    position: &quot;sticky&quot;,
+    top: &quot;24px&quot;,
+    zIndex: &quot;10&quot;
+}">
+                                <wm-picture name="picture4" width="15" on-click="picture4Click($event, widget)" class="aio-p2p-clickable" pictureplaceholder="resources/images/imagelists/icon-close.png"></wm-picture>
+                            </wm-container>
+                            <wm-container name="container48" class="pdf-scroll">
+                                <div id="pdf-canvas-container"></div>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+                <wm-spinner show="false" name="spinner1" deferload="false"></wm-spinner>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_EDIT_ITEM" iconclass="" name="dialogItem" class="aio-p2p-modal">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="aio-p2p-btn-alternate" caption="bind:appLocale.LANG_CANCEL" type="button" margin="unset 0.5em" name="button5" on-click="Widgets.dialogItem.close()"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_SAVE" name="button6_1" on-click="button6_1Click($event, widget)"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container115_2">
+            <wm-container name="container116">
+                <wm-composite name="composite18_1" captionposition="top">
+                    <wm-label class="col-md-3" name="label64" caption="Lead Time"></wm-label>
+                    <wm-container class="col-md-9 aio-p2p-form-container" name="container117" width="100%" conditionalstyle="bind:{position: 'relative'}" conditionalclass="bind:Variables.modelErrors.dataSet.leadTime ? 'form-error' : ''">
+                        <wm-text name="textLeadTime" placeholder="bind:appLocale.LANG_INSERT_LEAD_TIME_DAYS" maxchars="3" datavalue="bind:Variables.modelItemTmp.dataSet.leadTime" updateon="default" on-keyup="textLeadTimeKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                        <wm-label caption="bind:appLocale.LANG_DAYS" name="label68" conditionalstyle="bind:{position: 'absolute', top: '12px', right: '12px', zIndex: '10', color: 'rgba(64, 65, 67, 0.6)'}"></wm-label>
+                        <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.leadTime" name="label70_1"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container118" show="false">
+                <wm-composite name="composite22" captionposition="top">
+                    <wm-label class="col-md-3" name="label70" caption="bind:appLocale.LABEL_CURRENCY"></wm-label>
+                    <wm-container class="col-md-9" name="container124" width="100%">
+                        <wm-select name="selectCurrency" placeholder="bind:appLocale.LABEL_SELECT_CURRENCY" dataset="bind:Variables.modelCurrency.dataSet" datafield="All Fields" displayfield="fromCurrency" on-change="selectCurrencyChange($event, widget, newVal, oldVal)"></wm-select>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container120">
+                <wm-composite captionposition="top" name="composite20">
+                    <wm-label class="col-md-3" name="label66" caption="bind:appLocale.LANG_UNIT_PRICE"></wm-label>
+                    <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container121" conditionalclass="bind:Variables.modelErrors.dataSet.unitPrice ? 'form-error' : ''">
+                        <wm-text name="textUnitPrice" placeholder="bind:appLocale.LANG_SELECT_UNIT_PRICE" maxchars="19" datavalue="bind:Variables.modelItemTmp.dataSet.unitPrice" updateon="default" on-keyup="textUnitPriceKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                        <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.unitPrice" name="label71"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container122">
+                <wm-composite captionposition="top" name="composite21">
+                    <wm-label class="col-md-3" name="label67" caption="bind:appLocale.LANG_DISCOUNT"></wm-label>
+                    <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container123" conditionalstyle="bind:{position: 'relative'}" conditionalclass="bind:Variables.modelErrors.dataSet.discount ? 'form-error' : ''">
+                        <wm-text name="textDiscount" placeholder="Input Discount" maxchars="8" updateon="default" datavalue="bind:Variables.modelItemTmp.dataSet.discount" on-keyup="textDiscountKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                        <wm-label caption="%" conditionalstyle="bind:{position: 'absolute', top: '12px', right: '12px', zIndex: '10', color: 'rgba(64, 65, 67, 0.6)'}" name="label69"></wm-label>
+                        <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.discount" name="label72"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_PREVIEW_EXPORT_PDF" iconclass="" name="dialogExport" class="aio-p2p-modal" width="800">
+        <wm-container name="containerExportBg" fontsize="12" color="#000000">
+            <wm-layoutgrid name="layoutgridExport">
+                <wm-gridrow name="gridrowExportLogo">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExportLogo" horizontalalign="right">
+                        <wm-picture name="pictureExportLogo" width="110" height="40" picturesource="resources/images/logos/otsuka.png"></wm-picture>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport1" horizontalalign="center" padding="8px unset 16px unset">
+                        <wm-label padding="unset 0.5em" name="labelExportTitel" caption="bind:appLocale.LANG_QUOTATION_FORM" conditionalstyle="bind:{ fontWeight: &quot;600&quot;}" fontsize="14"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport2">
+                        <wm-label padding="unset 0.5em" name="labelExportKet1" class="col-md-12" caption="bind:appLocale.LANG_VENDOR_INFORMATION"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet2" caption="bind:Variables.modelRfqVendor.dataSet.rfqvVendorCode ? Variables.modelRfqVendor.dataSet.rfqvVendorCode + &quot; - &quot; + Variables.modelRfqVendor.dataSet.rfqvVendorName : Variables.modelRfqVendor.dataSet.rfqvVendorName"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-6" name="labelExportKet3" caption="bind:Variables.modelRfqVendor.dataSet.rfqvVendorAddress"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-7" name="labelExportKet4" caption="bind:appLocale[&quot;LANG_SALES_PERSON&quot;] +' : '+ (Variables.modelRfqVendor.dataSet.rfqvSalesPerson ? Variables.modelRfqVendor.dataSet.rfqvSalesPerson : &quot;-&quot;)"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet5" caption="bind:appLocale[&quot;LANG_MOBILE_NUMBER&quot;]+' : '+ (Variables.modelRfqVendor.dataSet.rfqvSalesNumber ? Variables.modelRfqVendor.dataSet.rfqvSalesNumber : &quot;-&quot; )"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet6" caption="bind:appLocale[&quot;LANG_EMAIL_SALES&quot;]+' : '+ (Variables.modelRfqVendor.dataSet.rfqvSalesEmail ? Variables.modelRfqVendor.dataSet.rfqvSalesEmail : &quot;-&quot; )"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet7" caption="bind:appLocale[&quot;LANG_DELIVERY_TERM&quot;]+' : '+ (Variables.modelRfqVendor.dataSet.rfqvTermDelivery ? Variables.modelRfqVendor.dataSet.rfqvTermDelivery : &quot;-&quot;)"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport3" padding="12px unset">
+                    <wm-gridcolumn columnwidth="9" name="gridcolumnExport3" horizontalalign="right">
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet9" caption="Quote No :"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet10" caption="bind:appLocale[&quot;LANG_DATE&quot;] + ' :'"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet11" caption="bind:appLocale[&quot;LANG_VALID_THRU&quot;] + ' :'"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet12" caption="bind:appLocale[&quot;LANG_TERM_OF_PAYMENT&quot;] + ' :'"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet13" caption="bind:appLocale[&quot;LANG_DURATION_LEAD_TIME_FOR_SERVICE_PROJECT&quot;] + ' :'"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" caption="bind:appLocale[&quot;LANG_CURRENCY&quot;]+ ' :'" name="label136_1"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet14" caption="bind:appLocale[&quot;LANG_REQUESTOR&quot;] + ' :'"></wm-label>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn8">
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet15" caption="bind:Variables.modelRfqVendor.dataSet.tblTrfq.rfqRef ? Variables.modelRfqVendor.dataSet.tblTrfq.rfqRef : &quot;-&quot;"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet16" caption="bind:Variables.modelRfqVendor.dataSet.rfqvDate ? (Variables.modelRfqVendor.dataSet.rfqvDate | toDate: 'dd-MM-yyyy') : &quot;-&quot;"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet17" caption="bind:Variables.modelRfqVendor.dataSet.rfqvValidThru ? (Variables.modelRfqVendor.dataSet.rfqvValidThru  | toDate: 'dd-MM-yyyy') : &quot;-&quot;"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet18" caption="bind:Variables.modelRfqVendor.dataSet.rfqvTermPayment ? Variables.modelRfqVendor.dataSet.rfqvTermPayment : &quot;-&quot;"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet19" caption="bind:(Variables.modelRfqVendor.dataSet.rfqvDuration ? Variables.modelRfqVendor.dataSet.rfqvDuration :  &quot;0&quot;) + ' ' + appLocale[&quot;LANG_DAYS&quot;]"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" caption="bind:Variables.modelRfqVendor.dataSet.rfqvCurrency ? Variables.modelRfqVendor.dataSet.rfqvCurrency : &quot;-&quot;" name="label137"></wm-label>
+                        <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportKet20" caption="bind:Variables.modelRfqVendor.dataSet.rfqvCreatedName ? Variables.modelRfqVendor.dataSet.rfqvCreatedName : &quot;-&quot;"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport4">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport4">
+                        <wm-container name="containerExportList" fontsize="11" class="aio-ptp-export-list">
+                            <wm-container name="containerExportListSub">
+                                <wm-container name="containerExportListHeader">
+                                    <wm-container padding="0px 16px" horizontalalign="left" name="containerExportListHeaderSub" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 0px 1px 0px">
+                                        <wm-container horizontalalign="left" display="inline-block" width="3.9%" name="containerExListHeader1" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NO" name="labelExListHeader1"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="21%" name="containerExListHeader2" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DESCRIPTION" name="labelExListHeader2"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="7.1%" name="containerExListHeader3" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="Qty" name="labelExListHeader3"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="12.1%" name="containerExListHeader5" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_UNIT_PRICE" name="labelExListHeader5"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="14%" name="containerExListHeader6" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_AMOUNT" name="labelExListHeader6"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="11.5%" name="containerExListHeader7" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale[&quot;LANG_DISCOUNT&quot;] + ' (%)'" name="labelExListHeader7"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="20%" name="containerExListHeader8" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_AMOUNT_AFTER_DISCOUNT" name="labelExListHeader8"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="10%" name="containerExListHeader9" padding="8px unset">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_LEAD_TIME" name="labelExListHeader9"></wm-label>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-container name="containerExportListData">
+                                        <wm-list listclass="list-group" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" dataset="bind:Variables.modelLineItem.dataSet"
+                                            navigation="None" name="listExport">
+                                            <wm-listtemplate layout="inline" name="listtemplateExport">
+                                                <wm-container horizontalalign="left" name="container147" padding="unset 15px">
+                                                    <wm-container display="inline-block" width="4.045%" horizontalalign="left" name="containerExListData1" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.nomor" name="labelExListData1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="21%" horizontalalign="left" name="containerExListData2" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.itemDescription" name="labelExListData2" whitespace="pre-line"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="7%" horizontalalign="center" name="containerExListData3" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.qty)" name="labelExListData3"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="right" name="containerExListData5" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.unitPrice)" name="labelExListData5"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="14%" horizontalalign="right" name="containerExListData6" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.amount)" name="labelExListData6"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="11.5%" horizontalalign="center" name="containerExListData7" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.discount)" name="labelExListData7"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="20%" horizontalalign="right" name="containerExListDatak" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.amountAfterDiscount)" name="labelExListData8"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="center" name="containerExListData9" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.leadTime" name="labelExListData9"></wm-label>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12" padding="16px unset 32px unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                        <wm-container name="container164">
+                            <wm-container name="container162" display="inline-block" width="68%" horizontalalign="right">
+                                <wm-label name="label138" caption="bind:appLocale[&quot;LANG_SUBTOTAL&quot;] + ' :'"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19%" name="container163" horizontalalign="right">
+                                <wm-label name="label139" caption="bind:App.formatCurrencyPTP(calculationSubtotal())"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container165">
+                            <wm-container display="inline-block" width="68%" horizontalalign="right" name="container166">
+                                <wm-label name="label140" caption="bind:appLocale[&quot;LANG_VAT_RATE&quot;] + ' ('+(Variables.modelRfqVendor.dataSet.rfqvVatRate ? Variables.modelRfqVendor.dataSet.rfqvVatRate : '0')+'%) :'"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19%" horizontalalign="right" name="container167">
+                                <wm-label name="label141" caption="bind:App.formatCurrencyPTP(calculationVatrate())"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container168">
+                            <wm-container display="inline-block" width="68%" horizontalalign="right" name="container169">
+                                <wm-label name="label142" caption="bind:appLocale[&quot;LANG_TOTAL_INCLUDE_TAX&quot;] + ' :'"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19%" horizontalalign="right" name="container170">
+                                <wm-label name="label143" caption="bind:App.formatCurrencyPTP(formatCalaculate(Widgets.textSubtotal.datavalue) + formatCalaculate(Widgets.textVatRate2.datavalue))"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container171">
+                            <wm-container display="inline-block" width="68%" horizontalalign="right" name="container172">
+                                <wm-label name="label144" caption="bind:appLocale[&quot;LANG_PACKING_COST&quot;] + ' :'"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19%" horizontalalign="right" name="container173">
+                                <wm-label name="label145" caption="bind:App.formatCurrencyPTP(Variables.modelRfqVendor.dataSet.rfqvPackingCost)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container174">
+                            <wm-container display="inline-block" width="68%" horizontalalign="right" name="container175">
+                                <wm-label name="label146" caption="bind:appLocale[&quot;LANG_SHIPPING_HANDLING&quot;] + ' :'"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19%" horizontalalign="right" name="container176">
+                                <wm-label name="label147" caption="bind:App.formatCurrencyPTP(Variables.modelRfqVendor.dataSet.rfqvShippingHandling)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container177">
+                            <wm-container display="inline-block" width="68%" horizontalalign="right" name="container178">
+                                <wm-label name="label148" caption="bind:appLocale[&quot;LANG_OTHER_COST_INSURANCE_FEE_UNLOADING_STAMP_ETC&quot;] + ' :'"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19%" horizontalalign="right" name="container179">
+                                <wm-label name="label149" caption="bind:App.formatCurrencyPTP(Variables.modelRfqVendor.dataSet.rfqvOtherCost)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container180">
+                            <wm-container display="inline-block" width="36%" horizontalalign="right" name="container181"></wm-container>
+                            <wm-container display="inline-block" width="32%" horizontalalign="right" name="container180_1" bordercolor="#c4c4c4" borderstyle="solid" borderwidth="1px 0px 0px 0px" padding="2px unset unset unset">
+                                <wm-label caption="bind:appLocale[&quot;LANG_TOTAL&quot;] + ' :'" name="label136"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="19.5%" horizontalalign="right" name="container182" bordercolor="#c4c4c4" borderstyle="solid" borderwidth="1px 0px 0px 0px" padding="2px 4px unset unset">
+                                <wm-label name="label151" caption="bind:(Widgets.search3.datavalue.fromCurrency == 'IDR' || Widgets.search3.datavalue.fromCurrency == 'JPY') ? App.formatCurrencyPTP((formatCalaculate(Widgets.textTotalTax.datavalue) + formatCalaculate(Widgets.textPackingCost.datavalue) + formatCalaculate(Widgets.textShipping.datavalue) + formatCalaculate(Widgets.textOtherCost.datavalue)).toFixed(0)) :  App.formatCurrencyPTP(formatCalaculate(Widgets.textTotalTax.datavalue) + formatCalaculate(Widgets.textPackingCost.datavalue) + formatCalaculate(Widgets.textShipping.datavalue) + formatCalaculate(Widgets.textOtherCost.datavalue))"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport6">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport6">
+                        <wm-container name="containerExportFooter" color="#666666">
+                            <wm-label padding="unset 0.5em" name="labelExportNote1" class="col-md-12" caption="bind:appLocale.LANG_NOTE_TERM"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-6" name="labelExportNote2" caption="bind:appLocale[&quot;LANG_NOTES&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvNotes ? Variables.modelRfqVendor.dataSet.rfqvNotes : &quot;-&quot; )"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportNote3" caption="bind:appLocale[&quot;LANG_WARRANTY&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvWarranty ? Variables.modelRfqVendor.dataSet.rfqvWarranty : &quot;-&quot;)"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportNote4" caption="bind:appLocale[&quot;LANG_KURS_ASSUMPTION&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvKursAssumption ? Variables.modelRfqVendor.dataSet.rfqvKursAssumption : &quot;-&quot; )"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportNote5" caption="bind:appLocale[&quot;LANG_BASE_PRICE_IN_ORIGINAL_CURRENCY&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvBasePrice ? Variables.modelRfqVendor.dataSet.rfqvBasePrice : &quot;-&quot;)"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportNote6" caption="bind:appLocale[&quot;LANG_PACKING_SIZE&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvPackingSize ? Variables.modelRfqVendor.dataSet.rfqvPackingSize : &quot;-&quot; )"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportNote7" caption="bind:appLocale[&quot;LANG_ORIGIN_MANUFACTURER&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvOriginManufacturer ? Variables.modelRfqVendor.dataSet.rfqvOriginManufacturer : &quot;-&quot; )"></wm-label>
+                            <wm-label padding="unset 0.5em" class="col-md-12" name="labelExportNote8" caption="bind:appLocale[&quot;LANG_SELF_LIFE_MATERIAL&quot;] + ' : '+ (Variables.modelRfqVendor.dataSet.rfqvMaterial ? Variables.modelRfqVendor.dataSet.rfqvMaterial : &quot;-&quot; )"></wm-label>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-spinner show="false" name="spinner2"></wm-spinner>
+        <wm-dialogactions name="dialogactionsExport">
+            <wm-button class="aio-p2p-btn-alternate" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset 0.5em" on-click="Widgets.dialogExport.close()" name="buttonCancelExport"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_EXPORT" on-click="buttonSaveExportClick($event, widget)" name="buttonSaveExport"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

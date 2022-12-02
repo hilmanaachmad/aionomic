@@ -1,0 +1,83 @@
+{
+  "displayName" : "QRCode",
+  "group" : "",
+  "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
+  "resources" : {
+    "styles" : [ "/pages/Main/Main.css" ],
+    "scripts" : [ "/js/qrcode.js" ],
+    "modules" : [ ]
+  },
+  "properties" : {
+    "text" : {
+      "type" : "string",
+      "bindable" : "in-bound",
+      "value" : "http://www.wavemaker.com",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false,
+      "description" : "Set this property to a variable/string for which the Quick Response(QR) code should be generated"
+    },
+    "type" : {
+      "type" : "number",
+      "bindable" : "in-bound",
+      "value" : "4",
+      "options" : [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" ],
+      "widget" : "list",
+      "show" : true,
+      "disabled" : false,
+      "displayName" : "Complexity Type",
+      "description" : "This property is used to set the complexity type. Use 1 for the lowest complexity"
+    },
+    "width" : {
+      "type" : "string",
+      "bindable" : "in-bound",
+      "value" : "100",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false,
+      "description" : ""
+    },
+    "height" : {
+      "type" : "string",
+      "bindable" : "in-bound",
+      "value" : "100",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false,
+      "description" : ""
+    },
+    "darkcolor" : {
+      "type" : "string",
+      "bindable" : "in-bound",
+      "value" : "#000000",
+      "widget" : "color",
+      "show" : true,
+      "disabled" : false,
+      "displayName" : "Dark Color",
+      "description" : "This property sets the color to be applied on the qr code."
+    },
+    "lightcolor" : {
+      "type" : "string",
+      "bindable" : "in-bound",
+      "value" : "#ffffff",
+      "widget" : "color",
+      "show" : true,
+      "disabled" : false,
+      "displayName" : "Light Color",
+      "description" : "This property sets the color to be applied to the background of the qr code."
+    },
+    "level" : {
+      "type" : "string",
+      "bindable" : "in-bound",
+      "value" : "H",
+      "options" : [ "L", "M", "Q", "H" ],
+      "widget" : "list",
+      "show" : true,
+      "disabled" : false,
+      "displayName" : "Correction Level",
+      "description" : "This property is used to set the correction level. Level L (Low), Level M (Medium), Level Q (Quartile), Level H (High)"
+    }
+  },
+  "methods" : { },
+  "events" : { }
+}

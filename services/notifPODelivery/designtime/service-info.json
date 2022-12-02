@@ -1,0 +1,5 @@
+{
+  "id" : "notifPODelivery",
+  "type" : "RestService",
+  "title" : "notifPODelivery"
+}

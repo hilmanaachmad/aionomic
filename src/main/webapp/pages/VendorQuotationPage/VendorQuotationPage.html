@@ -1,0 +1,121 @@
+<wm-page name="mainpage" pagetitle="Vendor Quotation" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="vendorQuotation" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_QUOTATION_REQUEST" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
+                        <wm-container name="background" backgroundcolor="#fff" conditionalstyle="bind:{
+    maxWidth: &quot;941px&quot;,
+    minWidth: &quot;600px&quot;
+}">
+                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container">
+                                <wm-container name="container15" padding="unset unset unset 8px" margin="unset unset 25px unset">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow2">
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn5_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite2">
+                                                    <wm-container class="col-md-9" name="container15_1" width="100%">
+                                                        <wm-select name="selectSearchBy" dataset="bind:Variables.vmSearchCriteria.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY" on-change="selectSearchByChange($event, widget, newVal, oldVal)"></wm-select>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite3">
+                                                    <wm-container class="col-md-9" name="container16_1" width="100%">
+                                                        <wm-text name="searchValue" type="search" disabled="bind:Widgets.selectSearchBy.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" show="bind:(Widgets.selectSearchBy.datavalue == 2 || Widgets.selectSearchBy.datavalue == 4) ? false : true"
+                                                            updateon="default" on-keyup="searchValueKeyup($event, widget)"></wm-text>
+                                                        <wm-date name="date3" placeholder="bind:appLocale.LANG_SELECT_DATE" show="bind:Widgets.selectSearchBy.datavalue === 2 ? true : false" datepattern="dd/MM/yyyy" on-change="Variables.viewVendorQuotation.listRecords()"
+                                                            outputformat="yyyy-MM-dd"></wm-date>
+                                                    </wm-container>
+                                                    <wm-select name="searchCompany" dataset="bind:Variables.vCompany.dataSet" datafield="All Fields" displayfield="ctitle" placeholder="bind:appLocale.LANG_SELECT_COMPANY" show="bind:Widgets.selectSearchBy.datavalue == 4 ? true : false"
+                                                        on-change="Variables.viewVendorQuotation.listRecords()"></wm-select>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-spinner show="false" name="spinner2" class="spinner-show"></wm-spinner>
+                                <wm-container name="container37">
+                                    <wm-container name="container38">
+                                        <wm-container class="aio-p2p-table-header" padding="16px" name="container39">
+                                            <wm-container display="inline-block" width="7%" name="container40_1" horizontalalign="left">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NO" name="label22_1"></wm-label>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="20%" class="aio-p2p-clickable" on-click="container41Click($event, widget)" name="container41" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RFQ_NUMBER" name="label23_1" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.viewVendorQuotation.orderBy === &quot;rfqNumber ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.viewVendorQuotation.orderBy === &quot;rfqNumber DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture10" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" on-click="container41Click($event, widget)" horizontalalign="center" name="container25">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY" class="aio-p2p-clickable" name="label10"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.viewVendorQuotation.orderBy === &quot;rfqNumber ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.viewVendorQuotation.orderBy === &quot;rfqNumber DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16" height="16" name="picture6"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="20%" class="aio-p2p-clickable" on-click="container44Click($event, widget)" name="container44" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_OVER_TIME_LIMIT" name="label26" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.viewVendorQuotation.orderBy === &quot;overTimeLimit ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.viewVendorQuotation.orderBy === &quot;overTimeLimit DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture13" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="20%" class="aio-p2p-clickable" on-click="container45Click($event, widget)" name="container45" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_STATUS" name="label27" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.viewVendorQuotation.orderBy === &quot;status ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.viewVendorQuotation.orderBy === &quot;status DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture14" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.viewVendorQuotation.dataSet" navigation="Basic"
+                                            on-beforedatarender="listDataBeforedatarender(widget, $data)" name="listData" statehandler="none">
+                                            <wm-listtemplate layout="media" name="listtemplate3">
+                                                <wm-container padding="unset 8px" name="container51">
+                                                    <wm-container display="inline-block" width="7%" name="container52" horizontalalign="left">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listData.currentItem.nomor" name="label33"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="20%" name="container53" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:Widgets.listData.currentItem.rfqNumber" name="label34"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" horizontalalign="center" name="container26">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:Widgets.listData.currentItem.companyCode == null ? '' : ( Widgets.listData.currentItem.companyCode == '1000' ? 'AIO' : 'ODI')" name="label11"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="20%" name="container56" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listData.currentItem.overTimeLimit | toDate: 'dd/MM/yyyy'" name="label37"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="20%" name="container57" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listData.currentItem.status" name="label38"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" horizontalalign="right" name="container63">
+                                                        <wm-picture picturesource="resources/images/logos/icon-pencil.png" on-click="Actions.goto_QuotaionForm.invoke()" margin="unset 8px unset unset" class="aio-p2p-clickable" name="picture10_1" show="bind:Widgets.listData.currentItem.status === 'Open'"></wm-picture>
+                                                        <wm-picture picturesource="resources/images/logos/icon-eye.png" on-click="Actions.goto_QuotaionFormView.invoke()" margin="unset 8px unset unset" class="aio-p2p-clickable" show="bind:Widgets.listData.currentItem.status == 'Submitted' || Widgets.listData.currentItem.status == 'Over Time Limit'"
+                                                            name="picture7"></wm-picture>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container margin="25px unset unset unset" name="container64">
+                                    <wm-layoutgrid name="layoutgrid5">
+                                        <wm-gridrow name="gridrow5">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn23"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn24">
+                                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_SHOW" padding="2px unset" margin="8px unset unset unset" name="label44"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn25">
+                                                <wm-select name="select9" datavalue="10" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" displayfield="name" on-change="select9Change($event, widget, newVal, oldVal)"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

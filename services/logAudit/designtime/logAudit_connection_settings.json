@@ -1,0 +1,22 @@
+{
+  "endpointAddress" : "https://myapps.aio.co.id/otsuka-api/api/audit-log/store-data",
+  "method" : "POST",
+  "headers" : {
+    "Content-Type" : [ "application/json" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "{\n    \"ip_address\": \"192.168.1.123\",\n    \"root_url\": \"myapps.aio.co.id\",\n    \"full_url\":\"myapps.aio.co.id/dts/create\",\n    \"action\":\"LOGIN\",\n    \"message\":\"login successfull\",\n    \"device\":\"mozilla, windows 11 NT\",\n    \"param\":\"\",\n    \"created_by\":\"1234\"\n}",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 0,
+    "headers" : {
+      "content-length" : [ "236" ],
+      "content-type" : [ "application/json; charset=utf-8" ]
+    },
+    "responseBody" : "{\"status\":true,\"data\":{\"ip_address\":\"192.168.1.123\",\"root_url\":\"myapps.aio.co.id\",\"full_url\":\"myapps.aio.co.id/dts/create\",\"action\":\"LOGIN\",\"message\":\"login successfull\",\"device\":\"mozilla, windows 11 NT\",\"param\":\"\",\"created_by\":\"1234\"}}",
+    "convertedResponse" : null
+  }
+}

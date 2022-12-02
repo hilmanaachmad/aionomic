@@ -1,0 +1,102 @@
+{
+  "description" : "controller class for java service execution",
+  "methods" : {
+    "send" : [ {
+      "url" : {
+        "value" : "/send",
+        "modified" : false
+      },
+      "method" : {
+        "value" : "POST",
+        "modified" : true
+      },
+      "accessSpecifier" : "APP_ONLY",
+      "parameters" : {
+        "to" : {
+          "name" : {
+            "value" : "to",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "cc" : {
+          "name" : {
+            "value" : "cc",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "subject" : {
+          "name" : {
+            "value" : "subject",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "body" : {
+          "name" : {
+            "value" : "body",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "BODY",
+            "modified" : true
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "text" : {
+          "name" : {
+            "value" : "text",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "QUERY",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        },
+        "request" : {
+          "name" : {
+            "value" : "request",
+            "modified" : false
+          },
+          "in" : {
+            "value" : "NONE",
+            "modified" : false
+          },
+          "required" : {
+            "value" : false,
+            "modified" : false
+          }
+        }
+      }
+    } ]
+  }
+}

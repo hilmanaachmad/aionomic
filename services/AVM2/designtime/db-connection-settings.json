@@ -1,0 +1,288 @@
+{
+  "username" : "xmsapps",
+  "password" : "7b6a43524a17241e6e7e3422205d7670477c612a43",
+  "url" : "jdbc:sqlserver://202.158.62.54:1433;databaseName=AVM2",
+  "driverClass" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.WMSQLServerDialect",
+  "serviceId" : "AVM2",
+  "packageName" : "id.co.aio.procure_to_pay.avm2",
+  "dbType" : "SQLServer",
+  "host" : "202.158.62.54",
+  "dbName" : "AVM2",
+  "port" : "1433",
+  "schemaName" : "dbo",
+  "tableFilter" : [ {
+    "table" : "BankData",
+    "schema" : "dbo"
+  }, {
+    "table" : "CategoryVendor",
+    "schema" : "dbo"
+  }, {
+    "table" : "emp_resign_ho",
+    "schema" : "dbo"
+  }, {
+    "table" : "PHP_ms_login",
+    "schema" : "dbo"
+  }, {
+    "table" : "table_vendor",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_hr",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_hr_ag",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_lg",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_acnk",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_acnk_konf",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_acnk_old",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_acnk_smi3",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_acnk_temp",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_agpe",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ak",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ba",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ba_",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ca",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_category",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_category_temp",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_cc",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_co",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_cu",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_de",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_de_new",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_do",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_em",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_em_del",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_em_temp",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_exon",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_forgot_user",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_lo",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_lo_",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_loc",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_loc_new",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_notif_email",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_pic",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_puon",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_puon_",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_puon_fina",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_puon_temp",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_re",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_re_old",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ta",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ta_temp",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_tape",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_top",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_tyon",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ve",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ms_ve_konf",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_ta_temp",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_ag",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_ag_",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_ag_real",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_agli",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_caor",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_catalog",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_doak",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_door",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_in",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_reak",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_rect",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_regal",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_renk",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_sk",
+    "schema" : "dbo"
+  }, {
+    "table" : "tl_tr_stce",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_bank",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_certiDom",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_dataBank",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_dataTaxLocal",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_dataTaxOverseas",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_data_vendor",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_exemptionDoc",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_ivendor",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_npwpDoc",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_PIC",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_regIndo",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_sppkpDoc",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_supDoc",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_vendor",
+    "schema" : "dbo"
+  }, {
+    "table" : "v_vendor_miro",
+    "schema" : "dbo"
+  }, {
+    "table" : "vw_gratifikasi",
+    "schema" : "dbo"
+  }, {
+    "table" : "vw_kontrak",
+    "schema" : "dbo"
+  }, {
+    "table" : "vw_kontrak_ori",
+    "schema" : "dbo"
+  }, {
+    "table" : "vw_listagree",
+    "schema" : "dbo"
+  } ],
+  "schemaFilter" : [ "dbo" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : null
+}

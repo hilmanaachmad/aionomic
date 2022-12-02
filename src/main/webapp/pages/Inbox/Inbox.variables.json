@@ -1,0 +1,244 @@
+{
+  "vdbInbox" : {
+    "_id" : "wm-vdbInbox-wm.LiveVariable-1609314153342",
+    "name" : "vdbInbox",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTInbox",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 10,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "inbId desc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "inbId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "inb_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbTimestamp",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "inb_timestamp",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbTaskType",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "inb_task_type",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbSubject",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "inb_subject",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "userId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "inb_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "SYSTEM",
+        "scale" : 0
+      } ],
+      "entityName" : "TblTInbox",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTInbox",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "inbId" ]
+    },
+    "bindCount" : 2,
+    "tableName" : "tbl_t_inbox",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "userId",
+        "type" : "string",
+        "matchMode" : "exact",
+        "value" : "bind:Variables.loggedInUserData.dataSet.username === null ? \"0\" : Variables.loggedInUserData.dataSet.username",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "inbTaskType",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.searchBy.datavalue === 1 ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "inbSubject",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.searchBy.datavalue === 2 ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "inbCreatedBy",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.searchBy.datavalue === 3 ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "inbTimestamp",
+        "type" : "datetime",
+        "matchMode" : "greaterthanequal",
+        "value" : "bind:Widgets.date1.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTInbox"
+  },
+  "vdbqTickInbox" : {
+    "_id" : "wm-vdbqTickInbox-wm.ServiceVariable-1611043980921",
+    "name" : "vdbqTickInbox",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "aio_ptp",
+    "operation" : "executeTickInboxLastSeen",
+    "operationId" : "QueryExecutionController_executeTickInboxLastSeen",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vdbqTickNotif" : {
+    "_id" : "wm-vdbqTickNotif-wm.ServiceVariable-1611044005322",
+    "name" : "vdbqTickNotif",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "aio_ptp",
+    "operation" : "executeTickNotificationLastSeen",
+    "operationId" : "QueryExecutionController_executeTickNotificationLastSeen",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vmPerPage" : {
+    "_id" : "wm-vmPerPage-wm.Variable-1607878196111",
+    "name" : "vmPerPage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "value" : 10
+    }, {
+      "name" : "30 Rows",
+      "value" : 30
+    }, {
+      "name" : "50 Rows",
+      "value" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchCriteria" : {
+    "_id" : "wm-searchCriteria-wm.Variable-1606354489201",
+    "name" : "vmSearchCriteria",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Receive Date",
+      "dataValue" : 4
+    }, {
+      "name" : "Task Type",
+      "dataValue" : 1
+    }, {
+      "name" : "Subject",
+      "dataValue" : 2
+    }, {
+      "name" : "Employee",
+      "dataValue" : 3
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

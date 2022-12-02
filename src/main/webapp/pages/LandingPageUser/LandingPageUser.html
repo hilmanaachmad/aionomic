@@ -1,0 +1,114 @@
+<wm-page pagetitle="List Forgot User" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container class="bg-image" padding="24px" name="container1" width="100vw" height="100vh" conditionalstyle="bind:{
+    display: &quot;flex&quot;,
+    flexDirection: &quot;row&quot;
+}" backgroundimage="resources/images/imagelists/bg-blurred.png" horizontalalign="center">
+                <wm-layoutgrid name="layoutgrid3">
+                    <wm-gridrow name="gridrow7">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn25"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn29_1">
+                            <wm-container name="container2" margin="85px unset unset unset" class="bg-radius" bordercolor="#bebebe" borderstyle="solid" borderwidth="1px" backgroundcolor="#e5e5e5">
+                                <wm-layoutgrid name="layoutgrid4">
+                                    <wm-gridrow name="gridrow6" padding="35px 0px unset unset">
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn18"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn22" horizontalalign="center">
+                                            <wm-picture name="picture2" picturesource="resources/images/logos/login-otsuka.png" width="250px"></wm-picture>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn19" padding="unset 0px unset unset"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow8" padding="75px 0px unset unset">
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn23"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn26" horizontalalign="center">
+                                            <wm-label padding="unset 0.5em" name="label33_1" caption="Please Choose Role" fontweight="bold" fontsize="30" textdecoration="underline" color="#3a8bca"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="2" name="gridcolumn24" padding="unset 0px unset unset"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow9" padding="35px 0px 155px unset">
+                                        <wm-gridcolumn columnwidth="1" name="gridcolumn27"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn31" padding="unset 5px unset unset">
+                                            <wm-container name="container30" horizontalalign="center" class="aio-p2p-clickable aio-btn-element bg-radius" on-click="container30Click($event, widget)" bordercolor="#bebebe" borderstyle="solid" height="150px"
+                                                borderwidth="1px">
+                                                <wm-container name="container8" margin="50px unset unset unset">
+                                                    <wm-icon iconsize="25px" iconclass="wi wi-work" name="icon2" caption="Vendor" class="aio-p2p-clickable" color="#000000"></wm-icon>
+                                                </wm-container>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn32" horizontalalign="left" padding="unset unset unset 5px">
+                                            <wm-container name="container31" horizontalalign="center" class="aio-p2p-clickable aio-btn-element bg-radius" on-click="container31Click($event, widget)" bordercolor="#bebebe" borderwidth="1px" borderstyle="solid"
+                                                height="150px">
+                                                <wm-container margin="50px unset unset unset" name="container9">
+                                                    <wm-icon iconsize="25px" iconclass="wi wi-people" name="icon3" iconposition="left" caption="Employee" class="aio-p2p-clickable" color="#000000"></wm-icon>
+                                                </wm-container>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="1" name="gridcolumn29"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn26_1"></wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_VENDOR_INFORMATION" iconclass="wi wi-file-text" name="ApproveForgotUser" width="850px">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow1" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn1">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_NAME" name="label14" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label35"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].vendorName" name="label25" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn12">
+                    <wm-label padding="unset 0.5em" caption="Title" fontsize="15" fontfamily="Inter" name="label22"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn2">
+                    <wm-label caption=":" name="label30" fontsize="15" fontfamily="Inter"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].title" fontsize="15" fontfamily="Inter" name="label29"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow2" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn3">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_EMAIL" name="label16_1" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label34"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].email" fontsize="15" fontfamily="Inter" name="label23"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn14">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NAME_DIRECTOR" name="label20_1" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn4">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label31"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].directorName" fontsize="15" fontfamily="Inter" name="label28"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow3" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn5">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NPWP_COMPANY" fontsize="15" fontfamily="Inter" name="label21_1"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label33"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].npwpNumber" fontsize="15" fontfamily="Inter" name="label24"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn16">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CITIZEN_ID" name="label18_1" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn6">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label32"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].idDirector" fontsize="15" fontfamily="Inter" name="label26"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-danger" caption="Reject" on-click="btnRejectClick($event, widget)" name="btnReject"></wm-button>
+            <wm-button class="btn-primary" caption="Approve" on-click="btnApproveClick($event, widget)" name="btnApprove"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

@@ -1,0 +1,21 @@
+[ {
+  "name" : "ptp-flat-design",
+  "version" : "1.0",
+  "artifactType" : "THEME",
+  "artifactDependencyList" : null
+}, {
+  "name" : "AIOPtpSelectSearch",
+  "version" : "1.11",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "QRCode",
+  "version" : "1.6",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+}, {
+  "name" : "googlemaps",
+  "version" : "6.11",
+  "artifactType" : "PREFAB",
+  "artifactDependencyList" : null
+} ]

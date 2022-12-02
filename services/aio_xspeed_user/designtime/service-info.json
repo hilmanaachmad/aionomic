@@ -1,0 +1,6 @@
+{
+  "id" : "aio_xspeed_user",
+  "type" : "DataService",
+  "packageNames" : [ "id.co.aio.procure_to_pay.aio_xspeed_user" ],
+  "title" : "aio_xspeed_user"
+}

@@ -1,0 +1,112 @@
+{
+  "basePath" : "${rest.notifPODelivery.basepath}",
+  "paths" : {
+    "/master/email/notif-po-delivery" : {
+      "post" : {
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "operationId" : "notifPODelivery_RestServiceVirtualController-invoke",
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "parameters" : [ {
+          "x-WM-VARIABLE_KEY" : "",
+          "x-WM-EDITABLE" : true,
+          "in" : "header",
+          "name" : "Content-Type",
+          "format" : "string",
+          "description" : "Content-Type",
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        }, {
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-VARIABLE_KEY" : "",
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object",
+          "required" : false,
+          "x-WM-VARIABLE_TYPE" : "PROMPT"
+        } ],
+        "tags" : [ "RestServiceVirtualController" ],
+        "consumes" : [ "application/json" ]
+      },
+      "x-WM-BASE_PATH" : "/master/email/notif-po-delivery",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.notifPODelivery.scheme}://${rest.notifPODelivery.host}${rest.notifPODelivery.basepath}/master/email/notif-po-delivery"
+    }
+  },
+  "host" : "${rest.notifPODelivery.host}",
+  "schemes" : [ "${rest.notifPODelivery.scheme}" ],
+  "definitions" : {
+    "Response.dataEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "notifPODelivery.Response.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "data", "status" ],
+      "properties" : {
+        "data" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "RootRequest" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "notifPODelivery.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "id_po" ],
+      "properties" : {
+        "id_po" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      }
+    },
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "notifPODelivery.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "required" : [ "data", "status" ],
+      "properties" : {
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Response.dataEntryItem"
+          }
+        },
+        "status" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-USE_PROXY_FOR_MOBILE" : false,
+    "x-WM-API_ID" : "22c97a75-7ab8-4f30-ab27-e0955ef4ec86",
+    "x-WM-SERVICE_ID" : "localhost",
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-USE_WITH_CREDENTIALS" : false
+  },
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ]
+}

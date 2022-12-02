@@ -1,0 +1,21 @@
+{
+  "endpointAddress" : "https://www.cloudflare.com/cdn-cgi/trace",
+  "method" : "GET",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 0,
+    "headers" : {
+      "cache-control" : [ "no-cache" ],
+      "content-type" : [ "text/plain" ],
+      "expires" : [ "Thu, 01 Jan 1970 00:00:01 GMT" ]
+    },
+    "responseBody" : "fl=545f3\nh=www.cloudflare.com\nip=103.11.134.165\nts=1665102111.347\nvisit_scheme=https\nuag=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36\ncolo=CGK\nsliver=none\nhttp=http/2\nloc=ID\ntls=TLSv1.3\nsni=plaintext\nwarp=off\ngateway=off\nkex=X25519\n",
+    "convertedResponse" : null
+  }
+}

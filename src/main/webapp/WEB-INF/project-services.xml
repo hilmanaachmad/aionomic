@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <import resource="classpath:AVM2.spring.xml"/>
+    <import resource="classpath:EmailService.spring.xml"/>
+    <import resource="classpath:FileService.spring.xml"/>
+    <import resource="classpath:GoodReceiptPost.spring.xml"/>
+    <import resource="classpath:MailService.spring.xml"/>
+    <import resource="classpath:aioEmailService.spring.xml"/>
+    <import resource="classpath:aio_employee.spring.xml"/>
+    <import resource="classpath:aio_ptp.spring.xml"/>
+    <import resource="classpath:aio_xspeed_user.spring.xml"/>
+    <import resource="classpath:approvalEmail.spring.xml"/>
+    <import resource="classpath:approvalEmailBudget.spring.xml"/>
+    <import resource="classpath:cloudflareIpCheck.spring.xml"/>
+    <import resource="classpath:logAudit.spring.xml"/>
+    <import resource="classpath:notifPODelivery.spring.xml"/>
+    <import resource="classpath:notifPOVendor.spring.xml"/>
+    <import resource="classpath:purchaseOrderPost.spring.xml"/>
+    <import resource="classpath:purchaseRequestDelete.spring.xml"/>
+    <import resource="classpath:purchaseRequestPost.spring.xml"/>
+    <import resource="classpath:sap_master.spring.xml"/>
+    <import resource="classpath:securityService.spring.xml"/>
+    <import resource="classpath:svNotifyEmailVendor.spring.xml"/>
+</beans>

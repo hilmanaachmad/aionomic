@@ -1,0 +1,221 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.MENU_BUD_UPLOAD_BUDGET" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="uploadBudget" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="List Asset" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content">
+                        <wm-container name="container7" class="aio-p2p-ub-main-container">
+                            <wm-container name="container24_2" width="400px">
+                                <wm-composite name="composite1" class="center">
+                                    <wm-label class="col-md-3 control-label" name="labelCompany" caption="Company :"></wm-label>
+                                    <wm-container class="col-md-9" name="container25_1">
+                                        <wm-select name="select6" height="2em"></wm-select>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-container>
+                            <wm-container name="container22_1">
+                                <wm-layoutgrid name="layoutgrid4">
+                                    <wm-gridrow name="gridrow12_1">
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn24_1">
+                                            <wm-label padding="unset 0.5em" name="label22" caption="FILTER"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn25_1" horizontalalign="right">
+                                            <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" name="button6" iconclass="wi wi-chevron-down"></wm-button>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                            <wm-container name="container90" class="center">
+                                <wm-container name="container33_2" width="33%">
+                                    <wm-layoutgrid name="layoutgrid1">
+                                        <wm-gridrow name="gridrow1" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn1" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelAssetNumber" caption="Asset Number"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn2">
+                                                <wm-text name="textAssetNumber" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow2" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn3" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelAssetName" caption="Asset Name"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn4">
+                                                <wm-text name="textAssetName" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow9" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn17" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelAssetClass" caption="Asset Class"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn18">
+                                                <wm-select name="selectAssetClass" height="2em"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow10" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn19" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelAssetType" caption="Asset Type"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn20">
+                                                <wm-select name="selectAssetType" height="2em"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-container width="33%" name="container34">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow3" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn5" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelYearAquisition" caption="Year Aquisition"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                                                <wm-text name="textYear" type="number" placeholder="Enter Year" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow4" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn7" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelPlant" caption="Plant"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                                                <wm-select name="selectPlant" height="2em"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow11" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn21" height="100%">
+                                                <wm-label padding="unset 0.5em" caption="Location" name="labelLocation"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn22">
+                                                <wm-text name="textLocation" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow12" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn23" height="100%">
+                                                <wm-label padding="unset 0.5em" caption="Department" name="labelDepartment"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn24">
+                                                <wm-text name="textDepartment" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-container width="33%" name="container36">
+                                    <wm-layoutgrid name="layoutgrid3">
+                                        <wm-gridrow name="gridrow5" class="center">
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                                                <wm-label padding="unset 0.5em" name="labelCostAquisition" caption="Cost Aquisition" height="100%"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn27">
+                                                <wm-select name="selecCostAquisition" datafield="All Fields" height="2em"></wm-select>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn10" horizontalalign="right">
+                                                <wm-text name="textCostAquisition" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow6" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn11" height="100%">
+                                                <wm-label padding="unset 0.5em" name="labelNBV" caption="NBV"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn12">
+                                                <wm-text name="textNBV" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow13" class="center">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn25" height="100%">
+                                                <wm-label padding="unset 0.5em" caption="Status" name="labelStatus"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn26">
+                                                <wm-text name="textStatus" height="2em"></wm-text>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="container40" horizontalalign="right">
+                                <wm-button class="btn-default" caption="Apply" type="button" margin="unset 0.5em" name="buttonApplyFilter"></wm-button>
+                                <wm-button class="btn-default" caption="Clear Filter" type="button" margin="unset 0.5em" name="buttonClearFilter"></wm-button>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container class="aio-p2p-ub-main-container" name="container26_1" margin="2em unset unset unset">
+                            <wm-container name="container30" horizontalalign="right">
+                                <wm-button class="btn-default" caption="Export to Excel" type="button" margin="unset 0.5em" name="button13" iconclass="wi wi-file-upload"></wm-button>
+                            </wm-container>
+                            <wm-container name="container29">
+                                <wm-table statehandler="URL" name="dummyAssetTable1" title="" dataset="bind:Variables.dummyAsset.dataSet" navigation="Classic">
+                                    <wm-table-column binding="customField" caption="Check" widget-type="checkbox" type="string" searchable="false" show="true" readonly="undefined">
+                                        <wm-checkbox datavalue="bind:row.getProperty('customField')" disabled="bind:colDef.readonly" class="" conditionalclass="" conditionalstyle=""></wm-checkbox>
+                                    </wm-table-column>
+                                    <wm-table-column binding="assetNumber" caption="Asset Number" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="inventoryNumber" caption="Inventory Number" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="assetName" caption="Asset Name" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="assetType" caption="Asset Type" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="yearAquisition" caption="Year Aquisition" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="plant" caption="Plant" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="location" caption="Location" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="department" caption="Department" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="costAquisition" caption="Cost Aquisition" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="nbv" caption="Nbv" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                    <wm-table-column binding="status" caption="Status" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                                </wm-table>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+            <wm-spinner show="false" name="spinner1" class="aio-loading"></wm-spinner>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_UPLOAD_BUDGET" iconclass="" name="uploadBudget" class="aio-ptp-dialog" on-opened="uploadBudgetOpened($event, widget)">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="aio-ptp-button aio-ptp-alternate-btn" caption="bind:appLocale.LANG_CANCEL" on-click="closeDialog()" name="button4" width="111"></wm-button>
+            <wm-button class="aio-ptp-button aio-ptp-primary-btn" caption="bind:appLocale.LANG_SAVE" name="uploadBudgetBtn" width="111" margin="unset unset unset 8px" on-click="uploadBudgetBtnClick($event, widget)"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container21" class="aio-input-group" margin="unset unset 24px unset">
+            <wm-label name="label11" caption="bind:appLocale.LANG_YEAR_T"></wm-label>
+            <wm-text name="uploadBudgetYearInp" class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_YEAR" color="#000"></wm-text>
+            <wm-label padding="unset 0.5em" name="label14_1" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" show="false"></wm-label>
+        </wm-container>
+        <wm-container class="aio-input-group" margin="unset unset 24px unset" name="container22">
+            <wm-label caption="bind:appLocale.LANG_COMPANY_V" name="label8"></wm-label>
+            <wm-select name="select2" class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_COMPANY" dataset="bind:Variables.vdbCompany.dataSet" datafield="All Fields" displayfield="ctitle" color="#000"></wm-select>
+            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" name="label15_1" show="false"></wm-label>
+        </wm-container>
+        <wm-container class="aio-input-group" name="container24">
+            <wm-label caption="bind:appLocale.LANG_UPLOAD_V" name="label20"></wm-label>
+            <wm-container class="aio-input-group" name="container33">
+                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_FILE_XLS" name="label19"></wm-label>
+            </wm-container>
+            <wm-container name="container24_1" content="uploadFile"></wm-container>
+        </wm-container>
+        <wm-label padding="unset 0.5em" name="label21_1" caption="bind:appLocale.LANG_ISREQUIRED" fontstyle="italic" fontweight="bold" margin="23px unset unset unset"></wm-label>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_VIEW_BUDGET" iconclass="" name="uploadBudgetEdit" class="aio-ptp-dialog" on-opened="uploadBudgetEditOpened($event, widget)">
+        <wm-container class="aio-input-group" margin="unset unset 24px unset" name="container25">
+            <wm-label caption="bind:appLocale.LANG_YEAR" name="label14"></wm-label>
+            <wm-text class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_YEAR" name="text5" color="#000" disabled="true"></wm-text>
+        </wm-container>
+        <wm-container class="aio-input-group" margin="unset unset 24px unset" name="container26">
+            <wm-label caption="bind:appLocale.LANG_COMPANY" name="label15"></wm-label>
+            <wm-select class="aio-p2p-input-field" placeholder="bind:appLocale.LANG_COMPANY" dataset="bind:Variables.vdbCompany.dataSet" datafield="ccode" displayfield="ctitle" name="select3" datavalue="bind:Variables.vmBudgetEdit.dataSet.companyId"
+                color="#000" disabled="true"></wm-select>
+        </wm-container>
+        <wm-container class="aio-input-group" name="container27">
+            <wm-label caption="bind:appLocale.LANG_UPLOAD" name="label16"></wm-label>
+            <wm-container content="uploadFile" name="container28">
+                <wm-param name="fileName" value="bind:Variables.vmBudgetEdit.dataSet.fileData.fileName" type="string"></wm-param>
+                <wm-param name="fileUrl" value="bind:Variables.vmBudgetEdit.dataSet.fileData.fileUrl" type="string"></wm-param>
+                <wm-param name="fileSize" value="bind:Variables.vmBudgetEdit.dataSet.fileData.fileSize" type="integer"></wm-param>
+                <wm-param name="disabled" value="true" type="boolean"></wm-param>
+            </wm-container>
+        </wm-container>
+        <wm-dialogactions name="dialogactions4">
+            <wm-button class="aio-ptp-button aio-ptp-alternate-btn" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" width="111" name="button9"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

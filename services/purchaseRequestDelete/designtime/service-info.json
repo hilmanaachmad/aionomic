@@ -1,0 +1,5 @@
+{
+  "id" : "purchaseRequestDelete",
+  "type" : "RestService",
+  "title" : "purchaseRequestDelete"
+}

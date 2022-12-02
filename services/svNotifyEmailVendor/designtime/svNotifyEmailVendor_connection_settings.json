@@ -1,0 +1,30 @@
+{
+  "endpointAddress" : "https://myapps.aio.co.id/otsuka-api/api/service/email",
+  "method" : "POST",
+  "headers" : { },
+  "redirectEnabled" : true,
+  "requestBody" : "{\n    \"to\" : [\"driyadi@aio.co.id\"],\n    \"subject\": \"Notification from Admin Otsuka GO\",\n    \"text\": \"Test Body\",\n    \"cc\": null,\n    \"html\": null\n}",
+  "queryParams" : { },
+  "authDetails" : null,
+  "contentType" : "application/json",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Date" : [ "Fri, 19 Nov 2021 09:21:34 GMT" ],
+      "Server" : [ "Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2" ],
+      "X-Powered-By" : [ "Express" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Access-Control-Allow-Methods" : [ "GET, POST, OPTIONS, PUT, PATCH, DELETE" ],
+      "Access-Control-Allow-Headers" : [ "authorization, content-type" ],
+      "Access-Control-Allow-Credentials" : [ "true" ],
+      "Content-Type" : [ "application/json; charset=utf-8" ],
+      "Content-Length" : [ "36" ],
+      "ETag" : [ "W/\"24-u0kQ45Nx0dBdvg2zI8hJ7GGQ25o\"" ],
+      "Keep-Alive" : [ "timeout=5, max=100" ],
+      "Connection" : [ "Keep-Alive" ]
+    },
+    "responseBody" : "{\"status\":true,\"data\":\"Email Sent!\"}",
+    "convertedResponse" : null
+  }
+}

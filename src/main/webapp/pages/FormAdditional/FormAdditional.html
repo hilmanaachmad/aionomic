@@ -1,0 +1,227 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.LANG_ADDITIONAL_BUDGET" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail">
+                        <wm-param name="page" value="additional" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content aio-p2p-linear" horizontalalign="center">
+                        <wm-container name="containerSideLeft" show="bind:!Variables.varShowPdf.dataSet.dataValue"></wm-container>
+                        <wm-container name="formContainer" horizontalalign="center" conditionalclass="bind:{'aio-p2p-detail-container' : !Variables.varShowPdf.dataSet.dataValue, 'aio-p2p-detail-container2' : Variables.varShowPdf.dataSet.dataValue}">
+                            <wm-container name="container8" horizontalalign="left" padding="24px unset">
+                                <wm-label caption="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot;  ? appLocale[&quot;LANG_VIEW_ADDITIONAL_BUDGET&quot;] : pageParams.baId ? appLocale[&quot;LANG_EDIT_ADDITIONAL_BUDGET&quot;] : appLocale[&quot;LANG_ADD_NEW_ADDITIONAL_BUDGET&quot;]"
+                                    name="label1" fontsize="32" class="aio-p2p-header"></wm-label>
+                            </wm-container>
+                            <wm-container name="formBody" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset" fontsize="14">
+                                <wm-container name="container11" horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.ubCatId ? 'form-error' : ''">
+                                    <wm-label name="label2" caption="bind:appLocale.LANG_UNBUDGETED_CATEGORY_V"></wm-label>
+                                    <wm-search name="selectCategory" type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_CATEGORY" dataset="bind:Variables.vdbUnbudgetCat.dataSet" displaylabel="ubCatTitle" datafield="ubCatId" matchmode="anywhereignorecase"
+                                        on-select="selectCategorySelect($event, widget, selectedValue)" searchkey="ubCatTitle" datavalue="bind:Variables.vmAdditionalModel.dataSet.ubCatId" class="aio-p2p-form-field" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"></wm-search>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.ubCatId" show="bind:Variables.vmErrorMessage.dataSet.ubCatId ? true : false" name="label18" class="aio-p2p-error-message"></wm-label>
+                                    <wm-picture class="aio-p2p-icon-down" picturesource="resources/images/logos/icon-chevron-down.png" name="picture3"></wm-picture>
+                                </wm-container>
+                                <wm-container name="containerRep" horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.ubCatId ? 'form-error' : ''">
+                                    <wm-label name="labelRep" caption="bind:appLocale.LABEL_REPRESENTATIVE"></wm-label>
+                                    <wm-search name="selectRep" type="autocomplete" placeholder="bind:appLocale.LABEL_SELECT_REPRESENTATIVE" dataset="bind:Variables.vEmployee.dataSet" displaylabel="employeeName" datafield="All Fields" matchmode="anywhereignorecase"
+                                        on-select="selectRepSelect($event, widget, selectedValue)" searchkey="employeeName,nik" class="aio-p2p-form-field" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"
+                                        on-clear="selectRepClear($event, widget)" datavalue="bind:pageParams.baId &amp;&amp; Variables.vmAdditionalModel.dataSet.repNik ? Variables.vEmployeeDef.firstRecord : null"></wm-search>
+                                </wm-container>
+                                <wm-container name="container40_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite7">
+                                        <wm-label caption="bind:appLocale.LANG_ACCUMULATED_UNBUDGET" name="label24_1"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.baUnbudget ? 'form-error':''" name="container41">
+                                            <wm-text placeholder="bind:appLocale.LANG_ENTER_AMOUNT" datavalue="bind:App.formatCurrency(Variables.vmAdditionalModel.dataSet.baUnbudget)" maxchars="19" type="text" class="aio-p2p-form-input" name="textUnbudget"
+                                                maxvalue="15" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"
+                                                updateon="default" on-change="textUnbudgetChange($event, widget, newVal, oldVal)"></wm-text>
+                                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.baUnbudget" show="bind:Variables.vmErrorMessage.dataSet.baUnbudget ? true : false" class="aio-p2p-error-message" name="label25_1"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container12">
+                                    <wm-composite name="composite1" captionposition="top" horizontalalign="left">
+                                        <wm-label name="label4" caption="bind:appLocale.LANG_REASON_AND_PURPOSE_V"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" name="container13" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.baReasonPurpose ? 'form-error' : ''">
+                                            <wm-textarea name="textareaReason" placeholder="bind:appLocale.LANG_ENTER_REASON_AND_PURPOSE" datavalue="bind:Variables.vmAdditionalModel.dataSet.baReasonPurpose" class="aio-p2p-form-input" maxchars="500" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"></wm-textarea>
+                                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.baReasonPurpose" name="label14_1" show="bind:Variables.vmErrorMessage.dataSet.baReasonPurpose ? true : false" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container14">
+                                    <wm-composite name="composite2" captionposition="top" horizontalalign="left">
+                                        <wm-label name="label7" caption="bind:appLocale.LANG_ADDITIONAL_AMOUNT_V"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" name="container15" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.baAmount ? 'form-error':''">
+                                            <wm-text name="textAmount" placeholder="bind:appLocale.LANG_ENTER_AMOUNT" datavalue="bind:App.formatCurrency(Variables.vmAdditionalModel.dataSet.baAmount)" maxchars="19" type="text" class="aio-p2p-form-input" maxvalue="15"
+                                                disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"
+                                                updateon="default" on-change="textAmountChange($event, widget, newVal, oldVal)"></wm-text>
+                                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.baAmount" name="label15_1" show="bind:Variables.vmErrorMessage.dataSet.baAmount ? true : false" class="aio-p2p-error-message"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container16">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite3">
+                                        <wm-label caption="bind:appLocale.LANG_BUDGET_YEAR_V" name="label8"></wm-label>
+                                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container17" conditionalclass="bind:Variables.vmErrorMessage.dataSet.baYear ? 'form-error' : ''">
+                                            <wm-text placeholder="bind:appLocale.LANG_SELECT_YEAR" name="selectYear" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"></wm-text>
+                                            <wm-picture name="picture1" class="aio-p2p-icon-date" picturesource="resources/images/logos/date.png"></wm-picture>
+                                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.baYear" name="label11_2" show="bind:Variables.vmErrorMessage.dataSet.baYear ? true : false" class="aio-p2p-error-message" color="#FF5756"></wm-label>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container horizontalalign="left" name="container19" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.ioNumber ? 'form-error' : ''">
+                                    <wm-label caption="bind:appLocale.LANG_IO_NUMBER_V" name="label11"></wm-label>
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SEARCH_IO_NUMBER" name="searchIO" dataset="bind:Variables.queryGetIOListBH.dataSet" searchkey="ioNumber,ioName" displaylabel="bind:$[ioName] ? $[ioNumber] +' - '+ $[ioName] : $[ioNumber]"
+                                        datafield="All Fields" on-select="searchIOSelect($event, widget, selectedValue)" datavalue="bind:{&quot;ioNumber&quot;: Variables.vmAdditionalModel.dataSet.ioNumber, &quot;ioName&quot;: Variables.vmAdditionalModel.dataSet.ioDesc}"
+                                        class="aio-p2p-form-field" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"></wm-search>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.ioNumber" name="label16" show="bind:Variables.vmErrorMessage.dataSet.ioNumber ? true : false" class="aio-p2p-error-message"></wm-label>
+                                    <wm-picture name="picture2" class="aio-p2p-icon-down" picturesource="resources/images/logos/icon-chevron-down.png"></wm-picture>
+                                </wm-container>
+                                <wm-container name="container20">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite4">
+                                        <wm-label caption="bind:appLocale.LABEL_IO_DESCRIPTION" name="label13"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container21">
+                                            <wm-text placeholder="" name="textIODesc" disabled="true" datavalue="bind:Variables.vmAdditionalModel.dataSet.ioDesc"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container39_1">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite6">
+                                        <wm-label caption="bind:appLocale.LANG_DEPARTMENT" name="label26_1"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container40">
+                                            <wm-text placeholder="" disabled="true" datavalue="bind:Variables.vmAdditionalModel.dataSet.ioDepartement" name="textIODepartment"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container23">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite5">
+                                        <wm-label caption="bind:appLocale.LANG_BRAND" name="label15"></wm-label>
+                                        <wm-container class="col-md-9" width="100%" name="container24">
+                                            <wm-text placeholder="" name="textIOBrand" disabled="true" datavalue="bind:Variables.vmAdditionalModel.dataSet.brTitle"></wm-text>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container name="container22_1" horizontalalign="left">
+                                    <wm-label caption="bind:appLocale.LANG_ATTACHMENT_V" name="label11_1"></wm-label>
+                                    <wm-container name="container26">
+                                        <wm-container name="container27" display="flex" class="aio-p2p-upload-container">
+                                            <wm-button class="btn-default aio-p2p-btn-upload" caption="bind:appLocale.LANG_SELECT_FILE" type="button" name="button6" iconurl="resources/images/logos/icon-file.png" on-click="button6Click($event, widget)" disabled="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? true : false"></wm-button>
+                                            <wm-container name="container28" width="100%"></wm-container>
+                                        </wm-container>
+                                        <wm-container name="container42" margin="5px unset unset unset">
+                                            <wm-layoutgrid name="layoutgrid1">
+                                                <wm-gridrow name="gridrow1">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn1" horizontalalign="left">
+                                                        <wm-label name="label3_1" caption="bind:appLocale.LANG_FILE_FORMAT" color="#666666"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow6">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                                                        <wm-label caption="bind:appLocale.LANG_WARNING_SPECIAL_CHAR" color="#666666" name="label30_1"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow2">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn3" padding="15px unset unset unset">
+                                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" dataset="bind:Variables.varListFile.dataSet"
+                                                            navigation="None" nodatamessage="" name="list2">
+                                                            <wm-listtemplate layout="inline" name="listtemplate2">
+                                                                <wm-layoutgrid show="true" name="layoutgrid2">
+                                                                    <wm-gridrow name="gridrow3">
+                                                                        <wm-gridcolumn columnwidth="10" name="gridcolumn5">
+                                                                            <wm-label caption="bind:Widgets.list2.currentItem.aaAttachment" class="aio-p2p-clickable" on-click="label26_2Click($event, widget, item, currentItemWidgets)" color="#404143" name="label26_2"></wm-label>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="2" horizontalalign="right" name="gridcolumn6">
+                                                                            <wm-picture picturesource="resources/images/logos/icon-eye.png" class="aio-p2p-clickable" show="bind:Widgets.list2.currentItem.aaAttachment.indexOf('.pdf') !== -1 ? true : false"
+                                                                                on-click="picture7Click($event, widget, item, currentItemWidgets)" name="picture7" margin="unset 8px unset unset"></wm-picture>
+                                                                            <wm-picture picturesource="resources/images/logos/icon-trash.png" class="aio-p2p-clickable" show="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? false : true"
+                                                                                name="picture5" on-click="picture5Click($event, widget, item, currentItemWidgets)"></wm-picture>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-listtemplate>
+                                                        </wm-list>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow4">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn5_1">
+                                                        <wm-label padding="unset 0.5em" name="label27" caption="bind:appLocale.LANG_ISREQUIRED" fontstyle="italic" fontweight="bold"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-fileupload name="attachmentReclass" on-select="attachmentReclassSelect($event, widget, selectedFiles)" caption="Select File" iconclass="wi wi-file-text" contenttype=".jpeg .jpg .pdf .docx .doc .xlsx .xls" show="false"></wm-fileupload>
+                                </wm-container>
+                            </wm-container>
+                            <wm-spinner show="false" name="spinner1" servicevariabletotrack="dbTblMEmpPriceLimit,dbTblTAdditionalAttachment,dbTblTAdditionalHistory,dbTblTInbox,FileServiceDeleteFile,FileServiceDownloadFile,FileServiceUploadFile,queryGetIOListBH,vdbBudgetAdditional,vdbTaskList"
+                                class="top-spinner"></wm-spinner>
+                            <wm-container name="btnContainer">
+                                <wm-container name="container24_1" class="col-md-2" horizontalalign="left">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_HISTORY" type="button" margin="unset 0.5em unset unset" name="buttonHistory" iconurl="resources/images/logos/icon-history.png" color="#026CB6" fontweight="bold"
+                                        on-click="Widgets.dialogHistory.open()" padding="10px 40px"></wm-button>
+                                </wm-container>
+                                <wm-container class="col-md-10" horizontalalign="right" name="container25">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_SAVE" type="button" name="buttonSave" color="#026CB6" fontweight="bold" on-click="buttonSaveClick($event, widget)" show="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? false : true"
+                                        disabled="bind:Variables.vmLoading.dataSet.dataValue" padding="10px 40px"></wm-button>
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_SUBMIT" type="button" margin="unset unset unset 8px" name="buttonSubmit" color="#fff" backgroundcolor="#026CB6" fontweight="bold" on-click="buttonSubmitClick($event, widget)"
+                                        show="bind:Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Submitted&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Rejected&quot; || Variables.vmAdditionalModel.dataSet.baRemarks == &quot;Accepted&quot; ? false : true"
+                                        disabled="bind:Variables.vmLoading.dataSet.dataValue" padding="10px 40px"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="containerSideRightPdf" show="bind:Variables.varShowPdf.dataSet.dataValue" width="50%" class="aio-ptp-pdf-viewer">
+                            <wm-container name="container47" horizontalalign="right" padding="70px 10px 5px unset" conditionalstyle="bind:{
+    position: &quot;sticky&quot;,
+    top: &quot;0px&quot;,
+    zIndex: &quot;10&quot;
+}">
+                                <wm-picture name="picture4" width="15" on-click="picture4Click($event, widget)" class="aio-p2p-clickable" pictureplaceholder="resources/images/imagelists/icon-close.png"></wm-picture>
+                            </wm-container>
+                            <wm-container name="container48" padding="unset 10px unset 25px" class="l">
+                                <div id="pdf-canvas-container"></div>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container show="bind:!Variables.varShowPdf.dataSet.dataValue" name="containerRigtht"></wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_HISTORY" iconclass="" name="dialogHistory" class="aio-p2p-modal" width="60%">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button6_1" padding="10px 40px" margin="unset unset 24px unset"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container29" display="block" backgroundcolor="#F6F7F8" padding="8px 16px">
+            <wm-container name="container30" display="inline-block" width="25%">
+                <wm-label padding="unset 0.5em" name="label23" caption="bind:appLocale.LANG_NAME" class="aio-p2p-header-history"></wm-label>
+            </wm-container>
+            <wm-container name="container31" display="inline-block" width="15%">
+                <wm-label padding="unset 0.5em" name="label24" caption="bind:appLocale.LANG_ACTIONS" class="aio-p2p-header-history"></wm-label>
+            </wm-container>
+            <wm-container display="inline-block" name="container32" width="25%">
+                <wm-label padding="unset 0.5em" name="label25" caption="bind:appLocale.LANG_DATE" class="aio-p2p-header-history"></wm-label>
+            </wm-container>
+            <wm-container display="inline-block" name="container33" width="35%">
+                <wm-label padding="unset 0.5em" name="label26" caption="bind:appLocale.LANG_COMMENTS" class="aio-p2p-header-history"></wm-label>
+            </wm-container>
+        </wm-container>
+        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" name="listHistory" navigation="None" dataset="bind:Variables.MODELHistory.dataSet">
+            <wm-listtemplate layout="inline" name="listtemplate1">
+                <wm-container display="block" name="container35">
+                    <wm-container display="inline-block" name="container36" width="25%">
+                        <wm-label padding="unset 0.5em" name="label28" caption="bind:Widgets.listHistory.currentItem.adEmployeeName"></wm-label>
+                    </wm-container>
+                    <wm-container display="inline-block" name="container37" width="15%">
+                        <wm-label padding="unset 0.5em" name="label29" caption="bind:Widgets.listHistory.currentItem.adAction"></wm-label>
+                    </wm-container>
+                    <wm-container display="inline-block" name="container38" width="25%">
+                        <wm-label padding="unset 0.5em" name="label30" caption="bind:Widgets.listHistory.currentItem.adTimestamp  | toDate: 'dd/MM/yyyy HH:mm:ss'"></wm-label>
+                    </wm-container>
+                    <wm-container display="inline-block" name="container39" width="35%">
+                        <wm-label padding="unset 0.5em" name="label31" caption="bind:Widgets.listHistory.currentItem.adComment" hint="bind:Widgets.listHistory.currentItem.adComment"></wm-label>
+                    </wm-container>
+                </wm-container>
+            </wm-listtemplate>
+        </wm-list>
+    </wm-dialog>
+</wm-page>

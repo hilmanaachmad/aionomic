@@ -1,0 +1,122 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.LANG_TASK_LIST_CHECKER" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="taskListCheckerPage" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_TASK_LIST_CHECKER" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
+                        <wm-container name="background" backgroundcolor="#fff">
+                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container">
+                                <wm-container name="container15" padding="unset unset unset 8px" margin="unset unset 25px unset">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow2">
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn5_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite2">
+                                                    <wm-container class="col-md-9" name="container15_1" width="100%">
+                                                        <wm-select name="selectSearchBy" dataset="bind:Variables.vmSearchCriteria.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY"></wm-select>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite3">
+                                                    <wm-container class="col-md-9" name="container16_1" width="100%">
+                                                        <wm-text name="searchValue" type="search" disabled="bind:Widgets.selectSearchBy.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" show="bind:Widgets.selectSearchBy.datavalue === 1 ? false : Widgets.selectSearchBy.datavalue === 4 ?false : true "
+                                                            updateon="default"></wm-text>
+                                                        <wm-date placeholder="bind:appLocale.LANG_SELECT_DATE" name="date2" show="bind:Widgets.selectSearchBy.datavalue === 4 ? true : false" datepattern="dd/MM/yyyy"></wm-date>
+                                                        <wm-date name="date3" placeholder="bind:appLocale.LANG_SELECT_DATE" show="bind:Widgets.selectSearchBy.datavalue === 1 ? true : false" datepattern="dd/MM/yyyy"></wm-date>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-spinner show="false" name="spinner2" class="spinner-show"></wm-spinner>
+                                <wm-container name="container37">
+                                    <wm-container name="container38">
+                                        <wm-container class="aio-p2p-table-header" padding="16px" name="container39">
+                                            <wm-container display="inline-block" width="5%" name="container40_1">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NO" name="label22_1"></wm-label>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="21%" class="aio-p2p-clickable" on-click="container41Click($event, widget)" name="container41">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RECEIVE_DATE" name="label23_1" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTPr.orderBy === &quot;prModifiedAt ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTPr.orderBy === &quot;prModifiedAt DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture10" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="17%" class="aio-p2p-clickable" on-click="container42Click($event, widget)" name="container42">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_TASK_TYPE" name="label24" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:&quot;resources/images/logos/icon-up-down.png&quot;" name="picture11" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" on-click="container43Click($event, widget)" name="container43">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_SUBJECT" name="label25" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTPr.orderBy === &quot;prId ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTPr.orderBy === &quot;prId DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture12" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="17%" class="aio-p2p-clickable" on-click="container44Click($event, widget)" name="container44">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DUE_DATE" name="label26" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTPr.orderBy === &quot;prModifiedAt ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTPr.orderBy === &quot;prModifiedAt DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture13" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" on-click="container45Click($event, widget)" name="container45">
+                                                <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_EMPLOYEE" name="label27" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTPr.orderBy === &quot;prCreatedName ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTPr.orderBy === &quot;prCreatedName DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture14" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.svGetCheckerTasklist.dataSet" navigation="Basic"
+                                            on-beforedatarender="dataListBeforedatarender(widget, $data)" name="list3" statehandler="none">
+                                            <wm-listtemplate layout="media" name="listtemplate3">
+                                                <wm-container padding="unset 8px" name="container51">
+                                                    <wm-container display="inline-block" width="5%" name="container52">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.numRow" name="label33"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="21%" name="container53">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:Widgets.list3.currentItem.prModifiedAt | toDate: 'dd/MM/yyyy HH:mm:ss'" name="label34"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="17%" name="container54">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.taskType" name="label35"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" name="container55">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.prRef" name="label36"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="17%" name="container56">
+                                                        <wm-label padding="unset 0.5em" caption="bind:dueDate(Widgets.list3.currentItem.prModifiedAt)  | toDate: 'dd/MM/yyyy'" name="label37"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" name="container57">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.prCreatedName" name="label38"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="right" name="container63">
+                                                        <wm-picture picturesource="resources/images/logos/icon-pencil.png" on-click="picture10_1Click($event, widget, item, currentItemWidgets)" margin="unset 8px unset unset" class="aio-p2p-clickable" name="picture10_1"
+                                                            show="true"></wm-picture>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container margin="25px unset unset unset" name="container64">
+                                    <wm-layoutgrid name="layoutgrid5">
+                                        <wm-gridrow name="gridrow5">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn23"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn24">
+                                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_SHOW" padding="2px unset" margin="8px unset unset unset" name="label44"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn25">
+                                                <wm-select name="select9" datavalue="10" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" displayfield="name" on-change="select9Change($event, widget, newVal, oldVal)"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

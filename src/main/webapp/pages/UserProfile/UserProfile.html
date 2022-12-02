@@ -1,0 +1,157 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.LANG_USER_PROFILE" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar"></wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_PROFILE" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px">
+                        <wm-container name="container7" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset">
+                            <wm-container name="container8" display="inline-block" margin="unset 24px unset unset" class="vertical-align-middle aio-p2p-image-container">
+                                <wm-picture name="picture2_1" picturesource="resources/images/logos/icon-camera.png" class="aio-p2p-image-btn" on-click="picture2_1Click($event, widget)"></wm-picture>
+                                <wm-container name="container41" class="aio-ptp-remove" width="100%" height="100%" conditionalstyle="bind:{ background : &quot;rgb(105,105,105, 0.5)&quot;}">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_REMOVE" type="button" margin="2em 0.5em unset 0.5em" name="button3_1" fontsize="12" fontfamily="Inter" color="#ffffff" backgroundcolor="#FF5756" on-click="button3_1Click($event, widget)"></wm-button>
+                                </wm-container>
+                                <wm-picture name="picture2" shape="circle" pictureaspect="Both" width="82" height="82" picturesource="bind:Variables.loggedInUserData.dataSet.user_profile_pic"></wm-picture>
+                            </wm-container>
+                            <wm-container name="container9" display="inline-block" class="vertical-align-top">
+                                <wm-container name="container10">
+                                    <wm-label name="label3" caption="bind:Variables.loggedInUserData.dataSet.user_full_name" fontweight="bold" fontsize="28"></wm-label>
+                                </wm-container>
+                                <wm-container name="container12">
+                                    <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_IVENDOR_PROFILE" type="button" margin="unset 0.5em" name="button1" show="bind:App.Variables.loggedInUserData.dataSet.user_type.indexOf(&quot;Vendor&quot;) !== -1 ? true : false"
+                                        on-click="button1Click($event, widget)"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                            <wm-fileupload name="fileupload1" on-select="Variables.FileServiceUploadFile.invoke()" contenttype="image/*" show="false" maxfilesize="5"></wm-fileupload>
+                        </wm-container>
+                        <wm-container name="container12_1">
+                            <wm-tabs name="tabs1" class="aio-p2p-tab-container">
+                                <wm-tabpane name="tabpane1" title="bind:appLocale.LANG_DETAIL_PROFILE" class="aio-p2p-tab-nav">
+                                    <wm-container name="container13" padding="24px" show="bind:App.Variables.loggedInUserData.dataSet.user_type.indexOf(&quot;Employee&quot;) !== -1 ? true : false">
+                                        <wm-layoutgrid name="layoutgrid1">
+                                            <wm-gridrow name="gridrow1" padding="unset unset 60px unset">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn1">
+                                                    <wm-container name="container14">
+                                                        <wm-container name="container15">
+                                                            <wm-label padding="unset 0.5em" name="label3_1" class="aio-p2p-profile-title" caption="bind:appLocale.LANG_DEPARTMENT"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container name="container16" class="aio-p2p-profile-value">
+                                                            <wm-label padding="unset 0.5em" name="label4" caption="bind:getDepartmentList(Variables.loggedInUserData.dataSet.user_department)"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn2">
+                                                    <wm-container name="container14">
+                                                        <wm-container name="container15">
+                                                            <wm-label padding="unset 0.5em" name="label3_1" class="aio-p2p-profile-title" caption="bind:appLocale.LANG_LEVEL"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container name="container16" class="aio-p2p-profile-value">
+                                                            <wm-label padding="unset 0.5em" name="label4" caption="bind:Variables.loggedInUserData.dataSet.user_level + &quot; (&quot; + Variables.loggedInUserData.dataSet.user_level_code + &quot;)&quot;"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                                                    <wm-container name="container14">
+                                                        <wm-container name="container15">
+                                                            <wm-label padding="unset 0.5em" name="label3_1" class="aio-p2p-profile-title" caption="bind:appLocale.LANG_POSITION"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container name="container16" class="aio-p2p-profile-value">
+                                                            <wm-label padding="unset 0.5em" name="label4" caption="bind:Variables.loggedInUserData.dataSet.user_position"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow2">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn3">
+                                                    <wm-container name="container14">
+                                                        <wm-container name="container15">
+                                                            <wm-label padding="unset 0.5em" name="label3_1" class="aio-p2p-profile-title" caption="bind:appLocale.LANG_EMAIL"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container name="container16" class="aio-p2p-profile-value">
+                                                            <wm-label padding="unset 0.5em" name="label4" caption="bind:Variables.loggedInUserData.dataSet.user_email"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                    <wm-container padding="24px" show="bind:App.Variables.loggedInUserData.dataSet.user_type.indexOf(&quot;Vendor&quot;) !== -1 ? true : false" name="container37">
+                                        <wm-layoutgrid name="layoutgrid2">
+                                            <wm-gridrow name="gridrow4">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                                                    <wm-container name="container47">
+                                                        <wm-container name="container48">
+                                                            <wm-label padding="unset 0.5em" class="aio-p2p-profile-title" caption="bind:appLocale.LANG_EMAIL" name="label22"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container class="aio-p2p-profile-value" name="container49">
+                                                            <wm-label padding="unset 0.5em" caption="bind:Variables.loggedInUserData.dataSet.user_email" name="label23"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                </wm-tabpane>
+                                <wm-tabpane name="tabpane2" title="bind:appLocale.LANG_CHANGE_PASSWORD" padding="24px" class="aio-p2p-tab-nav">
+                                    <wm-container name="container25" width="566">
+                                        <wm-container name="container26">
+                                            <wm-container name="container26_1">
+                                                <wm-composite name="composite1" captionposition="top">
+                                                    <wm-label class="col-md-3 control-label" name="label26" caption="bind:appLocale.LANG_CURRENT_PASSWORD" fontsize="14"></wm-label>
+                                                    <wm-container class="col-md-9 aio-p2p-form" name="container26_2" width="100%" conditionalclass="bind:Variables.vmErrorMessages.dataSet.userPassword ? &quot;form-error&quot; : &quot;&quot;">
+                                                        <wm-text name="currentPassword" type="password" placeholder="bind:appLocale.LANG_ENTER_CURRENT_PASSWORD" fontsize="14" on-change="currentPasswordChange($event, widget, newVal, oldVal)" on-keyup="currentPasswordKeyup($event, widget)"
+                                                            class="aio-p2p-form-input"></wm-text>
+                                                        <wm-picture name="pictureViewCurrent" class="aio-p2p-icon-down" width="24" height="24" picturesource="bind:Widgets.currentPassword.type === &quot;text&quot; ? &quot;resources/images/logos/icon-unvisible.png&quot; : &quot;resources/images/logos/icon-visible.png&quot;"
+                                                            on-click="pictureViewCurrentClick($event, widget)"></wm-picture>
+                                                    </wm-container>
+                                                    <wm-label padding="unset 0.5em" name="label13" caption="bind:Variables.vmErrorMessages.dataSet.userPassword" show="bind:Variables.vmErrorMessages.dataSet.userPassword != &quot;&quot; ? 1 : 0" color="#FF5756"></wm-label>
+                                                </wm-composite>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container name="container27">
+                                            <wm-container name="container27_1">
+                                                <wm-composite name="composite2" captionposition="top">
+                                                    <wm-label class="col-md-3 control-label" name="label27" caption="bind:appLocale.LANG_NEW_PASSWORD" fontsize="14"></wm-label>
+                                                    <wm-container class="col-md-9 aio-p2p-form" name="container27_2" width="100%" conditionalclass="bind:Variables.vmErrorMessages.dataSet.newPassword ? &quot;form-error&quot; : &quot;&quot;">
+                                                        <wm-text name="newPassword" placeholder="bind:appLocale.LANG_ENTER_NEW_PASSWORD" type="password" fontsize="14" on-keyup="newPasswordKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                                                        <wm-label padding="unset 0.5em" caption="bind:Variables.vmErrorMessages.dataSet.newPassword" show="bind:Variables.vmErrorMessages.dataSet.newPassword != &quot;&quot; ? 1 : 0" name="label14"
+                                                            color="#FF5756"></wm-label>
+                                                        <wm-picture class="aio-p2p-icon-down" width="24" height="24" picturesource="bind:Widgets.newPassword.type === &quot;text&quot; ? &quot;resources/images/logos/icon-unvisible.png&quot; : &quot;resources/images/logos/icon-visible.png&quot;"
+                                                            on-click="pictureNewPassClick($event, widget)" name="pictureNewPass"></wm-picture>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container name="container28">
+                                            <wm-container name="container28_1">
+                                                <wm-composite name="composite3" captionposition="top">
+                                                    <wm-label class="col-md-3 control-label" name="label28" caption="bind:appLocale.LANG_RETYPE_NEW_PASSWORD" fontsize="14"></wm-label>
+                                                    <wm-container class="col-md-9 aio-p2p-form" name="container28_2" width="100%" conditionalclass="bind:Variables.vmErrorMessages.dataSet.confirmPassword ? &quot;form-error&quot; : &quot;&quot;">
+                                                        <wm-text name="confirmPassword" placeholder="bind:appLocale.LANG_RETYPE_NEW_PASSWORD" type="password" updateon="blur" fontsize="14" on-keyup="confirmPasswordKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                                                        <wm-label padding="unset 0.5em" caption="bind:Variables.vmErrorMessages.dataSet.confirmPassword" show="bind:Variables.vmErrorMessages.dataSet.confirmPassword != &quot;&quot; ? 1 : 0" name="label15"
+                                                            color="#FF5756"></wm-label>
+                                                        <wm-picture class="aio-p2p-icon-down" width="24" height="24" picturesource="bind:Widgets.confirmPassword.type === &quot;text&quot; ? &quot;resources/images/logos/icon-unvisible.png&quot; : &quot;resources/images/logos/icon-visible.png&quot;"
+                                                            on-click="pictureConfirmPassClick($event, widget)" name="pictureConfirmPass"></wm-picture>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container name="container35" horizontalalign="right">
+                                            <wm-container name="container36" display="inline-flex" class="aio-p2p-container-right" horizontalalign="center">
+                                                <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_SAVE" type="button" margin="unset 0.5em" name="button3" on-click="button3Click($event, widget)"></wm-button>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-tabpane>
+                            </wm-tabs>
+                            <wm-spinner show="false" name="spinner1" servicevariabletotrack="vdbqSetProfilePic,dbTblMUserData,FileServiceDeleteFile,qChangePassEmpl,qCheckUserNikPass,qChangePasswordVen,qCheckUserVendor" class="aio-p2p-spinner"></wm-spinner>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

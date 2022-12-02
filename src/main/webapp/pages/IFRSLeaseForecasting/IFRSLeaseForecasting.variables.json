@@ -1,0 +1,236 @@
+{
+  "dummyExistingLease" : {
+    "_id" : "wm-dummyExistingLease-wm.Variable-1641889293107",
+    "name" : "dummyExistingLease",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dd3df2ec7ec95efa05da35",
+      "assetNumber" : 6886620,
+      "assetName" : "Trasola Sureplex",
+      "assetType" : "exercitation sint",
+      "yearAquisition" : 1993,
+      "plant" : "factory",
+      "location" : "Sukabumi",
+      "department" : "mollit",
+      "costAquisition" : 9658155951,
+      "leasePayment" : 13841370421,
+      "endOfContract" : "29 Jan 2013"
+    }, {
+      "_id" : "61dd3df2fb3e310b564612d3",
+      "assetNumber" : 7823185,
+      "assetName" : "Blurrybus Amtas",
+      "assetType" : "anim cillum",
+      "yearAquisition" : 2000,
+      "plant" : "factory",
+      "location" : "Sukabumi",
+      "department" : "culpa",
+      "costAquisition" : 12201220156,
+      "leasePayment" : 15067141631,
+      "endOfContract" : "13 Jun 2002"
+    }, {
+      "_id" : "61dd3df279271b2b9894dffa",
+      "assetNumber" : 7238218,
+      "assetName" : "Noralex Valreda",
+      "assetType" : "enim eu",
+      "yearAquisition" : 1994,
+      "plant" : "HO",
+      "location" : "Kejayan",
+      "department" : "fugiat",
+      "costAquisition" : 13669606968,
+      "leasePayment" : 5394557735,
+      "endOfContract" : "29 Oct 2019"
+    }, {
+      "_id" : "61dd3df2de9e34efa2b5e244",
+      "assetNumber" : 9244905,
+      "assetName" : "Imkan Kraggle",
+      "assetType" : "ad dolore",
+      "yearAquisition" : 2005,
+      "plant" : "HO",
+      "location" : "HO",
+      "department" : "commodo",
+      "costAquisition" : 8129465296,
+      "leasePayment" : 18274723509,
+      "endOfContract" : "27 Aug 2012"
+    }, {
+      "_id" : "61dd3df2eab74e1c518cddae",
+      "assetNumber" : 5060012,
+      "assetName" : "Gology Beadzza",
+      "assetType" : "enim quis",
+      "yearAquisition" : 1993,
+      "plant" : "factory",
+      "location" : "Kejayan",
+      "department" : "Lorem",
+      "costAquisition" : 15234066966,
+      "leasePayment" : 1446252187,
+      "endOfContract" : "14 Aug 2011"
+    }, {
+      "_id" : "61dd3df285477196178226cb",
+      "assetNumber" : 3041273,
+      "assetName" : "Skinserve Ronelon",
+      "assetType" : "do occaecat",
+      "yearAquisition" : 2010,
+      "plant" : "HO",
+      "location" : "Kejayan",
+      "department" : "et",
+      "costAquisition" : 13238118511,
+      "leasePayment" : 12280433375,
+      "endOfContract" : "02 Sep 2007"
+    }, {
+      "_id" : "61dd3df2942a5df84c5f23db",
+      "assetNumber" : 5200889,
+      "assetName" : "Electonic Skyplex",
+      "assetType" : "amet commodo",
+      "yearAquisition" : 2020,
+      "plant" : "HO",
+      "location" : "Sukabumi",
+      "department" : "reprehenderit",
+      "costAquisition" : 13581623404,
+      "leasePayment" : 19566908847,
+      "endOfContract" : "30 Oct 2000"
+    }, {
+      "_id" : "61dd3df2c3e3dfd6cf266b9f",
+      "assetNumber" : 7366982,
+      "assetName" : "Waab Musix",
+      "assetType" : "officia culpa",
+      "yearAquisition" : 1993,
+      "plant" : "HO",
+      "location" : "Sukabumi",
+      "department" : "velit",
+      "costAquisition" : 15432103806,
+      "leasePayment" : 18511056880,
+      "endOfContract" : "17 Jul 1995"
+    }, {
+      "_id" : "61dd3df2c976050eecfae30b",
+      "assetNumber" : 9363886,
+      "assetName" : "Centrexin Ramjob",
+      "assetType" : "nisi veniam",
+      "yearAquisition" : 1993,
+      "plant" : "factory",
+      "location" : "Sukabumi",
+      "department" : "exercitation",
+      "costAquisition" : 18462885469,
+      "leasePayment" : 11490213760,
+      "endOfContract" : "15 Apr 1992"
+    }, {
+      "_id" : "61dd3df2a04732a7a1b345f6",
+      "assetNumber" : 7258786,
+      "assetName" : "Zboo Cyclonica",
+      "assetType" : "nulla occaecat",
+      "yearAquisition" : 2019,
+      "plant" : "HO",
+      "location" : "HO",
+      "department" : "ut",
+      "costAquisition" : 12331586914,
+      "leasePayment" : 2301331801,
+      "endOfContract" : "05 Jul 2003"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyPlanOnRenewal" : {
+    "_id" : "wm-dummyPlanOnRenewal-wm.Variable-1641889807469",
+    "name" : "dummyPlanOnRenewal",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dd3fe8a0563ae726bf7bb3",
+      "aquisitionCost" : 18922811911,
+      "startOfLease" : "04 Oct 1995",
+      "endOfLease" : "06 May 2008",
+      "interestBorrowingRate" : 14731138226,
+      "paymentFrequency" : "Quarterly",
+      "payoutTime" : "03 Aug 2015",
+      "prepayment" : 16381331396
+    }, {
+      "_id" : "61dd3fe82dad66ba18b1366b",
+      "aquisitionCost" : 12335011720,
+      "startOfLease" : "06 Dec 2014",
+      "endOfLease" : "25 Dec 2004",
+      "interestBorrowingRate" : 18713195765,
+      "paymentFrequency" : "Semesterly",
+      "payoutTime" : "18 Jul 1999",
+      "prepayment" : 2188586084
+    }, {
+      "_id" : "61dd3fe8f6c218a76da65f5a",
+      "aquisitionCost" : 18041639163,
+      "startOfLease" : "25 Mar 1994",
+      "endOfLease" : "03 Dec 2014",
+      "interestBorrowingRate" : 15774204295,
+      "paymentFrequency" : "Quarterly",
+      "payoutTime" : "09 May 1999",
+      "prepayment" : 2045817996
+    }, {
+      "_id" : "61dd3fe81e08bc143eab6be6",
+      "aquisitionCost" : 17490569552,
+      "startOfLease" : "18 Dec 2001",
+      "endOfLease" : "09 Apr 1996",
+      "interestBorrowingRate" : 389258965,
+      "paymentFrequency" : "Monthly",
+      "payoutTime" : "24 Sep 1994",
+      "prepayment" : 3673626077
+    }, {
+      "_id" : "61dd3fe82ae88cfe6b962f96",
+      "aquisitionCost" : 4500213547,
+      "startOfLease" : "06 Dec 1992",
+      "endOfLease" : "30 Aug 2000",
+      "interestBorrowingRate" : 7111798847,
+      "paymentFrequency" : "Monthly",
+      "payoutTime" : "14 Jun 2021",
+      "prepayment" : 19370184960
+    }, {
+      "_id" : "61dd3fe87e5d49bbb4a51157",
+      "aquisitionCost" : 12686377453,
+      "startOfLease" : "24 Sep 1995",
+      "endOfLease" : "17 Jun 1992",
+      "interestBorrowingRate" : 17261576626,
+      "paymentFrequency" : "Quarterly",
+      "payoutTime" : "17 Sep 1997",
+      "prepayment" : 13434279840
+    }, {
+      "_id" : "61dd3fe827d7101f31e3b0e9",
+      "aquisitionCost" : 2332231176,
+      "startOfLease" : "07 Jun 2002",
+      "endOfLease" : "18 Jan 2000",
+      "interestBorrowingRate" : 5332608948,
+      "paymentFrequency" : "Yearly",
+      "payoutTime" : "08 Feb 1992",
+      "prepayment" : 16036298943
+    }, {
+      "_id" : "61dd3fe87530a6482243e117",
+      "aquisitionCost" : 1720808603,
+      "startOfLease" : "06 Feb 2014",
+      "endOfLease" : "17 Sep 2018",
+      "interestBorrowingRate" : 16858567019,
+      "paymentFrequency" : "Monthly",
+      "payoutTime" : "03 Mar 2010",
+      "prepayment" : 6953019102
+    }, {
+      "_id" : "61dd3fe87ea4b6b3ab699fbb",
+      "aquisitionCost" : 13546848022,
+      "startOfLease" : "16 Jan 1997",
+      "endOfLease" : "21 Dec 2019",
+      "interestBorrowingRate" : 16037704578,
+      "paymentFrequency" : "Semesterly",
+      "payoutTime" : "14 May 2020",
+      "prepayment" : 14206813070
+    }, {
+      "_id" : "61dd3fe88cd53244086729d2",
+      "aquisitionCost" : 13003120310,
+      "startOfLease" : "09 Aug 1994",
+      "endOfLease" : "02 Jan 2014",
+      "interestBorrowingRate" : 8189478975,
+      "paymentFrequency" : "Monthly",
+      "payoutTime" : "09 Jan 2004",
+      "prepayment" : 5935532876
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

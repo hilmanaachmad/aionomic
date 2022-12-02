@@ -1,0 +1,302 @@
+{
+  "sortirNumber" : {
+    "_id" : "wm-sortirNumber-wm.Variable-1607031160221",
+    "name" : "sortirNumber",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "dataValue" : 10
+    }, {
+      "name" : "30 Rows",
+      "dataValue" : 30
+    }, {
+      "name" : "50 Rows",
+      "dataValue" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vdbDelegation" : {
+    "_id" : "wm-vdbDelegation-wm.LiveVariable-1607046484913",
+    "name" : "vdbDelegation",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTDelegation",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 10,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "delCreatedAt desc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "delId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "del_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delFromUserId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_from_user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delToUserId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_to_user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delAvailDatetime",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "del_avail_datetime",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delExpDatetime",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "del_exp_datetime",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "del_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "SYSTEM",
+        "scale" : 0
+      }, {
+        "fieldName" : "delReason",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_reason",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delFromUserName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_from_user_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delToUserName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_to_user_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblTDelegation",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTDelegation",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "delId" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "tbl_t_delegation",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "delFromUserId",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.selectSearchBy.datavalue == \"2\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "delToUserId",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.selectSearchBy.datavalue == \"3\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "delAvailDatetime",
+        "type" : "datetime",
+        "matchMode" : "exact",
+        "value" : "bind:Widgets.selectSearchBy.datavalue == \"4\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "delExpDatetime",
+        "type" : "datetime",
+        "matchMode" : "exact",
+        "value" : "bind:Widgets.selectSearchBy.datavalue == \"5\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTDelegation"
+  },
+  "vdbDelHistory" : {
+    "_id" : "wm-vdbDelHistory-wm.ServiceVariable-1608484698009",
+    "name" : "vdbDelHistory",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "roleCode",
+      "value" : "bind:Widgets.selectSearchBy.datavalue == \"1\" ? Widgets.searchValue.datavalue : null",
+      "type" : "string"
+    }, {
+      "target" : "fromEmployee",
+      "value" : "bind:Widgets.selectSearchBy.datavalue == \"2\" ? Widgets.searchValue.datavalue : null",
+      "type" : "string"
+    }, {
+      "target" : "toEmployee",
+      "value" : "bind:Widgets.selectSearchBy.datavalue == \"3\" ? Widgets.searchValue.datavalue : null",
+      "type" : "string"
+    }, {
+      "target" : "reason",
+      "value" : "bind:Widgets.selectSearchBy.datavalue == \"6\" ? Widgets.searchValue.datavalue : null",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.aio_ptp.models.query.GetDelegationHistoryResponse",
+    "service" : "aio_ptp",
+    "operation" : "executeGetDelegationHistory",
+    "operationId" : "QueryExecutionController_executeGetDelegationHistory",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 10,
+    "orderBy" : "delCreatedAt DESC",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vdbDelHistoryAll" : {
+    "_id" : "wm-vdbDelHistoryAll-wm.ServiceVariable-1614324126139",
+    "name" : "vdbDelHistoryAll",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.aio_ptp.models.query.GetDelegationHistoryResponse",
+    "service" : "aio_ptp",
+    "operation" : "executeGetDelegationHistory",
+    "operationId" : "QueryExecutionController_executeGetDelegationHistory",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 1000,
+    "orderBy" : "delCreatedAt desc",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vmSearchCriteria" : {
+    "_id" : "wm-searchCriteria-wm.Variable-1606354489201",
+    "name" : "vmSearchCriteria",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Module",
+      "dataValue" : "1"
+    }, {
+      "name" : "From Employee",
+      "dataValue" : "2"
+    }, {
+      "name" : "To Employee",
+      "dataValue" : "3"
+    }, {
+      "name" : "Reason",
+      "dataValue" : "6"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

@@ -1,0 +1,61 @@
+.aio-p2p-detail-container {
+    max-width: 781px;
+    margin: auto;
+}
+
+.aio-p2p-btn-upload {
+    color: #026CB6;
+    background: rgba(2, 108, 182, 0.16);
+    border-radius: 4px;
+}
+
+.aio-p2p-form-container {
+    position: relative;
+}
+
+.aio-p2p-icon-down {
+    position: absolute;
+    right: 18px;
+    top: 38px;
+}
+.aio-p2p-icon-date {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+}
+
+/*FORM ERROR*/
+.aio-p2p-form-container .aio-p2p-error-message {
+	display: none;
+}
+.aio-p2p-form-container.form-error .aio-p2p-error-message {
+	display: block;
+	color: #FF5756;
+	font-size: 12px;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-input {
+    border-color: #FF5756;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-field > input {
+    border-color: #FF5756;
+}
+
+/*MODAL*/
+.aio-p2p-modal .dialog-heading {
+    color: #404143;
+}
+
+/*.pdf-scroll{*/
+/*    height: 872px;*/
+/*    overflow: auto;*/
+/*}*/
+
+.aio-p2p-page-content {
+    height: calc(100% - 52px) !important;
+}
+
+.aio-p2p-page-content .aio-p2p-detail-container2,
+.aio-p2p-page-content .aio-ptp-pdf-viewer{
+    height: 100%;
+    overflow: auto;
+}

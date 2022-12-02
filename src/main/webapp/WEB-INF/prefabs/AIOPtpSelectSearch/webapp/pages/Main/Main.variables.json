@@ -1,0 +1,50 @@
+{
+  "listDataset" : {
+    "_id" : "wm-listDataset-wm.Variable-1610562996639",
+    "name" : "listDataset",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "display" : "name0",
+      "data" : "dataValue0"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "selectedData" : {
+    "_id" : "wm-selectedData-wm.Variable-1610566454211",
+    "name" : "selectedData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "display",
+      "value" : "bind:displayvalue"
+    }, {
+      "target" : "value",
+      "value" : "bind:datavalue"
+    } ],
+    "dataSet" : {
+      "display" : "null",
+      "value" : "null"
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

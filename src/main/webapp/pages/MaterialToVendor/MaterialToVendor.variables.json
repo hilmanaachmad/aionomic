@@ -1,0 +1,604 @@
+{
+  "vdbGetMatVendor" : {
+    "_id" : "wm-vdbGetMatVendor-wm.LiveVariable-1606698192968",
+    "name" : "vdbGetMatVendor",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblMMatVendor",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 10,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "mvCreatedAt desc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "mvId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "mv_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "material",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "material",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "materialId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "material_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "vendor",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "vendor",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 2147483647,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "vendorId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "vendor_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 2147483647,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "{}",
+        "scale" : 0
+      }, {
+        "fieldName" : "mvCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "mv_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "SYSTEM",
+        "scale" : 0
+      }, {
+        "fieldName" : "mvCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "mv_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "mvStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "mv_status",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "active",
+        "scale" : 0
+      } ],
+      "entityName" : "TblMMatVendor",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMMatVendor",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "mvId" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "tbl_m_mat_vendor",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "material",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.searchBy.datavalue == \"1\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "vendor",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.searchBy.datavalue == \"2\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "mvStatus",
+        "type" : "string",
+        "matchMode" : "exactignorecase",
+        "value" : "bind:Widgets.searchBy.datavalue == \"3\" ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMMatVendor"
+  },
+  "vdbMaterialGroup" : {
+    "_id" : "wm-vdbMaterialGroup-wm.LiveVariable-1607675001201",
+    "name" : "vdbMaterialGroup",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "VPtpMaterialGroup",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 5,
+    "designMaxResults" : 5,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "sap_master",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "materialGroupDesc asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "materialGroup",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "material_group",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 9,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "authGroup",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "auth_group",
+        "isPrimaryKey" : true,
+        "notNull" : false,
+        "length" : 4,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "materialGroupDesc",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "material_group_desc",
+        "isPrimaryKey" : true,
+        "notNull" : false,
+        "length" : 40,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "materialGroupDesc60",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "material_group_desc_60",
+        "isPrimaryKey" : true,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "VPtpMaterialGroup",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.sap_master.VPtpMaterialGroup",
+      "tableType" : "VIEW",
+      "primaryFields" : [ "materialGroup", "authGroup", "materialGroupDesc", "materialGroupDesc60" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "v_ptp_material_group",
+    "tableType" : "VIEW",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.sap_master.VPtpMaterialGroup"
+  },
+  "vdbVendor" : {
+    "_id" : "wm-vdbVendor-wm.LiveVariable-1607420027682",
+    "name" : "vdbVendor",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "VVendor",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 5,
+    "designMaxResults" : 5,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "AVM2",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "vendorCode asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "vendorCode",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "VendorCode",
+        "isPrimaryKey" : true,
+        "notNull" : false,
+        "length" : 10,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "vendorName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "VendorName",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 140,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "email",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Email",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "add1",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ADD1",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 60,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "add2",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ADD2",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 40,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "add3",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ADD3",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 40,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "city",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "City",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 35,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "groupVendor",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "GroupVendor",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 4,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "title",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Title",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 15,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "region",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Region",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "country",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Country",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "email1",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Email1",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "email2",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Email2",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "telephone",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Telephone",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "mobilePhone",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "MobilePhone",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "VVendor",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.avm2.VVendor",
+      "tableType" : "VIEW",
+      "primaryFields" : [ "vendorCode" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "v_vendor",
+    "tableType" : "VIEW",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.avm2.VVendor"
+  },
+  "vmDeleteItem" : {
+    "_id" : "wm-vmDeleteItem-wm.Variable-1607561348130",
+    "name" : "vmDeleteItem",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : { },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmDeleteList" : {
+    "_id" : "wm-vmDeleteList-wm.Variable-1607561369020",
+    "name" : "vmDeleteList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : { },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmErrorMessage" : {
+    "_id" : "wm-vmErrorMessage-wm.Variable-1607682182166",
+    "name" : "vmErrorMessage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "material" : "",
+      "vendor" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmMatVendorModel" : {
+    "_id" : "wm-vmMatVendorModel-wm.Variable-1607553552618",
+    "name" : "vmMatVendorModel",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "materialTitle",
+      "value" : "bind:Widgets.searchMatCategory.datavalue"
+    }, {
+      "target" : "mvStatus",
+      "value" : "bind:Widgets.toggleStatus.datavalue"
+    } ],
+    "dataSet" : {
+      "material" : "",
+      "mvStatus" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmPerPage" : {
+    "_id" : "wm-vmPerPage-wm.Variable-1607878196111",
+    "name" : "vmPerPage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "value" : 10
+    }, {
+      "name" : "30 Rows",
+      "value" : 30
+    }, {
+      "name" : "50 Rows",
+      "value" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchCriteria" : {
+    "_id" : "wm-searchCriteria-wm.Variable-1606354489201",
+    "name" : "vmSearchCriteria",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Material Group/Category",
+      "dataValue" : "1"
+    }, {
+      "name" : "Vendor",
+      "dataValue" : "2"
+    }, {
+      "name" : "Status",
+      "dataValue" : "3"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmVendorList" : {
+    "_id" : "wm-vmVendorList-wm.Variable-1607560522510",
+    "name" : "vmVendorList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "vendorCode" : "",
+      "vendorName" : ""
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

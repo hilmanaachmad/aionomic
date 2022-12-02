@@ -1,0 +1,217 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.MENU_USER_MAPPING" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="userMapping" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_USER_MAPPING" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
+                        <wm-container name="background" backgroundcolor="#fff" conditionalstyle="bind:{
+    maxWidth: &quot;941px&quot;,
+    minWidth: &quot;600px&quot;
+}">
+                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container">
+                                <wm-container name="container15" padding="unset unset unset 8px">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow2">
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn5_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite2">
+                                                    <wm-container class="col-md-9" name="container15_1" width="100%">
+                                                        <wm-select name="selectSearchBy" dataset="bind:Variables.vmSearchCriteria.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY"></wm-select>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite3">
+                                                    <wm-container class="col-md-9" name="container16_1" width="100%">
+                                                        <wm-text name="searchValue" type="search" disabled="bind:Widgets.selectSearchBy.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD"></wm-text>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-container name="container16" display="flex" class="aio-p2p-space-between" padding="unset unset 16px unset">
+                                    <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_MAPPING_USER_TO_ROLE" type="button" margin="unset 0.5em" name="buttonAdd" on-click="Widgets.addRole.open();button1Click($event, widget)" color="#fff"></wm-button>
+                                    <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="unset 0.5em" name="button2" iconurl="resources/images/logos/icon-export.png" on-click="button2Click($event, widget)"></wm-button>
+                                </wm-container>
+                                <wm-container name="container14" class="aio-p2p-content-container">
+                                    <wm-layoutgrid name="layoutgrid1" class="aio-p2p-table-header">
+                                        <wm-gridrow name="gridrow1" padding="16px">
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn1">
+                                                <wm-label padding="unset 0.5em" name="label1" caption="bind:appLocale.LANG_NO" fontweight="bold"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn2">
+                                                <wm-container name="container28" on-click="container28Click($event, widget)" class="aio-p2p-clickable">
+                                                    <wm-label padding="unset 0.5em" name="label2" caption="bind:appLocale.LANG_ROLE" fontweight="bold"></wm-label>
+                                                    <wm-picture name="picture1" picturesource="resources/images/logos/icon-up-down.png" width="16px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn12">
+                                                <wm-container on-click="container30Click($event, widget)" class="aio-p2p-clickable" name="container30">
+                                                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_TOTAL_ASSIGNED" fontweight="bold" name="label14_1"></wm-label>
+                                                    <wm-picture picturesource="resources/images/logos/icon-up-down.png" name="picture6" width="16px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn5">
+                                                <wm-container name="container29" on-click="container29Click($event, widget)" class="aio-p2p-clickable">
+                                                    <wm-label padding="unset 0.5em" name="label3" caption="bind:appLocale.LANG_STATUS" fontweight="bold"></wm-label>
+                                                    <wm-picture picturesource="resources/images/logos/icon-up-down.png" name="picture2" width="16px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn6"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="roleUserList" dataset="bind:Variables.getRoleUserMapList.dataSet"
+                                        navigation="Basic" on-beforedatarender="roleUserListBeforedatarender(widget, $data)" statehandler="none">
+                                        <wm-listtemplate layout="media" name="listtemplate1">
+                                            <wm-layoutgrid name="layoutgrid4">
+                                                <wm-gridrow name="gridrow5_1">
+                                                    <wm-gridcolumn columnwidth="1" name="gridcolumn12_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.roleUserList.currentItem.nomor" name="label11"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn13_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.roleUserList.currentItem.roleTitle" name="label12"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn14">
+                                                        <wm-label padding="unset 0.5em" caption="bind:totalAssign(Widgets.roleUserList.currentItem.usersName)" name="label13" whitespace="pre-wrap"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn13">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.roleUserList.currentItem.urStatus" name="label15"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn15" horizontalalign="right">
+                                                        <wm-picture name="picture4" picturesource="resources/images/logos/icon-pencil.png" on-click="picture4Click($event, widget, item, currentItemWidgets)" margin="unset 8px unset unset" class="aio-p2p-clickable"></wm-picture>
+                                                        <wm-picture name="picture5" picturesource="resources/images/logos/icon-trash.png" on-click="picture5Click($event, widget, item, currentItemWidgets)" class="aio-p2p-clickable"></wm-picture>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                            <wm-spinner show="false" name="spinnerTable"></wm-spinner>
+                                        </wm-listtemplate>
+                                    </wm-list>
+                                    <wm-container name="container16_4" margin="15px unset unset unset">
+                                        <wm-layoutgrid name="layoutgrid7">
+                                            <wm-gridrow name="gridrow18">
+                                                <wm-gridcolumn columnwidth="9" name="gridcolumn33_1"></wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn37">
+                                                    <wm-label class="col-md-3 control-label" name="label19" caption="bind:appLocale.LANG_SHOW" padding="2px unset" margin="8px unset unset unset"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="2" name="gridcolumn34_1">
+                                                    <wm-select name="select9" datavalue="10" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" displayfield="name" on-change="select9Change($event, widget, newVal, oldVal)"></wm-select>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:Variables.vmRoleUserModel.dataSet.roleId ? appLocale[&quot;LANG_EDIT_USER_MAP&quot;] : appLocale[&quot;LANG_NEW_USER_MAPPING&quot;]" iconclass="" name="addRole" class="aio-p2p-modal">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-outline" caption="bind:appLocale.LANG_CANCEL" on-click="closeDialog()" name="button3"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_SAVE" on-click="button4Click($event, widget)" name="button4" disabled="bind:Variables.vmLoading.dataSet.dataValue"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container13">
+            <wm-container name="container26_1" show="bind:Variables.vmRoleUserModel.dataSet.urStatus? &quot;true&quot; : &quot;false&quot;">
+                <wm-composite name="composite5_1">
+                    <wm-container class="col-md-9" name="container27">
+                        <wm-checkbox caption="Toggle" type="toggle" name="toggleStatus" show="true" datavalue="bind:Variables.vmRoleUserModel.dataSet.urStatus" checkedvalue="active" uncheckedvalue="inactive" backgroundcolor="#2DCA8C" height="24" class="aio-p2p-toggle"
+                            width="48"></wm-checkbox>
+                        <wm-label padding="unset 0.5em" name="label17_1" caption="bind:Widgets.toggleStatus.datavalue"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container14_1">
+                <wm-composite name="composite7" captionposition="top">
+                    <wm-label class="col-md-3 control-label" name="label16_1" caption="bind:appLocale.LANG_ROLE_V"></wm-label>
+                    <wm-container class="col-md-9" name="container34" width="100%">
+                        <wm-select name="selectRole" dataset="bind:Variables.vdbMRole.dataSet" datafield="roleId" displayfield="roleTitle" datavalue="bind:Variables.vmRoleUserModel.dataSet.roleId" placeholder="bind:appLocale.LANG_SELECT_ROLE"></wm-select>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container31">
+                <wm-composite name="composite6" captionposition="top">
+                    <wm-label class="col-md-3 control-label" name="label15_1" caption="bind:appLocale.LANG_EMPLOYEE_NAME_V"></wm-label>
+                    <wm-container class="col-md-9" name="container33" width="100%">
+                        <wm-select name="selectEmpType" dataset="bind:[&quot;Internal Employee&quot;,&quot;Vendor&quot;]" datafield="All Fields" datavalue="bind:Variables.vmRoleUserModel.dataSet.urAdditionalData"></wm-select>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container16_2" show="bind:Variables.vmRoleUserModel.dataSet.urAdditionalData == &quot;Vendor&quot; ? 0 : 1">
+                <wm-composite name="composite5" captionposition="top">
+                    <wm-label class="col-md-3 control-label" name="label14" caption="bind:appLocale.LANG_EMPLOYEE"></wm-label>
+                    <wm-container name="container18" width="100%">
+                        <wm-search name="searchEmployee" type="autocomplete" dataset="bind:Variables.vdbEmployeeList.dataSet" searchkey="employeeName,nik" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="All Fields" matchmode="anywhereignorecase"
+                            datacompletemsg="bind:&quot;&quot;" on-select="search2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH_EMPLOYEE_NIK_OR_NAME" limit="20"></wm-search>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container16_3" show="bind:Variables.vmRoleUserModel.dataSet.urAdditionalData == &quot;Vendor&quot; ? 1 : 0">
+                <wm-composite name="composite6_1" captionposition="top">
+                    <wm-label class="col-md-3 control-label" name="label15_1" caption="bind:appLocale.LANG_VENDOR"></wm-label>
+                    <wm-container name="container18_1" width="100%">
+                        <wm-search name="searchVendor" type="autocomplete" dataset="bind:Variables.qGetVendor.dataSet" searchkey="VCode,VName" displaylabel="bind:$[vendorCode] + ' - ' +$[vendorName]" datafield="All Fields" datacompletemsg="bind:&quot;&quot;"
+                            on-select="search2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH_VENDOR_ID_OR_VENDOR_NAME"></wm-search>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container19">
+                <wm-container name="container21" backgroundcolor="#F6F7F8" padding="16px">
+                    <wm-container name="container22" display="inline-flex" width="30%">
+                        <wm-label padding="unset 0.5em" name="label16" fontsize="13" fontweight="bold" caption="bind:appLocale.LANG_NIK"></wm-label>
+                    </wm-container>
+                    <wm-container display="inline-flex" width="40%" name="container42">
+                        <wm-label padding="unset 0.5em" name="label17" fontsize="13" fontweight="bold" caption="bind:appLocale.LANG_NAME"></wm-label>
+                    </wm-container>
+                    <wm-container name="container23" display="inline-flex" width="30%">
+                        <wm-text name="filterListEmployee" updateon="default" placeholder="Search By NIK" on-keyup="filterListEmployeeKeyup($event, widget)"></wm-text>
+                    </wm-container>
+                </wm-container>
+                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list aio-p2p-employee-list" datafield="All Fields" name="listEmployee" dataset="bind:Variables.vmEmployeeListSearch.dataSet.length ? Variables.vmEmployeeListSearch.dataSet : Variables.vmEmployeeList.dataSet"
+                    navigation="Scroll" statehandler="none">
+                    <wm-listtemplate layout="inline" name="listtemplate">
+                        <wm-container padding="8px 12px" name="container24">
+                            <wm-container display="inline-flex" width="30%" name="container25">
+                                <wm-label padding="unset 0.5em" fontsize="13" caption="bind:nikConvert(Widgets.listEmployee.currentItem.lgNik)" name="label12_1"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-flex" width="45%" name="container26">
+                                <wm-label padding="unset 0.5em" fontsize="13" caption="bind:Widgets.listEmployee.currentItem.lgName" name="label13_1"></wm-label>
+                            </wm-container>
+                            <wm-container name="container25_1" display="inline-block">
+                                <wm-picture name="picture3" picturesource="resources/images/logos/icon-trash.png" class="aio-p2p-clickable" on-click="picture3Click($event, widget, item, currentItemWidgets)"></wm-picture>
+                            </wm-container>
+                        </wm-container>
+                    </wm-listtemplate>
+                </wm-list>
+            </wm-container>
+            <wm-container name="container32" margin="16px unset unset unset">
+                <wm-label class="col-12 control-label" name="label18" caption="bind:appLocale.LANG_DATE"></wm-label>
+                <wm-container name="container36" display="block" class="col-md-6" width="96%" show="bind:Widgets.checkUnlimited.datavalue ? 0 : 1">
+                    <wm-composite name="composite9" captionposition="top">
+                        <wm-container class="col-md-6" name="container38">
+                            <wm-date name="dateFrom" disabled="false" datavalue="bind:Widgets.roleUserList.selecteditem.urFromDate" placeholder="bind:appLocale.LANG_SELECT_DATE_FROM" datepattern="dd MMM yy"></wm-date>
+                        </wm-container>
+                        <wm-container class="col-md-6" name="container39">
+                            <wm-date name="dateTo" disabled="false" datavalue="bind:Widgets.roleUserList.selecteditem.urToDate" placeholder="bind:appLocale.LANG_SELECT_DATE_TO" datepattern="dd MMM yy"></wm-date>
+                        </wm-container>
+                    </wm-composite>
+                </wm-container>
+                <wm-composite name="composite11">
+                    <wm-checkbox caption="Unlimited" class="col-md-9" name="checkUnlimited" checkedvalue="true" uncheckedvalue="false" datavalue="bind:Widgets.roleUserList.selecteditem.urFromDate &amp;&amp; Widgets.roleUserList.selecteditem.urToDate ? false : true"></wm-checkbox>
+                </wm-composite>
+            </wm-container>
+        </wm-container>
+        <wm-spinner show="bind:Variables.vmLoading.dataSet.dataValue" name="spinnerDialog" animation="spin"></wm-spinner>
+        <wm-label padding="unset 0.5em" name="label20" caption="bind:appLocale.LANG_ISREQUIRED" fontweight="bold" fontstyle="italic"></wm-label>
+    </wm-dialog>
+    <wm-confirmdialog on-ok="dialogDeleteOk($event, widget)" on-cancel="Widgets.dialogDelete.close()" name="dialogDelete" title="bind:appLocale.LANG_DELETE_CONFIRMATION" message="bind:appLocale.LANG_ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_ACTION_CAN_T_BE_UNDONE_AND_THE_DATA_CAN_T_BE_RESTORED"
+        oktext="bind:appLocale.LANG_DELETE" class="aio-p2p-modal aio-p2p-modal-delete" canceltext="bind:appLocale.LANG_CANCEL" modal="false" iconclass=""></wm-confirmdialog>
+</wm-page>

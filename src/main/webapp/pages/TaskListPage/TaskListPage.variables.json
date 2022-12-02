@@ -1,0 +1,503 @@
+{
+  "dbTblTDelegation" : {
+    "_id" : "wm-dbTblTDelegation-wm.LiveVariable-1651105921019",
+    "name" : "dbTblTDelegation",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTDelegation",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "delId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "delId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "del_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delFromUserId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_from_user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delToUserId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_to_user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delAvailDatetime",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "del_avail_datetime",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delExpDatetime",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "del_exp_datetime",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "del_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "SYSTEM",
+        "scale" : 0
+      }, {
+        "fieldName" : "delReason",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_reason",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delFromUserName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_from_user_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "delToUserName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "del_to_user_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblTDelegation",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTDelegation",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "delId" ]
+    },
+    "tableName" : "tbl_t_delegation",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "delToUserId",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Variables.loggedInUser.dataSet.name",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTDelegation"
+  },
+  "dbTblTTasklist" : {
+    "_id" : "wm-dbTblTTasklist-wm.LiveVariable-1609736332080",
+    "name" : "dbTblTTasklist",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTTasklist",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 10,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeAll",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "tlId desc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "tlId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "tl_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlTimestamp",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "tl_timestamp",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlType",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "tl_type",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlSubject",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "tl_subject",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 65535,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlDueDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "tl_due_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "userId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlParamId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "tl_param_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlSubmitterName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "tl_submitter_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlModule",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "tl_module",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "tlStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "tl_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "active",
+        "scale" : 0
+      }, {
+        "fieldName" : "isApprovalBod",
+        "type" : "boolean",
+        "fullyQualifiedType" : "boolean",
+        "columnName" : "is_approval_bod",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 1,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblTTasklist",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTTasklist",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "tlId" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "tbl_t_tasklist",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "tlType",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.selectSearchBy.datavalue === 2 ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "tlSubject",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.selectSearchBy.datavalue === 3 ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "tlSubmitterName",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.selectSearchBy.datavalue === 5 ? Widgets.searchValue.datavalue : null",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "tlTimestamp",
+        "type" : "datetime",
+        "matchMode" : "greaterthanequal",
+        "value" : "bind:Widgets.selectSearchBy.datavalue === 1 ? Widgets.date3.datavalue : null ",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "tlDueDate",
+        "type" : "datetime",
+        "matchMode" : "greaterthanequal",
+        "value" : "bind:Widgets.selectSearchBy.datavalue === 4 ? Widgets.date2.datavalue : null ",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "condition" : "OR",
+        "rules" : [ {
+          "target" : "userId",
+          "type" : "string",
+          "matchMode" : "exact",
+          "value" : "bind:Variables.loggedInUser.dataSet.name",
+          "required" : false,
+          "secondvalue" : "",
+          "isFirst" : true
+        }, {
+          "condition" : "AND",
+          "rules" : [ {
+            "target" : "tlModule",
+            "type" : "string",
+            "matchMode" : "exactignorecase",
+            "value" : "BUD",
+            "required" : false,
+            "secondvalue" : ""
+          }, {
+            "target" : "userId",
+            "type" : "string",
+            "matchMode" : "in",
+            "value" : "bind:Variables.loggedInUserData.dataSet.user_delegated_data.BUD || [99]",
+            "required" : false,
+            "secondvalue" : "",
+            "isFirst" : true
+          } ]
+        }, {
+          "condition" : "AND",
+          "rules" : [ {
+            "target" : "tlModule",
+            "type" : "string",
+            "matchMode" : "exactignorecase",
+            "value" : "PRS",
+            "required" : false,
+            "secondvalue" : ""
+          }, {
+            "target" : "userId",
+            "type" : "string",
+            "matchMode" : "in",
+            "value" : "bind:Variables.loggedInUserData.dataSet.user_delegated_data.PRS || [99]",
+            "required" : false,
+            "secondvalue" : "",
+            "isFirst" : true
+          } ]
+        }, {
+          "condition" : "AND",
+          "rules" : [ {
+            "target" : "tlModule",
+            "type" : "string",
+            "matchMode" : "exactignorecase",
+            "value" : "RFQ",
+            "required" : false,
+            "secondvalue" : ""
+          }, {
+            "target" : "userId",
+            "type" : "string",
+            "matchMode" : "in",
+            "value" : "bind:Variables.loggedInUserData.dataSet.user_delegated_data.RFQ || [99]",
+            "required" : false,
+            "secondvalue" : "",
+            "isFirst" : true
+          } ]
+        } ]
+      }, {
+        "target" : "tlStatus",
+        "type" : "string",
+        "matchMode" : "notequalsignorecase",
+        "value" : "deleted",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTTasklist"
+  },
+  "sortirNumber" : {
+    "_id" : "wm-sortirNumber-wm.Variable-1607030584586",
+    "name" : "sortirNumber",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "dataValue" : 10
+    }, {
+      "name" : "30 Rows",
+      "dataValue" : 30
+    }, {
+      "name" : "50 Rows",
+      "dataValue" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchCriteria" : {
+    "_id" : "wm-searchCriteria-wm.Variable-1606354489201",
+    "name" : "vmSearchCriteria",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Receive Date",
+      "dataValue" : 1
+    }, {
+      "name" : "Task Type",
+      "dataValue" : 2
+    }, {
+      "name" : "Subject",
+      "dataValue" : 3
+    }, {
+      "name" : "Due Date",
+      "dataValue" : 4
+    }, {
+      "name" : "Employee",
+      "dataValue" : 5
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

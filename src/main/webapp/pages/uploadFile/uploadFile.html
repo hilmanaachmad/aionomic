@@ -1,0 +1,22 @@
+<wm-partial name="partial1">
+    <wm-container name="container1" class="aio-p2p-input-field">
+        <wm-container name="container2" class="aio-ptp-upload-btn" cursor="pointer" on-click="container2Click($event, widget)" conditionalclass="bind:{
+    disabled: pageParams.disabled
+}">
+            <wm-icon name="icon1" iconclass="wi wi-file-text"></wm-icon>
+            <wm-label name="label2" margin="unset unset 0px 10px" caption="bind:appLocale.LANG_SELECT_FILE"></wm-label>
+        </wm-container>
+        <wm-container name="container3" class="aio-ptp-upload-progress" show="bind:Variables.vmUploadProgress.dataSet.dataValue > 0">
+            <wm-container name="container4" class="aio-ptp-upload-progress-bar" conditionalstyle="bind:{
+    width: Variables.vmUploadProgress.dataSet.dataValue + &quot;%&quot;
+}"></wm-container>
+        </wm-container>
+        <wm-label name="label1" margin="unset unset 0px unset" caption="bind:Variables.vmUploadData.dataSet.fileName || appLocale[&quot;LANG_NO_FILE_SELECTED&quot;]" conditionalclass="bind:{
+    placeholder: !Variables.vmUploadData.dataSet.fileName || !Variables.vmUploadData.dataSet.fileName.length
+}" conditionalstyle="bind:{
+    cursor: Variables.vmUploadData.dataSet.fileName &amp;&amp; Variables.vmUploadData.dataSet.fileName.length ? &quot;pointer&quot; : &quot;&quot;
+}" on-click="label1Click($event, widget)"></wm-label>
+    </wm-container>
+    <wm-fileupload name="fileupload1" on-select="Variables.FileServiceUploadFile.invoke()" show="false" contenttype=".csv" on-beforeselect="fileupload1Beforeselect($event, widget, files)" maxfilesize="10"></wm-fileupload>
+    <wm-textarea name="uploadFileDataset" datavalue="bind:JSON.stringify(Variables.vmUploadData.dataSet)" show="false" readonly="true"></wm-textarea>
+</wm-partial>

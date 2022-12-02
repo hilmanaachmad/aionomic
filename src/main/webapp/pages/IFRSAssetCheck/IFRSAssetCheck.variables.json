@@ -1,0 +1,196 @@
+{
+  "dummyAttachment" : {
+    "_id" : "wm-dummyAttachment-wm.Variable-1641802007600",
+    "name" : "dummyAttachment",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dbe716fba34ed456a63e30",
+      "no" : 0,
+      "remarks" : "Norsup Affluex",
+      "attachment" : "",
+      "comment" : "sit adipisicing"
+    }, {
+      "_id" : "61dbe7165820c2613578d5db",
+      "no" : 1,
+      "remarks" : "Quadeebo Kaggle",
+      "attachment" : "",
+      "comment" : "nostrud ullamco"
+    }, {
+      "_id" : "61dbe716cdd1897e6c8240b6",
+      "no" : 2,
+      "remarks" : "Genesynk Skybold",
+      "attachment" : "",
+      "comment" : "anim incididunt"
+    }, {
+      "_id" : "61dbe716ae4cbc4cb0b94dc7",
+      "no" : 3,
+      "remarks" : "Kage Apex",
+      "attachment" : "",
+      "comment" : "aute dolore"
+    }, {
+      "_id" : "61dbe71614ca53516d15781b",
+      "no" : 4,
+      "remarks" : "Biolive Pyramis",
+      "attachment" : "",
+      "comment" : "officia cillum"
+    }, {
+      "_id" : "61dbe716f4541d122a535e04",
+      "no" : 5,
+      "remarks" : "Equitox Dadabase",
+      "attachment" : "",
+      "comment" : "veniam magna"
+    }, {
+      "_id" : "61dbe716a4a32a5ff5376847",
+      "no" : 6,
+      "remarks" : "Steeltab Izzby",
+      "attachment" : "",
+      "comment" : "ipsum occaecat"
+    }, {
+      "_id" : "61dbe716620c749c6ea69618",
+      "no" : 7,
+      "remarks" : "Olucore Accruex",
+      "attachment" : "",
+      "comment" : "officia consectetur"
+    }, {
+      "_id" : "61dbe716ce781c360c434ba4",
+      "no" : 8,
+      "remarks" : "Remold Xleen",
+      "attachment" : "",
+      "comment" : "ea est"
+    }, {
+      "_id" : "61dbe7163f946596d14b9bfc",
+      "no" : 9,
+      "remarks" : "Zidant Hivedom",
+      "attachment" : "",
+      "comment" : "exercitation reprehenderit"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "dummyCheckOutQueue" : {
+    "_id" : "wm-dummyCheckOutQueue-wm.Variable-1641807906400",
+    "name" : "dummyCheckOutQueue",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "_id" : "61dc00024233b9ab143b2272",
+      "no" : 0,
+      "assetNumber" : "Aquasure Quarx",
+      "assetType" : "ipsum aliqua",
+      "serialNumber" : 9741800,
+      "plant" : "HO",
+      "location" : "Sukabumi",
+      "department" : "deserunt",
+      "assignee" : "proident voluptate",
+      "dueDate" : "05/12/2007"
+    }, {
+      "_id" : "61dc000220fff7572dad9c65",
+      "no" : 1,
+      "assetNumber" : "Columella Xeronk",
+      "assetType" : "amet aute",
+      "serialNumber" : 6450742,
+      "plant" : "factory",
+      "location" : "Kejayan",
+      "department" : "elit",
+      "assignee" : "esse sunt",
+      "dueDate" : "16/07/1992"
+    }, {
+      "_id" : "61dc0002ecd3812beb65e53a",
+      "no" : 2,
+      "assetNumber" : "Geekol Injoy",
+      "assetType" : "nostrud excepteur",
+      "serialNumber" : 6440145,
+      "plant" : "factory",
+      "location" : "Kejayan",
+      "department" : "fugiat",
+      "assignee" : "cupidatat anim",
+      "dueDate" : "02/08/2017"
+    }, {
+      "_id" : "61dc0002a209888cf90b76d5",
+      "no" : 3,
+      "assetNumber" : "Infotrips Nurplex",
+      "assetType" : "nulla dolor",
+      "serialNumber" : 9352619,
+      "plant" : "factory",
+      "location" : "HO",
+      "department" : "sint",
+      "assignee" : "magna excepteur",
+      "dueDate" : "31/03/2009"
+    }, {
+      "_id" : "61dc0002c7308300c9d4531e",
+      "no" : 4,
+      "assetNumber" : "Kengen Bleeko",
+      "assetType" : "dolore voluptate",
+      "serialNumber" : 3176595,
+      "plant" : "HO",
+      "location" : "Kejayan",
+      "department" : "voluptate",
+      "assignee" : "sint officia",
+      "dueDate" : "14/11/2005"
+    }, {
+      "_id" : "61dc0002a21e2292a0432252",
+      "no" : 5,
+      "assetNumber" : "Zerology Quarmony",
+      "assetType" : "sunt esse",
+      "serialNumber" : 5254416,
+      "plant" : "factory",
+      "location" : "Sukabumi",
+      "department" : "do",
+      "assignee" : "qui officia",
+      "dueDate" : "16/12/2016"
+    }, {
+      "_id" : "61dc0002a60dc3705bdeacf5",
+      "no" : 6,
+      "assetNumber" : "Portaline Imaginart",
+      "assetType" : "velit et",
+      "serialNumber" : 7808614,
+      "plant" : "HO",
+      "location" : "HO",
+      "department" : "fugiat",
+      "assignee" : "duis occaecat",
+      "dueDate" : "28/12/2011"
+    }, {
+      "_id" : "61dc00022c548fde6b030ebc",
+      "no" : 7,
+      "assetNumber" : "Pathways Aclima",
+      "assetType" : "est aliqua",
+      "serialNumber" : 4967378,
+      "plant" : "HO",
+      "location" : "Sukabumi",
+      "department" : "dolore",
+      "assignee" : "do aliqua",
+      "dueDate" : "17/08/1990"
+    }, {
+      "_id" : "61dc0002c730872ab60207ad",
+      "no" : 8,
+      "assetNumber" : "Acumentor Biotica",
+      "assetType" : "et tempor",
+      "serialNumber" : 5882538,
+      "plant" : "factory",
+      "location" : "HO",
+      "department" : "proident",
+      "assignee" : "excepteur qui",
+      "dueDate" : "20/09/2011"
+    }, {
+      "_id" : "61dc0002ec0c3ad7395c4fcd",
+      "no" : 9,
+      "assetNumber" : "Interfind Ovium",
+      "assetType" : "enim eiusmod",
+      "serialNumber" : 5987148,
+      "plant" : "factory",
+      "location" : "Kejayan",
+      "department" : "amet",
+      "assignee" : "aute velit",
+      "dueDate" : "02/12/2007"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

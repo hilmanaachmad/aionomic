@@ -1,0 +1,228 @@
+.aio-p2p-form-container.form-error .aio-p2p-form-field input {
+    border-color: #FF5756;
+}
+
+.aio-p2p-form-container .aio-p2p-form-field {
+    max-width: 100%;
+}
+
+.aio-p2p-form-container .aio-p2p-form-input,
+.aio-p2p-form-container .aio-p2p-form-field input {
+    background: #FFFFFF;
+    border: 1px solid #E1E4E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 12px 16px;
+    letter-spacing: 0.24px;
+}
+
+
+.aio-p2p-content-container {
+    /*max-width: 941px !important;*/
+    max-width: 100% !important;
+}
+
+.app-container {
+    position: relative;
+    /*border-radius: 5px;*/
+}
+
+.aio-ptp-total-box{
+    border-radius: 0;
+    padding-top: 10px;
+    box-shadow: 0px -2px 6px rgb(218 218 218);
+}
+
+.wm-app .modal-header .modal-title {
+    color: #000;
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    width: 100%;
+    height: calc(100%);
+    float: none;
+    margin: auto !important;
+    overflow: unset;
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li.active > a {
+    background: white;
+    color: #026CB6;
+    border-bottom: 4px solid #026CB6;
+    font-weight: bold;
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li.active > a:hover, .wm-app .app-tabs .nav.nav-tabs > li.active > a:focus {
+     color: #026CB6; 
+     background-color: white; 
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li > a:hover, .wm-app .app-tabs .nav.nav-tabs > li > a:focus {
+    color: #026CB6; 
+    background-color: white; 
+}
+
+.aio-p2p-icon-date {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+}
+
+
+/*Custom*/
+.aio-p2p-scroll-x {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.aio-p2p-icon-down {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: #FFF;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+    border: 1px solid #cacfd3;
+    border-left: 0px;
+}
+
+.aio-p2p-box-filter{
+    background: #FFFFFF;
+    border: 1px solid #E1E4E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 99;
+    box-shadow: 2px 2px 20px;
+}
+
+.aio-p2p-max-height{
+    max-height: 400px;
+}
+
+.aio-p2p-all-checkbox{
+    background-color: #026CB6;
+    color: #FFF;
+}
+
+.wm-app .radio, .wm-app .checkbox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.wm-app .checkbox .caption:before {
+    border-radius: 6px;
+    background-color: #E5F1FF;
+    border: 1px #ccc #E5F1FF;
+}
+
+.wm-app .checkbox input:checked + .caption:before {
+    -moz-box-shadow: inset 0 0 0 13px #E5F1FF;
+    -webkit-box-shadow: inset 0 0 0 13px #E5F1FF;
+    box-shadow: inset 0 0 0 13px #E5F1FF;
+    background-color: #F7F8FA;
+    border-color: #E5F1FF;
+    border-top-style: none;
+    border-right-style: none;
+    padding: 0 1px;
+    color: #026CB6;
+    font-weight: bold;
+    font-family: wavicon;
+    content: "\f1cf";
+    text-shadow: 1px 1px 1px #E5F1FF;
+}
+
+/*Checkbox header table*/
+.aio-p2p-all-checkbox-header{
+    /*background-color: #FFFFFF;*/
+    color: #FFF;
+}
+.aio-p2p-all-checkbox-header.checkbox label{
+    width: 100%;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    padding-left: 0px;
+}
+.aio-p2p-all-checkbox-header.checkbox{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*Checkbox table*/
+.aio-p2p-all-checkbox-table {
+    /*background-color: #FFFFFF;*/
+    color: #FFF;
+}
+.aio-p2p-all-checkbox-table.checkbox{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.aio-p2p-all-checkbox-table.checkbox .caption:before{
+    border-radius: 6px;
+    background-color: transparent;
+}
+.aio-p2p-all-checkbox-table.checkbox input:disabled + .caption:before{
+    border-radius: 6px;
+    background-color: #E5E5E5;
+}
+
+/*dropdown*/
+.aio-ptp-dropdown .aio-ptp-dropdown-menu {
+    display: none;
+}
+
+.aio-ptp-dropdown.active .aio-ptp-dropdown-menu {
+    display: block;
+}
+
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: auto;
+}
+
+/*list*/
+.aio-p2p-list .aio-p2p-listGroup {
+    white-space: nowrap;
+}
+
+.aio-p2p-listGroup-item {
+    margin-right: 8px;
+    margin-left: 8px;
+    display: inline-block;
+    width: auto;
+}
+
+.aio-p2p-listGroup-item.active{
+    background: none !important;
+    z-index: 1 !important;
+    border-bottom: 3px solid #026CB6;
+}
+
+.aio-p2p-listGroup-item.active label{
+    color: #026CB6;
+    font-weight: bold;
+}
+
+.wm-app .app-livelist .list-group-item {
+    padding: 10px 15px;
+}

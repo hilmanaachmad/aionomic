@@ -1,0 +1,36 @@
+{
+  "username" : "xmsapps",
+  "password" : "7b6a43524a17241e6e7e3422205d7670477c612a43",
+  "url" : "jdbc:sqlserver://202.158.62.54:1433;databaseName=XMS_NxG",
+  "driverClass" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.WMSQLServerDialect",
+  "serviceId" : "aio_xspeed_user",
+  "packageName" : "id.co.aio.procure_to_pay.aio_xspeed_user",
+  "dbType" : "SQLServer",
+  "host" : "202.158.62.54",
+  "dbName" : "XMS_NxG",
+  "port" : "1433",
+  "schemaName" : "dbo",
+  "tableFilter" : [ {
+    "table" : "PHP_ms_login",
+    "schema" : "dbo"
+  } ],
+  "schemaFilter" : [ "dbo" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : null
+}

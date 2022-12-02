@@ -1,0 +1,16 @@
+{
+  "loadingMessage" : {
+    "_id" : "wm-loadingMessage-wm.Variable-1606723269541",
+    "name" : "loadingMessage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "Loading page"
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

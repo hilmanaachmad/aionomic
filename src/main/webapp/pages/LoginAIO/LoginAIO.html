@@ -1,0 +1,184 @@
+<wm-page pagetitle="Login" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-spinner show="false" name="spinner1" iconclass="fa fa-circle-o-notch fa-spin" caption="Logging in" type="icon" iconsize="18" backgroundcolor="#ffffff99" servicevariabletotrack="loginAction,vdbUserData"></wm-spinner>
+            <wm-container name="container1" conditionalstyle="bind:{
+    display: &quot;flex&quot;,
+    flexDirection: &quot;row&quot;
+}">
+                <wm-container name="container2" conditionalstyle="bind:{
+    minWidth: &quot;400px&quot;,
+    maxWidth: &quot;500px&quot;
+}" backgroundcolor="#ffffff" width="30%" horizontalalign="center">
+                    <wm-picture name="picture1" picturesource="resources/images/logos/login-otsuka.png" width="40%" margin="50px unset unset unset"></wm-picture>
+                    <wm-label padding="unset 0.5em" name="label1" width="100%" margin="100px unset unset unset" caption="bind:appLocale.LANG_WELCOME" fontfamily="Inter" fontsize="32" fontweight="bold"></wm-label>
+                    <wm-container name="container4" width="300" conditionalstyle="bind:{
+    float: &quot;none&quot;,
+    margin: &quot;auto&quot;,
+    marginTop: &quot;32px&quot;
+}" horizontalalign="left">
+                        <wm-label padding="unset 0em" name="label2" caption="bind:appLocale.LANG_USERNAME" color="#36414C" fontfamily="Inter" fontsize="14" conditionalstyle="bind:{
+    fontWeight: 500
+}"></wm-label>
+                        <wm-text name="UsernameInp" class="aio-p2p-input" placeholder="bind:appLocale.LANG_ENTER_USERNAME" margin="8px unset unset unset" on-keyup="UsernameInpKeyup($event, widget)" autotrim="false"></wm-text>
+                    </wm-container>
+                    <wm-container width="300" conditionalstyle="bind:{
+    float: &quot;none&quot;,
+    margin: &quot;auto&quot;,
+    marginTop: &quot;24px&quot;
+}" horizontalalign="left" name="container5">
+                        <wm-label padding="unset 0em" caption="bind:appLocale.LANG_PASSWORD" color="#36414C" fontfamily="Inter" fontsize="14" conditionalstyle="bind:{
+    fontWeight: 500
+}" name="label3"></wm-label>
+                        <wm-text class="aio-p2p-input" placeholder="bind:appLocale.LANG_ENTER_PASSWORD" margin="8px unset unset unset" name="passwordInp" type="password" on-keyup="passwordInpKeyup($event, widget)" autotrim="false"></wm-text>
+                        <wm-container name="containerEye" class="eye-icon" on-click="containerEyeClick($event, widget)">
+                            <wm-icon name="icon1" iconclass="far fa-eye-slash"></wm-icon>
+                        </wm-container>
+                    </wm-container>
+                    <wm-button class="aio-p2p-login-btn" caption="bind:appLocale.LANG_LOGIN" type="button" margin="25px unset unset unset" name="button1" color="#fff" on-click="button1Click($event, widget)"></wm-button>
+                    <wm-container name="container6" width="100%" horizontalalign="center" margin="12px unset unset unset">
+                        <wm-label padding="unset 0em" caption="bind:appLocale.LANG_FORGOT_PASSWORD" color="#026CB6" fontfamily="Inter" fontsize="15" conditionalstyle="bind:{
+    fontWeight: 600
+}" on-click="Actions.goToPage_ForgotPassword.invoke()" class="aio-p2p-clickable" textalign="left" name="label6"></wm-label>
+                        <wm-container name="container7" margin="0.5em 0.5em unset unset">
+                            <wm-label padding="unset 0.2em unset 0em" caption="bind:appLocale.LABEL_DONT_HAVE_ACCOUNT" fontfamily="Inter" fontsize="15" color="#026CB6" conditionalstyle="bind:{
+    fontWeight: 600
+}" name="label8" textalign="left"></wm-label>
+                            <wm-label padding="unset 0em" name="label6_1" caption="bind:appLocale.LABEL_CLICK_HERE" color="#dd0404" fontfamily="Inter" textalign="left" fontsize="15" conditionalstyle="bind:{
+    fontWeight: 600
+}" on-click="Actions.goToPage_CompanyDomicilie.invoke()" class="aio-p2p-clickable"></wm-label>
+                            <wm-label padding="unset 0em unset 0.2em" name="label7_1" caption="bind:appLocale.LABEL_CREAT_NEW_ACCOUNT" fontfamily="Inter" fontsize="15" color="#026CB6" conditionalstyle="bind:{
+    fontWeight: 600
+}"></wm-label>
+                        </wm-container>
+                    </wm-container>
+                    <wm-container width="100%" horizontalalign="center" margin="5px unset unset unset" name="container8">
+                        <wm-label padding="unset 0em" caption="bind:appLocale.LANG_FORGOT_USER" color="#026CB6" fontfamily="Inter" fontsize="15" conditionalstyle="bind:{
+    fontWeight: 600
+}" class="aio-p2p-clickable" textalign="left" name="label8_1" on-click="Widgets.forgot_user_form.open()"></wm-label>
+                    </wm-container>
+                    <wm-container horizontalalign="center" margin="40px 50px unset 50px" name="container20" fontsize="14">
+                        <wm-label caption="bind:appLocale.LANG_FRAUD_LINK" fontfamily="Inter" class="aio-p2p-nav-title" textalign="center" name="label27" fontsize="14"></wm-label>
+                        <wm-container width="100%" horizontalalign="center" name="container21" margin="10px unset unset unset">
+                            <form id="laporaio-form" method="post" action="https://lapor.aio.co.id:12000" target="_blank"><input type="hidden" id="laporaio-source" name="source" value="external"></form>
+                            <wm-anchor margin="unset 0.5em" name="anchorLaporAIO" iconclass="wi wi-external-link" caption="Lapor AIO" on-click="anchorLaporAIOClick($event, widget)"
+                                fontsize="14"></wm-anchor>
+                        </wm-container>
+                    </wm-container>
+                    <wm-container name="container15" margin="45px unset unset unset">
+                        <wm-picture name="picture2" picturesource="resources/images/imagelists/logo-user-manual.jpeg" on-click="picture2Click($event, widget)" width="135" class="aio-p2p-clickable"></wm-picture>
+                    </wm-container>
+                    <wm-container name="container16" margin="45px unset unset unset">
+                        <wm-label padding="unset 0.5em" name="label25" caption="Contact : websupport@aio.co.id" fontweight="bold" fontsize="15" color="#026CB6"></wm-label>
+                    </wm-container>
+                </wm-container>
+                <wm-container name="container3" conditionalstyle="bind:{
+    flex: 1
+}" backgroundcolor="#eaeaea" backgroundimage="bind:&quot;resources/images/imagelists/login-&quot; + loginBg + &quot;.png&quot;" backgroundrepeat="no-repeat" backgroundposition="center, center" backgroundsize="cover" color="#026CB6"></wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <!--<wm-footer content="footer" name="footer1"></wm-footer>-->
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Forgot User" iconclass="wi wi-user" name="forgot_user_form" width="750px" height="450px" on-opened="forgot_user_formOpened($event, widget)">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow1" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn1">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_INSERT_USERNAME" name="label12" fontfamily="Inter" fontsize="15" margin="5px unset unset unset"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="2" name="gridcolumn11">
+                    <wm-container horizontalalign="center" name="container13" margin="5px unset unset unset">
+                        <wm-label caption=":" name="label23"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn2">
+                    <wm-text name="userName" placeholder="Enter Username" class="ivendor-input-form"></wm-text>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow2" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn3" padding="5px unset unset unset">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_NAME" name="label14" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="2" name="gridcolumn12">
+                    <wm-container horizontalalign="center" name="container12" margin="5px unset unset unset">
+                        <wm-label padding="unset 0em" caption="*" color="#ff0000" name="label20"></wm-label>
+                        <wm-label caption=":" name="label21"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn4">
+                    <wm-search name="sCompanyName" class="ivendor-input-form" searchon="typing" dataset="bind:Variables.svGetDataVendor.dataSet" displaylabel="vendorName" datafield="vendorName" on-select="Variables.svGetDataVendorByName.invoke()" searchkey="vendorName"
+                        matchmode="startignorecase"></wm-search>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow3" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn5" padding="5px unset unset unset">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NPWP_COMPANY" name="label16" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="2" name="gridcolumn13">
+                    <wm-container horizontalalign="center" name="container11" margin="5px unset unset unset">
+                        <wm-label padding="unset 0em" caption="*" color="#ff0000" name="label18_1"></wm-label>
+                        <wm-label caption=":" name="label19"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn6"><input width="45" height="45" fontsize="14" margin="0em unset unset unset" placeholder="Please Fill With 0 If You don't Have NPWP" id="inputTax" type="text" name="taxId" class="form-control app-textbox ng-pristine ng-valid ivendor-input-form ng-touched ivendor-input-form"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow4" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_EMAIL" name="label17" fontfamily="Inter" fontsize="15" margin="5px unset unset unset"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="2" name="gridcolumn14">
+                    <wm-container horizontalalign="center" name="container10" margin="5px unset unset unset">
+                        <wm-label padding="unset 0em" caption="*" color="#ff0000" name="label16_1"></wm-label>
+                        <wm-label caption=":" name="label17_1"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                    <wm-text name="companyEmail" placeholder="Enter Company's Email" class="ivendor-input-form" on-click="companyEmailClick($event, widget)"></wm-text>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow5" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CITIZEN_ID" name="label18" fontsize="15" fontfamily="Inter" margin="5px unset unset unset"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="2" name="gridcolumn15">
+                    <wm-container horizontalalign="center" name="container9" margin="5px unset unset unset">
+                        <wm-label padding="unset 0em" caption="*" color="#ff0000" name="label14_1"></wm-label>
+                        <wm-label caption=":" name="label15"></wm-label>
+                    </wm-container>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="6" name="gridcolumn10">
+                    <wm-text name="citizenId" placeholder="Please Fill With 0 If You don't Have KTP" class="ivendor-input-form" maxchars="16" type="text" on-change="citizenIdChange($event, widget, newVal, oldVal)"></wm-text>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-container name="container14" margin="55px unset unset unset" width="525px">
+            <wm-label padding="unset 0.5px" name="label23_1" caption="Notes :" fontsize="15" fontfamily="Inter"></wm-label>
+            <wm-label padding="unset 0.5em" name="label24" caption="bind:appLocale.LANG_NOTES_FORGOT_USER" fontsize="15" fontfamily="Inter"></wm-label>
+        </wm-container>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-danger" caption="Cancel" on-click="closeDialog()" name="btnCancel" margin="unset 5px unset unset"></wm-button>
+            <wm-button class="btn-primary" caption="Submit" on-click="Variables.svInsertForgotUser.invoke()" name="btnSubmit"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Information" iconclass="wi wi-file-text" name="dialogSuccess" showheader="false">
+        <wm-dialogactions name="dialogactions2">
+            <wm-container name="container19" horizontalalign="center">
+                <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button4" width="50%"></wm-button>
+            </wm-container>
+        </wm-dialogactions>
+        <wm-container name="container17" margin="unset unset 2em unset" horizontalalign="center">
+            <wm-anchor margin="unset 0.5em" name="anchor1" fontsize="20" caption="Success!" iconclass="wi wi-check" color="#26d329"></wm-anchor>
+        </wm-container>
+        <wm-container name="container18" horizontalalign="center">
+            <wm-label padding="unset 0.5em" name="label30" caption="Login cannot be done right now due to internal Purchasing Department approval needed. Please contact your AIO/ODI PIC to approve your vendor"></wm-label>
+        </wm-container>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="" name="dialogAnnouncement" class="announcement" showheader="true" closable="true">
+        <wm-layoutgrid name="layoutgrid2">
+            <wm-gridrow name="gridrow7">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn18" horizontalalign="center">
+                    <wm-picture name="picture3" width="100%" picturesource="bind:Variables.ModelAnnouncement.dataSet[0].content"></wm-picture>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+</wm-page>

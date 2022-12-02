@@ -1,0 +1,13 @@
+<wm-prefab-container name="prefab_container1">
+    <wm-container name="container1" class="aio-ptp-css-main-container">
+        <wm-text name="text1" class="aio-ptp-css-query-field" autocomplete="false" updateon="default" on-change="text1Change($event, widget, newVal, oldVal)" datavalue="bind:Variables.selectedData.dataSet.display" updatedelay="250"></wm-text>
+        <wm-container name="container2" class="aio-ptp-css-popup-container">
+            <wm-list listclass="list-group" itemclass="aio-ptp-css-popup-list-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="none" name="popuplist" dataset="bind:Variables.listDataset.dataSet"
+                navigation="Scroll" on-setrecord="popuplistSetrecord($event, widget, $index, $data)" on-select="popuplistSelect(widget, $data)">
+                <wm-listtemplate layout="inline" name="listtemplate1">
+                    <wm-label name="label2" margin="unset unset 0px unset" caption="bind:Widgets.popuplist.currentItem.display"></wm-label>
+                </wm-listtemplate>
+            </wm-list>
+        </wm-container>
+    </wm-container>
+</wm-prefab-container>

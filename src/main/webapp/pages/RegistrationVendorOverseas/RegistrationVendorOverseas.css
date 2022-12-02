@@ -1,0 +1,142 @@
+.aio-p2p-content-container {
+    /*max-width: 941px !important;*/
+    max-width: 100% !important;
+}
+
+.ivendor-input-form{
+    height: 30px;
+    border-radius: 5px;
+    border: solid #3a8bca;
+    border-width: 1px;
+}
+
+.ivendor-input-form-search{
+    height: 30px;
+    border: solid #3a8bca;
+    border-width: 1px;
+}
+
+.ivendor-input-form-pic{
+    height: 30px;
+    border-color: #3a8bca;
+    border-radius: 10px;
+}
+.ivendor-container-position{
+    border-radius: 5px;
+}
+.btn-attach{
+    background-color: #3a8bca;
+}
+.btn-attach: hover{
+    background-color: red;
+}
+
+/*table*/
+.aio-ptp-table-container {
+    width: 100%;
+}
+
+.aio-ptp-table-row {
+    white-space: nowrap;
+    border-bottom: 1px solid #EDEEEF;
+    display: block;
+}
+
+.aio-ptp-table-header {
+    background: #F6F7F8;
+    border-radius: 2px 2px 0px 0px;
+}
+
+.aio-ptp-table-cell {
+    display: inline-flex;
+    white-space: normal;
+    padding: 12px;
+    vertical-align: top;
+}
+
+.aio-ptp-table-cell label {
+    font-family: Inter;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
+    align-items: center;
+    color: #404143;
+    font-weight: 400;
+}
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    overflow: visible !important;
+}
+.aio-ptp-table-header .aio-ptp-table-cell label{
+    font-weight: 500;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+.aio-p2p-table-header .app-label
+
+/*button*/
+.aio-p2p-btn-upload {
+    color: #026CB6;
+    background: rgba(2, 108, 182, 0.16);
+    border-radius: 4px;
+    width: 123px;
+    height: 37px;
+    font-size: 14px;
+}
+
+.aio-p2p-table-header .app-label{
+    font-weight: 500 !important;
+}
+
+.aio-p2p-btn-primary {
+    padding: 10px 12px;
+    background: #026CB6;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    color: white;
+    text-transform: initial;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.aio-p2p-btn-outline {
+    border: 1px solid #e0dede;
+    box-sizing: border-box;
+    border-radius: 2;
+    background-color: #f2f2f2;
+    color: #3a8bca;
+    padding: 5px 7px;
+    font-size: 10px;
+    cursor: pointer;
+    text-transform: initial;
+}
+
+.aio-p2p-btn-outline:hover {
+    background-color: #BDBDBD;
+    color: #3a8bca;
+}
+.aio-ptp-button {
+    padding: 6px 8px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+.aio-ptp-secondary-btn {
+    border: 1px solid #026CB6;
+    color: #026CB6;
+    background: white;
+}
+
+.license-agreement {
+    overflow: scroll;
+}

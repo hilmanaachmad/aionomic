@@ -1,0 +1,462 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.MENU_BUD_UPLOAD_BUDGET" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="uploadBudget" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="View / Edit Asset" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content">
+                        <wm-container name="container7" class="aio-p2p-ub-main-container">
+                            <wm-container name="container24_2" horizontalalign="center" class="center"></wm-container>
+                            <wm-container name="container22_1">
+                                <wm-tabs type="static" statehandler="URL" name="Contracts">
+                                    <wm-tabpane name="tabpane1" title="Check In">
+                                        <wm-container name="container40" horizontalalign="left">
+                                            <wm-layoutgrid name="layoutgrid6_1">
+                                                <wm-gridrow name="gridrow16_1">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn30_1">
+                                                        <wm-label padding="unset 0.5em" name="label29" caption="Asset Details"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn31_1" horizontalalign="right">
+                                                        <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" name="button7" iconclass="wi wi-chevron-down"></wm-button>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-container name="container90">
+                                            <wm-container width="80%" name="container34">
+                                                <wm-layoutgrid name="layoutgrid2">
+                                                    <wm-gridrow name="gridrow3" class="center">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn5" height="100%">
+                                                            <wm-label padding="unset 0.5em" name="label92" caption="Scan QR Code :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn6">
+                                                            <wm-text name="textYear" type="number" placeholder="Enter Year" height="30px"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow4" class="center">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn7" height="100%">
+                                                            <wm-label padding="unset 0em unset 0.5em" caption="*" color="#e51b1b" name="label32_1"></wm-label>
+                                                            <wm-label padding="unset 0.5em unset unset" name="labelPlant" caption="Asset Name :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn8">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text11_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow11">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn21" height="100%">
+                                                            <wm-label padding="unset 0.5em" name="label93" caption="Asset Number :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn22">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text26"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow58">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn128">
+                                                            <wm-label padding="unset 0.5em" name="label84" caption="Plant :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn129">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text27"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow59">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn130">
+                                                            <wm-label padding="unset 0.5em" name="label85" caption="Location :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn131">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text28"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow60">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn132">
+                                                            <wm-label padding="unset 0.5em" name="label86" caption="Quantity :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn133">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text29"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow61">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn134">
+                                                            <wm-label padding="unset 0.5em" name="label87" caption="Current User :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn135">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text30"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow62">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn136">
+                                                            <wm-label padding="unset 0.5em" name="label88" caption="Department :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn137">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text31"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container horizontalalign="left" name="container32">
+                                            <wm-layoutgrid name="layoutgrid5_1">
+                                                <wm-gridrow name="gridrow14_1">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn26">
+                                                        <wm-label padding="unset 0.5em" caption="Check In by" name="label44"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn27" horizontalalign="right">
+                                                        <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" name="button6" iconclass="wi wi-chevron-down"></wm-button>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-container horizontalalign="left" name="container33_1" class="flexbox">
+                                            <wm-container width="40%" name="container34_1" height="100%">
+                                                <wm-layoutgrid name="layoutgrid9">
+                                                    <wm-gridrow class="center" name="gridrow28">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn56">
+                                                            <wm-label padding="unset 0.5em" name="label89" caption="Current User :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn57">
+                                                            <wm-text type="number" placeholder="Enter Year" name="text21" height="30px"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow class="center" name="gridrow29">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn58">
+                                                            <wm-label padding="unset 0.5em" name="label90" caption="Department :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn59">
+                                                            <wm-text height="30px" name="text32"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow class="center" name="gridrow30">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn60">
+                                                            <wm-label padding="unset 0.5em" name="label91" caption="Plant :"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn61">
+                                                            <wm-text name="text22" height="30px"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow66">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn144">
+                                                            <wm-label padding="unset 0em unset 0.5em" caption="*" color="#e51b1b" name="label94"></wm-label>
+                                                            <wm-label padding="unset 0.5em unset unset" caption="Location :" name="label95"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn145">
+                                                            <wm-text height="30px" name="text33"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow67">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn146">
+                                                            <wm-label padding="unset 0em unset 0.5em" caption="*" color="#e51b1b" name="label96"></wm-label>
+                                                            <wm-label padding="unset 0.5em unset unset" caption="Condition :" name="label97"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn147">
+                                                            <wm-select height="30px" name="select6"></wm-select>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow68">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn148">
+                                                            <wm-label padding="unset 0.5em" caption="Comment :" name="label98"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn149">
+                                                            <wm-textarea name="textarea2" height="250px"></wm-textarea>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow69">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn150"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn151"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow70">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn152"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn153"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                            <wm-container width="60%" name="container56">
+                                                <wm-layoutgrid name="layoutgrid24">
+                                                    <wm-gridrow class="center" name="gridrow71" height="300px" overflow="visible">
+                                                        <wm-gridcolumn columnwidth="3" height="100%" name="gridcolumn154">
+                                                            <wm-container name="container23" height="100%">
+                                                                <wm-label padding="unset 0.5em" caption="Attachment :" name="label99"></wm-label>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn155" height="100%">
+                                                            <wm-container name="container21" height="100%" overflow="scroll">
+                                                                <wm-table statehandler="none" name="dummyAttachmentTable1" title="" dataset="bind:Variables.dummyAttachment.dataSet" navigation="On-Demand">
+                                                                    <wm-table-column binding="no" caption="No" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                    <wm-table-column binding="remarks" caption="Remarks" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                    <wm-table-column binding="attachment" caption="Attachment" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                    <wm-table-column binding="comment" caption="Comment" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                </wm-table>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow77">
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn166"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn167">
+                                                            <wm-button class="btn-default" caption="Add Attachment" type="button" margin="unset 0.5em" name="button4"></wm-button>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow78">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn168"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn169"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-tabpane>
+                                    <wm-tabpane name="tabpane2" title="Check Out">
+                                        <wm-container horizontalalign="left" name="container26">
+                                            <wm-layoutgrid name="layoutgrid12">
+                                                <wm-gridrow name="gridrow35">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn69">
+                                                        <wm-label padding="unset 0.5em" caption="Asset Details" name="label37"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" horizontalalign="right" name="gridcolumn70">
+                                                        <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" iconclass="wi wi-chevron-down" name="button8"></wm-button>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-container name="container27">
+                                            <wm-container width="80%" name="container28">
+                                                <wm-layoutgrid name="layoutgrid13">
+                                                    <wm-gridrow class="center" name="gridrow36">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn71">
+                                                            <wm-label padding="unset 0.5em" caption="Scan QR Code :" name="label38"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn72">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text21_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow class="center" name="gridrow37">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn73">
+                                                            <wm-label padding="unset 0em unset 0.5em" caption="*" color="#e51b1b" name="label39"></wm-label>
+                                                            <wm-label padding="unset 0.5em unset unset" caption="Asset Name :" name="label40"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn74">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text22_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow38">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn75">
+                                                            <wm-label padding="unset 0.5em" caption="Asset Number :" name="label41"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn76">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text23"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow39">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn77">
+                                                            <wm-label padding="unset 0.5em" caption="Plant :" name="label42"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn78">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text24"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow40">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn79">
+                                                            <wm-label padding="unset 0.5em" caption="Location :" name="label43"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn80">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text25"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow41">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn81">
+                                                            <wm-label padding="unset 0.5em" caption="Quantity :" name="label44_1"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn82">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text26_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow42">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn83">
+                                                            <wm-label padding="unset 0.5em" caption="Current User :" name="label45"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn84">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text27_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow43">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn85">
+                                                            <wm-label padding="unset 0.5em" caption="Department :" name="label46"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn86">
+                                                            <wm-text type="number" placeholder="" height="30px" name="text28_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container horizontalalign="left" name="container29">
+                                            <wm-layoutgrid name="layoutgrid14">
+                                                <wm-gridrow name="gridrow44">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn87">
+                                                        <wm-label padding="unset 0.5em" caption="Check Out To" name="label47"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" horizontalalign="right" name="gridcolumn88">
+                                                        <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" iconclass="wi wi-chevron-down" name="button9"></wm-button>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-container horizontalalign="left" class="flexbox" name="container30">
+                                            <wm-container width="40%" height="100%" name="container31">
+                                                <wm-layoutgrid name="layoutgrid15">
+                                                    <wm-gridrow class="center" name="gridrow45">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn89">
+                                                            <wm-label padding="unset 0.5em" caption="Current User :" name="label48"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn90">
+                                                            <wm-text type="number" placeholder="Enter Year" height="30px" name="text29_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow class="center" name="gridrow46">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn91">
+                                                            <wm-label padding="unset 0.5em" caption="Department :" name="label49"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn92">
+                                                            <wm-text height="30px" name="text30_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow class="center" name="gridrow47">
+                                                        <wm-gridcolumn columnwidth="6" height="100%" name="gridcolumn93">
+                                                            <wm-label padding="unset 0.5em" caption="Plant :" name="label50"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn94">
+                                                            <wm-text height="30px" name="text31_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow48">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn95">
+                                                            <wm-label padding="unset 0em unset 0.5em" caption="*" color="#e51b1b" name="label51"></wm-label>
+                                                            <wm-label padding="unset 0.5em unset unset" caption="Location :" name="label52"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn96">
+                                                            <wm-text height="30px" name="text32_1"></wm-text>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow49">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn97">
+                                                            <wm-label padding="unset 0em unset 0.5em" caption="*" color="#e51b1b" name="label53"></wm-label>
+                                                            <wm-label padding="unset 0.5em unset unset" caption="Condition :" name="label54"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn98">
+                                                            <wm-select height="30px" name="select4"></wm-select>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow50">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn99">
+                                                            <wm-label padding="unset 0.5em" caption="Comment :" name="label55"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn100">
+                                                            <wm-textarea height="250px" name="textarea2_1"></wm-textarea>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow51">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn101"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn102"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow52">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn103"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn104"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                            <wm-container width="60%" name="container32_1">
+                                                <wm-layoutgrid name="layoutgrid16">
+                                                    <wm-gridrow class="center" height="300px" overflow="visible" name="gridrow53">
+                                                        <wm-gridcolumn columnwidth="3" height="100%" name="gridcolumn105">
+                                                            <wm-container height="100%" name="container33">
+                                                                <wm-label padding="unset 0.5em" caption="Attachment :" name="label56"></wm-label>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="9" height="100%" name="gridcolumn106">
+                                                            <wm-container height="100%" overflow="scroll" name="container34_2">
+                                                                <wm-table statehandler="none" title="" dataset="bind:Variables.dummyAttachment.dataSet" navigation="On-Demand" name="table3">
+                                                                    <wm-table-column binding="no" caption="No" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                    <wm-table-column binding="remarks" caption="Remarks" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                    <wm-table-column binding="attachment" caption="Attachment" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                    <wm-table-column binding="comment" caption="Comment" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                                </wm-table>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow54">
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn107"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn108">
+                                                            <wm-button class="btn-default" caption="Add Attachment" type="button" margin="unset 0.5em" name="button10"></wm-button>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow55">
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn109">
+                                                            <wm-label padding="unset 0.5em" caption="Due Date :" name="label41_1"></wm-label>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn110">
+                                                            <wm-layoutgrid name="layoutgrid12_1">
+                                                                <wm-gridrow name="gridrow45_1">
+                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn89_1">
+                                                                        <wm-radioset height="auto" dataset="Tomorrow" datafield="All Fields" name="radioset2"></wm-radioset>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn90_1"></wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow name="gridrow46_1">
+                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn91_1">
+                                                                        <wm-radioset height="auto" dataset="Due On" datafield="All Fields" name="radioset3"></wm-radioset>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn92_1">
+                                                                        <wm-date name="date1"></wm-date>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow44_1">
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn87_1"></wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="6" name="gridcolumn88_1" horizontalalign="right">
+                                                            <wm-button class="btn-success" caption="Check Out" type="button" margin="unset 0.5em" name="button8_1"></wm-button>
+                                                            <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="button9_1"></wm-button>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-container horizontalalign="left" name="container28_1">
+                                            <wm-layoutgrid name="layoutgrid11">
+                                                <wm-gridrow name="gridrow43_1">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn85_1">
+                                                        <wm-label padding="unset 0.5em" caption="Check Out Queue" name="label42_1"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" horizontalalign="right" name="gridcolumn86_1">
+                                                        <wm-button class="btn-default" caption="" type="button" margin="unset 0.5em" iconclass="wi wi-chevron-down" name="button7_1"></wm-button>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-container name="container33_2">
+                                            <wm-table statehandler="none" name="dummyCheckOutQueueTable1" title="" dataset="bind:Variables.dummyCheckOutQueue.dataSet" navigation="On-Demand">
+                                                <wm-table-column binding="no" caption="No" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="assetNumber" caption="Asset Number" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="assetType" caption="Asset Type" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="serialNumber" caption="Serial Number" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="plant" caption="Plant" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="location" caption="Location" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="department" caption="Department" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="assignee" caption="Assignee" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                                <wm-table-column binding="dueDate" caption="Due Date" pcdisplay="true" mobiledisplay="true" tabletdisplay="true"></wm-table-column>
+                                            </wm-table>
+                                        </wm-container>
+                                    </wm-tabpane>
+                                </wm-tabs>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+            <wm-spinner show="false" name="spinner1" class="aio-loading"></wm-spinner>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

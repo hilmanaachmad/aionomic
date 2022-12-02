@@ -1,0 +1,44 @@
+{
+  "dummyNotif" : {
+    "_id" : "wm-dummyNotif-wm.Variable-1606666062956",
+    "name" : "dummyNotif",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "notifTitle" : "Konfirmasi Perubahan Password",
+      "notifContent" : "Segera ubah password untuk meningkatkan keamanan account mu pada menu Profile"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "varLang" : {
+    "_id" : "wm-varLang-wm.Variable-1607571634493",
+    "name" : "varLang",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "code" : "ID",
+      "id" : "id-id",
+      "value" : "Indonesia",
+      "status" : true
+    }, {
+      "code" : "EN",
+      "id" : "en",
+      "value" : "English",
+      "status" : false
+    }, {
+      "code" : "JP",
+      "id" : "ja-jp",
+      "value" : "日本語（日本",
+      "status" : false
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

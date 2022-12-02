@@ -1,0 +1,19 @@
+.ivendor-status{
+    height: 40px;
+    border-radius: 15px;
+    border: solid #ffffff;
+    background-color: #3a8bca; 
+    border-width: 3px;
+}
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-btn-element:hover {
+    background: #3a8bca;
+}
+
+.bg-radius{
+    border-radius: 25px;
+}

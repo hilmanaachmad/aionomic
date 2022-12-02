@@ -1,0 +1,236 @@
+<wm-page name="mainpage" pagetitle="Quotation Summary" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail">
+                        <wm-param name="page" value="RFQSummary" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container class="row aio-p2p-page-content" horizontalalign="center" name="PageContent">
+                        <wm-container horizontalalign="center" name="formContainer" class="aio-p2p-detail-container">
+                            <wm-container horizontalalign="left" name="container62_2">
+                                <wm-label caption="bind:appLocale.LANG_QUOTATION_SUMMARY" fontsize="32" name="label26_2" conditionalstyle="bind:{fontWeight: '600'}" color="#000" padding="16px unset"></wm-label>
+                                <wm-container padding="24px" backgroundcolor="#fff" fontsize="13" name="container63_2">
+                                    <wm-container horizontalalign="left" name="container80">
+                                        <wm-fileupload on-select="Variables.FileServiceUploadFile.invoke()" caption="Select File" iconclass="wi wi-file-text" contenttype=".jpeg .jpg .pdf .docx .doc .xlsx .xls" show="false" name="fileupload2"></wm-fileupload>
+                                        <wm-container class="aio-p2p-scroll-x" name="container37">
+                                            <wm-container name="container38">
+                                                <wm-container class="aio-p2p-table-header" padding="16px" name="container39">
+                                                    <wm-container display="inline-block" width="8%" name="container41" horizontalalign="left">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RFQ_NUMBER" name="label23_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="6%" name="container42" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_LINE_ITEM" name="label24"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="14%" name="container45" horizontalalign="left">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DESCRIPTION" name="label27"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" name="container68" horizontalalign="left">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_VENDOR_CODE" name="label26_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="left" name="container48">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_VENDOR_NAME" name="label22"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="6%" horizontalalign="center" name="container50_1">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_TOTAL_PRICE" name="label23"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="5%" horizontalalign="center" name="container51_1">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_QUALITY" name="label24_2"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="7%" horizontalalign="center" name="container52">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_LEAD_TIME" name="label25"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="9%" horizontalalign="center" name="container49">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_SUMMARY_RANK" name="label24_3"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="center" name="container50_2">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_SUMMARY_OVERWRITE" name="label25_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="11%" horizontalalign="center" name="container52_1">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_REASON_OVERWRITE" name="label27_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container name="container53_1">
+                                                        <wm-container name="container54" display="inline-block" width="50%"></wm-container>
+                                                        <wm-container display="inline-block" width="6%" class="aio-p2p-clickable" horizontalalign="center" name="container55">
+                                                            <wm-label padding="unset 0.5em unset unset" caption="bind:Variables.modelParameterRFQ.dataSet.totalPrice+&quot;%&quot;" class="aio-p2p-clickable" name="label28"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="5%" class="aio-p2p-clickable" horizontalalign="center" name="container56_1">
+                                                            <wm-label padding="unset 0.5em unset unset" caption="bind:Variables.modelParameterRFQ.dataSet.quality+&quot;%&quot;" class="aio-p2p-clickable" name="label29"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="7%" class="aio-p2p-clickable" horizontalalign="center" name="container57_1">
+                                                            <wm-label padding="unset 0.5em unset unset" caption="bind:Variables.modelParameterRFQ.dataSet.leadTime+&quot;%&quot;" class="aio-p2p-clickable" name="label30"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-container>
+                                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.modelRfqVendorList.dataSet"
+                                                    navigation="None" on-beforedatarender="dataListBeforedatarender(widget, $data)" name="list3" statehandler="none">
+                                                    <wm-listtemplate layout="media" name="listtemplate3">
+                                                        <wm-container padding="4px 8px 4px 12px" name="container51" bordercolor="#E1E4E7" borderstyle="solid" borderwidth="0px 1px">
+                                                            <wm-container display="inline-block" width="8%" name="container53" horizontalalign="left">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.rfqNumber" name="label34"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="6%" name="container57" horizontalalign="center" bordercolor="#E1E4E7" borderstyle="solid" borderwidth="0px">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.item" name="label29_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="14%" name="container72" horizontalalign="left" borderwidth="0px" borderstyle="solid" bordercolor="#E1E4E7">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.description" name="label30_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="10%" horizontalalign="left" borderwidth="0px" bordercolor="#E1E4E7" name="container58_2">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.vendorCode" name="label31"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="12%" horizontalalign="left" borderwidth="0px" bordercolor="#E1E4E7" name="container59">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.vendorName" name="label32"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="6%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container60_1">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.totalPrice" name="label21"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="5%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container61_1">
+                                                                <wm-composite name="composite3">
+                                                                    <wm-container class="col-md-9" name="container67_1" width="80%" horizontalalign="center" conditionalstyle="bind:{margin: &quot;0 auto&quot;}">
+                                                                        <wm-text name="text3" placeholder="" datavalue="bind:Widgets.list3.currentItem.quality ? Widgets.list3.currentItem.quality : '0'" textalign="center" maxchars="2" updateon="default" on-keyup="text3Keyup($event, widget, item, currentItemWidgets)"></wm-text>
+                                                                    </wm-container>
+                                                                </wm-composite>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="7%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container62_1">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.leadTime" name="label22_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="9%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container64">
+                                                                <wm-label padding="unset 0.5em" caption="bind:summaryRank(Widgets.list3.currentItem, Variables.modelRfqVendorList.dataSet)" name="label23_2"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="12%" horizontalalign="left" borderwidth="0px" bordercolor="#E1E4E7" name="container65">
+                                                                <wm-composite name="composite4_1">
+                                                                    <wm-container class="col-md-9" name="container68_1" width="100%" padding="unset 8px">
+                                                                        <wm-text name="text4" placeholder="" datavalue="bind:Widgets.list3.currentItem.summaryOverwrite" updateon="default" on-keyup="text4Keyup($event, widget, item, currentItemWidgets)" maxchars="100"
+                                                                            type="text"></wm-text>
+                                                                    </wm-container>
+                                                                </wm-composite>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="11%" horizontalalign="left" borderwidth="0px" borderstyle="solid" bordercolor="#E1E4E7" name="container66_1">
+                                                                <wm-composite name="composite5_1">
+                                                                    <wm-container class="col-md-9" name="container69_1" width="100%" padding="unset 8px">
+                                                                        <wm-text name="text6" placeholder="" datavalue="bind:Widgets.list3.currentItem.summaryReason" updateon="default" on-keyup="text6Keyup($event, widget, item, currentItemWidgets)" maxchars="100"></wm-text>
+                                                                    </wm-container>
+                                                                </wm-composite>
+                                                            </wm-container>
+                                                        </wm-container>
+                                                    </wm-listtemplate>
+                                                </wm-list>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-container name="container44" width="30%">
+                                        <wm-container name="container45_1" padding="16px unset 8px unset">
+                                            <wm-label name="label24_1" caption="bind:appLocale.LANG_ATTACHMENT" fontweight="bold"></wm-label>
+                                        </wm-container>
+                                        <wm-container name="container46">
+                                            <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" name="listAttachment"
+                                                dataset="bind:Variables.modelAttachmentList.dataSet" navigation="None">
+                                                <wm-listtemplate layout="inline" name="listtemplate2">
+                                                    <wm-container name="container49_2" display="inline-block" borderwidth="unset 1px" on-click="container49_2Click($event, widget, item, currentItemWidgets)">
+                                                        <wm-container class="media-body" padding="unset 8px unset 21px" width="10%" name="container49_1">
+                                                            <wm-picture picturesource="resources/images/logos/icon-file.png" name="picture2"></wm-picture>
+                                                        </wm-container>
+                                                        <wm-container class="media-body" name="container48_1" width="90%">
+                                                            <wm-label name="fileName" caption="bind:Widgets.listAttachment.currentItem.rfqSumAttachment" fontunit="em" color="#026CB6" class="aio-p2p-clickable"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                </wm-listtemplate>
+                                            </wm-list>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container name="container50" horizontalalign="right" padding="16px unset">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset 0.5em" name="button7" color="#BA0D2B" fontweight="bold" padding="10px 40px" on-click="button7Click($event, widget)" show="false"></wm-button>
+                                    <wm-button class="btn-default" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset unset unset 0.5em" name="button_cancel" padding="10px 40px" color="#BA0D2B" fontweight="bold" show="bind:pageParams.rfqId"
+                                        on-click="Actions.goto_RFQTrackinng.invoke()" bordercolor="#BA0D2B"></wm-button>
+                                    <wm-button class="btn-default" caption="bind:appLocale.LANG_SUBMIT" type="button" margin="unset unset unset 0.5em" padding="10px 40px" color="#fff" backgroundcolor="#026CB6" fontweight="bold" show="bind:pageParams.rfqId"
+                                        on-click="button8_1Click($event, widget)" name="button5"></wm-button>
+                                </wm-container>
+                                <wm-container name="container73" backgroundcolor="#ffffff" padding="24px" margin="20px unset unset unset">
+                                    <wm-container horizontalalign="left" name="container74">
+                                        <wm-fileupload on-select="Variables.FileServiceUploadFile.invoke()" caption="Select File" iconclass="wi wi-file-text" contenttype=".jpeg .jpg .pdf .docx .doc .xlsx .xls" show="false" name="fileupload3"></wm-fileupload>
+                                        <wm-container class="aio-p2p-scroll-x" name="container75">
+                                            <wm-container name="container76">
+                                                <wm-container class="aio-p2p-table-header" padding="16px" name="container77">
+                                                    <wm-container display="inline-block" width="8%" horizontalalign="left" name="container78">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RFQ_NUMBER" name="label44"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="6%" horizontalalign="center" name="container79">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_LINE_ITEM" name="label45"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="14%" horizontalalign="left" name="container80_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DESCRIPTION" name="label46"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="left" name="container81">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_VENDOR_CODE" name="label47"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="left" name="container82">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_VENDOR_NAME" name="label48"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="center" name="container83">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LABEL_UNIT_PRICE" name="label49"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="center" name="container84">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_TOTAL_PRICE" name="label50"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="center" name="container85">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LABEL_TOP" name="label51"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="20%" horizontalalign="center" name="container86">
+                                                        <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_LEAD_TIME" name="label52"></wm-label>
+                                                    </wm-container>
+                                                </wm-container>
+                                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.modelRfqVendorList.dataSet"
+                                                    navigation="None" on-beforedatarender="dataListBeforedatarender(widget, $data)" name="list4" statehandler="none">
+                                                    <wm-listtemplate layout="media" name="listtemplate4">
+                                                        <wm-container padding="4px 8px 4px 12px" bordercolor="#E1E4E7" borderstyle="solid" borderwidth="0px 1px" name="container87">
+                                                            <wm-container display="inline-block" width="8%" horizontalalign="left" name="container88">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.rfqNumber" name="label53"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="6%" horizontalalign="center" bordercolor="#E1E4E7" borderstyle="solid" borderwidth="0px" name="container89">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.item" name="label54"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="14%" horizontalalign="left" borderwidth="0px" borderstyle="solid" bordercolor="#E1E4E7" name="container90">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.description" name="label55"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="10%" horizontalalign="left" borderwidth="0px" bordercolor="#E1E4E7" name="container91">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.vendorCode" name="label56"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="12%" horizontalalign="left" borderwidth="0px" bordercolor="#E1E4E7" name="container92">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.vendorName" name="label57"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="10%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container93">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.list4.currentItem.liqUnitPrice)" name="label58"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="10%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container94">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.list4.currentItem.liqAmount)" name="label59"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="10%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container95">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.top" name="label60"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="20%" horizontalalign="center" borderwidth="0px" bordercolor="#E1E4E7" name="container96">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.list4.currentItem.rfqvDuration  +  &quot; Days&quot;" name="label61"></wm-label>
+                                                            </wm-container>
+                                                        </wm-container>
+                                                    </wm-listtemplate>
+                                                </wm-list>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="right" padding="16px unset" name="container97">
+                                    <wm-button class="btn-default" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset 0.5em" color="#BA0D2B" fontweight="bold" padding="10px 40px" on-click="button7Click($event, widget)" show="false" name="button6"></wm-button>
+                                    <wm-button class="btn-default" caption="bind:appLocale.BUTTON_EXPORT_EXCEL" type="button" margin="1em unset unset 0.5em" padding="10px 20px" color="#fff" backgroundcolor="#026CB6" fontweight="bold" show="bind:pageParams.rfqId"
+                                        on-click="button3Click($event, widget)" name="button3" iconclass="fa fa-upload" textalign="right"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                            <wm-spinner show="false" servicevariabletotrack="dbTblMEmpPriceLimit,vdbTaskList,dbTblTAdditionalHistory,FileServiceDownloadFile,vdbBudgetAdditional,dbTblTAdditionalAttachment,FileServiceDeleteFile,dbTblTInbox,FileServiceUploadFile"
+                                class="top-spinner" name="spinner2_1"></wm-spinner>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-spinner show="false" name="spinner2" class="top-spinner" servicevariabletotrack="qChangeRGQ,qGetRFGVendorTracking,FileServiceDownloadFile,qChangeRFQVendorStatusWithoutCreated,qChangeRFQVendorStatus,FileServiceDeleteFile,qChangeRFQSetNull,FileServiceUploadFile,vVendor"></wm-spinner>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

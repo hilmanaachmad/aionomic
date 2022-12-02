@@ -1,0 +1,548 @@
+<wm-page name="mainpage" pagetitle="Quotation Form" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail">
+                        <wm-param name="page" value="reclass" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="row aio-p2p-page-content" horizontalalign="center" padding="unset unset 24px unset">
+                        <wm-container name="formContainer" horizontalalign="center" conditionalclass="bind:Variables.vmShowPdf.dataSet.dataValue ? 'col-md-7 col-md-offset-1 aio-p2p-detail-container2' : 'aio-p2p-detail-container'" padding="unset 8px unset unset">
+                            <wm-container name="container8" horizontalalign="left" padding="10px unset">
+                                <wm-label caption="" name="label1" fontsize="32" fontweight="bold"></wm-label>
+                            </wm-container>
+                            <wm-container name="vendorInformation" padding="20px 24px 24px 24px" backgroundcolor="#fff" margin="unset unset 24px unset">
+                                <wm-container name="container39_1" horizontalalign="left" padding="unset unset 4px unset" borderstyle="outset" borderwidth="0px 0px 8px 0px" bordercolor="#eaeaea" margin="15px unset unset unset">
+                                    <wm-label name="label24_1" caption="Delivery Order" fontweight="bold" fontsize="23"></wm-label>
+                                </wm-container>
+                                <wm-container name="container40" margin="35px unset 20px unset" horizontalalign="left">
+                                    <wm-container display="inline-block" class="col-md-2" width="50%" name="container166_2">
+                                        <wm-label caption="No  :" fontsize="14" color="#666666" fontweight="bold" name="label127" margin="unset 8px unset unset"></wm-label>
+                                        <wm-label caption="bind:Variables.getDataDetailDO.dataSet[$i].sapPoNumber" fontsize="14" color="#666666" fontweight="bold" name="label121_1"></wm-label>
+                                    </wm-container>
+                                    <wm-button class="btn-primary" caption="View PO" type="button" margin="unset 0.5em" name="button11_1" on-click="Widgets.dialogExport.open()"></wm-button>
+                                </wm-container>
+                                <wm-container name="container49" horizontalalign="left" display="block" class="row">
+                                    <wm-container name="container50" display="inline-block" class="col-md-2" width="50%">
+                                        <wm-label caption="Jakarta," fontsize="14" color="#666666" fontweight="bold" name="label123"></wm-label>
+                                        <wm-label name="label30_1" caption="bind:Variables.getDataDetailDO.dataSet[$i].lastApprovedDate | toDate: 'dd/MM/yyyy'" fontsize="14" color="#666666" margin="unset unset unset 8px"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" name="container51" width="50%"></wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" class="row" margin="10px unset unset unset" name="container159_1">
+                                    <wm-container display="inline-block" class="col-md-2" width="8%" name="container160">
+                                        <wm-label caption="To :" fontsize="14" color="#666666" fontweight="bold" name="label119"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="42%" name="container131">
+                                        <wm-label caption="bind:Variables.getDataVendor.dataSet[$i].address ? Variables.getDataVendor.dataSet[$i].address : '-'" fontsize="13" color="#666666" margin="unset unset unset 10px" name="label116_2"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="50%" name="container160">
+                                        <wm-container display="inline-block" class="col-md-2" width="20%" name="container129">
+                                            <wm-label caption="Ship To :" fontsize="14" color="#666666" fontweight="bold" name="label115_1"></wm-label>
+                                        </wm-container>
+                                        <wm-container display="inline-block" class="col-md-2" width="80%" name="container130">
+                                            <wm-label caption="bind:Variables.getDataDetailDO.dataSet[$i].shipmentTo" fontsize="13" color="#666666" name="label121" margin="unset unset unset 10px"></wm-label>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" class="row" margin="10px unset unset unset" name="container159_2">
+                                    <wm-container display="inline-block" class="col-md-2" width="8%" name="container160">
+                                        <wm-label caption="Attn :" fontsize="14" color="#666666" fontweight="bold" name="label119"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="42%" name="container133">
+                                        <wm-label caption="bind:Variables.getDataVendor.dataSet[$i].title + '' + Variables.getDataVendor.dataSet[$i].vendorName" fontsize="13" color="#666666" margin="unset unset unset 10px" name="label120_1"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="10%" name="container160">
+                                        <wm-label caption="Invoice To :" fontsize="14" color="#666666" fontweight="bold" name="label119"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="40%" name="container132">
+                                        <wm-label caption="bind:Variables.getDataDetailDO.dataSet[$i].caddress" fontsize="13" color="#666666" margin="unset unset unset 10px" name="label118"></wm-label>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" class="row" margin="10px unset unset unset" name="container159_3">
+                                    <wm-container display="inline-block" class="col-md-2" width="15%" name="container160">
+                                        <wm-label caption="Incoterms :" fontsize="14" color="#666666" fontweight="bold" name="label119"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="65%" name="container134">
+                                        <wm-label caption="-" fontsize="13" color="#666666" margin="unset unset unset 10px" name="label122"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="20%" name="container160"></wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" class="row" margin="10px unset unset unset" name="container159_32">
+                                    <wm-container display="inline-block" class="col-md-2" width="15%" name="container160">
+                                        <wm-label caption="Payment Terms :" fontsize="14" color="#666666" fontweight="bold" name="label119"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="65%" name="container135">
+                                        <wm-label caption="bind:Variables.getTop.dataSet[$i].text1 ? Variables.getTop.dataSet[$i].text1 : '-'" fontsize="13" color="#666666" margin="unset unset unset 10px" name="label124_2"></wm-label>
+                                    </wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="20%" name="container160"></wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" class="row" margin="40px unset unset unset" name="container159_4">
+                                    <wm-container display="inline-block" class="col-md-2" width="50%" name="container160"></wm-container>
+                                    <wm-container display="inline-block" class="col-md-2" width="50%" name="container160" horizontalalign="right"></wm-container>
+                                </wm-container>
+                                <wm-container name="container42">
+                                    <wm-composite captionposition="top" horizontalalign="left" name="composite7">
+                                        <wm-container class="col-md-9" width="100%" name="container43">
+                                            <wm-container name="container73" conditionalstyle="bind:{ overflowX: &quot;scroll&quot; }">
+                                                <wm-container name="container115" width="1200">
+                                                    <wm-container name="container102_1" padding="16px" horizontalalign="left" backgroundcolor="#F6F7F8">
+                                                        <wm-container name="container104_1" horizontalalign="left" display="inline-block" width="3%">
+                                                            <wm-label padding="unset 0.5em" name="label52" caption="No" class="aio-p2p-header-label"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="center" display="inline-block" width="15%" name="container190">
+                                                            <wm-label padding="unset 0.5em" caption="Description" class="aio-p2p-header-label" name="label133"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="center" display="inline-block" name="container106" width="10%">
+                                                            <wm-label padding="unset 0.5em" name="label54" caption="ETA" class="aio-p2p-header-label"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="center" display="inline-block" name="container107" width="10%">
+                                                            <wm-label padding="unset 0.5em" name="label55" caption="Qty Order" class="aio-p2p-header-label"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="center" display="inline-block" name="container108" width="8%">
+                                                            <wm-label padding="unset 0.5em" name="label56" caption="Unit" class="aio-p2p-header-label"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="right" display="inline-block" name="container111" width="12%">
+                                                            <wm-label padding="unset 0.5em" name="label59" caption="Qty Delivered" class="aio-p2p-header-label"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="center" display="inline-block" width="12%" name="container136">
+                                                            <wm-label padding="unset 0.5em" caption="Input Qty" class="aio-p2p-header-label" name="label125"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container horizontalalign="center" display="inline-block" name="container114" width="14%">
+                                                            <wm-label padding="unset 0.5em" name="label62" caption="Delivery Date" class="aio-p2p-header-label"></wm-label>
+                                                        </wm-container>
+                                                    </wm-container>
+                                                    <wm-container name="container103_1">
+                                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="none"
+                                                            name="listItem" dataset="bind:Variables.modelItem.dataSet" navigation="None" orderby="id:asc" enablereorder="true">
+                                                            <wm-listtemplate layout="inline" name="listtemplate1">
+                                                                <wm-container name="container104_2" horizontalalign="left">
+                                                                    <wm-container name="container105_2" display="inline-block" width="4%" horizontalalign="left">
+                                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listItem.currentItem.nomor" name="label113"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-block" width="15%" horizontalalign="center" name="container191">
+                                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listItem.currentItem.item" name="label134" hint="bind:Widgets.listItem.currentItem.item"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-block" width="10%" name="container107_1" horizontalalign="center">
+                                                                        <wm-label padding="unset 0.5em" name="label56_1" caption="bind:Widgets.listItem.currentItem.eta | toDate: 'dd/MM/yyyy'"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-block" width="10%" name="container108_1" horizontalalign="center">
+                                                                        <wm-label padding="unset 0.5em" name="label57_1" caption="bind:Widgets.listItem.currentItem.poQty"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-block" width="8%" name="container109_1" horizontalalign="center">
+                                                                        <wm-label padding="1em 0.5em unset 0.5em" name="label58_1" caption="bind:Widgets.listItem.currentItem.uom"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-block" width="12%" name="container112_1" horizontalalign="right">
+                                                                        <wm-label padding="unset 0.5em" name="label61_1" caption="bind:Widgets.listItem.currentItem.delivered == null ? 0 : Widgets.listItem.currentItem.delivered"></wm-label>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-block" width="12%" horizontalalign="right" name="container137">
+                                                                        <wm-text name="text4" width="80%" margin="0px 0px 0px 12px" type="number" placeholder="Enter Qty" datavalue="bind:Widgets.listItem.currentItem.deliveryQty !== 0 ? Widgets.listItem.currentItem.deliveryQty : null"
+                                                                            updateon="default" on-keyup="text4Keyup($event, widget, item, currentItemWidgets)" disabled="bind:Widgets.listItem.currentItem.isDone == true ? true : false"></wm-text>
+                                                                    </wm-container>
+                                                                    <wm-container display="inline-flex" width="13%" name="container113_2" horizontalalign="center">
+                                                                        <wm-label padding="unset 0.5em" name="label114_1" show="bind:Widgets.listItem.currentItem.isDone == true ? true : false" caption="bind:Widgets.listItem.currentItem.tanggaldelivery | toDate: 'dd/MM/yyyy'"
+                                                                            margin="unset unset unset 20px"></wm-label>
+                                                                        <wm-date name="date2" datepattern="dd/MM/yyyy" datavalue="bind:Widgets.listItem.currentItem.deliveryDate" class="aio-date" width="90%" show="bind:Widgets.listItem.currentItem.isDone == true ? false : true"
+                                                                            mindate="CURRENT_DATE"></wm-date>
+                                                                    </wm-container>
+                                                                </wm-container>
+                                                            </wm-listtemplate>
+                                                        </wm-list>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-composite>
+                                </wm-container>
+                                <wm-container class="row" name="container98" margin="unset unset 8px unset">
+                                    <wm-container class="col-md-5" horizontalalign="left" padding="12px 12px unset unset" name="container99" width="20%" margin="unset unset unset 27px">
+                                        <wm-label caption="Delivery Order Number :" name="label44" fontsize="14" fontweight="bold"></wm-label>
+                                    </wm-container>
+                                    <wm-container class="col-md-5" horizontalalign="left" padding="unset 12px unset unset" name="container167_1" width="50%">
+                                        <wm-text name="deliveryNumber" placeholder="Enter Delivery Number" width="75%"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container class="row" margin="unset unset 8px unset" name="container139">
+                                    <wm-container class="col-md-5" horizontalalign="left" padding="12px 12px unset unset" width="25%" name="container140"></wm-container>
+                                    <wm-container class="col-md-5" horizontalalign="left" padding="12px 12px unset unset" width="50%" name="container141"></wm-container>
+                                </wm-container>
+                                <!--this-->
+                                <!--this-->
+                                <wm-container horizontalalign="left" display="block" class="row" name="notes">
+                                    <wm-container display="inline-block" class="col-md-2" width="47%" name="container160" margin="unset unset unset 20px">
+                                        <wm-label padding="unset 0.5em" name="label124" caption="Comment :" fontweight="bold"></wm-label>
+                                        <wm-textarea name="textarea1" width="100%" height="215" backgroundcolor="#e8e8e8" placeholder="Comment"></wm-textarea>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container horizontalalign="left" display="block" class="row" margin="20px unset unset unset" name="container159">
+                                    <wm-container display="inline-block" class="col-md-2" width="50%" name="container160" horizontalalign="left">
+                                        <wm-container name="container146" width="50%" display="inline-block"></wm-container>
+                                        <wm-container width="50%" display="inline-block" name="container148" horizontalalign="right">
+                                            <wm-button class="btn-primary" caption="Submit" type="button" margin="unset 0.5em" name="button11" fontweight="bold" on-click="button11Click($event, widget)"></wm-button>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="btnContainer">
+                                <wm-container name="container24_1" class="col-md-3" horizontalalign="left"></wm-container>
+                                <wm-container class="col-md-3" horizontalalign="left" name="container124_1" padding="unset unset unset 16px"></wm-container>
+                                <wm-container class="col-md-6" horizontalalign="right" name="container25">
+                                    <wm-button class="btn-default" caption="Cancel" type="button" margin="unset 0.5em" name="buttonCancel" color="#BA0D2B" fontweight="bold" on-click="buttonCancelClick($event, widget)" show="false" padding="10px 40px"></wm-button>
+                                    <wm-button class="btn-default" caption="Submit" type="button" margin="unset unset unset 0.5em" name="buttonSubmit" color="#fff" backgroundcolor="#026CB6" fontweight="bold" on-click="buttonSubmitClick($event, widget)"
+                                        disabled="false" show="false" padding="10px 40px"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="pdfPreview" class="col-md-5 aio-ptp-pdf-viewer" padding="72px unset unset 8px" show="bind:Variables.vmShowPdf.dataSet.dataValue">
+                            <wm-container name="container47" horizontalalign="right" padding="unset 32px 5px unset" conditionalstyle="bind:{
+    position: &quot;sticky&quot;,
+    top: &quot;24px&quot;,
+    zIndex: &quot;10&quot;
+}">
+                                <wm-picture name="picture4" width="15" on-click="picture4Click($event, widget)" class="aio-p2p-clickable" pictureplaceholder="resources/images/imagelists/icon-close.png"></wm-picture>
+                            </wm-container>
+                            <wm-container name="container48" class="pdf-scroll">
+                                <div id="pdf-canvas-container"></div>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+                <wm-spinner show="false" name="spinner1" deferload="false"></wm-spinner>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Acccept Order" iconclass="" name="dialogItem" class="aio-p2p-modal" width="35%">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="aio-p2p-btn-alternate" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset 0.5em" name="button5" on-click="Widgets.dialogItem.close()"></wm-button>
+            <wm-button class="btn-primary" caption="OK" name="BtnConfirm" on-click="BtnConfirmClick($event, widget)" disabled="bind:Widgets.checkboxterm.datavalue == false ? true : false"></wm-button>
+        </wm-dialogactions>
+        <wm-layoutgrid name="layoutgrid4">
+            <wm-gridrow name="gridrow11">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn15_1">
+                    <wm-label padding="unset 0.5em" name="label124_1" caption="I undersigned"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow12_1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn17">
+                    <wm-container name="container116">
+                        <wm-container class="col-md-9 aio-p2p-form-container" name="container117" width="100%" conditionalstyle="bind:{position: 'relative'}" conditionalclass="bind:Variables.modelErrors.dataSet.leadTime ? 'form-error' : ''" show="true">
+                            <wm-label caption="" name="label68" conditionalstyle="bind:{position: 'absolute', top: '12px', right: '12px', zIndex: '10', color: 'rgba(64, 65, 67, 0.6)'}"></wm-label>
+                            <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.leadTime" name="label70_1"></wm-label>
+                            <wm-container name="container164_2" class="col-md-4">
+                                <wm-label class="col-md-3" name="label64" caption="Name" margin="unset unset unset 4px"></wm-label>
+                            </wm-container>
+                            <wm-container class="col-md-8" name="container165_2">
+                                <wm-text name="NameText" placeholder="Enter Name"></wm-text>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalstyle="bind:{position: 'relative'}" conditionalclass="bind:Variables.modelErrors.dataSet.leadTime ? 'form-error' : ''" show="true" name="container163_3"
+                            margin="20px unset unset unset">
+                            <wm-label caption="" conditionalstyle="bind:{position: 'absolute', top: '12px', right: '12px', zIndex: '10', color: 'rgba(64, 65, 67, 0.6)'}" name="label115"></wm-label>
+                            <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.leadTime" name="label116_1"></wm-label>
+                            <wm-container class="col-md-4" name="container164_3">
+                                <wm-label class="col-md-3" caption="Position" name="label117_1" margin="unset unset unset 4px"></wm-label>
+                            </wm-container>
+                            <wm-container class="col-md-8" name="container165_3">
+                                <wm-text name="PositionText" placeholder="Enter Position"></wm-text>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow13">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn18">
+                    <wm-label padding="unset 0.5em" name="label125_1" caption="do hereby confirm that i on behalf of Director" margin="20px unset unset unset"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow14">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn19">
+                    <wm-label padding="unset 0.5em" name="label126" caption="bind:Variables.getDataVendor1.dataSet[$i].vendorName"></wm-label>
+                    <wm-label padding="unset 0.5em" name="label127_1" caption="Accept this purchase request"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow15">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn20" horizontalalign="left">
+                    <wm-checkbox caption="I have read and understand term and conditions" class="col-md-push-3 col-md-9" name="checkboxterm" margin="unset unset unset -125px" datavalue="false" checkedvalue="true" uncheckedvalue="false"></wm-checkbox>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="" name="dialogExport" class="aio-p2p-modal" width="900">
+        <wm-container name="containerExportBg" fontsize="12" color="#000000" bordercolor="#ffffff" show="true">
+            <wm-container name="container152" margin="8px unset unset unset">
+                <wm-container name="container156" horizontalalign="left" backgroundcolor="#ffffff" bordercolor="#eaeaea" borderwidth="0px 0px 8px 0px" borderstyle="outset">
+                    <wm-container name="container172_2" width="65%" display="inline-block">
+                        <wm-picture name="picture4_1" picturesource="resources/images/logos/login-otsuka.png" height="70" margin="-50px unset 5px 5px"></wm-picture>
+                    </wm-container>
+                    <wm-container width="35%" name="container173_2" display="inline-block">
+                        <wm-html name="address" content="bind:pageParams.company_code == '1000' ? '<label>PT. Amerta Indah Otsuka</label><p>Pondok Indah Office Tower I 6th Floor. Jl. Sultan Iskandar Muda Kav. V-TA South Jakarta, DKI Jakarta 12310</p>' : '<label>PT. Otsuka Distribution Indonesia</label><p>Pondok Indah Office Tower I 6th Floor. Jl. Sultan Iskandar Muda Kav. V-TA South Jakarta, DKI Jakarta 12310</p>'">bind:pageParams.company_code == '1000' ? '<label>PT. Amerta Indah Otsuka</label>
+                            <p>Pondok Indah Office Tower I 6th Floor. Jl. Sultan Iskandar Muda Kav. V-TA South Jakarta, DKI Jakarta 12310</p>' : '<label>PT. Otsuka Distribution Indonesia</label>
+                            <p>Pondok Indah Office Tower I 6th Floor. Jl. Sultan Iskandar Muda Kav. V-TA South Jakarta, DKI Jakarta 12310</p>'</wm-html>
+                        <wm-label padding="unset 0.5em" name="label128" caption="bind:pageParams.company_code == '1000' ? 'PT. Amerta Indah Otsuka                             Pondok Indah Office Tower I 6th Floor. Jl. Sultan Iskandar Muda Kav. V-TA South Jakarta, DKI Jakarta 12310' : 'PT. Otsuka Distributor Indonesia                             Pondok Indah Office Tower I 6th Floor. Jl. Sultan Iskandar Muda Kav. V-TA South Jakarta, DKI Jakarta 12310'"
+                            show="false"></wm-label>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container horizontalalign="left" backgroundcolor="#ffffff" borderwidth="0px" name="container176_2">
+                <wm-container width="65%" display="inline-block" name="container177_1"></wm-container>
+                <wm-container width="35%" display="inline-block" name="container178_1"></wm-container>
+            </wm-container>
+            <wm-container horizontalalign="left" backgroundcolor="#ffffff" borderwidth="0px" name="container166_3">
+                <wm-container width="35%" display="inline-block" name="container167_1" horizontalalign="right"></wm-container>
+                <wm-container width="30%" display="inline-block" horizontalalign="center" name="container170_2">
+                    <wm-label padding="unset 0.5em" caption="PURCHASE ORDER" conditionalstyle="bind:{ fontWeight: &quot;600&quot;}" fontsize="16" name="label123_2"></wm-label>
+                </wm-container>
+                <wm-container width="35%" display="inline-block" name="container168_2" horizontalalign="right">
+                    <wm-label padding="unset 0.5em" name="label122" caption="Jakarta,"></wm-label>
+                    <wm-label padding="unset 0.5em" name="label103" caption="bind:Variables.getDataDetailDO.dataSet[$i].lastApprovedDate | toDate : 'dd/MM/yyyy'"></wm-label>
+                </wm-container>
+            </wm-container>
+            <wm-container horizontalalign="left" backgroundcolor="#ffffff" borderwidth="0px" name="container166_53" margin="unset unset 15px unset">
+                <wm-container width="35%" display="inline-block" name="container167_1" horizontalalign="right"></wm-container>
+                <wm-container width="30%" display="inline-block" horizontalalign="center" name="container170_2">
+                    <wm-label padding="unset 0.5em" caption="bind:'NO : ' + Variables.getDataDetailDO.dataSet[$i].sapPoNumber" conditionalstyle="bind:{ fontWeight: &quot;600&quot;}" fontsize="14" name="label123_2"></wm-label>
+                </wm-container>
+                <wm-container width="35%" display="inline-block" name="container168_2"></wm-container>
+            </wm-container>
+            <wm-layoutgrid name="layoutgridExport">
+                <wm-gridrow name="gridrow17">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn17_1">
+                        <wm-container class="col-md-12" name="container178_3" backgroundcolor="#eeeeee">
+                            <wm-container class="col-md-7" name="container179_2" padding="4px unset">
+                                <wm-label padding="unset 0.5em" name="label107_2" caption="Supplier" fontsize="13" margin="2px unset -1px unset" fontweight="bold"></wm-label>
+                            </wm-container>
+                            <wm-container class="col-md-5" name="container180_2" padding="4px unset" horizontalalign="right">
+                                <wm-label padding="unset 0.5em" caption="Delivery Address" name="label108_1" fontsize="13" fontweight="bold" textalign="right"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow16">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn16">
+                        <wm-container class="col-md-12" name="container181_1">
+                            <wm-container class="col-md-7" margin="unset unset 12px unset" name="container182_1">
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getDataVendor.dataSet[$i].title + ' ' + Variables.getDataVendor.dataSet[$i].vendorName" name="label109_1" class="col-md-12"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getDataVendor.dataSet[$i].address" class="col-md-12" name="label112"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="Terms :" class="col-md-3" name="label113_1"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getTop.dataSet[$i].text1" class="col-md-8" name="label114_1"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="Phone No :" class="col-md-3" name="label115_1"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.DBRFQTOPO.dataSet[$i].rfqvSalesNumber ?  Variables.DBRFQTOPO.dataSet[$i].rfqvSalesNumber : '-'" class="col-md-8" name="label116_2"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="Attn :" class="col-md-3" name="label118_1"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getAcceptance.dataSet[$i].name" class="col-md-8" name="label117_2"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="Email  :" class="col-md-3" name="label119_1"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.DBRFQTOPO.dataSet[$i].rfqvSalesEmail ? Variables.DBRFQTOPO.dataSet[$i].rfqvSalesEmail : '-'" class="col-md-8" name="label120"></wm-label>
+                            </wm-container>
+                            <wm-container class="col-md-5" margin="unset unset 12px unset" name="container183">
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.getDataDetailDO.dataSet[$i].caddress" name="label110_2"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow18"></wm-gridrow>
+                <wm-gridrow name="gridrow19">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn19_1" height="12"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport4">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport4">
+                        <wm-container name="containerExportList" fontsize="11" class="aio-ptp-export-list" show="false">
+                            <wm-container name="containerExportListSub">
+                                <wm-container name="containerExportListHeader">
+                                    <wm-container padding="0px 16px" horizontalalign="left" name="containerExportListHeaderSub" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="1px 0px" backgroundcolor="#eeeeee" class="flex-parent">
+                                        <wm-container horizontalalign="left" display="inline-block" name="containerExListHeader1" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child" width="3.9%">
+                                            <wm-label padding="unset 0.5em" caption="No" name="labelExListHeader1"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="16%" name="containerExListHeader2" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DESCRIPTION" name="labelExListHeader2"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="10%" name="containerExListHeader3" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="ETA" name="labelExListHeader3"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="7.1%" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" name="container176_3" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="Qty" name="label107"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="7.1%" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" name="container158" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="UOM" name="label109_2"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="12.1%" name="containerExListHeader5" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_UNIT_PRICE" name="labelExListHeader5"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="12%" name="containerExListHeader6" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_AMOUNT" name="labelExListHeader6"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="7%" name="containerExListHeader7" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale[&quot;LANG_DISCOUNT&quot;] + ' (%)'" name="labelExListHeader7"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="13%" name="containerExListHeader8" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px 1px 0px 0px" padding="8px unset" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_AMOUNT_AFTER_DISCOUNT" name="labelExListHeader8"></wm-label>
+                                        </wm-container>
+                                        <wm-container horizontalalign="center" display="inline-block" width="10%" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" padding="8px unset" name="container178" class="flex-child">
+                                            <wm-label padding="unset 0.5em" caption="AVT (IDR)" name="label109"></wm-label>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-container name="containerExportListData">
+                                        <wm-list listclass="list-group" template="true" template-name="Contact List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" datafield="All Fields" statehandler="URL" dataset="bind:Variables.modelLineItemPO.dataSet"
+                                            navigation="None" name="listExport" on-beforedatarender="listExportBeforedatarender(widget, $data)">
+                                            <wm-listtemplate layout="inline" name="listtemplateExport">
+                                                <wm-container horizontalalign="left" name="container147" padding="unset 15px">
+                                                    <wm-container display="inline-block" width="4.045%" horizontalalign="left" name="containerExListData1" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.nomor" name="labelExListData1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="16%" horizontalalign="left" name="containerExListData2" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.item" name="labelExListData2" whitespace="pre-line"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="center" name="containerExListData3" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.eta | toDate: 'dd/MM/yyyy'" name="labelExListData3"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="7%" horizontalalign="center" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" name="container177_2">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.poQty" name="label108"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="7%" horizontalalign="center" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" name="container159_5">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listExport.currentItem.uom" name="label110_3"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="right" name="containerExListData5" padding="8px unset" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.unitPrice)" name="labelExListData5"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="right" name="containerExListData6" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.itemTotalAmount)" name="labelExListData6"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="7%" horizontalalign="center" name="containerExListData7" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.discount)" name="labelExListData7"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="13%" horizontalalign="right" name="containerExListDatak" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" padding="8px unset">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(Widgets.listExport.currentItem.itemAmountAfterDiscount)" name="labelExListData8"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="10%" horizontalalign="right" bordercolor="#C4C4C4" borderstyle="solid" borderwidth="0px" padding="8px unset" name="container179">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.formatCurrencyPTP(calculationVatItem(Widgets.listExport.currentItem.itemAmountAfterDiscount, Variables.getDataDetailDO.dataSet[$i].vat))" name="label110"></wm-label>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow19">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn19_1">
+                        <wm-html name="newTable" id="new-table"></wm-html>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12" padding="12px unset 16px unset">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn15">
+                        <wm-container name="container164">
+                            <wm-container name="container162" display="inline-block" width="78%" horizontalalign="right">
+                                <wm-label name="label138" caption="Subtotal"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="20%" name="container163" horizontalalign="right">
+                                <wm-label name="label139" caption="bind:App.formatCurrencyPTP(Variables.totalLineItem.dataSet.subtotal)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container165">
+                            <wm-container display="inline-block" width="78%" horizontalalign="right" name="container166">
+                                <wm-label name="label140" caption="Sub Total + Charges / Discount"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="20%" horizontalalign="right" name="container167">
+                                <wm-label name="label141" caption="bind:App.formatCurrencyPTP(Variables.totalLineItem.dataSet.subtotalchangesdisc)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container168">
+                            <wm-container display="inline-block" width="78%" horizontalalign="right" name="container169">
+                                <wm-label name="label142" caption="Total VAT"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="20%" horizontalalign="right" name="container170">
+                                <wm-label name="label143" caption="bind:App.formatCurrencyPTP(Variables.totalLineItem.dataSet.totalvat)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container180">
+                            <wm-container display="inline-block" width="78%" horizontalalign="right" name="container180_1" bordercolor="#c4c4c4" borderstyle="solid" borderwidth="0px" padding="2px unset unset unset">
+                                <wm-label caption="Grand Total" name="label136"></wm-label>
+                            </wm-container>
+                            <wm-container display="inline-block" width="20%" horizontalalign="right" name="container182" bordercolor="#c4c4c4" borderstyle="solid" borderwidth="2px 0px 0px 0px" padding="2px 4px unset unset">
+                                <wm-label name="label151" caption="bind:App.formatCurrencyPTP(Variables.totalLineItem.dataSet.grandtotal)"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow13_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                        <wm-label padding="unset 0.5em" name="label110_1" caption="Notes from purchasing"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrowExport6">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport6">
+                        <wm-container name="containerExportFooter" color="#666666">
+                            <wm-html name="html7" content="bind:Variables.DataHeaderPO.dataSet[$i].additionalNotesPo">bind:Variables.DataHeaderPO.dataSet[$i].additionalNotesPo</wm-html>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow14_2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                        <wm-label padding="unset 0.5em" caption="Agreement by Legal :" name="label111"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow15_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumnExport6">
+                        <wm-container name="containerExportFooter" color="#666666">
+                            <wm-html name="html7" content="bind:Variables.DataHeaderPO.dataSet[$i].additionalNotesLegal">bind:Variables.DataHeaderPO.dataSet[$i].additionalNotesLegal</wm-html>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow10">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                        <wm-container class="col-md-12" name="container177" padding="12px unset unset unset">
+                            <wm-container class="col-md-7" name="container178_2">
+                                <wm-label caption="Ordered By," name="label101" class="col-md-12" fontsize="14"></wm-label>
+                                <wm-label caption="PT. Amerta Indah Otsuka" class="col-md-12" name="label102" fontsize="14"></wm-label>
+                            </wm-container>
+                            <wm-container class="col-md-5" name="container179_1" show="bind:Variables.getAcceptance.dataSet.length > 0 ? true : false">
+                                <wm-label caption="Accepted And Confirmed By," class="col-md-12" name="label103_2" fontsize="14" padding="unset unset unset 0.5px"></wm-label>
+                                <wm-label caption="bind:Variables.getAcceptance.dataSet[$i].acceptedAt | toDate : 'dd/MM/yyyy'" class="col-md-12" name="label104_1" fontsize="14" padding="unset unset unset 0.5px"></wm-label>
+                                <wm-label caption="bind:Variables.getDataVendor.dataSet[$i].title + ' ' + Variables.getDataVendor.dataSet[$i].vendorName" class="col-md-12" fontsize="14" padding="unset unset unset 0.5px" name="label119"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow11_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn11">
+                        <wm-container class="col-md-12" name="container171">
+                            <wm-container class="col-md-7" name="container172" margin="unset unset 12px unset"></wm-container>
+                            <wm-container class="col-md-5" name="container173" margin="unset unset 12px unset"></wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow12_2">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                        <wm-container class="col-md-12" name="container174">
+                            <wm-container class="col-md-7" name="container175">
+                                <wm-label caption="Boby Santoso" class="col-md-12" name="label106" fontsize="14"></wm-label>
+                                <wm-label caption="Head Of Corporate Procurement" class="col-md-12" fontsize="14" name="label113"></wm-label>
+                                <wm-label caption="Generated by system, Signature is no longer required" class="col-md-12" name="label107_1" fontsize="10"></wm-label>
+                            </wm-container>
+                            <wm-container class="col-md-5" name="container176" show="bind:Variables.getAcceptance.dataSet.length > 0 ? true : false">
+                                <wm-label padding="unset 0.5em unset unset" name="label114" caption="bind:Variables.getAcceptance.dataSet[$i].name" class="col-md-12" fontsize="14"></wm-label>
+                                <wm-label padding="unset 0.5em unset unset" caption="bind:Variables.getAcceptance.dataSet[$i].position" class="col-md-12" name="label116" fontsize="14"></wm-label>
+                                <wm-label padding="unset 0.5em unset unset" caption="On behalf of director" class="col-md-12" fontsize="14" name="label117"></wm-label>
+                                <wm-label padding="unset 0.5em unset unset" caption="bind:Variables.getDataVendor.dataSet[$i].title + ' ' + Variables.getDataVendor.dataSet[$i].vendorName" class="col-md-12" fontsize="14" name="label118"></wm-label>
+                            </wm-container>
+                        </wm-container>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-spinner show="false" name="spinner2"></wm-spinner>
+        <wm-dialogactions name="dialogactionsExport">
+            <wm-button class="aio-p2p-btn-alternate" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset 0.5em" on-click="Widgets.dialogExport.close()" name="buttonCancelExport"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_EXPORT" on-click="buttonSaveExportClick($event, widget)" name="buttonSaveExport"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Reject Order" iconclass="" name="RejectOrder" class="aio-p2p-modal">
+        <wm-dialogactions name="dialogactions3">
+            <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button12"></wm-button>
+            <wm-button class="btn-default" caption="Yes" type="button" margin="unset 0.5em" name="Reject" backgroundcolor="#f44444" color="#ffffff" on-click="RejectClick($event, widget)"></wm-button>
+        </wm-dialogactions>
+        <wm-label padding="unset 0.5em" name="label133_1" caption="Are you sure want to reject the order ?"></wm-label>
+        <wm-label padding="unset 0.5em" name="label134_1" caption="THIS IS IMMEDIATE AND CANNOT BE UNDONE" fontweight="bold"></wm-label>
+    </wm-dialog>
+</wm-page>

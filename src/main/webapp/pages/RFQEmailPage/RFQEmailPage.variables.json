@@ -1,0 +1,60 @@
+{
+  "dbGetRfqVendor" : {
+    "_id" : "wm-dbGetRfqVendor-wm.ServiceVariable-1613970883145",
+    "name" : "dbGetRfqVendor",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "rfqvId",
+      "value" : "bind:pageParams.rfqvId",
+      "type" : "integer"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.aio_ptp.TblTRfqVendor",
+    "service" : "aio_ptp",
+    "operation" : "getTblTRfqVendor",
+    "operationId" : "TblTRfqVendorController_getTblTRfqVendor",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "TblTRfqVendor"
+  },
+  "goto_QuotaionFormVendor" : {
+    "_id" : "wm-goto_QuotaionFormVendor-wm.NavigationVariable-1613982851165",
+    "name" : "goto_QuotaionFormVendor",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "QuotationFormVendor",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "rfqvId",
+      "value" : "bind:pageParams.rfqvId"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "modelErrors" : {
+    "_id" : "wm-modelErrors-wm.Variable-1613969640278",
+    "name" : "modelErrors",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "email" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

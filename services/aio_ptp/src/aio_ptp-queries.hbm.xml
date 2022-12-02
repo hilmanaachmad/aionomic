@@ -1,0 +1,2088 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="generateRFQRef">
+        <![CDATA[
+        UPDATE tbl_t_rfq
+SET rfq_ref = :rfqRef
+WHERE rfq_id = :rfqId
+        ]]>
+    <query-param name="rfqRef" type="java.lang.String"/>
+    <query-param name="rfqId" type="java.math.BigInteger"/>
+    </sql-query>
+
+    <sql-query name="getBODbyDepartementId">
+        <![CDATA[
+        SELECT tmom.om_id, tmom.division_title, tmom.department_title, tmom.department_id, tmom.cost_center_id, tmom.cost_center_title, tmom.om_created_at, tmom.om_created_by, tmom.om_status,
+tmom.purch_org, tmom.purch_org_desc, tmdb.*
+FROM tbl_m_organization_map tmom 
+JOIN tbl_m_division_bod tmdb on tmom.division_id = tmdb.division_id 
+WHERE tmom.department_id IN :departementId and tmdb.div_bod_status like 'active' and tmom.om_status like 'active'
+        ]]>
+    <query-param name="departementId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getBODbyDepartementId__count">
+        <![CDATA[
+        select count(*) from (SELECT tmom.om_id, tmom.division_title, tmom.department_title, tmom.department_id, tmom.cost_center_id, tmom.cost_center_title, tmom.om_created_at, tmom.om_created_by, tmom.om_status,
+tmom.purch_org, tmom.purch_org_desc, tmdb.*
+FROM tbl_m_organization_map tmom 
+JOIN tbl_m_division_bod tmdb on tmom.division_id = tmdb.division_id 
+WHERE tmom.department_id IN :departementId and tmdb.div_bod_status like 'active' and tmom.om_status like 'active') wmTempTable
+        ]]>
+    <query-param name="departementId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="sendCheckerNotification">
+        <![CDATA[
+        insert into tbl_t_inbox(inb_task_type, inb_subject, inb_created_by, user_id)
+select DISTINCT
+	'PR' as inb_task_type,
+	'<b>PR</b> - Segera melakukan pengisian COA dan asset number pada halaman task list checker' as inb_subject,
+	:createdBy as inb_created_by,
+	tmur.user_id as user_id  
+from tbl_m_user_role tmur
+left join rel_role_auth rra on rra.role_id = tmur.role_id 
+left join tbl_m_authorization tma on tma.auth_id = rra.auth_id
+where tma.auth_code = 'PRS-007'
+        ]]>
+    <query-param name="createdBy" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="update_userDepStatus">
+        <![CDATA[
+        UPDATE tbl_m_user_dep SET status = :status 
+WHERE company_id = :company_id
+AND department_id = :department_id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="company_id" type="java.lang.String"/>
+    <query-param name="department_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getBudgetUploadList">
+        <![CDATA[
+        SELECT 
+    ttbu.*,
+    (
+        SELECT COUNT(*) FROM tbl_t_budget_header ttbh
+        LEFT JOIN tbl_t_budget_details ttbd ON ttbd.bh_id = ttbh.bh_id
+        WHERE ttbh.bu_id = ttbu.bu_id
+            AND ttbd.bd_id IS NOT NULL
+            AND ttbd.bd_status <> 'deleted'
+            AND ttbh.bh_status <> 'deleted'
+            AND ttbd.bd_adjustment_type <> 'BEGINNING'
+    ) AS trans_count
+FROM tbl_t_budget_upload ttbu
+WHERE 
+    (
+        :year IS NULL 
+        OR
+        ttbu.bu_year = :year
+    )
+    AND
+    (
+        :company IS NULL
+        OR
+        ttbu.company LIKE CONCAT('%', :company, '%')
+    )
+    AND ttbu.bu_status <> 'deleted'
+        ]]>
+    <query-param name="year" type="java.lang.String"/>
+    <query-param name="company" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getBudgetUploadList__count">
+        <![CDATA[
+        select count(*) from (SELECT 
+    ttbu.*,
+    (
+        SELECT COUNT(*) FROM tbl_t_budget_header ttbh
+        LEFT JOIN tbl_t_budget_details ttbd ON ttbd.bh_id = ttbh.bh_id
+        WHERE ttbh.bu_id = ttbu.bu_id
+            AND ttbd.bd_id IS NOT NULL
+            AND ttbd.bd_status <> 'deleted'
+            AND ttbh.bh_status <> 'deleted'
+            AND ttbd.bd_adjustment_type <> 'BEGINNING'
+    ) AS trans_count
+FROM tbl_t_budget_upload ttbu
+WHERE 
+    (
+        :year IS NULL 
+        OR
+        ttbu.bu_year = :year
+    )
+    AND
+    (
+        :company IS NULL
+        OR
+        ttbu.company LIKE CONCAT('%', :company, '%')
+    )
+    AND ttbu.bu_status <> 'deleted') wmTempTable
+        ]]>
+    <query-param name="year" type="java.lang.String"/>
+    <query-param name="company" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="setUserProfilePic">
+        <![CDATA[
+        UPDATE tbl_m_user_data SET udat_profile_pic = :imageUrl
+WHERE udat_username = :username
+        ]]>
+    <query-param name="imageUrl" type="java.lang.String"/>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_get_BudgetDetail2">
+        <![CDATA[
+        SELECT
+	a.bh_amount  as bd_original,
+	'' as io_origin_number,
+	'' as io_dest_number,
+	bd_adjustment as amount,
+	bd_adjustment_type as type_data,
+	bd_created_at,
+	bd_created_by,
+	a.coa
+FROM
+	 tbl_t_budget_header a
+	 JOIN tbl_t_budget_details b ON a.bh_id = b.bh_id
+WHERE
+	a.bh_id = :bh_id
+	
+UNION
+
+SELECT
+	'' as bd_original,
+	b.io_origin_number,
+	b.io_dest_number,
+	b.reclass_amount as amount,
+	'RECLASS' as type_data,
+	b.bd_rc_created_at as created_at,
+	b.bd_rc_created_by as created_by,
+	a.coa
+	
+	FROM tbl_t_budget_header a
+	JOIN tbl_t_budget_reclass b ON a.io_number = b.io_origin_number OR a.io_number = b.io_dest_number
+	WHERE a.bh_id = :bh_id
+UNION 
+
+SELECT 
+	'' as bd_original,
+	'' as io_origin_number,
+	'' as io_dest_number,
+	b.ba_amount as amount,
+	'ADDITIONAL' as type_data,
+	b.ba_created_at as created_at,
+	b.ba_created_by as created_by,
+	a.coa
+	FROM tbl_t_budget_header a
+	JOIN tbl_t_budget_additional  b
+	WHERE a.bh_id = :bh_id
+        ]]>
+    <query-param name="bh_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_get_BudgetDetail2__count">
+        <![CDATA[
+        select count(*) from (SELECT
+	a.bh_amount  as bd_original,
+	'' as io_origin_number,
+	'' as io_dest_number,
+	bd_adjustment as amount,
+	bd_adjustment_type as type_data,
+	bd_created_at,
+	bd_created_by,
+	a.coa
+FROM
+	 tbl_t_budget_header a
+	 JOIN tbl_t_budget_details b ON a.bh_id = b.bh_id
+WHERE
+	a.bh_id = :bh_id
+	
+UNION
+
+SELECT
+	'' as bd_original,
+	b.io_origin_number,
+	b.io_dest_number,
+	b.reclass_amount as amount,
+	'RECLASS' as type_data,
+	b.bd_rc_created_at as created_at,
+	b.bd_rc_created_by as created_by,
+	a.coa
+	
+	FROM tbl_t_budget_header a
+	JOIN tbl_t_budget_reclass b ON a.io_number = b.io_origin_number OR a.io_number = b.io_dest_number
+	WHERE a.bh_id = :bh_id
+UNION 
+
+SELECT 
+	'' as bd_original,
+	'' as io_origin_number,
+	'' as io_dest_number,
+	b.ba_amount as amount,
+	'ADDITIONAL' as type_data,
+	b.ba_created_at as created_at,
+	b.ba_created_by as created_by,
+	a.coa
+	FROM tbl_t_budget_header a
+	JOIN tbl_t_budget_additional  b
+	WHERE a.bh_id = :bh_id) wmTempTable
+        ]]>
+    <query-param name="bh_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDataDetailDO">
+        <![CDATA[
+        SELECT a.*, b.sap_po_number, c.c_address FROM tbl_t_po a LEFT JOIN tbl_sap_po b ON a.id = b.id_po_header LEFT JOIN tbl_m_company c ON a.company_id = c.c_code  WHERE a.id = :id_po
+        ]]>
+    <query-param name="id_po" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDataDetailDO__count">
+        <![CDATA[
+        select count(*) from (SELECT a.*, b.sap_po_number, c.c_address FROM tbl_t_po a LEFT JOIN tbl_sap_po b ON a.id = b.id_po_header LEFT JOIN tbl_m_company c ON a.company_id = c.c_code  WHERE a.id = :id_po) wmTempTable
+        ]]>
+    <query-param name="id_po" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateETAPOLineItem">
+        <![CDATA[
+        UPDATE tbl_t_po_line_item SET eta = :eta where id = :id
+        ]]>
+    <query-param name="eta" type="java.time.LocalDateTime"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deleteTaskListByParamId">
+        <![CDATA[
+        update tbl_t_tasklist
+set tl_status = 'deleted'
+WHERE tl_param_id = :tlParamId and tl_type = :tlType
+        ]]>
+    <query-param name="tlParamId" type="java.lang.Integer"/>
+    <query-param name="tlType" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetMapRoleAll">
+        <![CDATA[
+        SELECT t1.*, t2.role_title from tbl_m_user_role t1
+join tbl_m_role t2 on t1.role_id = t2.role_id
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetMapRoleAll__count">
+        <![CDATA[
+        select count(*) from (SELECT t1.*, t2.role_title from tbl_m_user_role t1
+join tbl_m_role t2 on t1.role_id = t2.role_id) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="vendorPONotes">
+        <![CDATA[
+        UPDATE tbl_t_po SET vendor_notes = :notes WHERE id = :idpo
+        ]]>
+    <query-param name="notes" type="java.lang.String"/>
+    <query-param name="idpo" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deleteBudgetUpload">
+        <![CDATA[
+        UPDATE tbl_t_budget_upload a, tbl_t_budget_header b,
+tbl_t_budget_details c
+SET a.bu_status = 'deleted', b.bh_status = 'deleted',
+c.bd_status = 'deleted'
+WHERE a.bu_id = :buId AND b.bu_id = :buId AND c.bh_id = b.bh_id
+        ]]>
+    <query-param name="buId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="changeRFQVendorStatus">
+        <![CDATA[
+        UPDATE tbl_t_rfq_vendor
+SET rfqv_created_at = :rfqvCreatedAt, rfqv_modified_by = :rfqvModifiedBy, rfqv_modified_at = :rfqvModifiedAt, rfqv_status = :rfqvStatus
+WHERE rfqv_id = :rfqvId
+        ]]>
+    <query-param name="rfqvCreatedAt" type="java.time.LocalDateTime"/>
+    <query-param name="rfqvModifiedBy" type="java.lang.String"/>
+    <query-param name="rfqvModifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="rfqvStatus" type="java.lang.String"/>
+    <query-param name="rfqvId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getUserRole">
+        <![CDATA[
+        SELECT tmur.user_id,
+	GROUP_CONCAT(tma.auth_code) as auth
+FROM tbl_m_user_role tmur
+LEFT JOIN rel_role_auth rra ON rra.role_id = tmur.role_id
+LEFT JOIN tbl_m_authorization tma ON tma.auth_id = rra.auth_id
+WHERE tmur.user_id = :username
+GROUP BY tmur.user_id
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getUserRole__count">
+        <![CDATA[
+        select count(*) from (SELECT tmur.user_id,
+	GROUP_CONCAT(tma.auth_code) as auth
+FROM tbl_m_user_role tmur
+LEFT JOIN rel_role_auth rra ON rra.role_id = tmur.role_id
+LEFT JOIN tbl_m_authorization tma ON tma.auth_id = rra.auth_id
+WHERE tmur.user_id = :username
+GROUP BY tmur.user_id) wmTempTable
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="Q_MasterDepartment">
+        <![CDATA[
+        SELECT department_title as department, department_id FROM tbl_m_department ORDER BY department
+        ]]>
+    </sql-query>
+
+    <sql-query name="Q_MasterDepartment__count">
+        <![CDATA[
+        select count(*) from (SELECT department_title as department, department_id FROM tbl_m_department ORDER BY department) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="deleteAttionalAttachment">
+        <![CDATA[
+        DELETE FROM tbl_t_additional_attachment WHERE ba_id = :baId
+        ]]>
+    <query-param name="baId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="vMaterrialGroupPurchasing">
+        <![CDATA[
+        SELECT * FROM v_material_group_purchasing WHERE user_id = :userId
+        ]]>
+    <query-param name="userId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="vMaterrialGroupPurchasing__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_material_group_purchasing WHERE user_id = :userId) wmTempTable
+        ]]>
+    <query-param name="userId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getUnseenNotification">
+        <![CDATA[
+        select tti.* from tbl_t_inbox tti 
+left join tbl_m_user_data tmud on tmud.udat_username = tti.user_id
+where tti.inb_timestamp > tmud.udat_notification_last_seen
+and tti.user_id = :SERVER__USER_ID__userid
+        ]]>
+    <query-param name="SERVER__USER_ID__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getUnseenNotification__count">
+        <![CDATA[
+        select count(*) from (select tti.* from tbl_t_inbox tti 
+left join tbl_m_user_data tmud on tmud.udat_username = tti.user_id
+where tti.inb_timestamp > tmud.udat_notification_last_seen
+and tti.user_id = :SERVER__USER_ID__userid) wmTempTable
+        ]]>
+    <query-param name="SERVER__USER_ID__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFGVendorTracking">
+        <![CDATA[
+        SELECT ttr.*, ttrv.listvendor
+FROM tbl_t_rfq ttr 
+LEFT JOIN (
+	SELECT ttrv.rfq_id, CONCAT('[', 
+		group_concat(CONCAT( 
+			'{"rfqvId":', ttrv.rfqv_id  , 
+			',"rfqvVendorCode":"', ttrv.rfqv_vendor_code, '"',
+			',"rfqvVendorName":"', ttrv.rfqv_vendor_name, '"',
+			',"rfqvStatus":"', ttrv.rfqv_status, '"', '}'
+		) separator ',')
+	, ']') as listvendor
+	FROM tbl_t_rfq_vendor ttrv 
+	GROUP BY ttrv.rfq_id
+) as ttrv on ttr.rfq_id = ttrv.rfq_id
+        ]]>
+    </sql-query>
+
+    <sql-query name="getRFGVendorTracking__count">
+        <![CDATA[
+        select count(*) from (SELECT ttr.*, ttrv.listvendor
+FROM tbl_t_rfq ttr 
+LEFT JOIN (
+	SELECT ttrv.rfq_id, CONCAT('[', 
+		group_concat(CONCAT( 
+			'{"rfqvId":', ttrv.rfqv_id  , 
+			',"rfqvVendorCode":"', ttrv.rfqv_vendor_code, '"',
+			',"rfqvVendorName":"', ttrv.rfqv_vendor_name, '"',
+			',"rfqvStatus":"', ttrv.rfqv_status, '"', '}'
+		) separator ',')
+	, ']') as listvendor
+	FROM tbl_t_rfq_vendor ttrv 
+	GROUP BY ttrv.rfq_id
+) as ttrv on ttr.rfq_id = ttrv.rfq_id) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="getRoleUserMapList">
+        <![CDATA[
+        SELECT * FROM
+(
+    SELECT
+    a.role_id,
+    b.role_title,
+    GROUP_CONCAT(a.ur_id) as ids,
+    GROUP_CONCAT(a.ur_created_at) as created_at,
+    GROUP_CONCAT(a.user_id) as users_nik,
+    GROUP_CONCAT(a.user_full_name) as users_name,
+    a.ur_status,
+    a.ur_additional_data,
+    a.ur_from_date,
+    a.ur_to_date
+    FROM tbl_m_user_role a
+    LEFT JOIN tbl_m_role b ON b.role_id = a.role_id
+    GROUP BY a.role_id
+) temp
+WHERE (:searchRoleTitle IS NULL OR role_title LIKE CONCAT('%',:searchRoleTitle,'%'))
+AND (:searchAssignee IS NULL OR users_name LIKE CONCAT('%',:searchAssignee,'%'))
+AND (:searchStatus IS NULL OR ur_status LIKE CONCAT(:searchStatus,'%'))
+        ]]>
+    <query-param name="searchRoleTitle" type="java.lang.String"/>
+    <query-param name="searchAssignee" type="java.lang.String"/>
+    <query-param name="searchStatus" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRoleUserMapList__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM
+(
+    SELECT
+    a.role_id,
+    b.role_title,
+    GROUP_CONCAT(a.ur_id) as ids,
+    GROUP_CONCAT(a.ur_created_at) as created_at,
+    GROUP_CONCAT(a.user_id) as users_nik,
+    GROUP_CONCAT(a.user_full_name) as users_name,
+    a.ur_status,
+    a.ur_additional_data,
+    a.ur_from_date,
+    a.ur_to_date
+    FROM tbl_m_user_role a
+    LEFT JOIN tbl_m_role b ON b.role_id = a.role_id
+    GROUP BY a.role_id
+) temp
+WHERE (:searchRoleTitle IS NULL OR role_title LIKE CONCAT('%',:searchRoleTitle,'%'))
+AND (:searchAssignee IS NULL OR users_name LIKE CONCAT('%',:searchAssignee,'%'))
+AND (:searchStatus IS NULL OR ur_status LIKE CONCAT(:searchStatus,'%'))) wmTempTable
+        ]]>
+    <query-param name="searchRoleTitle" type="java.lang.String"/>
+    <query-param name="searchAssignee" type="java.lang.String"/>
+    <query-param name="searchStatus" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMappingToUser">
+        <![CDATA[
+        SELECT ud.udep_id, ud.company_id, ud.company, ud.department_id, ud.departrment, ud.udep_created_at, ud.udep_created_by,
+COUNT(ud.user_id) - 2 as jumlah_user
+from tbl_m_user_dep ud
+group by ud.company_id, ud.department_id
+        ]]>
+    </sql-query>
+
+    <sql-query name="getMappingToUser__count">
+        <![CDATA[
+        select count(*) from (SELECT ud.udep_id, ud.company_id, ud.company, ud.department_id, ud.departrment, ud.udep_created_at, ud.udep_created_by,
+COUNT(ud.user_id) - 2 as jumlah_user
+from tbl_m_user_dep ud
+group by ud.company_id, ud.department_id) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="q_AccTypeBudgetHMapDepUser">
+        <![CDATA[
+        SELECT a.acc_id, a.acc_title 
+FROM tbl_m_account_type a JOIN tbl_t_budget_header b 
+ON a.acc_id = b.acc_id WHERE b.department_id IN (SELECT department_id FROM tbl_m_user_dep WHERE user_id = :emp GROUP BY department_id) GROUP BY acc_id
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_AccTypeBudgetHMapDepUser__count">
+        <![CDATA[
+        select count(*) from (SELECT a.acc_id, a.acc_title 
+FROM tbl_m_account_type a JOIN tbl_t_budget_header b 
+ON a.acc_id = b.acc_id WHERE b.department_id IN (SELECT department_id FROM tbl_m_user_dep WHERE user_id = :emp GROUP BY department_id) GROUP BY acc_id) wmTempTable
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updatePurchaseRequest">
+        <![CDATA[
+        UPDATE tbl_t_pr SET pr_status = :prStatus WHERE pr_id = :prId
+        ]]>
+    <query-param name="prStatus" type="java.lang.String"/>
+    <query-param name="prId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QSetStatusGRLineItemByPRLineHeader">
+        <![CDATA[
+        UPDATE tbl_t_gr_line_item SET status = :status WHERE id_pr_line_item_header = :id_pr_line_item_header
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="id_pr_line_item_header" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="update_userMapStatus">
+        <![CDATA[
+        UPDATE tbl_m_user_role 
+SET 
+ur_status = :status,
+ur_from_date = :from_date,
+ur_to_date = :to_date
+WHERE role_id = :role_id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="from_date" type="java.sql.Date"/>
+    <query-param name="to_date" type="java.sql.Date"/>
+    <query-param name="role_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="OrganizationMap">
+        <![CDATA[
+        SELECT a.*, b.department_title FROM tbl_m_organization_map a JOIN tbl_m_department b ON a.department_id = b.department_id
+        ]]>
+    </sql-query>
+
+    <sql-query name="OrganizationMap__count">
+        <![CDATA[
+        select count(*) from (SELECT a.*, b.department_title FROM tbl_m_organization_map a JOIN tbl_m_department b ON a.department_id = b.department_id) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qInsertBudgetDetail">
+        <![CDATA[
+        INSERT INTO tbl_t_budget_details 
+(
+	bh_id, 
+	bd_original, 
+	bd_adjustment, 
+	bd_after_adjustment,
+	bd_adjustment_type,
+	bd_document_id,
+	bd_remarks,
+	bd_status,
+	bd_created_by,
+	bd_created_at,
+	r_cat_id,
+	ub_cat_id,
+	coa_id,
+	bd_additional_doc_id,
+	bd_additional_doc_type
+)
+VALUES (
+	:bhId, 
+	(
+		SELECT bd_after_adjustment 
+		FROM tbl_t_budget_details b
+		WHERE bh_id = :bhId
+		AND bd_status != 'deleted'
+		ORDER BY bd_id DESC
+		LIMIT 1
+	), 
+	:bdAdjustment, 
+	(
+		SELECT bd_after_adjustment+:bdAdjustment
+		FROM tbl_t_budget_details c
+		WHERE bh_id = :bhId
+		AND bd_status != 'deleted'
+		ORDER BY bd_id DESC
+		LIMIT 1
+	),
+	:bdAdjustmentType,
+	:bdDocumentId,
+	:bdRemarks,
+	'active',
+	:createdBy,
+	:createdAt,
+	:rCatId,
+	:ubCatId,
+	:coaId,
+	:addDocId,
+	:addDocType
+)
+        ]]>
+    <query-param name="bhId" type="java.lang.String"/>
+    <query-param name="bdAdjustment" type="java.math.BigInteger"/>
+    <query-param name="bdAdjustmentType" type="java.lang.String"/>
+    <query-param name="bdDocumentId" type="java.lang.String"/>
+    <query-param name="bdRemarks" type="java.lang.String"/>
+    <query-param name="createdBy" type="java.lang.String"/>
+    <query-param name="createdAt" type="java.time.LocalDateTime"/>
+    <query-param name="rCatId" type="java.lang.String"/>
+    <query-param name="ubCatId" type="java.lang.String"/>
+    <query-param name="coaId" type="java.lang.String"/>
+    <query-param name="addDocId" type="java.lang.Integer"/>
+    <query-param name="addDocType" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFQParamByDepartment">
+        <![CDATA[
+        SELECT rp.*
+FROM tbl_m_rfq_parameter rp
+LEFT JOIN tbl_m_organization_map om ON rp.purch_org = om.purch_org
+WHERE (:userDepartment IS NULL OR CONCAT(",", :userDepartment, ",") LIKE CONCAT("%,",om.department_id,",%"))
+ORDER BY rp.rfq_year DESC
+        ]]>
+    <query-param name="userDepartment" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFQParamByDepartment__count">
+        <![CDATA[
+        select count(*) from (SELECT rp.*
+FROM tbl_m_rfq_parameter rp
+LEFT JOIN tbl_m_organization_map om ON rp.purch_org = om.purch_org
+WHERE (:userDepartment IS NULL OR CONCAT(",", :userDepartment, ",") LIKE CONCAT("%,",om.department_id,",%"))
+ORDER BY rp.rfq_year DESC) wmTempTable
+        ]]>
+    <query-param name="userDepartment" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updateStatusPO">
+        <![CDATA[
+        UPDATE tbl_t_po SET status = :status WHERE id = :idpo
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="idpo" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="changeRGQ">
+        <![CDATA[
+        UPDATE tbl_t_rfq
+SET rfq_modified_by = :rfqModifiedBy, rfq_modified_at = :rfqModifiedAt, rfq_status = :rfqStatus, rfq_del_attachment = :rfqDelAttachment, rfq_sum_attachment = :rfqSumAttachment
+WHERE rfq_id = :rfqId
+        ]]>
+    <query-param name="rfqModifiedBy" type="java.lang.String"/>
+    <query-param name="rfqModifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="rfqStatus" type="java.lang.String"/>
+    <query-param name="rfqDelAttachment" type="java.lang.String"/>
+    <query-param name="rfqSumAttachment" type="java.lang.String"/>
+    <query-param name="rfqId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="changeTaskListUserId">
+        <![CDATA[
+        UPDATE tbl_t_tasklist
+SET user_id = :userId, is_approval_bod = :isBod
+WHERE tl_param_id = :tlParamId and tl_type = :tlType
+        ]]>
+    <query-param name="userId" type="java.lang.String"/>
+    <query-param name="isBod" type="java.lang.Integer"/>
+    <query-param name="tlParamId" type="java.lang.Integer"/>
+    <query-param name="tlType" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="reminderTasklistQuery">
+        <![CDATA[
+        insert into tbl_t_inbox(inb_task_type, inb_subject, user_id)
+select 
+	ttt.tl_type as inb_task_type,
+	case ttt.tl_type 
+		when 'Additional' then '<b>Additional (Reminder)</b> - Segera melakukan approval pada halaman task list'
+		when 'Reclass' then '<b>Relcass (Reminder)</b> - Segera melakukan approval pada halaman task list'
+		when 'PR' then '<b>PR (Reminder)</b> - Segera melakukan approval pada halaman task list'
+		else 'un-catch reminder'
+	end as inb_subject,
+	case
+		when rd.del_to_user_id is not null then rd.del_to_user_id
+		else ttt.user_id 
+	end as user_id
+from tbl_t_tasklist ttt
+left join (
+	select DISTINCT 
+		ttd.del_from_user_id,
+		ttd.del_from_user_name,
+		ttd.del_to_user_id,
+		ttd.del_to_user_name,
+		tma.auth_module 
+	from tbl_t_delegation ttd
+	left join rel_del_auth rda on rda.del_id = ttd.del_id
+	left join tbl_m_authorization tma on tma.auth_id = rda.auth_id
+	where ttd.del_avail_datetime <= CURRENT_DATE() and ttd.del_exp_datetime >= CURRENT_DATE()
+) rd on rd.del_from_user_id = ttt.user_id and rd.auth_module = ttt.tl_module 
+where 
+	ttt.tl_due_date > CURRENT_TIMESTAMP()
+	and tl_status = 'active'
+union
+select 
+	'Change Password' as inb_task_type,
+	'<b>Change Password (Reminder)</b> - Segera melakukan penggantian password melalui halaman profil.' as inb_subject,
+	tmud.udat_username as user_id
+from tbl_m_user_data tmud
+where DATE(tmud.udat_last_change_pass) <= ADDDATE(CURRENT_DATE(), INTERVAL -6 MONTH)
+        ]]>
+    </sql-query>
+
+    <sql-query name="changeRFQVendorStatusWithoutCreated">
+        <![CDATA[
+        UPDATE tbl_t_rfq_vendor
+SET rfqv_modified_by = :rfqvModifiedBy, rfqv_modified_at = :rfqvModifiedAt, rfqv_status = :rfqvStatus
+WHERE rfqv_id = :rfqvId
+        ]]>
+    <query-param name="rfqvModifiedBy" type="java.lang.String"/>
+    <query-param name="rfqvModifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="rfqvStatus" type="java.lang.String"/>
+    <query-param name="rfqvId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getDelegatedRoles">
+        <![CDATA[
+        SELECT DISTINCT 
+	ttd.del_from_user_id,
+	ttd.del_to_user_id,
+	tma.auth_code,
+	tma.auth_module 
+FROM tbl_t_delegation ttd
+LEFT JOIN rel_del_auth rda ON rda.del_id = ttd.del_id
+LEFT JOIN tbl_m_authorization tma ON tma.auth_id = rda.auth_id
+WHERE ttd.del_avail_datetime <= CURDATE() AND ttd.del_exp_datetime >= CURDATE()
+AND ttd.del_to_user_id = :userid
+        ]]>
+    <query-param name="userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDelegatedRoles__count">
+        <![CDATA[
+        select count(*) from (SELECT DISTINCT 
+	ttd.del_from_user_id,
+	ttd.del_to_user_id,
+	tma.auth_code,
+	tma.auth_module 
+FROM tbl_t_delegation ttd
+LEFT JOIN rel_del_auth rda ON rda.del_id = ttd.del_id
+LEFT JOIN tbl_m_authorization tma ON tma.auth_id = rda.auth_id
+WHERE ttd.del_avail_datetime <= CURDATE() AND ttd.del_exp_datetime >= CURDATE()
+AND ttd.del_to_user_id = :userid) wmTempTable
+        ]]>
+    <query-param name="userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_BrandMappingToBudgetDepUsrMap">
+        <![CDATA[
+        SELECT a.br_id, a.br_title 
+FROM tbl_m_brand a JOIN tbl_t_budget_header b 
+ON a.br_id = b.br_id WHERE b.department_id IN (SELECT department_id FROM tbl_m_user_dep WHERE user_id = :emp GROUP BY department_id) GROUP BY br_id
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_BrandMappingToBudgetDepUsrMap__count">
+        <![CDATA[
+        select count(*) from (SELECT a.br_id, a.br_title 
+FROM tbl_m_brand a JOIN tbl_t_budget_header b 
+ON a.br_id = b.br_id WHERE b.department_id IN (SELECT department_id FROM tbl_m_user_dep WHERE user_id = :emp GROUP BY department_id) GROUP BY br_id) wmTempTable
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getPurchaseRequest">
+        <![CDATA[
+        SELECT ttp.pr_id , tmc.c_id, tmc.c_code, tmc.c_title, tmd.department_id, tmd.department_title, ttp.pr_ref, ttp.pr_purchase_by, ttp.pr_payment_method,
+ttpb.pb_amount, ttpb.pb_project_name, ttp.pr_created_at, tmat.acc_id, tmat.acc_title, ttp.pr_status 
+FROM tbl_t_pr ttp 
+JOIN tbl_m_company tmc ON ttp.c_id = tmc .c_id
+JOIN tbl_m_department tmd on tmd.department_id = ttp.department_id 
+JOIN tbl_t_proposal_budget ttpb on ttpb.pb_id = ttp.pb_id 
+JOIN tbl_m_account_type tmat on ttp.acc_id = tmat.acc_id 
+WHERE tmc.c_status = "active" and ttpb.pb_status != "deleted" and tmat.acc_status = "active"
+        ]]>
+    </sql-query>
+
+    <sql-query name="getPurchaseRequest__count">
+        <![CDATA[
+        select count(*) from (SELECT ttp.pr_id , tmc.c_id, tmc.c_code, tmc.c_title, tmd.department_id, tmd.department_title, ttp.pr_ref, ttp.pr_purchase_by, ttp.pr_payment_method,
+ttpb.pb_amount, ttpb.pb_project_name, ttp.pr_created_at, tmat.acc_id, tmat.acc_title, ttp.pr_status 
+FROM tbl_t_pr ttp 
+JOIN tbl_m_company tmc ON ttp.c_id = tmc .c_id
+JOIN tbl_m_department tmd on tmd.department_id = ttp.department_id 
+JOIN tbl_t_proposal_budget ttpb on ttpb.pb_id = ttp.pb_id 
+JOIN tbl_m_account_type tmat on ttp.acc_id = tmat.acc_id 
+WHERE tmc.c_status = "active" and ttpb.pb_status != "deleted" and tmat.acc_status = "active") wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="getDataPODetail">
+        <![CDATA[
+        SELECT a.*, b.sap_po_number, c.c_address FROM tbl_t_po a LEFT JOIN tbl_sap_po b ON a.id = b.id_po_header LEFT JOIN tbl_m_company c ON a.company_id = c.c_code  WHERE a.id = :id_po
+        ]]>
+    <query-param name="id_po" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDataPODetail__count">
+        <![CDATA[
+        select count(*) from (SELECT a.*, b.sap_po_number, c.c_address FROM tbl_t_po a LEFT JOIN tbl_sap_po b ON a.id = b.id_po_header LEFT JOIN tbl_m_company c ON a.company_id = c.c_code  WHERE a.id = :id_po) wmTempTable
+        ]]>
+    <query-param name="id_po" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMappingToUser2">
+        <![CDATA[
+        SELECT ud.udep_id, ud.company_id, ud.company, ud.department_id, ud.departrment, ud.udep_created_at, ud.udep_created_by, 
+group_concat( CONCAT(
+	 '{"user_id":"', ud.user_id, '","userFullName":"', ud.user_full_name , '","udepId":', ud.udep_id , '}' 
+) separator ',')
+as listUsers,
+group_concat(ud.user_full_name separator ', ') as nameUsers,
+COUNT(ud.user_id) as jumlah_user, status
+from tbl_m_user_dep ud
+WHERE (:company IS NULL OR ud.company LIKE CONCAT('%',:company,'%'))
+AND (:departrment IS NULL OR ud.departrment LIKE CONCAT('%',:departrment,'%'))
+AND (:assignee IS NULL OR ud.user_full_name LIKE CONCAT('%',:assignee,'%'))
+AND (:status IS NULL OR ud.status LIKE CONCAT('%',:status,'%'))
+group by ud.company_id, ud.department_id
+        ]]>
+    <query-param name="company" type="java.lang.String"/>
+    <query-param name="departrment" type="java.lang.String"/>
+    <query-param name="assignee" type="java.lang.String"/>
+    <query-param name="status" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMappingToUser2__count">
+        <![CDATA[
+        select count(*) from (SELECT ud.udep_id, ud.company_id, ud.company, ud.department_id, ud.departrment, ud.udep_created_at, ud.udep_created_by, 
+group_concat( CONCAT(
+	 '{"user_id":"', ud.user_id, '","userFullName":"', ud.user_full_name , '","udepId":', ud.udep_id , '}' 
+) separator ',')
+as listUsers,
+group_concat(ud.user_full_name separator ', ') as nameUsers,
+COUNT(ud.user_id) as jumlah_user, status
+from tbl_m_user_dep ud
+WHERE (:company IS NULL OR ud.company LIKE CONCAT('%',:company,'%'))
+AND (:departrment IS NULL OR ud.departrment LIKE CONCAT('%',:departrment,'%'))
+AND (:assignee IS NULL OR ud.user_full_name LIKE CONCAT('%',:assignee,'%'))
+AND (:status IS NULL OR ud.status LIKE CONCAT('%',:status,'%'))
+group by ud.company_id, ud.department_id) wmTempTable
+        ]]>
+    <query-param name="company" type="java.lang.String"/>
+    <query-param name="departrment" type="java.lang.String"/>
+    <query-param name="assignee" type="java.lang.String"/>
+    <query-param name="status" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="prChangeStatus">
+        <![CDATA[
+        UPDATE tbl_t_pr
+SET pr_status = :prStatus, pr_modified_at = :prModifiedAt, pr_modified_by = :prModifiedBy 
+WHERE pr_id = :prId
+        ]]>
+    <query-param name="prStatus" type="java.lang.String"/>
+    <query-param name="prModifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="prModifiedBy" type="java.lang.String"/>
+    <query-param name="prId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getPOLineitem">
+        <![CDATA[
+        SELECT
+	DISTINCT
+	a.*,
+	b.currency 
+FROM
+	tbl_t_po_line_item a 
+	JOIN tbl_t_po b ON a.id_po_header = b.id
+WHERE
+	a.id_po_header = :id_po
+        ]]>
+    <query-param name="id_po" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getPOLineitem__count">
+        <![CDATA[
+        select count(*) from (SELECT
+	DISTINCT
+	a.*,
+	b.currency 
+FROM
+	tbl_t_po_line_item a 
+	JOIN tbl_t_po b ON a.id_po_header = b.id
+WHERE
+	a.id_po_header = :id_po) wmTempTable
+        ]]>
+    <query-param name="id_po" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qDataPOHeader">
+        <![CDATA[
+        SELECT a.*, b.sap_po_number, c.c_address 
+FROM tbl_t_po a 
+LEFT JOIN tbl_sap_po b ON a.id = b.id_po_header AND b.sap_po_number IS NOT NULL 
+LEFT JOIN tbl_m_company c ON a.company_id = c.c_code  
+WHERE a.id = :id_po
+        ]]>
+    <query-param name="id_po" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="qDataPOHeader__count">
+        <![CDATA[
+        select count(*) from (SELECT a.*, b.sap_po_number, c.c_address 
+FROM tbl_t_po a 
+LEFT JOIN tbl_sap_po b ON a.id = b.id_po_header AND b.sap_po_number IS NOT NULL 
+LEFT JOIN tbl_m_company c ON a.company_id = c.c_code  
+WHERE a.id = :id_po) wmTempTable
+        ]]>
+    <query-param name="id_po" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="get_DeptDivCostCenterAll">
+        <![CDATA[
+        SELECT * FROM tbl_m_organization_map
+        ]]>
+    </sql-query>
+
+    <sql-query name="get_DeptDivCostCenterAll__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM tbl_m_organization_map) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="changeRFQSetNull">
+        <![CDATA[
+        UPDATE tbl_t_rfq_vendor
+SET rfqv_created_at = :rfqvCreatedAt, rfqv_modified_by = :rfqvModifiedBy, rfqv_modified_at = :rfqvModifiedAt, rfqv_status = :rfqvStatus, rfqv_vendor_code = :rfqvVendorCode, rfqv_vendor_email = :rfqvVendorEmail, rfqv_vendor_phone = :rfqvVendorPhone, rfqv_vendor_name = :rfqvVendorName, rfqv_vendor_address = :rfqvVendorAddress, rfqv_vendor_title = :rfqvVendorTitle, rfqv_sales_person = NULL, rfqv_sales_number = NULL, rfqv_sales_email = NULL, rfqv_term_delivery = NULL, rfqv_term_payment = NULL, rfqv_date = NULL, rfqv_valid_thru = NULL, rfqv_vat_rate = NULL, rfqv_packing_cost = NULL, rfqv_shipping_handling = NULL, rfqv_other_cost = NULL, rfqv_warranty = NULL, rfqv_kurs_assumption = NULL, rfqv_base_price = NULL, rfqv_packing_size = NULL, rfqv_origin_manufacturer = NULL, rfqv_material = NULL, rfqv_notes = NULL, rfqv_duration = NULL
+WHERE rfqv_id = :rfqvId
+        ]]>
+    <query-param name="rfqvCreatedAt" type="java.time.LocalDateTime"/>
+    <query-param name="rfqvModifiedBy" type="java.lang.String"/>
+    <query-param name="rfqvModifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="rfqvStatus" type="java.lang.String"/>
+    <query-param name="rfqvVendorCode" type="java.lang.String"/>
+    <query-param name="rfqvVendorEmail" type="java.lang.String"/>
+    <query-param name="rfqvVendorPhone" type="java.lang.String"/>
+    <query-param name="rfqvVendorName" type="java.lang.String"/>
+    <query-param name="rfqvVendorAddress" type="java.lang.String"/>
+    <query-param name="rfqvVendorTitle" type="java.lang.String"/>
+    <query-param name="rfqvId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="q_company">
+        <![CDATA[
+        SELECT c_id as company_id , c_title as company FROM tbl_m_company
+        ]]>
+    </sql-query>
+
+    <sql-query name="q_company__count">
+        <![CDATA[
+        select count(*) from (SELECT c_id as company_id , c_title as company FROM tbl_m_company) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qBDReversalLineItem">
+        <![CDATA[
+        insert into tbl_t_budget_details(bh_id, bd_original, bd_document_id, bd_adjustment_type, bd_adjustment, bd_after_adjustment, bd_status, bd_created_by, bd_additional_doc_id, bd_additional_doc_type, bd_remarks, coa_id)
+select 
+	ttbd.bh_id,
+	(
+		select ttbd3.bd_after_adjustment 
+		from tbl_t_budget_details ttbd3
+		where ttbd3.bh_id = ttbd.bh_id 
+		order by ttbd3.bd_id desc
+		limit 1
+	) as bd_original,
+	ttbd.bd_document_id,
+	ttbd.bd_adjustment_type,
+	ttbd.bd_adjustment * -1 as bd_adjustment,
+	(
+		select ttbd3.bd_after_adjustment 
+		from tbl_t_budget_details ttbd3
+		where ttbd3.bh_id = ttbd.bh_id 
+		order by ttbd3.bd_id desc
+		limit 1
+	) + (ttbd.bd_adjustment * -1) as bd_after_adjustment,
+	'active' as bd_status,
+	:userId as bd_created_by,
+	ttbd.bd_id as bd_additional_doc_id,
+	'pr_line_item_rev' as bd_additional_doc_type,
+	concat(:category,:reason) as bd_remarks,
+    ttbd.coa_id
+from tbl_t_budget_details ttbd
+left join tbl_t_budget_details ttbd2 on ttbd2.bd_additional_doc_type = 'pr_line_item_rev' and ttbd2.bd_additional_doc_id = ttbd.bd_id 
+where ttbd.bd_additional_doc_type = 'pr_line_item' and ttbd2.bd_id is null and ttbd.bd_additional_doc_id = :lineItemID
+        ]]>
+    <query-param name="userId" type="java.lang.String"/>
+    <query-param name="category" type="java.lang.String"/>
+    <query-param name="reason" type="java.lang.String"/>
+    <query-param name="lineItemID" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="countUnseenInbox">
+        <![CDATA[
+        select count(*) as result from tbl_t_inbox tti 
+left join tbl_m_user_data tmud on tmud.udat_username = tti.user_id
+where tti.inb_timestamp >= tmud.udat_inbox_last_seen
+    and tti.user_id = :SERVER__USER_NAME__userid
+        ]]>
+    <query-param name="SERVER__USER_NAME__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="countUnseenInbox__count">
+        <![CDATA[
+        select count(*) from (select count(*) as result from tbl_t_inbox tti 
+left join tbl_m_user_data tmud on tmud.udat_username = tti.user_id
+where tti.inb_timestamp >= tmud.udat_inbox_last_seen
+    and tti.user_id = :SERVER__USER_NAME__userid) wmTempTable
+        ]]>
+    <query-param name="SERVER__USER_NAME__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getCompanyRFQ">
+        <![CDATA[
+        SELECT
+	ttrv.*,
+	( SELECT `vgr`.`company` FROM `v_goods_rfq` `vgr` WHERE `vgr`.`rls_id` = ( SELECT rls_id FROM v_rfq_rls_id WHERE rfq_id = `ttrv`.`rfq_id` ) ) AS `company_send_email`,
+	( SELECT `vgr2`.`company_code` FROM `v_goods_rfq` `vgr2` WHERE `vgr2`.`rls_id` = ( SELECT rls_id FROM v_rfq_rls_id WHERE rfq_id = `ttrv`.`rfq_id` ) ) AS `company_code` 
+FROM
+	tbl_t_rfq_vendor ttrv 
+WHERE
+	ttrv.rfqv_id = :rfqvid
+        ]]>
+    <query-param name="rfqvid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getCompanyRFQ__count">
+        <![CDATA[
+        select count(*) from (SELECT
+	ttrv.*,
+	( SELECT `vgr`.`company` FROM `v_goods_rfq` `vgr` WHERE `vgr`.`rls_id` = ( SELECT rls_id FROM v_rfq_rls_id WHERE rfq_id = `ttrv`.`rfq_id` ) ) AS `company_send_email`,
+	( SELECT `vgr2`.`company_code` FROM `v_goods_rfq` `vgr2` WHERE `vgr2`.`rls_id` = ( SELECT rls_id FROM v_rfq_rls_id WHERE rfq_id = `ttrv`.`rfq_id` ) ) AS `company_code` 
+FROM
+	tbl_t_rfq_vendor ttrv 
+WHERE
+	ttrv.rfqv_id = :rfqvid) wmTempTable
+        ]]>
+    <query-param name="rfqvid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDelegationHistory">
+        <![CDATA[
+        SELECT d.*, a.auth_desc FROM tbl_t_delegation d
+LEFT JOIN rel_del_auth r ON d.del_id = r.del_id
+LEFT JOIN tbl_m_authorization a ON r.auth_id = a.auth_id
+WHERE (:roleCode IS NULL OR a.auth_desc LIKE CONCAT('%', :roleCode, '%'))
+AND (:fromEmployee IS NULL OR d.del_from_user_name LIKE CONCAT('%', :fromEmployee, '%'))
+AND (:toEmployee IS NULL OR d.del_to_user_name LIKE CONCAT('%', :toEmployee, '%'))
+AND (:reason IS NULL OR d.del_reason LIKE CONCAT('%', :reason, '%'))
+        ]]>
+    <query-param name="roleCode" type="java.lang.String"/>
+    <query-param name="fromEmployee" type="java.lang.String"/>
+    <query-param name="toEmployee" type="java.lang.String"/>
+    <query-param name="reason" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getDelegationHistory__count">
+        <![CDATA[
+        select count(*) from (SELECT d.*, a.auth_desc FROM tbl_t_delegation d
+LEFT JOIN rel_del_auth r ON d.del_id = r.del_id
+LEFT JOIN tbl_m_authorization a ON r.auth_id = a.auth_id
+WHERE (:roleCode IS NULL OR a.auth_desc LIKE CONCAT('%', :roleCode, '%'))
+AND (:fromEmployee IS NULL OR d.del_from_user_name LIKE CONCAT('%', :fromEmployee, '%'))
+AND (:toEmployee IS NULL OR d.del_to_user_name LIKE CONCAT('%', :toEmployee, '%'))
+AND (:reason IS NULL OR d.del_reason LIKE CONCAT('%', :reason, '%'))) wmTempTable
+        ]]>
+    <query-param name="roleCode" type="java.lang.String"/>
+    <query-param name="fromEmployee" type="java.lang.String"/>
+    <query-param name="toEmployee" type="java.lang.String"/>
+    <query-param name="reason" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deleteBudgetUploadAdjustment">
+        <![CDATA[
+        UPDATE tbl_t_budget_upload_adjustment a
+SET a.bu_status = 'deleted'
+WHERE a.bu_id = :buId
+        ]]>
+    <query-param name="buId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="prLineItemChangeCaoAsset">
+        <![CDATA[
+        UPDATE tbl_t_pr_line_item
+SET pli_modified_at = :pliModifiedAt, pli_modified_by = :pliModifiedBy, pli_coa = :pliCoa, pli_asset_number = :assetNumber, bh_id = :bhId, pli_cost_center_id = :pliCostCenterId, pli_cost_center_title = :pliCostCenterTitle
+WHERE pli_id = :pliId
+        ]]>
+    <query-param name="pliModifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="pliModifiedBy" type="java.lang.String"/>
+    <query-param name="pliCoa" type="java.lang.String"/>
+    <query-param name="assetNumber" type="java.lang.String"/>
+    <query-param name="bhId" type="java.lang.String"/>
+    <query-param name="pliCostCenterId" type="java.lang.String"/>
+    <query-param name="pliCostCenterTitle" type="java.lang.String"/>
+    <query-param name="pliId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="changeStatusAdditional">
+        <![CDATA[
+        UPDATE tbl_t_budget_additional
+SET ba_remarks = :status
+WHERE ba_id = :baId
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="baId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="updatePurchaseRequestLineItem">
+        <![CDATA[
+        UPDATE tbl_t_pr_line_item SET pli_status = :pli_status WHERE pli_id = :pli_id
+        ]]>
+    <query-param name="pli_status" type="java.lang.String"/>
+    <query-param name="pli_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deletePODoc">
+        <![CDATA[
+        DELETE FROM tbl_t_po_doc WHERE id_po_header = :idPoHeader
+        ]]>
+    <query-param name="idPoHeader" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qBudgetDetail2_export">
+        <![CDATA[
+        SELECT
+DISTINCT
+	b.bh_year,
+	comp.c_title,
+	b.department,
+	brand.br_title,
+	acc.acc_title,
+	CONCAT(b.io_number,b.io_name) as io,
+	b.bh_currency,
+	c.user_full_name,
+	a.*
+FROM
+	tbl_t_budget_details a
+	JOIN (
+	tbl_t_budget_header b 
+	LEFT JOIN tbl_m_company comp ON comp.c_id = b.c_id 
+	LEFT JOIN tbl_m_brand brand ON brand.br_id = b.br_id
+	LEFT JOIN tbl_m_account_type acc ON acc.acc_id = b.acc_id
+	) ON b.bh_id = a.bh_id
+	LEFT JOIN tbl_m_user_role c ON ( c.user_id = a.bd_created_by )
+WHERE
+	a.bh_id = :bh_id
+        ]]>
+    <query-param name="bh_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qBudgetDetail2_export__count">
+        <![CDATA[
+        select count(*) from (SELECT
+DISTINCT
+	b.bh_year,
+	comp.c_title,
+	b.department,
+	brand.br_title,
+	acc.acc_title,
+	CONCAT(b.io_number,b.io_name) as io,
+	b.bh_currency,
+	c.user_full_name,
+	a.*
+FROM
+	tbl_t_budget_details a
+	JOIN (
+	tbl_t_budget_header b 
+	LEFT JOIN tbl_m_company comp ON comp.c_id = b.c_id 
+	LEFT JOIN tbl_m_brand brand ON brand.br_id = b.br_id
+	LEFT JOIN tbl_m_account_type acc ON acc.acc_id = b.acc_id
+	) ON b.bh_id = a.bh_id
+	LEFT JOIN tbl_m_user_role c ON ( c.user_id = a.bd_created_by )
+WHERE
+	a.bh_id = :bh_id) wmTempTable
+        ]]>
+    <query-param name="bh_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updateStatusRfq">
+        <![CDATA[
+        UPDATE tbl_t_rfq_li_status
+SET rls_status = :status
+WHERE rls_id = :rlsId
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="rlsId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="getMasterRole">
+        <![CDATA[
+        SELECT a.*,
+GROUP_CONCAT(c.auth_id) as auth_ids,
+GROUP_CONCAT(c.auth_code) as auth_codes,
+GROUP_CONCAT(c.auth_desc SEPARATOR ";") as auth_descs
+FROM tbl_m_role a
+LEFT JOIN rel_role_auth b ON a.role_id = b.role_id
+LEFT JOIN tbl_m_authorization c ON b.auth_id = c.auth_id
+WHERE a.role_status != 'deleted'
+AND (:roleTitle IS NULL OR a.role_title LIKE CONCAT('%', :roleTitle, '%'))
+AND (:roleStatus IS NULL OR a.role_status LIKE CONCAT(:roleStatus, '%'))
+GROUP BY a.role_id
+        ]]>
+    <query-param name="roleTitle" type="java.lang.String"/>
+    <query-param name="roleStatus" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMasterRole__count">
+        <![CDATA[
+        select count(*) from (SELECT a.*,
+GROUP_CONCAT(c.auth_id) as auth_ids,
+GROUP_CONCAT(c.auth_code) as auth_codes,
+GROUP_CONCAT(c.auth_desc SEPARATOR ";") as auth_descs
+FROM tbl_m_role a
+LEFT JOIN rel_role_auth b ON a.role_id = b.role_id
+LEFT JOIN tbl_m_authorization c ON b.auth_id = c.auth_id
+WHERE a.role_status != 'deleted'
+AND (:roleTitle IS NULL OR a.role_title LIKE CONCAT('%', :roleTitle, '%'))
+AND (:roleStatus IS NULL OR a.role_status LIKE CONCAT(:roleStatus, '%'))
+GROUP BY a.role_id) wmTempTable
+        ]]>
+    <query-param name="roleTitle" type="java.lang.String"/>
+    <query-param name="roleStatus" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_changeRemarksPR_BD">
+        <![CDATA[
+        UPDATE tbl_t_budget_details SET bd_remarks = :bd_remarks WHERE bd_adjustment_type = 'PR' AND bd_additional_doc_id = :bd_additional_doc_id
+        ]]>
+    <query-param name="bd_remarks" type="java.lang.String"/>
+    <query-param name="bd_additional_doc_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="tickInboxLastSeen">
+        <![CDATA[
+        update tbl_m_user_data 
+set udat_inbox_last_seen = :date
+where udat_username = :SERVER__USER_NAME__userid
+        ]]>
+    <query-param name="date" type="java.time.LocalDateTime"/>
+    <query-param name="SERVER__USER_NAME__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updatePO">
+        <![CDATA[
+        UPDATE tbl_t_po SET status = :status, last_approved_date = NOW() WHERE id = :id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="tickLastAccess">
+        <![CDATA[
+        update tbl_m_user_data 
+set udat_last_access = current_timestamp()
+where udat_username = :SERVER__USER_NAME__userid
+        ]]>
+    <query-param name="SERVER__USER_NAME__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="tickNotificationLastSeen">
+        <![CDATA[
+        update tbl_m_user_data 
+set udat_notification_last_seen = :date
+where udat_username = :SERVER__USER_NAME__userid
+        ]]>
+    <query-param name="date" type="java.time.LocalDateTime"/>
+    <query-param name="SERVER__USER_NAME__userid" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_DepartmentMapUser">
+        <![CDATA[
+        SELECT b.department_title as department, b.department_id 
+FROM tbl_m_user_dep a JOIN tbl_m_department b ON a.department_id = b.department_id
+WHERE user_id = :emp GROUP BY department_id
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_DepartmentMapUser__count">
+        <![CDATA[
+        select count(*) from (SELECT b.department_title as department, b.department_id 
+FROM tbl_m_user_dep a JOIN tbl_m_department b ON a.department_id = b.department_id
+WHERE user_id = :emp GROUP BY department_id) wmTempTable
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_CompanyUserLogin">
+        <![CDATA[
+        SELECT company_id, company FROM tbl_m_user_dep WHERE user_id = :emp GROUP BY company_id
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_CompanyUserLogin__count">
+        <![CDATA[
+        select count(*) from (SELECT company_id, company FROM tbl_m_user_dep WHERE user_id = :emp GROUP BY company_id) wmTempTable
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMappingUserPurchaseGroup">
+        <![CDATA[
+        SELECT
+	ud.upurgr_id,
+	ud.purchase_group_id,
+	ud.purchase_group,
+	ud.udep_created_at,
+	ud.udep_created_by,
+	group_concat( CONCAT( '{"user_id":"', ud.user_id, '","userFullName":"', ud.user_full_name, '","upurgrId":', ud.upurgr_id, '}' ) SEPARATOR ',' ) AS listUsers,
+	group_concat( ud.user_full_name SEPARATOR ', ' ) AS nameUsers,
+	COUNT( ud.user_id ) AS jumlah_user,
+STATUS 
+FROM
+	tbl_m_user_purchase_group ud 
+WHERE
+	( :purchase_group IS NULL OR ud.purchase_group LIKE CONCAT( '%',:purchase_group, '%' ) ) 
+	AND ( :assignee IS NULL OR ud.user_full_name LIKE CONCAT( '%',:assignee, '%' ) ) 
+	AND ( :status IS NULL OR ud.status LIKE CONCAT( '%',:status, '%' ) ) 
+GROUP BY
+	ud.purchase_group_id
+        ]]>
+    <query-param name="purchase_group" type="java.lang.String"/>
+    <query-param name="assignee" type="java.lang.String"/>
+    <query-param name="status" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getMappingUserPurchaseGroup__count">
+        <![CDATA[
+        select count(*) from (SELECT
+	ud.upurgr_id,
+	ud.purchase_group_id,
+	ud.purchase_group,
+	ud.udep_created_at,
+	ud.udep_created_by,
+	group_concat( CONCAT( '{"user_id":"', ud.user_id, '","userFullName":"', ud.user_full_name, '","upurgrId":', ud.upurgr_id, '}' ) SEPARATOR ',' ) AS listUsers,
+	group_concat( ud.user_full_name SEPARATOR ', ' ) AS nameUsers,
+	COUNT( ud.user_id ) AS jumlah_user,
+STATUS 
+FROM
+	tbl_m_user_purchase_group ud 
+WHERE
+	( :purchase_group IS NULL OR ud.purchase_group LIKE CONCAT( '%',:purchase_group, '%' ) ) 
+	AND ( :assignee IS NULL OR ud.user_full_name LIKE CONCAT( '%',:assignee, '%' ) ) 
+	AND ( :status IS NULL OR ud.status LIKE CONCAT( '%',:status, '%' ) ) 
+GROUP BY
+	ud.purchase_group_id) wmTempTable
+        ]]>
+    <query-param name="purchase_group" type="java.lang.String"/>
+    <query-param name="assignee" type="java.lang.String"/>
+    <query-param name="status" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFQSummaryPrint">
+        <![CDATA[
+        SELECT 
+	ttr.rfq_ref as rfq_number,
+	ttrv.rfqv_id as rfqv_id,
+	ttpli.pli_id as item,
+	ttpli.pli_desc as description,
+	ttrls.rls_id,
+	ttrv.rfqv_vendor_code as vendor_code,
+	ttrv.rfqv_vendor_name as vendor_name,
+	ttrv.rfqv_quality as quality,
+	ttrv.rfqv_summary_overwrite as summary_overwrite,
+	ttrv.rfqv_summary_reason as summary_reason,
+	ttrv.rfqv_duration,
+	ttrv.rfqv_base_price as unit_price,
+	ttrv.rfqv_term_payment as top,
+	ttpli.pli_qty as qty,
+	ttrvq.liq_unit_price,
+	ttrvq.liq_amount,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv1.rfqv_total_price as total_price, rv1.rfqv_currency_kurs as kurs
+			FROM tbl_t_rfq_vendor rv1
+			WHERE rv1.rfq_id = :rfqId
+		) as tmp1
+		WHERE (
+			CASE WHEN tmp1.kurs IS NULL
+				THEN tmp1.total_price
+				ELSE tmp1.total_price*tmp1.kurs
+			END
+		) > (
+			CASE WHEN ttrv.rfqv_currency_kurs IS NULL
+				THEN ttrv.rfqv_total_price
+				ELSE ttrv.rfqv_total_price*ttrv.rfqv_currency_kurs
+			END
+		)
+	) as total_price,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv2.rfqv_duration as lead_time
+			FROM tbl_t_rfq_vendor rv2
+			WHERE rv2.rfq_id = :rfqId
+			GROUP BY rv2.rfqv_duration
+		) as tmp2
+		WHERE tmp2.lead_time < ttrv.rfqv_duration
+	) as lead_time,
+	'' as summary_rank
+FROM tbl_t_rfq_vendor ttrv 
+LEFT JOIN tbl_t_rfq ttr ON ttrv.rfq_id = ttr.rfq_id
+LEFT JOIN tbl_t_rfq_ven_quotation ttrvq ON ttrvq.rfqv_id = ttrv.rfqv_id
+LEFT JOIN tbl_t_rfq_li_status ttrls ON ttrvq.rls_id = ttrls.rls_id
+LEFT JOIN tbl_t_pr_line_item ttpli ON ttrls.pli_id = ttpli.pli_id
+WHERE ttrv.rfq_id = :rfqId
+        ]]>
+    <query-param name="rfqId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFQSummaryPrint__count">
+        <![CDATA[
+        select count(*) from (SELECT 
+	ttr.rfq_ref as rfq_number,
+	ttrv.rfqv_id as rfqv_id,
+	ttpli.pli_id as item,
+	ttpli.pli_desc as description,
+	ttrls.rls_id,
+	ttrv.rfqv_vendor_code as vendor_code,
+	ttrv.rfqv_vendor_name as vendor_name,
+	ttrv.rfqv_quality as quality,
+	ttrv.rfqv_summary_overwrite as summary_overwrite,
+	ttrv.rfqv_summary_reason as summary_reason,
+	ttrv.rfqv_duration,
+	ttrv.rfqv_base_price as unit_price,
+	ttrv.rfqv_term_payment as top,
+	ttpli.pli_qty as qty,
+	ttrvq.liq_unit_price,
+	ttrvq.liq_amount,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv1.rfqv_total_price as total_price, rv1.rfqv_currency_kurs as kurs
+			FROM tbl_t_rfq_vendor rv1
+			WHERE rv1.rfq_id = :rfqId
+		) as tmp1
+		WHERE (
+			CASE WHEN tmp1.kurs IS NULL
+				THEN tmp1.total_price
+				ELSE tmp1.total_price*tmp1.kurs
+			END
+		) > (
+			CASE WHEN ttrv.rfqv_currency_kurs IS NULL
+				THEN ttrv.rfqv_total_price
+				ELSE ttrv.rfqv_total_price*ttrv.rfqv_currency_kurs
+			END
+		)
+	) as total_price,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv2.rfqv_duration as lead_time
+			FROM tbl_t_rfq_vendor rv2
+			WHERE rv2.rfq_id = :rfqId
+			GROUP BY rv2.rfqv_duration
+		) as tmp2
+		WHERE tmp2.lead_time < ttrv.rfqv_duration
+	) as lead_time,
+	'' as summary_rank
+FROM tbl_t_rfq_vendor ttrv 
+LEFT JOIN tbl_t_rfq ttr ON ttrv.rfq_id = ttr.rfq_id
+LEFT JOIN tbl_t_rfq_ven_quotation ttrvq ON ttrvq.rfqv_id = ttrv.rfqv_id
+LEFT JOIN tbl_t_rfq_li_status ttrls ON ttrvq.rls_id = ttrls.rls_id
+LEFT JOIN tbl_t_pr_line_item ttpli ON ttrls.pli_id = ttpli.pli_id
+WHERE ttrv.rfq_id = :rfqId) wmTempTable
+        ]]>
+    <query-param name="rfqId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deleteAdditionalHistory">
+        <![CDATA[
+        DELETE FROM tbl_t_additional_history WHERE ba_id = :baId
+        ]]>
+    <query-param name="baId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QSetStatusGRLineItem">
+        <![CDATA[
+        UPDATE tbl_t_gr_line_item SET status = :status WHERE id = :id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deletePODocByIDPO">
+        <![CDATA[
+        DELETE FROM tbl_t_po_doc WHERE id_po_header = :idPoHeader
+        ]]>
+    <query-param name="idPoHeader" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="generatePRref">
+        <![CDATA[
+        UPDATE tbl_t_pr
+SET pr_ref = :prRef
+WHERE pr_id = :prId
+        ]]>
+    <query-param name="prRef" type="java.lang.String"/>
+    <query-param name="prId" type="java.math.BigInteger"/>
+    </sql-query>
+
+    <sql-query name="getIOListBH">
+        <![CDATA[
+        SELECT 
+    bh.io_number, 
+    bh.io_name,
+    c_id,
+    (
+        SELECT bhd.bh_id 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as bh_id,
+    (
+        SELECT bhd.department 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as department,
+    (
+        SELECT bhd.department_id 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as department_id,
+    bh.acc_id,
+    br.br_id,
+    br.br_title
+FROM tbl_t_budget_header bh
+JOIN tbl_m_brand br on br.br_id = bh.br_id
+WHERE bh.bh_status = 'active'
+AND (:userDepartment IS NULL OR CONCAT(",", :userDepartment, ",") LIKE CONCAT("%,", bh.department_id, ",%"))
+AND (:accType IS NULL OR CONCAT(",", :accType, ",") LIKE CONCAT("%,", bh.acc_id, ",%"))
+
+-- Hilman
+AND (:accActivity IS NULL OR CONCAT(",", :accActivity, ",") LIKE CONCAT("%,", bh.acc_id, ",%") 
+OR CONCAT(",", :accNonActivity, ",") LIKE CONCAT("%,", bh.acc_id, ",%")
+OR CONCAT(",", :accAsset, ",") LIKE CONCAT("%,", bh.acc_id, ",%")
+OR CONCAT(",", :accSewaLeasing, ",") LIKE CONCAT("%,", bh.acc_id, ",%")
+)
+
+AND (:cId IS NULL OR CONCAT(",", :cId, ",") LIKE CONCAT("%,", bh.c_id, ",%"))
+AND (:accId IS NULL OR CONCAT(",", :accId, ",") LIKE CONCAT("%,", bh.acc_id, ",%"))
+-- Hilman
+
+AND ((:ioNumber IS NULL OR bh.io_number LIKE CONCAT('%', :ioNumber, '%'))
+OR (:ioName IS NULL OR bh.io_name LIKE CONCAT('%', :ioName, '%')))
+AND (:budgetYear IS NULL OR bh.bh_year = :budgetYear)
+AND br.br_status = 'active'
+GROUP BY bh.io_number, bh.io_name
+        ]]>
+    <query-param name="budgetYear" type="java.lang.String"/>
+    <query-param name="userDepartment" type="java.lang.String"/>
+    <query-param name="accType" type="java.lang.String"/>
+    <query-param name="accActivity" type="java.lang.String"/>
+    <query-param name="accNonActivity" type="java.lang.String"/>
+    <query-param name="accAsset" type="java.lang.String"/>
+    <query-param name="accSewaLeasing" type="java.lang.String"/>
+    <query-param name="cId" type="java.lang.String"/>
+    <query-param name="accId" type="java.lang.String"/>
+    <query-param name="ioNumber" type="java.lang.String"/>
+    <query-param name="ioName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getIOListBH__count">
+        <![CDATA[
+        select count(*) from (SELECT 
+    bh.io_number, 
+    bh.io_name,
+    c_id,
+    (
+        SELECT bhd.bh_id 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as bh_id,
+    (
+        SELECT bhd.department 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as department,
+    (
+        SELECT bhd.department_id 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as department_id,
+    bh.acc_id,
+    br.br_id,
+    br.br_title
+FROM tbl_t_budget_header bh
+JOIN tbl_m_brand br on br.br_id = bh.br_id
+WHERE bh.bh_status = 'active'
+AND (:userDepartment IS NULL OR CONCAT(",", :userDepartment, ",") LIKE CONCAT("%,", bh.department_id, ",%"))
+AND (:accType IS NULL OR CONCAT(",", :accType, ",") LIKE CONCAT("%,", bh.acc_id, ",%"))
+
+-- Hilman
+AND (:accActivity IS NULL OR CONCAT(",", :accActivity, ",") LIKE CONCAT("%,", bh.acc_id, ",%") 
+OR CONCAT(",", :accNonActivity, ",") LIKE CONCAT("%,", bh.acc_id, ",%")
+OR CONCAT(",", :accAsset, ",") LIKE CONCAT("%,", bh.acc_id, ",%")
+OR CONCAT(",", :accSewaLeasing, ",") LIKE CONCAT("%,", bh.acc_id, ",%")
+)
+
+AND (:cId IS NULL OR CONCAT(",", :cId, ",") LIKE CONCAT("%,", bh.c_id, ",%"))
+AND (:accId IS NULL OR CONCAT(",", :accId, ",") LIKE CONCAT("%,", bh.acc_id, ",%"))
+-- Hilman
+
+AND ((:ioNumber IS NULL OR bh.io_number LIKE CONCAT('%', :ioNumber, '%'))
+OR (:ioName IS NULL OR bh.io_name LIKE CONCAT('%', :ioName, '%')))
+AND (:budgetYear IS NULL OR bh.bh_year = :budgetYear)
+AND br.br_status = 'active'
+GROUP BY bh.io_number, bh.io_name) wmTempTable
+        ]]>
+    <query-param name="budgetYear" type="java.lang.String"/>
+    <query-param name="userDepartment" type="java.lang.String"/>
+    <query-param name="accType" type="java.lang.String"/>
+    <query-param name="accActivity" type="java.lang.String"/>
+    <query-param name="accNonActivity" type="java.lang.String"/>
+    <query-param name="accAsset" type="java.lang.String"/>
+    <query-param name="accSewaLeasing" type="java.lang.String"/>
+    <query-param name="cId" type="java.lang.String"/>
+    <query-param name="accId" type="java.lang.String"/>
+    <query-param name="ioNumber" type="java.lang.String"/>
+    <query-param name="ioName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="changeRFQItemQuotation">
+        <![CDATA[
+        UPDATE tbl_t_rfq_ven_quotation
+SET 
+liq_modified_by = :modifiedBy,
+liq_modified_at = :modifiedAt,
+liq_lead_time = :leadTime,
+liq_discount = :discount,
+liq_unit_price = :unitPrice,
+liq_currency = :currency,
+liq_amount = :amount
+WHERE liq_id = :liqId
+        ]]>
+    <query-param name="modifiedBy" type="java.time.LocalDateTime"/>
+    <query-param name="modifiedAt" type="java.time.LocalDateTime"/>
+    <query-param name="leadTime" type="java.lang.String"/>
+    <query-param name="discount" type="java.lang.String"/>
+    <query-param name="unitPrice" type="java.lang.String"/>
+    <query-param name="currency" type="java.lang.String"/>
+    <query-param name="amount" type="java.lang.String"/>
+    <query-param name="liqId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GRCompareQtyConfirm">
+        <![CDATA[
+        SELECT
+	a.id_pr_line_item_header,
+( SELECT SUM( delivery_qty ) FROM tbl_t_gr_line_item WHERE tbl_t_gr_line_item.id_pr_line_item_header = a.id_pr_line_item_header ) AS delivery_item,
+( SELECT SUM( confirm_qty) FROM tbl_t_gr_confirm_line_item WHERE tbl_t_gr_confirm_line_item .id_pr_line_item_header = a.id_pr_line_item_header AND tbl_t_gr_confirm_line_item  .`status` = 'COMPLETE' ) AS confirm_item
+FROM
+	tbl_t_gr_line_item a
+	JOIN tbl_t_po b ON a.id_po_header = b.id
+	JOIN tbl_t_po_line_item c ON a.id_pr_line_item_header = c.id_pr_line_item_header
+WHERE
+	a.id_pr_line_item_header = :id_pr_line_item_header
+GROUP BY b.id
+        ]]>
+    <query-param name="id_pr_line_item_header" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GRCompareQtyConfirm__count">
+        <![CDATA[
+        select count(*) from (SELECT
+	a.id_pr_line_item_header,
+( SELECT SUM( delivery_qty ) FROM tbl_t_gr_line_item WHERE tbl_t_gr_line_item.id_pr_line_item_header = a.id_pr_line_item_header ) AS delivery_item,
+( SELECT SUM( confirm_qty) FROM tbl_t_gr_confirm_line_item WHERE tbl_t_gr_confirm_line_item .id_pr_line_item_header = a.id_pr_line_item_header AND tbl_t_gr_confirm_line_item  .`status` = 'COMPLETE' ) AS confirm_item
+FROM
+	tbl_t_gr_line_item a
+	JOIN tbl_t_po b ON a.id_po_header = b.id
+	JOIN tbl_t_po_line_item c ON a.id_pr_line_item_header = c.id_pr_line_item_header
+WHERE
+	a.id_pr_line_item_header = :id_pr_line_item_header
+GROUP BY b.id) wmTempTable
+        ]]>
+    <query-param name="id_pr_line_item_header" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QueryupdateStatusBH">
+        <![CDATA[
+        UPDATE tbl_t_budget_header SET bh_status = :status WHERE bh_id = :id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getCheckerTasklist">
+        <![CDATA[
+        SELECT ROW_NUMBER() OVER() AS num_row, orderedData.* from 
+
+(SELECT * FROM
+(SELECT pr_id, pr_modified_at, pr_ref, 'PR' as task_type, pr_created_name from tbl_t_pr where pr_status = "Submitted"
+UNION
+SELECT bd_rc_id as pr_id, bd_rc_created_at, bd_rc_id, 'Reclass' as task_type, bd_rc_created_by from tbl_t_budget_reclass where bd_rc_status = "Submit"
+UNION
+SELECT ba_id as pr_id, ba_created_at, ba_id, 'Additional' as task_type, ba_created_by from tbl_t_budget_additional where ba_remarks = "Submit") as data ORDER BY pr_modified_at) as orderedData
+        ]]>
+    </sql-query>
+
+    <sql-query name="getCheckerTasklist__count">
+        <![CDATA[
+        select count(*) from (SELECT ROW_NUMBER() OVER() AS num_row, orderedData.* from 
+
+(SELECT * FROM
+(SELECT pr_id, pr_modified_at, pr_ref, 'PR' as task_type, pr_created_name from tbl_t_pr where pr_status = "Submitted"
+UNION
+SELECT bd_rc_id as pr_id, bd_rc_created_at, bd_rc_id, 'Reclass' as task_type, bd_rc_created_by from tbl_t_budget_reclass where bd_rc_status = "Submit"
+UNION
+SELECT ba_id as pr_id, ba_created_at, ba_id, 'Additional' as task_type, ba_created_by from tbl_t_budget_additional where ba_remarks = "Submit") as data ORDER BY pr_modified_at) as orderedData) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qVendorListOrder">
+        <![CDATA[
+        SELECT a.*, b.c_code, b.c_title, d.pr_created_name FROM tbl_t_po a LEFT JOIN tbl_m_company b ON a.company_id = c_code JOIN tbl_t_po_line_item c ON a.id = c.id_po_header JOIN tbl_t_pr d ON c.id_pr_header = d.pr_id WHERE doc_type = 'purchase_order' AND a.status IN ( 'Approved','Accepted', 'Revise', 'In Progress', 'On Delivery', 'Open', 'Delivered') AND vendor_code = :vendorCode AND b.c_code = :company_code
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="company_code" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qVendorListOrder__count">
+        <![CDATA[
+        select count(*) from (SELECT a.*, b.c_code, b.c_title, d.pr_created_name FROM tbl_t_po a LEFT JOIN tbl_m_company b ON a.company_id = c_code JOIN tbl_t_po_line_item c ON a.id = c.id_po_header JOIN tbl_t_pr d ON c.id_pr_header = d.pr_id WHERE doc_type = 'purchase_order' AND a.status IN ( 'Approved','Accepted', 'Revise', 'In Progress', 'On Delivery', 'Open', 'Delivered') AND vendor_code = :vendorCode AND b.c_code = :company_code) wmTempTable
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="company_code" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFQSummary">
+        <![CDATA[
+        SELECT 
+	ttr.rfq_ref as rfq_number,
+	COUNT(ttpli.pli_id) as item,
+	GROUP_CONCAT(CONCAT(ttpli.pli_desc)) as description,
+	ttrv.rfqv_id as rfqv_id,
+	ttrls.rls_id,
+	ttrv.rfqv_vendor_code as vendor_code,
+	ttrv.rfqv_vendor_name as vendor_name,
+	ttrv.rfqv_quality as quality,
+	ttrv.rfqv_summary_overwrite as summary_overwrite,
+	ttrv.rfqv_summary_reason as summary_reason,
+	ttrv.rfqv_duration,
+	ttrv.rfqv_base_price as unit_price,
+	ttrv.rfqv_term_payment as top,
+	ttrv.rfqv_attachments as attachments,
+	ttpli.pli_qty as qty,
+	ttrvq.liq_unit_price,
+	ttrvq.liq_amount,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv1.rfqv_total_price as total_price, rv1.rfqv_currency_kurs as kurs
+			FROM tbl_t_rfq_vendor rv1
+			WHERE rv1.rfq_id = :rfqId
+			AND rv1.rfqv_status = 'Submitted'
+		) as tmp1
+		WHERE (
+			CASE WHEN tmp1.kurs IS NULL
+				THEN tmp1.total_price
+				ELSE tmp1.total_price*tmp1.kurs
+			END
+		) > (
+			CASE WHEN ttrv.rfqv_currency_kurs IS NULL
+				THEN ttrv.rfqv_total_price
+				ELSE ttrv.rfqv_total_price*ttrv.rfqv_currency_kurs
+			END
+		)
+	) as total_price,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv2.rfqv_duration as lead_time
+			FROM tbl_t_rfq_vendor rv2
+			WHERE rv2.rfq_id = :rfqId
+			AND rv2.rfqv_status = 'Submitted'
+			GROUP BY rv2.rfqv_duration
+		) as tmp2
+		WHERE tmp2.lead_time < ttrv.rfqv_duration
+	) as lead_time,
+	'' as summary_rank
+FROM tbl_t_rfq_vendor ttrv 
+LEFT JOIN tbl_t_rfq ttr ON ttrv.rfq_id = ttr.rfq_id
+LEFT JOIN tbl_t_rfq_ven_quotation ttrvq ON ttrvq.rfqv_id = ttrv.rfqv_id
+LEFT JOIN tbl_t_rfq_li_status ttrls ON ttrvq.rls_id = ttrls.rls_id
+LEFT JOIN tbl_t_pr_line_item ttpli ON ttrls.pli_id = ttpli.pli_id
+WHERE ttrv.rfq_id = :rfqId
+AND ttrv.rfqv_status = 'Submitted'
+GROUP BY ttrv.rfqv_id
+        ]]>
+    <query-param name="rfqId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getRFQSummary__count">
+        <![CDATA[
+        select count(*) from (SELECT 
+	ttr.rfq_ref as rfq_number,
+	COUNT(ttpli.pli_id) as item,
+	GROUP_CONCAT(CONCAT(ttpli.pli_desc)) as description,
+	ttrv.rfqv_id as rfqv_id,
+	ttrls.rls_id,
+	ttrv.rfqv_vendor_code as vendor_code,
+	ttrv.rfqv_vendor_name as vendor_name,
+	ttrv.rfqv_quality as quality,
+	ttrv.rfqv_summary_overwrite as summary_overwrite,
+	ttrv.rfqv_summary_reason as summary_reason,
+	ttrv.rfqv_duration,
+	ttrv.rfqv_base_price as unit_price,
+	ttrv.rfqv_term_payment as top,
+	ttrv.rfqv_attachments as attachments,
+	ttpli.pli_qty as qty,
+	ttrvq.liq_unit_price,
+	ttrvq.liq_amount,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv1.rfqv_total_price as total_price, rv1.rfqv_currency_kurs as kurs
+			FROM tbl_t_rfq_vendor rv1
+			WHERE rv1.rfq_id = :rfqId
+			AND rv1.rfqv_status = 'Submitted'
+		) as tmp1
+		WHERE (
+			CASE WHEN tmp1.kurs IS NULL
+				THEN tmp1.total_price
+				ELSE tmp1.total_price*tmp1.kurs
+			END
+		) > (
+			CASE WHEN ttrv.rfqv_currency_kurs IS NULL
+				THEN ttrv.rfqv_total_price
+				ELSE ttrv.rfqv_total_price*ttrv.rfqv_currency_kurs
+			END
+		)
+	) as total_price,
+	(
+		SELECT COUNT(*)+1
+		FROM (
+			SELECT rv2.rfqv_duration as lead_time
+			FROM tbl_t_rfq_vendor rv2
+			WHERE rv2.rfq_id = :rfqId
+			AND rv2.rfqv_status = 'Submitted'
+			GROUP BY rv2.rfqv_duration
+		) as tmp2
+		WHERE tmp2.lead_time < ttrv.rfqv_duration
+	) as lead_time,
+	'' as summary_rank
+FROM tbl_t_rfq_vendor ttrv 
+LEFT JOIN tbl_t_rfq ttr ON ttrv.rfq_id = ttr.rfq_id
+LEFT JOIN tbl_t_rfq_ven_quotation ttrvq ON ttrvq.rfqv_id = ttrv.rfqv_id
+LEFT JOIN tbl_t_rfq_li_status ttrls ON ttrvq.rls_id = ttrls.rls_id
+LEFT JOIN tbl_t_pr_line_item ttpli ON ttrls.pli_id = ttpli.pli_id
+WHERE ttrv.rfq_id = :rfqId
+AND ttrv.rfqv_status = 'Submitted'
+GROUP BY ttrv.rfqv_id) wmTempTable
+        ]]>
+    <query-param name="rfqId" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="query_budgetDetail1">
+        <![CDATA[
+        SELECT
+	ROW_NUMBER() OVER(ORDER BY a.bh_id ASC) AS num,
+	a.bh_year,
+	a.c_id,
+	a.br_id,
+	a.acc_id,
+	a.department_id,
+	a.bh_id,
+	a.io_number,
+	a.io_name,
+	a.bh_status
+FROM
+	tbl_t_budget_header a
+	WHERE department_id 
+	IN (SELECT department_id FROM tbl_m_user_dep 
+	WHERE user_id = :emp GROUP BY department_id)
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="query_budgetDetail1__count">
+        <![CDATA[
+        select count(*) from (SELECT
+	ROW_NUMBER() OVER(ORDER BY a.bh_id ASC) AS num,
+	a.bh_year,
+	a.c_id,
+	a.br_id,
+	a.acc_id,
+	a.department_id,
+	a.bh_id,
+	a.io_number,
+	a.io_name,
+	a.bh_status
+FROM
+	tbl_t_budget_header a
+	WHERE department_id 
+	IN (SELECT department_id FROM tbl_m_user_dep 
+	WHERE user_id = :emp GROUP BY department_id)) wmTempTable
+        ]]>
+    <query-param name="emp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_get_budgetHeader_Detail2">
+        <![CDATA[
+        SELECT 
+    ROW_NUMBER() OVER(ORDER BY a.bh_id ASC) AS num,
+    a.*,
+    b.c_code,
+    b.c_title,
+    c.br_code,
+    c.br_title,
+    d.acc_code,
+    d.acc_title
+FROM tbl_t_budget_header a
+JOIN tbl_m_company b ON a.c_id = b.c_id
+JOIN tbl_m_brand c ON a.br_id = c.br_id
+JOIN tbl_m_account_type d ON a.acc_id = d.acc_id
+WHERE
+    a.bh_id = :bh_id
+    AND a.io_number = :io_number
+        ]]>
+    <query-param name="bh_id" type="java.lang.String"/>
+    <query-param name="io_number" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="q_get_budgetHeader_Detail2__count">
+        <![CDATA[
+        select count(*) from (SELECT 
+    ROW_NUMBER() OVER(ORDER BY a.bh_id ASC) AS num,
+    a.*,
+    b.c_code,
+    b.c_title,
+    c.br_code,
+    c.br_title,
+    d.acc_code,
+    d.acc_title
+FROM tbl_t_budget_header a
+JOIN tbl_m_company b ON a.c_id = b.c_id
+JOIN tbl_m_brand c ON a.br_id = c.br_id
+JOIN tbl_m_account_type d ON a.acc_id = d.acc_id
+WHERE
+    a.bh_id = :bh_id
+    AND a.io_number = :io_number) wmTempTable
+        ]]>
+    <query-param name="bh_id" type="java.lang.String"/>
+    <query-param name="io_number" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="deletePOLineItem">
+        <![CDATA[
+        DELETE FROM tbl_t_po_line_item WHERE id_po_header = :idPoHeader
+        ]]>
+    <query-param name="idPoHeader" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getIOListBHDef">
+        <![CDATA[
+        SELECT 
+    bh.io_number, 
+    bh.io_name, 
+    bh.department, 
+    bh.department_id,
+    (
+        SELECT bhd.bh_id 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as bh_id
+FROM tbl_t_budget_header bh
+WHERE bh.bh_status = 'active'
+AND (:userDepartment IS NULL OR CONCAT(",", :userDepartment, ",") LIKE CONCAT("%,", bh.department_id, ",%"))
+AND ((:ioNumber IS NULL OR bh.io_number LIKE CONCAT('%', :ioNumber, '%'))
+AND (:ioName IS NULL OR bh.io_name LIKE CONCAT('%', :ioName, '%')))
+AND (:budgetYear IS NULL OR bh.bh_year = :budgetYear)
+GROUP BY bh.io_number, bh.io_name, bh.department,bh.department_id
+        ]]>
+    <query-param name="budgetYear" type="java.lang.String"/>
+    <query-param name="userDepartment" type="java.lang.String"/>
+    <query-param name="ioNumber" type="java.lang.String"/>
+    <query-param name="ioName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getIOListBHDef__count">
+        <![CDATA[
+        select count(*) from (SELECT 
+    bh.io_number, 
+    bh.io_name, 
+    bh.department, 
+    bh.department_id,
+    (
+        SELECT bhd.bh_id 
+        FROM tbl_t_budget_header bhd 
+        WHERE bhd.io_number = bh.io_number
+        AND bhd.bh_status = 'active'
+        AND (:budgetYear IS NULL OR bhd.bh_year = :budgetYear)
+        ORDER BY bhd.bh_id DESC 
+        LIMIT 1 OFFSET 0
+    ) as bh_id
+FROM tbl_t_budget_header bh
+WHERE bh.bh_status = 'active'
+AND (:userDepartment IS NULL OR CONCAT(",", :userDepartment, ",") LIKE CONCAT("%,", bh.department_id, ",%"))
+AND ((:ioNumber IS NULL OR bh.io_number LIKE CONCAT('%', :ioNumber, '%'))
+AND (:ioName IS NULL OR bh.io_name LIKE CONCAT('%', :ioName, '%')))
+AND (:budgetYear IS NULL OR bh.bh_year = :budgetYear)
+GROUP BY bh.io_number, bh.io_name, bh.department,bh.department_id) wmTempTable
+        ]]>
+    <query-param name="budgetYear" type="java.lang.String"/>
+    <query-param name="userDepartment" type="java.lang.String"/>
+    <query-param name="ioNumber" type="java.lang.String"/>
+    <query-param name="ioName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updatebhIdAdditionalBudget">
+        <![CDATA[
+        UPDATE tbl_t_budget_additional
+SET bh_id = :bhId
+WHERE ba_id = :baId
+        ]]>
+    <query-param name="bhId" type="java.lang.Integer"/>
+    <query-param name="baId" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="changetCOABudgetDetail">
+        <![CDATA[
+        UPDATE tbl_t_budget_details 
+SET coa_id = :coaId, bh_id = :bhId
+where  bd_additional_doc_id = :pliId and bd_additional_doc_type = 'pr_line_item'
+        ]]>
+    <query-param name="coaId" type="java.lang.Integer"/>
+    <query-param name="bhId" type="java.lang.Float"/>
+    <query-param name="pliId" type="java.lang.Integer"/>
+    </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,256 @@
+<wm-page pagetitle="List Forgot User" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
+                        <wm-container name="background" backgroundcolor="#fff">
+                            <wm-container class="aio-p2p-content-container" padding="24px" name="container12_1" margin="unset unset unset 55px">
+                                <wm-container name="container83_1">
+                                    <wm-container name="container14" width="1800">
+                                        <wm-container name="container27_1">
+                                            <wm-button caption="bind:appLocale.LANG_BACK" type="button" margin="5px unset 15px unset" on-click="Actions.goToPage_Main.invoke()" class="aio-p2p-btn-primary" color="#026CB6" iconclass="wi wi-backward" backgroundcolor="#d8d8d8"
+                                                width="115px" height="40px" name="btn_back"></wm-button>
+                                            <wm-layoutgrid name="layoutgrid3">
+                                                <wm-gridrow name="gridrow5" padding="unset unset 5px unset">
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn16_1">
+                                                        <wm-container class="col-md-9" name="container28_1">
+                                                            <wm-label padding="unset 0.5em" name="label33_2" caption="Filter" fontsize="15" fontweight="bold" fontfamily="Inter"></wm-label>
+                                                            <wm-select dataset="bind:Variables.filterLocation.dataSet" datafield="dataValue" displayfield="name" width="20px" on-change="select3Change($event, widget, newVal, oldVal)" placeholder="- Select Location-"
+                                                                fontweight="bold" fontsize="14" name="select3_1"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn18">
+                                                        <wm-container class="col-md-9" name="container28_2">
+                                                            <wm-select name="select3" dataset="bind:Variables.filterStatus.dataSet" datafield="name" displayfield="dataValue" width="20px" on-change="select3Change($event, widget, newVal, oldVal)" placeholder="- Select Status -"
+                                                                fontweight="bold" fontsize="14" margin="25px unset unset unset"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="8" name="gridcolumn17_1" horizontalalign="right">
+                                                        <wm-container name="container30_1" horizontalalign="right" width="50%" margin="2em unset unset 48em">
+                                                            <wm-text name="searchCompany" width="50%" placeholder="Search Company Name" on-keydown="searchCompanyKeydown($event, widget)" on-keyup="searchCompanyKeyup($event, widget)" margin="unset unset unset 15em"></wm-text>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <!--<wm-container padding="16px" name="container15" class="aio-p2p-scroll-x" width="1800">-->
+                                        <!--    <wm-container class="aio-p2p-table-header" padding="16px" name="container15">-->
+                                        <!--        <wm-container display="inline-block" width="12%" on-click="container41Click($event, widget)" horizontalalign="center" name="container16">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_USERNAME" class="aio-p2p-clickable" fontsize="15" name="label6_1"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="270px" class="aio-p2p-clickable" on-click="container42Click($event, widget)" horizontalalign="center" name="container17">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_NAME" class="aio-p2p-clickable" fontsize="15" name="label7"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="350px" on-click="container43Click($event, widget)" horizontalalign="center" name="container18">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_EMAIL" class="aio-p2p-clickable" fontsize="15" name="label8"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="230px" on-click="container44Click($event, widget)" horizontalalign="center" name="container19">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NPWP_COMPANY" class="aio-p2p-clickable" fontsize="15" name="label9"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="220px" on-click="container45Click($event, widget)" horizontalalign="center" name="container20">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CITIZEN_ID" class="aio-p2p-clickable" fontsize="15" name="label10"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="230px" on-click="container50Click($event, widget)" horizontalalign="center" name="container21">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="Created Date" class="aio-p2p-clickable" fontsize="15" name="label34_1"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="170px" on-click="container41Click($event, widget)" horizontalalign="center" name="container30_2">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="Status" class="aio-p2p-clickable" fontsize="15" name="label11"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="230px" on-click="container41Click($event, widget)" horizontalalign="center" name="container31_2">-->
+                                        <!--            <wm-label padding="unset 0.5em" caption="Approval Date" class="aio-p2p-clickable" fontsize="15" name="label35_2"></wm-label>-->
+                                        <!--        </wm-container>-->
+                                        <!--        <wm-container display="inline-block" width="120px" on-click="container65Click($event, widget)" horizontalalign="center" name="container22"></wm-container>-->
+                                        <!--    </wm-container>-->
+                                        <!--    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" navigation="Basic" on-beforedatarender="dataListBeforedatarender(widget, $data)"-->
+                                        <!--        statehandler="none" name="list1" dataset="bind:Variables.dvGetForgotUser.dataSet">-->
+                                        <!--        <wm-listtemplate layout="media" name="listtemplate1">-->
+                                        <!--            <wm-container padding="unset 8px" name="container26">-->
+                                        <!--                <wm-container display="inline-block" width="12%" horizontalalign="center" name="container27">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abUsername" fontsize="15" name="label16"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="270px" horizontalalign="center" name="container28">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abCompanyName" fontsize="15" name="label17"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="350px" horizontalalign="center" name="container29">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abCompanyEmail" fontsize="15" name="label18"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="230px" horizontalalign="center" name="container30">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abCompanyNpwp" fontsize="15" name="label19"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="220px" horizontalalign="center" name="container31">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abKtp" fontsize="15" name="label20"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="230px" horizontalalign="center" name="container32">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abPuon" class="aio-p2p-clickable" fontsize="15" name="label35_1"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="170px" on-click="container41Click($event, widget)" horizontalalign="center" name="container31_1">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abStatus" fontsize="15" class="ivendor-status" fontweight="bold" color="#ffffff" width="100px" margin="5px unset unset 15px"-->
+                                        <!--                        name="label31_1"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="230px" horizontalalign="center" name="container32_1">-->
+                                        <!--                    <wm-label padding="unset 0.5em" caption="bind:Widgets.list1.currentItem.abApprovalDate" class="aio-p2p-clickable" fontsize="15" name="label36"></wm-label>-->
+                                        <!--                </wm-container>-->
+                                        <!--                <wm-container display="inline-block" width="120px" horizontalalign="center" name="container24">-->
+                                        <!--                    <wm-picture picturesource="resources/images/logos/icon-pencil.png" on-click="Widgets.ApproveForgotUser.open();picture1Click($event, widget, item, currentItemWidgets)" margin="unset 8px 15px 0px"-->
+                                        <!--                        class="aio-p2p-clickable" show="bind:Variables.dvGetForgotUser.dataSet[$i].abStatus !== 'New' ? false : true" name="picture1"></wm-picture>-->
+                                        <!--                </wm-container>-->
+                                        <!--            </wm-container>-->
+                                        <!--        </wm-listtemplate>-->
+                                        <!--    </wm-list>-->
+                                        <!--</wm-container>-->
+                                        <wm-container name="contentContainer" class="aio-p2p-content-container" padding="24px">
+                                            <wm-container name="container83_1" class="aio-p2p-scroll-x">
+                                                <wm-container name="container84_1" width="1800">
+                                                    <wm-container class="aio-p2p-table-header" padding="16px" name="container39">
+                                                        <wm-container display="inline-block" width="12%" on-click="container41Click($event, widget)" name="container41" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_USERNAME" name="label23_1" class="aio-p2p-clickable" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" on-click="container42Click($event, widget)" name="container42" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_NAME" name="label24" class="aio-p2p-clickable" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="12%" on-click="container43Click($event, widget)" name="container43" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_EMAIL" name="label25" class="aio-p2p-clickable" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="12%" on-click="container44Click($event, widget)" name="container44" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NPWP_COMPANY" name="label26" class="aio-p2p-clickable" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="12%" on-click="container45Click($event, widget)" name="container45" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CITIZEN_ID" name="label27" class="aio-p2p-clickable" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="10%" on-click="container50Click($event, widget)" name="container50" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="Created Date" name="label32" class="aio-p2p-clickable" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="8%" on-click="container65Click($event, widget)" name="container65" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="Status" class="aio-p2p-clickable" name="label23_2" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="10%" on-click="container66Click($event, widget)" name="container66" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="Approval Date" class="aio-p2p-clickable" name="label24_1" fontsize="15"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="5%" on-click="container66Click($event, widget)" horizontalalign="center" name="container36">
+                                                            <wm-label padding="unset 0.5em" caption="Location" class="aio-p2p-clickable" fontsize="15" name="label37_1"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="3%" on-click="container66Click($event, widget)" horizontalalign="center" name="container136"></wm-container>
+                                                    </wm-container>
+                                                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.dvGetForgotUser.dataSet"
+                                                        navigation="Basic" on-beforedatarender="dataListBeforedatarender(widget, $data)" name="listForgotUser" statehandler="none" on-select="listForgotUserSelect(widget, $data)">
+                                                        <wm-listtemplate layout="media" name="listtemplate">
+                                                            <wm-container padding="unset 8px" name="container51">
+                                                                <wm-container display="inline-block" width="12%" name="container53" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abUsername" fontsize="15" name="label137_1"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="15%" name="container55" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abCompanyName" name="label36" fontsize="15"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="12%" horizontalalign="center" name="container146">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abCompanyEmail" name="label203" fontsize="15"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="12%" name="container56" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abCompanyNpwp" name="label37" fontsize="15"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="12%" name="container57" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abKtp" name="label38" fontsize="15"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="10%" name="container62" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abCreatedDate | toDate: 'dd/MM/yyyy'" name="label43" fontsize="15"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="8%" name="container62" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abStatus" fontsize="15" class="ivendor-status" fontweight="bold" color="#ffffff" width="100px" margin="5px unset unset 15px"
+                                                                        name="label31_1"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="10%" name="container62" horizontalalign="center">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abApprovalDate | toDate: 'dd/MM/yyyy'" class="aio-p2p-clickable" fontsize="15" name="label36"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="5%" horizontalalign="center" name="container37">
+                                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.listForgotUser.currentItem.abPuon" class="aio-p2p-clickable" fontsize="15" name="label38_1"></wm-label>
+                                                                </wm-container>
+                                                                <wm-container display="inline-block" width="3%" name="container62" horizontalalign="center">
+                                                                    <wm-picture picturesource="resources/images/logos/icon-pencil.png" on-click="Widgets.ApproveForgotUser.open();picture1Click($event, widget, item, currentItemWidgets)" margin="unset 8px 15px 0px"
+                                                                        class="aio-p2p-clickable" show="bind:Variables.dvGetForgotUser.dataSet[$i].abStatus !== 'New' ? false : true" name="picture1"></wm-picture>
+                                                                </wm-container>
+                                                            </wm-container>
+                                                        </wm-listtemplate>
+                                                    </wm-list>
+                                                </wm-container>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container name="container25" margin="25px unset unset unset">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow4" height="100%" padding="unset 0px unset unset">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn13_1"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn17" horizontalalign="left">
+                                                <wm-label padding="1em 0.5em unset 0.5em" name="label31_2" textalign="center" caption="Show" fontsize="14"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn14_1">
+                                                <wm-select name="select1" height="45px" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" displayfield="name" datavalue="10" on-change="select1Change($event, widget, newVal, oldVal)"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer content="footer" name="footer1"></wm-footer>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_VENDOR_INFORMATION" iconclass="wi wi-file-text" name="ApproveForgotUser" width="850px">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow1" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn1">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_NAME" name="label14" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label35"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].vendorName" name="label25" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn12">
+                    <wm-label padding="unset 0.5em" caption="Title" fontsize="15" fontfamily="Inter" name="label22"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn2">
+                    <wm-label caption=":" name="label30" fontsize="15" fontfamily="Inter"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].title" fontsize="15" fontfamily="Inter" name="label29"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow2" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn3">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY_EMAIL" name="label16_1" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn13">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label34"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].email" fontsize="15" fontfamily="Inter" name="label23"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn14">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NAME_DIRECTOR" name="label20_1" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn4">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label31"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].directorName" fontsize="15" fontfamily="Inter" name="label28"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow3" padding="unset 0px 15px unset">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn5">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NPWP_COMPANY" fontsize="15" fontfamily="Inter" name="label21_1"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label33"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].npwpNumber" fontsize="15" fontfamily="Inter" name="label24"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn16">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CITIZEN_ID" name="label18_1" fontsize="15" fontfamily="Inter"></wm-label>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="3" name="gridcolumn6">
+                    <wm-label caption=":" fontsize="15" fontfamily="Inter" name="label32"></wm-label>
+                    <wm-label padding="unset 0.5em" caption="bind:Variables.svGetDataVendor.dataSet[0].idDirector" fontsize="15" fontfamily="Inter" name="label26"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="btn-danger" caption="Reject" on-click="btnRejectClick($event, widget)" name="btnReject"></wm-button>
+            <wm-button class="btn-primary" caption="Approve" on-click="btnApproveClick($event, widget)" name="btnApprove" disabled="true"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

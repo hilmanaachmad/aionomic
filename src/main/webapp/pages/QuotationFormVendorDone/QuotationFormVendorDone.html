@@ -1,0 +1,64 @@
+<wm-page name="mainpage" pagetitle="Quotation Form" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" horizontalalign="center" backgroundcolor="#fff">
+                        <wm-picture name="picture2" picturesource="resources/images/logos/otsuka.png" width="90" padding="7px unset"></wm-picture>
+                    </wm-container>
+                    <wm-container name="PageContent" class="row aio-p2p-page-content" horizontalalign="center" padding="unset unset 24px unset">
+                        <wm-picture name="picture2_1" width="600" picturesource="resources/images/imagelists/Submit-Quotation-Done.png" margin="152px unset unset unset"></wm-picture>
+                    </wm-container>
+                </wm-container>
+                <wm-spinner show="false" name="spinner1" deferload="false"></wm-spinner>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container"></wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="Edit Item" iconclass="" name="dialogItem" class="aio-p2p-modal">
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="aio-p2p-btn-alternate" caption="bind:appLocale.LABEL_CANCEL" type="button" margin="unset 0.5em" name="button5" on-click="Widgets.dialogItem.close()"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.BUTTON_SAVE" name="button6_1" on-click="button6_1Click($event, widget)"></wm-button>
+        </wm-dialogactions>
+        <wm-container name="container115_2">
+            <wm-container name="container116">
+                <wm-composite name="composite18_1" captionposition="top">
+                    <wm-label class="col-md-3" name="label64" caption="Lead Time"></wm-label>
+                    <wm-container class="col-md-9 aio-p2p-form-container" name="container117" width="100%" conditionalstyle="bind:{position: 'relative'}" conditionalclass="bind:Variables.modelErrors.dataSet.leadTime ? 'form-error' : ''">
+                        <wm-text name="textLeadTime" placeholder="Insert Lead Time" maxchars="3" datavalue="bind:Variables.modelItemTmp.dataSet.leadTime" updateon="default" on-keyup="textLeadTimeKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                        <wm-label caption="Days" name="label68" conditionalstyle="bind:{position: 'absolute', top: '12px', right: '12px', zIndex: '10', color: 'rgba(64, 65, 67, 0.6)'}"></wm-label>
+                        <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.leadTime" name="label70_1"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container118">
+                <wm-composite name="composite22" captionposition="top">
+                    <wm-label class="col-md-3" name="label70" caption="bind:appLocale.LABEL_CURRENCY"></wm-label>
+                    <wm-container class="col-md-9" name="container124" width="100%">
+                        <wm-select name="selectCurrency" placeholder="bind:appLocale.LABEL_SELECT_CURRENCY" dataset="bind:Variables.modelCurrency.dataSet" datafield="All Fields" displayfield="fromCurrency" on-change="selectCurrencyChange($event, widget, newVal, oldVal)"></wm-select>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container120">
+                <wm-composite captionposition="top" name="composite20">
+                    <wm-label class="col-md-3" name="label66" caption="bind:appLocale.LABEL_UNIT_PRICE"></wm-label>
+                    <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container121" conditionalclass="bind:Variables.modelErrors.dataSet.unitPrice ? 'form-error' : ''">
+                        <wm-text name="textUnitPrice" placeholder="bind:appLocale.LABEL_SELECT_UNIT_PRICE" maxchars="19" datavalue="bind:App.formatCurrency(Variables.modelItemTmp.dataSet.unitPrice)" updateon="default" on-keyup="textUnitPriceKeyup($event, widget)"
+                            class="aio-p2p-form-input"></wm-text>
+                        <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.unitPrice" name="label71"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+            <wm-container name="container122">
+                <wm-composite captionposition="top" name="composite21">
+                    <wm-label class="col-md-3" name="label67" caption="Discount"></wm-label>
+                    <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container123" conditionalstyle="bind:{position: 'relative'}" conditionalclass="bind:Variables.modelErrors.dataSet.discount ? 'form-error' : ''">
+                        <wm-text name="textDiscount" placeholder="Input Discount" maxchars="3" updateon="default" datavalue="bind:Variables.modelItemTmp.dataSet.discount" on-keyup="textDiscountKeyup($event, widget)" class="aio-p2p-form-input"></wm-text>
+                        <wm-label caption="%" conditionalstyle="bind:{position: 'absolute', top: '12px', right: '12px', zIndex: '10', color: 'rgba(64, 65, 67, 0.6)'}" name="label69"></wm-label>
+                        <wm-label class="aio-p2p-error-message" caption="bind:Variables.modelErrors.dataSet.discount" name="label72"></wm-label>
+                    </wm-container>
+                </wm-composite>
+            </wm-container>
+        </wm-container>
+    </wm-dialog>
+</wm-page>

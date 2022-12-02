@@ -1,0 +1,1167 @@
+{
+  "spBudgetDetail1" : {
+    "name" : "spBudgetDetail1",
+    "description" : "ambil budget detail 1",
+    "version" : "V2",
+    "procedureString" : "CALL budget_detail1( :acc_type, :comp, :brand, :dep, :emp, :year, :admin)",
+    "parameters" : [ {
+      "name" : "acc_type",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "comp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "brand",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "dep",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "emp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "emp::3703",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "year",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2021",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "admin",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TRUE",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpBudgetDetail1Response",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "content",
+        "fieldName" : "content",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpBudgetDetail1ResponseContent",
+          "list" : true,
+          "properties" : [ {
+            "name" : "bh_id",
+            "fieldName" : "bhId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bh_year",
+            "fieldName" : "bhYear",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "io_number",
+            "fieldName" : "ioNumber",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "io_name",
+            "fieldName" : "ioName",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "c_id",
+            "fieldName" : "cid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "br_id",
+            "fieldName" : "brId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "acc_id",
+            "fieldName" : "accId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "department_id",
+            "fieldName" : "departmentId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "bh_status",
+            "fieldName" : "bhStatus",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_original",
+            "fieldName" : "budgetOriginal",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_adjusment",
+            "fieldName" : "budgetAdjusment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_additional",
+            "fieldName" : "budgetAdditional",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_reclass",
+            "fieldName" : "budgetReclass",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_pr",
+            "fieldName" : "budgetPr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_po",
+            "fieldName" : "budgetPo",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_gr",
+            "fieldName" : "budgetGr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_after_adjustment",
+            "fieldName" : "budgetAfterAdjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_available",
+            "fieldName" : "budgetAvailable",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "sp_budgetDetail2" : {
+    "name" : "sp_budgetDetail2",
+    "description" : "Store Procedure Budget Detail 2",
+    "version" : "V2",
+    "procedureString" : "CALL budget_detail2( :bh_id, :type_data, :value_beginning, :value_adjustment, :value_reclass, :value_additional, :created_at_start, :created_at_end, :created_by, :coa)",
+    "parameters" : [ {
+      "name" : "bh_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "419",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "type_data",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_beginning",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_adjustment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_reclass",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_additional",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_start",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_end",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_by",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "coa",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpBudgetDetail2Response",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "content",
+        "fieldName" : "content",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpBudgetDetail2ResponseContent",
+          "list" : true,
+          "properties" : [ {
+            "name" : "bd_id",
+            "fieldName" : "bdId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bh_id",
+            "fieldName" : "bhId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_original",
+            "fieldName" : "bdOriginal",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Double",
+              "list" : false
+            }
+          }, {
+            "name" : "coa",
+            "fieldName" : "coa",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_after_adjustment",
+            "fieldName" : "bdAfterAdjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Double",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_document_id",
+            "fieldName" : "bdDocumentId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "type_data",
+            "fieldName" : "typeData",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_created_at",
+            "fieldName" : "bdCreatedAt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_created_by",
+            "fieldName" : "bdCreatedBy",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_remarks",
+            "fieldName" : "bdRemarks",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "value_adjustment",
+            "fieldName" : "valueAdjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Double",
+              "list" : false
+            }
+          }, {
+            "name" : "value_reclass",
+            "fieldName" : "valueReclass",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Double",
+              "list" : false
+            }
+          }, {
+            "name" : "value_additional",
+            "fieldName" : "valueAdditional",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Double",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "sp_budgetDetails" : {
+    "name" : "sp_budgetDetails",
+    "description" : "New SP Budget Detail 2",
+    "version" : "V2",
+    "procedureString" : "CALL budget_details( :bh_id, :type_data, :value_beginning, :value_adjustment, :value_reclass, :value_additional, :created_at_start, :created_at_end, :created_by, :coa, :remarks, :docNumber)",
+    "parameters" : [ {
+      "name" : "bh_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "12",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "type_data",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_beginning",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_adjustment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_reclass",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_additional",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_start",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_end",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_by",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "coa",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "remarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "docNumber",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpBudgetDetailsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "content",
+        "fieldName" : "content",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpBudgetDetailsResponseContent",
+          "list" : true,
+          "properties" : [ {
+            "name" : "actual",
+            "fieldName" : "actual",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "additional",
+            "fieldName" : "additional",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "adjustment",
+            "fieldName" : "adjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "available",
+            "fieldName" : "available",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_id",
+            "fieldName" : "bdId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bh_id",
+            "fieldName" : "bhId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_after_adjustment",
+            "fieldName" : "budgetAfterAdjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_original",
+            "fieldName" : "budgetOriginal",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "coa",
+            "fieldName" : "coa",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "commitment",
+            "fieldName" : "commitment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "created_by",
+            "fieldName" : "createdBy",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "creator",
+            "fieldName" : "creator",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "datetime",
+            "fieldName" : "datetime",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "doc_number",
+            "fieldName" : "docNumber",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "io",
+            "fieldName" : "io",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "reclass",
+            "fieldName" : "reclass",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "remarks",
+            "fieldName" : "remarks",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "reserved",
+            "fieldName" : "reserved",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "type",
+            "fieldName" : "type",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "year",
+            "fieldName" : "year",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_additional_doc_id",
+            "fieldName" : "bdAdditionalDocId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_additional_doc_type",
+            "fieldName" : "bdAdditionalDocType",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "sp_usage_budgetDetails" : {
+    "name" : "sp_usage_budgetDetails",
+    "description" : "SP usage budget detail",
+    "version" : "V2",
+    "procedureString" : "CALL usage_budget_details( :bh_id, :type_data, :value_beginning, :value_adjustment, :value_reserve, :value_commitment, :value_actual, :created_at_start, :created_at_end, :created_by, :coa, :remarks, :docNumber)",
+    "parameters" : [ {
+      "name" : "bh_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "12",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "type_data",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_beginning",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_adjustment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_reserve",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_commitment",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "value_actual",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_start",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_at_end",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "created_by",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "coa",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "remarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "docNumber",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "NULL",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpUsageBudgetDetailsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "content",
+        "fieldName" : "content",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpUsageBudgetDetailsResponseContent",
+          "list" : true,
+          "properties" : [ {
+            "name" : "actual",
+            "fieldName" : "actual",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "additional",
+            "fieldName" : "additional",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "adjustment",
+            "fieldName" : "adjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "available",
+            "fieldName" : "available",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_id",
+            "fieldName" : "bdId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bh_id",
+            "fieldName" : "bhId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_after_adjustment",
+            "fieldName" : "budgetAfterAdjustment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "budget_original",
+            "fieldName" : "budgetOriginal",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "coa",
+            "fieldName" : "coa",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "commitment",
+            "fieldName" : "commitment",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "created_by",
+            "fieldName" : "createdBy",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "creator",
+            "fieldName" : "creator",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "datetime",
+            "fieldName" : "datetime",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "doc_number",
+            "fieldName" : "docNumber",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "io",
+            "fieldName" : "io",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "reclass",
+            "fieldName" : "reclass",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "remarks",
+            "fieldName" : "remarks",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "reserved",
+            "fieldName" : "reserved",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "type",
+            "fieldName" : "type",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "year",
+            "fieldName" : "year",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_additional_doc_id",
+            "fieldName" : "bdAdditionalDocId",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Integer",
+              "list" : false
+            }
+          }, {
+            "name" : "bd_additional_doc_type",
+            "fieldName" : "bdAdditionalDocType",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  }
+}

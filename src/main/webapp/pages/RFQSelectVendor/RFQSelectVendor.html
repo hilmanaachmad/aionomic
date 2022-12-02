@@ -1,0 +1,351 @@
+<wm-page name="mainpage" pagetitle="Good/Service RFQ" backgroundcolor="#ffffff" cache="false" refreshdataonattach="true">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1" columnwidth="12">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <!--<wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar"></wm-container>-->
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="HeaderForBudgetPage">
+                        <wm-param name="page" value="budget-detail1" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content">
+                        <wm-container name="background" conditionalstyle="bind:{
+    maxWidth: &quot;1800px&quot;,
+    minWidth: &quot;600px&quot;
+}">
+                            <wm-container name="bg">
+                                <wm-container name="container38" margin="unset unset unset 80px" width="1300px">
+                                    <wm-label padding="unset 0.5em" name="label24" caption="bind:appLocale.LANG_GOOD_SERVICE_READY_FOR_QUOTATION_RFQ" class="h2" width="85%"></wm-label>
+                                </wm-container>
+                                <wm-container margin="30px unset 18px 90px" width="1300px" name="container105">
+                                    <wm-container name="container106_1" display="inline-flex" width="10%" height="38">
+                                        <wm-button caption="bind:appLocale.LANG_SELECT_RFQ" type="button" backgroundcolor="#2DCA8C" color="#ffffff" height="38" width="100%" iconclass="wi wi-check fa-lg" iconposition="right" name="btnSelectRFQ" conditionalstyle="bind:{
+    borderRadius: &quot;20px&quot;
+}" textalign="center"></wm-button>
+                                    </wm-container>
+                                    <wm-container display="inline-flex" width="3%" name="container108_1" height="38" horizontalalign="center">
+                                        <wm-container name="container109_1" width="100%" height="0px" bordercolor="#026CB6" borderstyle="solid" borderwidth="1px"></wm-container>
+                                    </wm-container>
+                                    <wm-container display="inline-flex" width="9%" height="38" name="container110_1">
+                                        <wm-button caption="bind:appLocale.LANG_SELECT_VENDOR" type="button" backgroundcolor="#026CB6" color="#FFFFFF" height="38" width="100%" iconclass="" iconposition="right" conditionalstyle="bind:{
+    borderRadius: &quot;20px&quot;
+}" name="btnSelectVendor" textalign="center" disabled="false" on-click="btnSelectVendorClick($event, widget)"></wm-button>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-container>
+                            <wm-container name="Content" width="90%" margin="0px 85px unset 90px" backgroundcolor="#ffffff" padding="24px" conditionalstyle="bind:{
+    borderRadius: &quot;6px&quot;
+}" show="true" class="aio-p2p-content-container">
+                                <wm-container name="container35" horizontalalign="right" margin="unset unset 12px unset">
+                                    <wm-button caption="bind:appLocale.LANG_EXISTING_VENDOR" type="button" backgroundcolor="#FFFFFF" color="#026CB6" height="41" iconclass="wi wi-add fa-lg" iconposition="left" name="buttonExistingVendor" disabled="false" bordercolor="#026CB6"
+                                        padding="unset 8px unset unset" on-click="Widgets.dialogExistingVendor.open()"></wm-button>
+                                    <wm-button caption="bind:appLocale.LANG_NEW_VENDOR" type="button" backgroundcolor="#026CB6" color="#FFFFFF" height="41" iconclass="wi wi-add fa-lg" iconposition="left" disabled="false" bordercolor="#026CB6"
+                                        name="buttonNewVendor" margin="unset unset unset 8px" on-click="Widgets.dialogNewVendor.open()"></wm-button>
+                                </wm-container>
+                                <wm-container horizontalalign="left" margin="unset unset 12px unset" name="container53_1" show="bind:Variables.vmRAV.dataSet.length !== 0 ? true : false">
+                                    <wm-label caption="bind:appLocale.LANG_RECENTLY_ADD_VENDOR" conditionalstyle="bind:{
+    fontFamily: &quot;Inter&quot;,
+    fontWeight: 600,
+    lineHeight: &quot;17px&quot;,
+    letterSpacing: &quot;0.25px&quot;
+}" fontsize="14" color="#000000" name="label38"></wm-label>
+                                </wm-container>
+                                <wm-container class="aio-p2p-scroll-x" margin="12px unset" name="container54" show="bind:Variables.vmRAV.dataSet.length !== 0 ? true : false">
+                                    <wm-container name="container55_1" conditionalstyle="bind:{
+    maxWidth: &quot;1800px&quot;,
+    minWidth: &quot;1400px&quot;
+}">
+                                        <wm-container class="aio-p2p-table-header" padding="16px" name="container56_1">
+                                            <wm-container display="inline-block" width="3%" horizontalalign="center" name="container57_1">
+                                                <wm-checkbox caption="" margin="0px" class="aio-p2p-all-checkbox-table" show="false" name="checkbox3"></wm-checkbox>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="5%" horizontalalign="center" name="container58">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NO" fontweight="bold" name="label39"></wm-label>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="12%" class="aio-p2p-clickable" horizontalalign="left" name="container59">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_CODE" fontweight="bold" class="aio-p2p-clickable" name="label40_1"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vmRAV.orderBy === &quot;vendorCode ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vmRAV.orderBy === &quot;vendorCode DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture8" show="false"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" horizontalalign="left" name="container60">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_NAME" fontweight="bold" class="aio-p2p-clickable" name="label41"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vmRAV.orderBy === &quot;vendorName ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vmRAV.orderBy === &quot;vendorName DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture9" show="false"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="17%" class="aio-p2p-clickable" horizontalalign="left" name="container61">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_EMAIL" fontweight="bold" class="aio-p2p-clickable" name="label42"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vmRAV.orderBy === &quot;email ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vmRAV.orderBy === &quot;email DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture10" show="false"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="17%" class="aio-p2p-clickable" horizontalalign="left" name="container62">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_EMAIL_2" fontweight="bold" class="aio-p2p-clickable" name="label43"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vmRAV.orderBy === &quot;email2 ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vmRAV.orderBy === &quot;email2 DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture11" show="false"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="16%" class="aio-p2p-clickable" horizontalalign="left" name="container63">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_PHONE" fontweight="bold" class="aio-p2p-clickable" name="label44"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vmRAV.orderBy === &quot;telephone ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vmRAV.orderBy === &quot;telephone DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture12" show="false"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" horizontalalign="left" name="container64">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_OVER_TIME_LIMIT_DAYS" fontweight="bold" class="aio-p2p-clickable" name="label45"></wm-label>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.vmRAV.dataSet" navigation="Basic"
+                                            statehandler="none" padding="unset 0px" name="listRAV">
+                                            <wm-listtemplate layout="media" name="listtemplate2">
+                                                <wm-container name="container65">
+                                                    <wm-container display="inline-block" width="3%" horizontalalign="center" name="container66">
+                                                        <wm-checkbox caption="" margin="0px" disabled="false" class="aio-p2p-all-checkbox-table" on-change="checkboxListChange($event, widget, item, currentItemWidgets, newVal, oldVal)" on-click="checkboxListClick($event, widget, item, currentItemWidgets)"
+                                                            name="checkboxListRAV"></wm-checkbox>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="5%" horizontalalign="center" name="container67_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:App.getTableNumbering(Variables.vmRAV, Widgets.listRAV.currentItem, &quot;uuid&quot;)" name="label46_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="left" name="container68_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listRAV.currentItem.vendorCode" name="label47_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" horizontalalign="left" name="container69">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listRAV.currentItem.vendorName" name="label48"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="17%" horizontalalign="left" name="container70">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listRAV.currentItem.email" name="label49"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="17%" horizontalalign="left" name="container71_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listRAV.currentItem.email2" name="label50_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="16%" horizontalalign="left" name="container72_1">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listRAV.currentItem.telephone" name="label51_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" horizontalalign="left" name="container73">
+                                                        <wm-text type="number" datavalue="0" minvalue="0" updateon="default" width="70" name="textTimeLimitRAV"></wm-text>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container margin="25px unset" name="container74" show="false">
+                                    <wm-layoutgrid name="layoutgrid6">
+                                        <wm-gridrow name="gridrow8_1">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn12"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn13">
+                                                <wm-label class="col-md-3 control-label" caption="Show" padding="2px unset" margin="8px unset unset unset" name="label52"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn14_1">
+                                                <wm-select datavalue="10" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" on-change="selectRowEVChange($event, widget, newVal, oldVal)" name="selectRowEV" displayfield="name"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-container horizontalalign="left" margin="12px unset" name="container38_2">
+                                    <wm-label name="label17_1" caption="bind:appLocale.LANG_VENDOR_LIST" conditionalstyle="bind:{
+    fontFamily: &quot;Inter&quot;,
+    fontWeight: 600,
+    lineHeight: &quot;17px&quot;,
+    letterSpacing: &quot;0.25px&quot;
+}" fontsize="14" color="#000000"></wm-label>
+                                </wm-container>
+                                <wm-container class="aio-p2p-scroll-x" name="container36" margin="12px unset unset unset">
+                                    <wm-container name="container37" conditionalstyle="bind:{
+    maxWidth: &quot;1800px&quot;,
+    minWidth: &quot;1300px&quot;
+}">
+                                        <wm-container class="aio-p2p-table-header" padding="16px" name="container38_1">
+                                            <wm-container display="inline-block" width="3%" horizontalalign="center" name="container39">
+                                                <wm-checkbox caption="" name="checkboxListAll" margin="0px" class="aio-p2p-all-checkbox-table" show="false"></wm-checkbox>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="5%" horizontalalign="center" name="container56">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NO" fontweight="bold" name="label22"></wm-label>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="12%" class="aio-p2p-clickable" on-click="container40Click($event, widget)" horizontalalign="left" name="container40">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_CODE" fontweight="bold" class="aio-p2p-clickable" name="label8"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vViewVendor.orderBy === &quot;vendorCode ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vViewVendor.orderBy === &quot;vendorCode DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture3"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" on-click="container41Click($event, widget)" horizontalalign="left" name="container41">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_NAME" fontweight="bold" class="aio-p2p-clickable" name="label9"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vViewVendor.orderBy === &quot;vendorName ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vViewVendor.orderBy === &quot;vendorName DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture4"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="17%" class="aio-p2p-clickable" on-click="container42Click($event, widget)" horizontalalign="left" name="container42">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_EMAIL" fontweight="bold" class="aio-p2p-clickable" name="label10"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vViewVendor.orderBy === &quot;email ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vViewVendor.orderBy === &quot;email DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture5"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="17%" class="aio-p2p-clickable" on-click="container43Click($event, widget)" horizontalalign="left" name="container43">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_EMAIL_2" fontweight="bold" class="aio-p2p-clickable" name="label11"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vViewVendor.orderBy === &quot;email2 ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vViewVendor.orderBy === &quot;email2 DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture6"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="16%" class="aio-p2p-clickable" on-click="container44Click($event, widget)" horizontalalign="left" name="container44">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_PHONE" fontweight="bold" class="aio-p2p-clickable" name="label12"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.vViewVendor.orderBy === &quot;telephone ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vViewVendor.orderBy === &quot;telephone DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16px" name="picture7"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="15%" class="aio-p2p-clickable" on-click="container45Click($event, widget)" horizontalalign="left" name="container45">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_OVER_TIME_LIMIT_DAYS" fontweight="bold" class="aio-p2p-clickable" name="label13"></wm-label>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.vViewVendor.dataSet" navigation="Basic"
+                                            on-beforedatarender="listPRIBeforedatarender(widget, $data)" name="listPRI" statehandler="sessionStorage" padding="unset 0px">
+                                            <wm-listtemplate layout="media" name="listtemplate1">
+                                                <wm-container name="container46">
+                                                    <wm-container display="inline-block" width="3%" horizontalalign="center" name="container47">
+                                                        <wm-checkbox caption="" margin="0px" name="checkboxList" disabled="false" class="aio-p2p-all-checkbox-table" on-change="checkboxListChange($event, widget, item, currentItemWidgets, newVal, oldVal)" on-click="checkboxListClick($event, widget, item, currentItemWidgets)"
+                                                            datavalue="bind:Widgets.listPRI.currentItem.checked" checkedvalue="true" uncheckedvalue="false"></wm-checkbox>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="5%" horizontalalign="center" name="container57">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listPRI.currentItem.nomor" name="label22_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" horizontalalign="left" name="container48">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listPRI.currentItem.vendorCode" name="label15"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" horizontalalign="left" name="container49">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listPRI.currentItem.vendorName" name="label16"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="17%" horizontalalign="left" name="container50">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listPRI.currentItem.email" name="label17"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="17%" horizontalalign="left" name="container51">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listPRI.currentItem.email2" name="label18"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="16%" horizontalalign="left" name="container52">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.listPRI.currentItem.telephone" name="label19"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="15%" horizontalalign="left" name="container53">
+                                                        <wm-text name="textTimeLimit" type="number" datavalue="0" minvalue="0" updateon="default" width="70"></wm-text>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container margin="25px unset 24px unset" name="container55">
+                                    <wm-layoutgrid name="layoutgrid4">
+                                        <wm-gridrow name="gridrow8">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn14"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn15">
+                                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_SHOW" padding="2px unset" margin="8px unset unset unset" name="label21"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn16">
+                                                <wm-select datavalue="10" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" displayfield="name" on-change="selectRowChange($event, widget, newVal, oldVal)" name="selectRow"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-container horizontalalign="right" margin="24px unset 12px unset" name="container37_1">
+                                    <wm-button caption="bind:appLocale.LANG_SEND_QUOTATION" type="button" backgroundcolor="#026CB6" color="#FFFFFF" height="41" iconclass="" iconposition="right" disabled="bind:checkDisabledBtn()" name="buttonSendQuotation"
+                                        width="141" on-click="buttonSendQuotationClick($event, widget)"></wm-button>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+                <wm-spinner show="false" name="spinner1" servicevariabletotrack="vViewVendor,vMatVendor"></wm-spinner>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_ADD_EXISTING_VENDOR" iconclass="" name="EditStatus" on-opened="EditStatusOpened($event, widget)" class="aio-p2p-modal">
+        <wm-layoutgrid name="layoutgrid7">
+            <wm-gridrow name="gridrow17">
+                <wm-gridcolumn columnwidth="6" name="gridcolumn46_1">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_VENDOR_NAME" name="label40"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow18_1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn48_1">
+                    <wm-container name="container104_1">
+                        <wm-select name="valueStatus" dataset="bind:Variables.vmSelectStatus.dataSet" datafield="dataValue" displayfield="name"></wm-select>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions1">
+            <wm-button class="aio-p2p-btn-alternate" caption="bind:appLocale.LANG_CANCEL" on-click="closeDialog()" name="button5" width="90px" backgroundcolor="#ffffff" color="#7d7d7d"></wm-button>
+            <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_SAVE" type="button" margin="unset 0.5em" name="btn_Save" on-click="btn_SaveClick($event, widget)" width="90px" backgroundcolor="#026CB6" color="#ffffff"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_ADD_EXISTING_VENDOR" iconclass="" name="dialogExistingVendor" class="aio-p2p-modal" width="50%">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow2">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                    <wm-container backgroundcolor="#fff" margin="unset unset 24px unset" name="container67">
+                        <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.vendorName ? 'form-error' : ''" name="container68">
+                            <wm-label caption="bind:appLocale.LANG_VENDOR_NAME" class="col-md-3 control-label" name="label46"></wm-label>
+                            <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SEARCH_VENDOR_ID_OR_VENDOR_NAME" dataset="bind:Variables.vVendorEV.dataSet" displaylabel="bind:$[vendorName] + &quot; - &quot; + $[vendorCode]" datafield="All Fields"
+                                matchmode="anywhereignorecase" on-select="selectCategorySelect($event, widget, selectedValue)" class="aio-p2p-form-field" disabled="false" name="searchVendorEV" searchkey="vendorCode,vendorName"></wm-search>
+                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.vendorName" show="bind:Variables.vmErrorMessage.dataSet.vendorName ? true : false" class="aio-p2p-error-message" name="label47"></wm-label>
+                            <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" class="aio-p2p-icon-down" name="picture10_1"></wm-picture>
+                        </wm-container>
+                        <wm-container name="container71">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite11">
+                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_VENDOR_EMAIL" name="label50"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liSpec ? 'form-error' : ''" name="container72">
+                                    <wm-text placeholder="" disabled="true" name="textVenEmail1EV" maxchars="150" class="aio-p2p-form-input" datavalue="bind:Widgets.searchVendorEV.datavalue.email"></wm-text>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liSpec" show="bind:Variables.vmErrorMessage.dataSet.liSpec ? true : false" class="aio-p2p-error-message" name="label51"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container name="container75_1">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite13">
+                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_VENDOR_EMAIL_2" name="label54"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liQty ? 'form-error' : ''" name="container76">
+                                    <wm-text placeholder="" disabled="true" name="textVenEmail2EV" type="text" class="aio-p2p-form-input" minvalue="1" updateon="default" maxchars="15" on-change="textQuantityChange($event, widget, newVal, oldVal)" on-keyup="textQuantityKeyup($event, widget)"
+                                        datavalue="bind:Widgets.searchVendorEV.datavalue.email2"></wm-text>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liQty" show="bind:Variables.vmErrorMessage.dataSet.liQty ? true : false" class="aio-p2p-error-message" name="label79_1"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liUnitPrice ? 'form-error' : ''" name="container77">
+                            <wm-label caption="bind:appLocale.LANG_VENDOR_PHONE" class="col-md-3 control-label" name="label55"></wm-label>
+                            <wm-text placeholder="" disabled="true" name="textVenPhoneEV" type="text" updateon="default" on-change="textUnitPriceChange($event, widget, newVal, oldVal)" class="aio-p2p-form-input" maxchars="19" datavalue="bind:Widgets.searchVendorEV.datavalue.telephone"></wm-text>
+                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liUnitPrice" show="bind:Variables.vmErrorMessage.dataSet.liUnitPrice ? true : false" class="aio-p2p-error-message" name="label56"></wm-label>
+                        </wm-container>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-dialogactions name="dialogactions2">
+            <wm-button class="btn-outline" caption="bind:appLocale.LANG_CANCEL" on-click="closeDialog()" name="button8" margin="unset unset 20px unset"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_ADD" name="buttonAddEV" margin="unset unset 20px 10px" on-click="buttonAddEVClick($event, widget)"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_ADD_NEW_VENDOR" iconclass="" name="dialogNewVendor" class="aio-p2p-modal" width="50%">
+        <wm-dialogactions name="dialogactions3">
+            <wm-button class="btn-outline" caption="bind:appLocale.LANG_CANCEL" on-click="closeDialog()" margin="unset unset 20px unset" name="button11"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_ADD" margin="unset unset 20px 10px" name="buttonAddNV" on-click="buttonAddNVClick($event, widget)"></wm-button>
+        </wm-dialogactions>
+        <wm-layoutgrid name="layoutgrid5">
+            <wm-gridrow name="gridrow7">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn11">
+                    <wm-container backgroundcolor="#fff" margin="unset unset 24px unset" name="container46_1">
+                        <wm-container name="container48_1">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite3">
+                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_VENDOR" name="label32"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.vendorNameNV ? 'form-error' : ''" name="container49_1">
+                                    <wm-text placeholder="" disabled="false" maxchars="25" class="aio-p2p-form-input" name="textVenNameNV" updateon="default"></wm-text>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.vendorNameNV" show="bind:Variables.vmErrorMessage.dataSet.vendorNameNV ? true : false" class="aio-p2p-error-message" name="label33"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container name="container50_1">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite4">
+                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_VENDOR_EMAIL" name="label34"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.vendorEmailNV ? 'form-error' : ''" name="container51_1">
+                                    <wm-text placeholder="" disabled="false" type="text" class="aio-p2p-form-input" minvalue="1" updateon="default" maxchars="150" on-keyup="textQuantityKeyup($event, widget)" name="textVenEmailNV"></wm-text>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.vendorEmailNV" show="bind:Variables.vmErrorMessage.dataSet.vendorEmailNV ? true : false" class="aio-p2p-error-message" name="label35"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.vendorPhoneNV ? 'form-error' : ''" name="container52_1">
+                            <wm-label caption="bind:appLocale.LANG_VENDOR_PHONE" class="col-md-3 control-label" name="label36"></wm-label>
+                            <wm-text placeholder="" disabled="false" type="text" updateon="default" class="aio-p2p-form-input" maxchars="25" name="textVenPhoneNV" on-keyup="textVenPhoneNVKeyup($event, widget)"></wm-text>
+                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.vendorPhoneNV" show="bind:Variables.vmErrorMessage.dataSet.vendorPhoneNV ? true : false" class="aio-p2p-error-message" name="label37"></wm-label>
+                        </wm-container>
+                    </wm-container>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-dialog>
+</wm-page>

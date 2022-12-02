@@ -1,0 +1,607 @@
+{
+  "DBDepartment" : {
+    "_id" : "wm-DBDepartment-wm.LiveVariable-1627624162192",
+    "name" : "DBDepartment",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblMDepartment",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "departmentId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "departmentId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "department_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "departmentTitle",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "department_title",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "deptCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "dept_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "deptCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "dept_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "departmentCode",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "department_code",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "deptStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "dept_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblMDepartment",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMDepartment",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "departmentId" ]
+    },
+    "tableName" : "tbl_m_department",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMDepartment"
+  },
+  "DBPOReadyToGRUser" : {
+    "_id" : "wm-DBPOReadyToGRUser-wm.LiveVariable-1627824972512",
+    "name" : "DBPOReadyToGRUser",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "VPoReadyToGrUser",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "0",
+        "scale" : 0
+      }, {
+        "fieldName" : "item",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "item",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "year",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "YEAR",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "createdDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "created_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "departmentCode",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "department_code",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "companyId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "company_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 50,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "idGrLineItem",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "id_gr_line_item",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "0",
+        "scale" : 0
+      }, {
+        "fieldName" : "poNumber",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "po_number",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "releaseDate",
+        "type" : "date",
+        "fullyQualifiedType" : "date",
+        "columnName" : "release_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "currency",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "currency",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 50,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "deliveryDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "delivery_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "status",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 50,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "statusGr",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "status_gr",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 50,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "poItem",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "po_item",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "deliveryItem",
+        "type" : "big_decimal",
+        "fullyQualifiedType" : "big_decimal",
+        "columnName" : "delivery_item",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 20,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 9
+      }, {
+        "fieldName" : "confirmItem",
+        "type" : "big_decimal",
+        "fullyQualifiedType" : "big_decimal",
+        "columnName" : "confirm_item",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 20,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 3
+      }, {
+        "fieldName" : "assign",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "assign",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "vendorName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "vendor_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "prCreator",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "pr_creator",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "createdBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "departmentId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "department_id",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "0",
+        "scale" : 0
+      }, {
+        "fieldName" : "purchaseBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "purchase_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 50,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "VPoReadyToGrUser",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.VPoReadyToGrUser",
+      "tableType" : "VIEW",
+      "primaryFields" : [ "id" ]
+    },
+    "tableName" : "v_po_ready_to_gr_user",
+    "tableType" : "VIEW",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "year",
+        "type" : "integer",
+        "matchMode" : "exact",
+        "value" : "bind:Widgets.year.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "companyId",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.company.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "departmentCode",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.department.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "status",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.po_status.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "createdDate",
+        "type" : "datetime",
+        "matchMode" : "between",
+        "value" : "bind:Variables.MODELVariable.dataSet.create_date_start | toDate: 'yyyy-MM-dd'",
+        "required" : false,
+        "secondvalue" : "bind:Variables.MODELVariable.dataSet.create_date_end | toDate: 'yyyy-MM-dd'",
+        "isFirst" : false
+      }, {
+        "target" : "deliveryDate",
+        "type" : "datetime",
+        "matchMode" : "between",
+        "value" : "bind:Variables.MODELVariable.dataSet.delivery_date_start  | toDate: 'yyyy-MM-dd hh:mm:ss'",
+        "required" : false,
+        "secondvalue" : "bind:Variables.MODELVariable.dataSet.delivery_date_end  | toDate: 'yyyy-MM-dd hh:mm:ss'",
+        "isFirst" : false
+      }, {
+        "target" : "assign",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Variables.loggedInUserData.dataSet.username",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "item",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.item.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.VPoReadyToGrUser"
+  },
+  "MODELDataCompany" : {
+    "_id" : "wm-MODELDataCompany-wm.Variable-1627624046311",
+    "name" : "MODELDataCompany",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "PT. Amerta Indah Otsuka",
+      "dataValue" : "1000"
+    }, {
+      "name" : "PT. Otsuka Distribution Indonesia",
+      "dataValue" : "2000"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "MODELPOStatus" : {
+    "_id" : "wm-MODELPOStatus-wm.Variable-1627625002195",
+    "name" : "MODELPOStatus",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Waiting for Delivery",
+      "dataValue" : "Waiting for Delivery"
+    }, {
+      "name" : "Waiting for Confirmation",
+      "dataValue" : "Waiting for Confirmation"
+    }, {
+      "name" : "Waiting for GR",
+      "dataValue" : "Waiting for GR"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "MODELVariable" : {
+    "_id" : "wm-staticVariable1-wm.Variable-1627625224437",
+    "name" : "MODELVariable",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "create_date_start" : null,
+      "create_date_end" : null,
+      "delivery_date_start" : null,
+      "delivery_date_end" : null
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "sortirNumber" : {
+    "_id" : "wm-sortirNumber-wm.Variable-1607030584586",
+    "name" : "sortirNumber",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "dataValue" : 10
+    }, {
+      "name" : "30 Rows",
+      "dataValue" : 30
+    }, {
+      "name" : "50 Rows",
+      "dataValue" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchCriteria" : {
+    "_id" : "wm-searchCriteria-wm.Variable-1606354489201",
+    "name" : "vmSearchCriteria",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Company",
+      "dataValue" : 1
+    }, {
+      "name" : "Department",
+      "dataValue" : 2
+    }, {
+      "name" : "RFQ",
+      "dataValue" : 3
+    }, {
+      "name" : "Doc Type",
+      "dataValue" : 4
+    }, {
+      "name" : "Purch Org",
+      "dataValue" : 5
+    }, {
+      "name" : "Vendor",
+      "dataValue" : 6
+    }, {
+      "name" : "Currency",
+      "dataValue" : 7
+    }, {
+      "name" : "TOP",
+      "dataValue" : 10
+    }, {
+      "name" : "Status",
+      "dataValue" : 8
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

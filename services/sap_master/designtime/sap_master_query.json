@@ -1,0 +1,342 @@
+{
+  "getCurrencyByCode" : {
+    "name" : "getCurrencyByCode",
+    "description" : "get currency by code",
+    "version" : "V2",
+    "queryString" : "SELECT DISTINCT\r\n\t* \r\nFROM v_ptp_currency vpc\r\nWHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)\r\nAND vpc.to_currency = 'IDR'\r\nAND (:currs IS NULL OR :currs LIKE CONCAT(\"%\", vpc.from_currency, \"%\"))",
+    "countQueryString" : "select count(*) from (SELECT DISTINCT\r\n\t* \r\nFROM v_ptp_currency vpc\r\nWHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)\r\nAND vpc.to_currency = 'IDR'\r\nAND (:currs IS NULL OR :currs LIKE CONCAT(\"%\", vpc.from_currency, \"%\"))) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "currs",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.sap_master.models.query.GetCurrencyByCodeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "kurs_type",
+        "fieldName" : "kursType",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "from_currency",
+        "fieldName" : "fromCurrency",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "to_currency",
+        "fieldName" : "toCurrency",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "effective_date",
+        "fieldName" : "effectiveDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "kurs",
+        "fieldName" : "kurs",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigDecimal",
+          "list" : false
+        }
+      }, {
+        "name" : "DATUM",
+        "fieldName" : "datum",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "TAHUN",
+        "fieldName" : "tahun",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "BULAN",
+        "fieldName" : "bulan",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "TANGGAL",
+        "fieldName" : "tanggal",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "DATE",
+        "fieldName" : "date",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "FFACT",
+        "fieldName" : "ffact",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "TFACT",
+        "fieldName" : "tfact",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getCurrencyPRLineItem" : {
+    "name" : "getCurrencyPRLineItem",
+    "description" : "get currency to IDR for Line Item PR",
+    "version" : "V2",
+    "queryString" : "SELECT DISTINCT\r\n\t* \r\nFROM v_ptp_currency vpc\r\nWHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)\r\nAND vpc.to_currency = 'IDR'",
+    "countQueryString" : "select count(*) from (SELECT DISTINCT\r\n\t* \r\nFROM v_ptp_currency vpc\r\nWHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)\r\nAND vpc.to_currency = 'IDR') wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.sap_master.models.query.GetCurrencyPrlineItemResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "kurs_type",
+        "fieldName" : "kursType",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "from_currency",
+        "fieldName" : "fromCurrency",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "to_currency",
+        "fieldName" : "toCurrency",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "effective_date",
+        "fieldName" : "effectiveDate",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "kurs",
+        "fieldName" : "kurs",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigDecimal",
+          "list" : false
+        }
+      }, {
+        "name" : "DATUM",
+        "fieldName" : "datum",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Long",
+          "list" : false
+        }
+      }, {
+        "name" : "TAHUN",
+        "fieldName" : "tahun",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "BULAN",
+        "fieldName" : "bulan",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "TANGGAL",
+        "fieldName" : "tanggal",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "DATE",
+        "fieldName" : "date",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "FFACT",
+        "fieldName" : "ffact",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "TFACT",
+        "fieldName" : "tfact",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getTOP" : {
+    "name" : "getTOP",
+    "description" : "getTOP",
+    "version" : "V2",
+    "queryString" : "SELECT * FROM `v_ptp_top` WHERE payment_term_code = :top",
+    "countQueryString" : "select count(*) from (SELECT * FROM `v_ptp_top` WHERE payment_term_code = :top) wmTempTable",
+    "offlineQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "top",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D030",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "id.co.aio.procure_to_pay.sap_master.models.query.GetTopResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "payment_term_code",
+        "fieldName" : "paymentTermCode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "top_description",
+        "fieldName" : "topDescription",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "number_of_days",
+        "fieldName" : "numberOfDays",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Short",
+          "list" : false
+        }
+      }, {
+        "name" : "TEXT1",
+        "fieldName" : "text1",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

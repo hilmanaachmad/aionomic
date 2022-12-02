@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="getCurrencyByCode">
+        <![CDATA[
+        SELECT DISTINCT
+	* 
+FROM v_ptp_currency vpc
+WHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)
+AND vpc.to_currency = 'IDR'
+AND (:currs IS NULL OR :currs LIKE CONCAT("%", vpc.from_currency, "%"))
+        ]]>
+    <query-param name="currs" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getCurrencyByCode__count">
+        <![CDATA[
+        select count(*) from (SELECT DISTINCT
+	* 
+FROM v_ptp_currency vpc
+WHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)
+AND vpc.to_currency = 'IDR'
+AND (:currs IS NULL OR :currs LIKE CONCAT("%", vpc.from_currency, "%"))) wmTempTable
+        ]]>
+    <query-param name="currs" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getCurrencyPRLineItem">
+        <![CDATA[
+        SELECT DISTINCT
+	* 
+FROM v_ptp_currency vpc
+WHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)
+AND vpc.to_currency = 'IDR'
+        ]]>
+    </sql-query>
+
+    <sql-query name="getCurrencyPRLineItem__count">
+        <![CDATA[
+        select count(*) from (SELECT DISTINCT
+	* 
+FROM v_ptp_currency vpc
+WHERE vpc.DATUM = (select max(DATUM) from v_ptp_currency vpc2 where vpc.from_currency = vpc2.from_currency AND vpc.to_currency = vpc2.to_currency)
+AND vpc.to_currency = 'IDR') wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="getTOP">
+        <![CDATA[
+        SELECT * FROM `v_ptp_top` WHERE payment_term_code = :top
+        ]]>
+    <query-param name="top" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTOP__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM `v_ptp_top` WHERE payment_term_code = :top) wmTempTable
+        ]]>
+    <query-param name="top" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

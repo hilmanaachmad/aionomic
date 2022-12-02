@@ -1,0 +1,51 @@
+.aio-p2p-detail-container {
+    max-width: 781px;
+    margin: auto;
+}
+
+.aio-p2p-btn-upload {
+    color: #026CB6;
+    background: rgba(2, 108, 182, 0.16);
+    border-radius: 4px;
+}
+
+/*FORM ERROR*/
+.aio-p2p-form-container .aio-p2p-error-message {
+		display: none;
+}
+.aio-p2p-form-container.form-error .aio-p2p-error-message {
+	display: block;
+	color: #FF5756;
+	font-size: 12px;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-input {
+    border-color: #FF5756;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-field > input {
+    border-color: #FF5756;
+}
+
+/*MODAL*/
+.aio-p2p-modal .dialog-heading {
+    color: #404143;
+}
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+
+.aio-p2p-btn-outline {
+    border: 1px solid #026CB6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: white;
+    color: #026CB6;
+    padding: 10px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: initial;
+}

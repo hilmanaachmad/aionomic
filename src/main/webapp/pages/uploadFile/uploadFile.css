@@ -1,0 +1,71 @@
+.aio-p2p-input-field {
+    border: 1px solid #CBD5E0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: white;
+    height: 100% !important;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.aio-p2p-input-field > label {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 137.5%;
+    padding: 10px 16px;
+    letter-spacing: 0.25px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aio-p2p-input-field .aio-ptp-upload-btn {
+    flex: 0;
+    background: rgba(2, 108, 182, 0.16);
+    border-radius: 4px;
+    padding: 10px 16px;
+    white-space: nowrap;
+}
+
+.aio-p2p-input-field .aio-ptp-upload-btn.disabled {
+    opacity: .5;
+}
+
+.aio-p2p-input-field .aio-ptp-upload-btn label,
+.aio-p2p-input-field .aio-ptp-upload-btn .app-icon-wrapper
+{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 17px;
+    color: #026CB6;
+    vertical-align: middle;
+}
+
+.aio-p2p-input-field > label.placeholder {
+    color: rgba(64, 65, 67, 0.6);
+}
+
+.aio-ptp-upload-progress {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255, 255, 255, .5);
+}
+.aio-ptp-upload-progress .aio-ptp-upload-progress-bar {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 5px;
+    transition: all .3s;
+    background: #026CB6;
+}

@@ -1,0 +1,78 @@
+{
+  "sp_UsageBudgetDetails" : {
+    "_id" : "wm-sp_UsageBudgetDetails-wm.ServiceVariable-1651031093313",
+    "name" : "sp_UsageBudgetDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "bh_id",
+      "value" : "835",
+      "type" : "string"
+    }, {
+      "target" : "type_data",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "value_beginning",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "value_adjustment",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "value_reserve",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "value_commitment",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "value_actual",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "created_at_start",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "created_at_end",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "created_by",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "coa",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "remarks",
+      "value" : "bind:NULL",
+      "type" : "string"
+    }, {
+      "target" : "docNumber",
+      "value" : "bind:NULL",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.aio_ptp.models.procedure.SpUsageBudgetDetailsResponse",
+    "service" : "aio_ptp",
+    "operation" : "executeSp_usage_budgetDetails",
+    "operationId" : "ProcedureExecutionController_executeSp_usage_budgetDetails",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "sp_UsageBudgetDetailsonSuccess(variable, data, options)",
+    "onBeforeDatasetReady" : "sp_UsageBudgetDetailsonBeforeDatasetReady(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

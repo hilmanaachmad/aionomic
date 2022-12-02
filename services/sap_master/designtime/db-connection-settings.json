@@ -1,0 +1,84 @@
+{
+  "username" : "root",
+  "password" : "7b6a43524a17241e6e7e3422205d7670477c612a43",
+  "url" : "jdbc:mysql://202.158.62.54:3307/sap_master?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "sap_master",
+  "packageName" : "id.co.aio.procure_to_pay.sap_master",
+  "dbType" : "MySQL",
+  "host" : "202.158.62.54",
+  "dbName" : "sap_master",
+  "port" : "3307",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "CSKS",
+    "schema" : null
+  }, {
+    "table" : "CSKT",
+    "schema" : null
+  }, {
+    "table" : "SKAT",
+    "schema" : null
+  }, {
+    "table" : "T006",
+    "schema" : null
+  }, {
+    "table" : "T023",
+    "schema" : null
+  }, {
+    "table" : "T023T",
+    "schema" : null
+  }, {
+    "table" : "T024E",
+    "schema" : null
+  }, {
+    "table" : "T052",
+    "schema" : null
+  }, {
+    "table" : "T052U",
+    "schema" : null
+  }, {
+    "table" : "TCURR",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_coa",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_costcenter",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_currency",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_material_group",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_purch_org",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_top",
+    "schema" : null
+  }, {
+    "table" : "v_ptp_uom",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : null
+}

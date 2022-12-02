@@ -1,0 +1,94 @@
+{
+  "goTo_BudgetDetails" : {
+    "_id" : "wm-goTo_BudgetDetails-wm.NavigationVariable-1616490115915",
+    "name" : "goTo_BudgetDetails",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "BudgetDetail",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "cachecontrol",
+      "value" : "bind:App.generateUUID()"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "goto_POList" : {
+    "_id" : "wm-goto_POList-wm.NavigationVariable-1626070884193",
+    "name" : "goto_POList",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "POList",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goTo_PRReadyforPurchase" : {
+    "_id" : "wm-goTo_PRReadyforPurchase-wm.NavigationVariable-1624066585838",
+    "name" : "goTo_PRReadyforPurchase",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "PRReadyforPurchase",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goto_purchaseGroupUser" : {
+    "_id" : "wm-goto_purchaseGroupUser-wm.NavigationVariable-1624006116154",
+    "name" : "goto_purchaseGroupUser",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "MapPurchaseGroupUser",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goTo_RFQTracking" : {
+    "_id" : "wm-goTo_RFQTracking-wm.NavigationVariable-1616148090864",
+    "name" : "goTo_RFQTracking",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "RFQTrackingPage",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "cachecontrol",
+      "value" : "bind:App.generateUUID()"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "gotoVendorListWithParam" : {
+    "_id" : "wm-gotoVendorListWithParam-wm.NavigationVariable-1625624233765",
+    "name" : "gotoVendorListWithParam",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "VendorOrderList",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  }
+}

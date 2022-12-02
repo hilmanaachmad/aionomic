@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="qGetEmployeeSupervisor">
+        <![CDATA[
+        select * from php_ms_login where lg_nik = :nik
+        ]]>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetEmployeeSupervisor__count">
+        <![CDATA[
+        select count(*) from (select * from php_ms_login where lg_nik = :nik) wmTempTable
+        ]]>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetAllUser">
+        <![CDATA[
+        SELECT lg_nik, lg_name FROM php_ms_login
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetAllUser__count">
+        <![CDATA[
+        select count(*) from (SELECT lg_nik, lg_name FROM php_ms_login) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="getEmployeeData">
+        <![CDATA[
+        SELECT  lg_email_aio, lg_nik FROM php_ms_login where lg_nik = :nik
+        ]]>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getEmployeeData__count">
+        <![CDATA[
+        select count(*) from (SELECT  lg_email_aio, lg_nik FROM php_ms_login where lg_nik = :nik) wmTempTable
+        ]]>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qChangePassEmpl">
+        <![CDATA[
+        UPDATE php_ms_login
+SET lg_password = :password
+WHERE lg_nik = :nik
+        ]]>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qForgotPassEmp">
+        <![CDATA[
+        UPDATE php_ms_login
+SET lg_password = :password
+WHERE lg_nik = :username and lg_email_aio = :email
+        ]]>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="username" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qCheckUserNikPass">
+        <![CDATA[
+        select lg_nik, lg_name
+from php_ms_login
+where lg_nik = :nik and lg_password like :password
+        ]]>
+    <query-param name="nik" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qCheckUserNikPass__count">
+        <![CDATA[
+        select count(*) from (select lg_nik, lg_name
+from php_ms_login
+where lg_nik = :nik and lg_password like :password) wmTempTable
+        ]]>
+    <query-param name="nik" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qCheckUserEmailNik">
+        <![CDATA[
+        select lg_nik, lg_name
+from php_ms_login
+where lg_email_aio LIKE :email and lg_nik LIKE :nik
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qCheckUserEmailNik__count">
+        <![CDATA[
+        select count(*) from (select lg_nik, lg_name
+from php_ms_login
+where lg_email_aio LIKE :email and lg_nik LIKE :nik) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="nik" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

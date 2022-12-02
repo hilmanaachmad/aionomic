@@ -1,0 +1,1625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="qUpdateStatusForgot">
+        <![CDATA[
+        UPDATE tl_ms_forgot_user
+SET 
+ab_status = :status,
+ab_approval_date = GETDATE()
+WHERE ab_id = :id
+        ]]>
+    <query-param name="status" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetForgotUser">
+        <![CDATA[
+        SELECT * FROM tl_ms_forgot_user
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetForgotUser__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM tl_ms_forgot_user) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetDataBank">
+        <![CDATA[
+        SELECT * FROM v_dataBank
+WHERE UserName = :userName
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetDataBank__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_dataBank
+WHERE UserName = :userName) wmTempTable
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertCertidom">
+        <![CDATA[
+        INSERT INTO tl_tr_door (ab_idor, ab_nant, ab_nale, ab_stnt, ab_pathfile)
+VALUES (:idVendor, '22', :fileName, 'Aktif', :fileUrl)
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="fileUrl" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertTaxOverseasTemp">
+        <![CDATA[
+        INSERT INTO tl_ms_ta_temp (ab_coorsa, ab_ume, ab_dafrom, ab_dato, ab_inby, ab_rfus, ab_cc
+)
+VALUES (:vendorCode, :userName, :dateFrom, :dateTo, :inputBy, 0, :companyCode
+)
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="dateFrom" type="java.lang.String"/>
+    <query-param name="dateTo" type="java.lang.String"/>
+    <query-param name="inputBy" type="java.lang.String"/>
+    <query-param name="companyCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendroDataByName">
+        <![CDATA[
+        SELECT * FROM v_ivendor
+where vendorName = :vendorName
+        ]]>
+    <query-param name="vendorName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendroDataByName__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_ivendor
+where vendorName = :vendorName) wmTempTable
+        ]]>
+    <query-param name="vendorName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetTaxType">
+        <![CDATA[
+        select * from tl_ms_tape
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetTaxType__count">
+        <![CDATA[
+        select count(*) from (select * from tl_ms_tape) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qCheckUserVendor">
+        <![CDATA[
+        select ab_coorsa, ab_ume from tl_ms_ve where ab_emss = :username and ab_prd = :password
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qCheckUserVendor__count">
+        <![CDATA[
+        select count(*) from (select ab_coorsa, ab_ume from tl_ms_ve where ab_emss = :username and ab_prd = :password) wmTempTable
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getNpwpVendor">
+        <![CDATA[
+        select * from v_ivendor
+where npwpNumber = :Npwp
+        ]]>
+    <query-param name="Npwp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getNpwpVendor__count">
+        <![CDATA[
+        select count(*) from (select * from v_ivendor
+where npwpNumber = :Npwp) wmTempTable
+        ]]>
+    <query-param name="Npwp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorDataByNames">
+        <![CDATA[
+        SELECT * FROM v_ivendor
+where vendorName = :vendorName
+        ]]>
+    <query-param name="vendorName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorDataByNames__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_ivendor
+where vendorName = :vendorName) wmTempTable
+        ]]>
+    <query-param name="vendorName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorData">
+        <![CDATA[
+        SELECT * FROM v_ivendor
+        ]]>
+    </sql-query>
+
+    <sql-query name="getVendorData__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_ivendor) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qUpdateExemptionFile">
+        <![CDATA[
+        UPDATE tl_tr_door
+SET 
+ab_nale = :fileName,
+ab_pathFile = :filePath
+WHERE ab_idnt = :idFileExemption
+        ]]>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="filePath" type="java.lang.String"/>
+    <query-param name="idFileExemption" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertSupDoc">
+        <![CDATA[
+        INSERT INTO tl_tr_door (ab_idor, ab_nant, ab_nale, ab_don, ab_stnt, ab_pathfile)
+VALUES (:idVendor, '33', :fileName, :remark, 'Aktif', :docSupUpload)
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="remark" type="java.lang.String"/>
+    <query-param name="docSupUpload" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateVendorOverseas">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET
+ab_naor = :veName, 
+ab_emss = :companyEmail, 
+ab_ofss = :officeAddress, 
+ab_ron = :province, 
+ab_cty = :city, 
+ab_pode = :pos,
+ab_cry = :country,
+ab_tne = :telephone, 
+ab_mone = :mobilePhone, 
+ab_emdir = :directorEmail, 
+ab_dirme = :nameDirector, 
+ab_wess = :webCompany, 
+ab_bfs = :businessFieldSector, 
+ab_lsi = :radioLocation, 
+ab_caturl = :catUpload, 
+ab_prd = :password, 
+ab_catname = :catName, 
+ab_ume = :companyEmail,
+ab_rfus = 2,
+ab_license = 1
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="veName" type="java.lang.String"/>
+    <query-param name="companyEmail" type="java.lang.String"/>
+    <query-param name="officeAddress" type="java.lang.String"/>
+    <query-param name="province" type="java.lang.String"/>
+    <query-param name="city" type="java.lang.String"/>
+    <query-param name="pos" type="java.lang.String"/>
+    <query-param name="country" type="java.lang.String"/>
+    <query-param name="telephone" type="java.lang.String"/>
+    <query-param name="mobilePhone" type="java.lang.String"/>
+    <query-param name="directorEmail" type="java.lang.String"/>
+    <query-param name="nameDirector" type="java.lang.String"/>
+    <query-param name="webCompany" type="java.lang.String"/>
+    <query-param name="businessFieldSector" type="java.lang.String"/>
+    <query-param name="radioLocation" type="java.lang.String"/>
+    <query-param name="catUpload" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="catName" type="java.lang.String"/>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankInfo">
+        <![CDATA[
+        SELECT * FROM v_bank
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetBankInfo__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_bank) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qInsertTaxTemp">
+        <![CDATA[
+        INSERT INTO tl_ms_ta_temp (ab_coorsa, ab_ume, ab_exor, ab_dafrom, ab_dato, ab_effective, ab_serv_office, ab_add_servoffice, ab_tape, ab_inby, ab_rfus, ab_cc
+)
+VALUES (:vendorCode, :userName, :exemptionNumber, :dateFrom, :dateTo, :effectiveSince, :serviceOffice, :serviceOfficeAddress, :exemptionType, :inputBy, 0, :companyCode
+)
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="exemptionNumber" type="java.lang.String"/>
+    <query-param name="dateFrom" type="java.lang.String"/>
+    <query-param name="dateTo" type="java.lang.String"/>
+    <query-param name="effectiveSince" type="java.lang.String"/>
+    <query-param name="serviceOffice" type="java.lang.String"/>
+    <query-param name="serviceOfficeAddress" type="java.lang.String"/>
+    <query-param name="exemptionType" type="java.lang.String"/>
+    <query-param name="inputBy" type="java.lang.String"/>
+    <query-param name="companyCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorDataEmail">
+        <![CDATA[
+        SELECT idVendor,
+vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+picName,
+mobilePhone,
+postalCode,
+province,
+region,
+country,
+nib,
+doi,
+rtRw,
+telephone,
+webAddress,
+companyDomicilie,
+npwpName,
+npwpNumber,
+npwpType,
+effectiveSince,
+idNpwp,
+fileNameNpwp,
+fileNpwp,
+statusSppkp,
+sppkpNumber,
+serviceOffice,
+serviceOfficeAddress,
+fileSppkp,
+catalogueUrl,
+catalogueName
+FROM v_ivendor WHERE email = :email and (:password IS NULL OR password = :password)
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorDataEmail__count">
+        <![CDATA[
+        select count(*) from (SELECT idVendor,
+vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+picName,
+mobilePhone,
+postalCode,
+province,
+region,
+country,
+nib,
+doi,
+rtRw,
+telephone,
+webAddress,
+companyDomicilie,
+npwpName,
+npwpNumber,
+npwpType,
+effectiveSince,
+idNpwp,
+fileNameNpwp,
+fileNpwp,
+statusSppkp,
+sppkpNumber,
+serviceOffice,
+serviceOfficeAddress,
+fileSppkp,
+catalogueUrl,
+catalogueName
+FROM v_ivendor WHERE email = :email and (:password IS NULL OR password = :password)) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertCertificate">
+        <![CDATA[
+        INSERT INTO tl_tr_door (ab_idor, ab_nant, ab_nale, ab_stnt, ab_pathfile)
+VALUES (:idVendor, '30', :fileName, 'Aktif', :fileUrl)
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="fileUrl" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertVendorOverseas">
+        <![CDATA[
+        INSERT INTO tl_ms_ve (
+ab_naor, ab_ofss, ab_ron, ab_cty, ab_pode,  ab_cry, ab_tne, ab_mone, ab_wess, ab_dirme, ab_emdir,  ab_emss, ab_biha, ab_lsi, ab_caturl, ab_catname, ab_prd, ab_ume, ab_nper, ab_npeff, ab_rfus, ab_stor, ab_acup, ab_cute, ab_stwp, ab_vsi, ab_license, ab_npme, ab_npss, ab_npss2, ab_npss3
+    )
+VALUES (
+:veName, :officeAddress, :region, :city, :zipCode, :country, :telephone, :mobilePhone, :webCompany, :nameDirector, :directorEmail, :companyEmail, :businessFieldSector, :radioLocation, :catUpload,  :catName, :password, :companyEmail, :npwpNumber, :effectiveNpwp, 0, 0, '-', GETDATE(), 1, :vsi, 1, :veName, :ab_npss, :ab_npss2, :ab_npss3
+    )
+        ]]>
+    <query-param name="veName" type="java.lang.String"/>
+    <query-param name="officeAddress" type="java.lang.String"/>
+    <query-param name="region" type="java.lang.String"/>
+    <query-param name="city" type="java.lang.String"/>
+    <query-param name="zipCode" type="java.lang.String"/>
+    <query-param name="country" type="java.lang.String"/>
+    <query-param name="telephone" type="java.lang.String"/>
+    <query-param name="mobilePhone" type="java.lang.String"/>
+    <query-param name="webCompany" type="java.lang.String"/>
+    <query-param name="nameDirector" type="java.lang.String"/>
+    <query-param name="directorEmail" type="java.lang.String"/>
+    <query-param name="companyEmail" type="java.lang.String"/>
+    <query-param name="businessFieldSector" type="java.lang.String"/>
+    <query-param name="radioLocation" type="java.lang.String"/>
+    <query-param name="catUpload" type="java.lang.String"/>
+    <query-param name="catName" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="npwpNumber" type="java.lang.String"/>
+    <query-param name="effectiveNpwp" type="java.lang.String"/>
+    <query-param name="vsi" type="java.lang.String"/>
+    <query-param name="ab_npss" type="java.lang.String"/>
+    <query-param name="ab_npss2" type="java.lang.String"/>
+    <query-param name="ab_npss3" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qMaxVendor">
+        <![CDATA[
+        select MAX(ab_idor) as id
+from tl_ms_ve
+        ]]>
+    </sql-query>
+
+    <sql-query name="qMaxVendor__count">
+        <![CDATA[
+        select count(*) from (select MAX(ab_idor) as id
+from tl_ms_ve) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qCheckUserEmailVen">
+        <![CDATA[
+        select ab_coorsa, ab_ume from tl_ms_ve where ab_emss = :username and ab_emss = :email
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qCheckUserEmailVen__count">
+        <![CDATA[
+        select count(*) from (select ab_coorsa, ab_ume from tl_ms_ve where ab_emss = :username and ab_emss = :email) wmTempTable
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qRfusDelPIC">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET 
+ab_rfus = 50
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorUme">
+        <![CDATA[
+        select * from tl_ms_ve where ab_ume = :username
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorUme__count">
+        <![CDATA[
+        select count(*) from (select * from tl_ms_ve where ab_ume = :username) wmTempTable
+        ]]>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertNpwp">
+        <![CDATA[
+        INSERT INTO tl_tr_door (ab_idor, ab_nant, ab_nale, ab_stnt, ab_pathfile)
+VALUES (:idVendor, '1', :fileName, 'Aktif', :fileUrl)
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="fileUrl" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertPicTemp">
+        <![CDATA[
+        INSERT INTO tl_ms_em_temp (ab_coorsa, ab_name, ab_emss, ab_mobile_phone, ab_position, ab_puon, ab_password, ab_ume, ab_lsi, ab_rfus, ab_mece, ab_inby)
+VALUES (:vendorCode, :namePIC, :emailPIC, :phonePIC, :selectPositionPIC, :selectAreaPIC, :password, :userName, :locationFor, 0, 0, :inputBy)
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="namePIC" type="java.lang.String"/>
+    <query-param name="emailPIC" type="java.lang.String"/>
+    <query-param name="phonePIC" type="java.lang.String"/>
+    <query-param name="selectPositionPIC" type="java.lang.String"/>
+    <query-param name="selectAreaPIC" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="locationFor" type="java.lang.String"/>
+    <query-param name="inputBy" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateTaxKonf">
+        <![CDATA[
+        UPDATE tl_ms_ta_konf
+SET ab_idax = :taxId,
+ab_type = :typeNpwp,
+ab_name = :nameNpwp,
+ab_add = :addressNpwp,
+ab_effect = :effectiveNpwp,
+ab_conf_num = :taxConfirmationNumber,
+ab_serv_of = :taxServiceOffice,
+ab_add_serv = :addressTaxService,
+ab_cert_num = :taxCertificateNumber,
+ab_cerpe = :typeCertificateNpwp,
+ab_vafrom = :validCertificateFrom,
+ab_vato = :validCertificateTo,
+ab_file_npwp = :npwpUpload,
+ab_filename_npwp = :nameNpwpUpload,
+ab_file_sppkp = :sppkpUpload,
+ab_filename_sppkp = :nameSppkpUpload,
+ab_file_certi = :taxCertiUpload,
+ab_filename_certi = :nameCertiUpload
+WHERE ab_id = :id
+        ]]>
+    <query-param name="taxId" type="java.lang.String"/>
+    <query-param name="typeNpwp" type="java.lang.String"/>
+    <query-param name="nameNpwp" type="java.lang.String"/>
+    <query-param name="addressNpwp" type="java.lang.String"/>
+    <query-param name="effectiveNpwp" type="java.lang.String"/>
+    <query-param name="taxConfirmationNumber" type="java.lang.String"/>
+    <query-param name="taxServiceOffice" type="java.lang.String"/>
+    <query-param name="addressTaxService" type="java.lang.String"/>
+    <query-param name="taxCertificateNumber" type="java.lang.String"/>
+    <query-param name="typeCertificateNpwp" type="java.lang.String"/>
+    <query-param name="validCertificateFrom" type="java.lang.String"/>
+    <query-param name="validCertificateTo" type="java.lang.String"/>
+    <query-param name="npwpUpload" type="java.lang.String"/>
+    <query-param name="nameNpwpUpload" type="java.lang.String"/>
+    <query-param name="sppkpUpload" type="java.lang.String"/>
+    <query-param name="nameSppkpUpload" type="java.lang.String"/>
+    <query-param name="taxCertiUpload" type="java.lang.String"/>
+    <query-param name="nameCertiUpload" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankInfoKonf">
+        <![CDATA[
+        SELECT tl_ms_acnk.ab_idng,
+tl_ms_acnk.ab_coorsa,
+tl_ms_ba.ab_bame, 
+tl_ms_acnk.ab_coey, 
+tl_ms_acnk.ab_acer, 
+tl_ms_acnk.ab_acme, 
+tl_ms_acnk.ab_bch, 
+tl_ms_acnk.ab_ccy,
+tl_ms_acnk.ab_bepe,
+tl_ms_acnk.ab_beus, 
+tl_ms_acnk.ab_supdoc,
+tl_ms_acnk.ab_supdocme
+FROM tl_ms_acnk
+JOIN tl_ms_ba ON tl_ms_acnk.ab_baey = tl_ms_ba.ab_baey
+WHERE tl_ms_acnk.ab_coorsa = :sVeCode AND
+tl_ms_ba.ab_coey = tl_ms_acnk.ab_coey
+        ]]>
+    <query-param name="sVeCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankInfoKonf__count">
+        <![CDATA[
+        select count(*) from (SELECT tl_ms_acnk.ab_idng,
+tl_ms_acnk.ab_coorsa,
+tl_ms_ba.ab_bame, 
+tl_ms_acnk.ab_coey, 
+tl_ms_acnk.ab_acer, 
+tl_ms_acnk.ab_acme, 
+tl_ms_acnk.ab_bch, 
+tl_ms_acnk.ab_ccy,
+tl_ms_acnk.ab_bepe,
+tl_ms_acnk.ab_beus, 
+tl_ms_acnk.ab_supdoc,
+tl_ms_acnk.ab_supdocme
+FROM tl_ms_acnk
+JOIN tl_ms_ba ON tl_ms_acnk.ab_baey = tl_ms_ba.ab_baey
+WHERE tl_ms_acnk.ab_coorsa = :sVeCode AND
+tl_ms_ba.ab_coey = tl_ms_acnk.ab_coey) wmTempTable
+        ]]>
+    <query-param name="sVeCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qDeleteTaxKonf">
+        <![CDATA[
+        DELETE FROM tl_ms_ta_konf WHERE ab_id = :id
+        ]]>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateSppkp">
+        <![CDATA[
+        UPDATE tl_tr_door
+SET 
+ab_nale = :fileName,
+ab_pathFile = :filePath
+WHERE ab_idnt = :idFileSppkp
+        ]]>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="filePath" type="java.lang.String"/>
+    <query-param name="idFileSppkp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateNpwpFile">
+        <![CDATA[
+        UPDATE tl_tr_door
+SET 
+ab_nale = :fileName,
+ab_pathFile = :filePath
+WHERE ab_idnt = :idFileNpwp
+        ]]>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="filePath" type="java.lang.String"/>
+    <query-param name="idFileNpwp" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetTaxKonf">
+        <![CDATA[
+        SELECT * FROM tl_ms_ta_konf
+WHERE ab_coorsa = :sVeCode
+        ]]>
+    <query-param name="sVeCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetTaxKonf__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM tl_ms_ta_konf
+WHERE ab_coorsa = :sVeCode) wmTempTable
+        ]]>
+    <query-param name="sVeCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qChangePasswordVen">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET ab_prd = :password
+WHERE ab_emss = :username
+        ]]>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertVendor">
+        <![CDATA[
+        INSERT INTO tl_ms_ve (
+ab_tle, ab_naor, ab_emss, ab_ofss, ab_cty, ab_nib, ab_doi, ab_tne, ab_mone, ab_rt, ab_klrhn, ab_kcmtn, ab_pode,ab_ron, ab_emdir, ab_dirme, ab_notp, ab_wess, ab_biha, ab_lsi, ab_picurl, ab_caturl, ab_prd, ab_picname, ab_catname, ab_ume, ab_nper, ab_cawp, ab_npss, ab_npss2, ab_npss3, ab_npme, ab_npeff, ab_cry, ab_taey, ab_rfus, ab_stor, ab_acup, ab_cute, ab_vaer, ab_stat, ab_stwp, ab_vsi, ab_servoffice, ab_add_servoffice, ab_license
+    )
+VALUES (
+:tittle, :veName, :companyEmail, :officeAddress, :city, :nib, :doi, :telephone, :mobilePhone, :rtRw, :kelurahan, :kecamatan, :pos, :province, :directorEmail, :nameDirector, :idDirector, :webCompany, :businessFieldSector, :radioLocation, :picUpload, :catUpload, :password, :picName, :catName, :companyEmail, :npwpNumber, :npwpType, :npwpAddress, :npwpAddress2, :npwpAddress3, :npwpName, :npwpEffective, 'ID', 'ID', 0, 0, '-', GETDATE(), :sppkpNumber, :statSppkp , 0, :vsi, :serviceOffice, :addServiceOffice, 1
+    )
+        ]]>
+    <query-param name="tittle" type="java.lang.String"/>
+    <query-param name="veName" type="java.lang.String"/>
+    <query-param name="companyEmail" type="java.lang.String"/>
+    <query-param name="officeAddress" type="java.lang.String"/>
+    <query-param name="city" type="java.lang.String"/>
+    <query-param name="nib" type="java.lang.String"/>
+    <query-param name="doi" type="java.lang.String"/>
+    <query-param name="telephone" type="java.lang.String"/>
+    <query-param name="mobilePhone" type="java.lang.String"/>
+    <query-param name="rtRw" type="java.lang.String"/>
+    <query-param name="kelurahan" type="java.lang.String"/>
+    <query-param name="kecamatan" type="java.lang.String"/>
+    <query-param name="pos" type="java.lang.String"/>
+    <query-param name="province" type="java.lang.String"/>
+    <query-param name="directorEmail" type="java.lang.String"/>
+    <query-param name="nameDirector" type="java.lang.String"/>
+    <query-param name="idDirector" type="java.lang.String"/>
+    <query-param name="webCompany" type="java.lang.String"/>
+    <query-param name="businessFieldSector" type="java.lang.String"/>
+    <query-param name="radioLocation" type="java.lang.String"/>
+    <query-param name="picUpload" type="java.lang.String"/>
+    <query-param name="catUpload" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="picName" type="java.lang.String"/>
+    <query-param name="catName" type="java.lang.String"/>
+    <query-param name="npwpNumber" type="java.lang.String"/>
+    <query-param name="npwpType" type="java.lang.String"/>
+    <query-param name="npwpAddress" type="java.lang.String"/>
+    <query-param name="npwpAddress2" type="java.lang.String"/>
+    <query-param name="npwpAddress3" type="java.lang.String"/>
+    <query-param name="npwpName" type="java.lang.String"/>
+    <query-param name="npwpEffective" type="java.lang.String"/>
+    <query-param name="sppkpNumber" type="java.lang.String"/>
+    <query-param name="statSppkp" type="java.lang.String"/>
+    <query-param name="vsi" type="java.lang.String"/>
+    <query-param name="serviceOffice" type="java.lang.String"/>
+    <query-param name="addServiceOffice" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertForgotUser">
+        <![CDATA[
+        INSERT INTO tl_ms_forgot_user (ab_username, ab_company_name, ab_company_npwp, ab_company_email, ab_ktp, ab_status, ab_puon, ab_created_date)
+VALUES (:userName, :companyName, :companyNpwp, :companyEmail, :ktp, 'New', :location, GETDATE())
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="companyName" type="java.lang.String"/>
+    <query-param name="companyNpwp" type="java.lang.String"/>
+    <query-param name="companyEmail" type="java.lang.String"/>
+    <query-param name="ktp" type="java.lang.String"/>
+    <query-param name="location" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertTax">
+        <![CDATA[
+        INSERT INTO tl_ms_ta (ab_coorsa, ab_ume, ab_exor, ab_dafrom, ab_dato, ab_tape, ab_cc
+)
+VALUES (:vendorCode, :userName, :exemptionNumber, :dateFrom, :dateTo, :exemptionType, :companyCode
+)
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="exemptionNumber" type="java.lang.String"/>
+    <query-param name="dateFrom" type="java.lang.String"/>
+    <query-param name="dateTo" type="java.lang.String"/>
+    <query-param name="exemptionType" type="java.lang.String"/>
+    <query-param name="companyCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertBank">
+        <![CDATA[
+        INSERT INTO tl_ms_acnk (ab_coey, ab_baey, ab_ume, ab_acer, ab_acme, ab_bch, ab_ccy, ab_bepe, ab_beus)
+Values (:countryCode, :bankName, :userName, :accountNumber, :accountName, :branch, :currency, :beneficiaryType, :beneficiaryStatus)
+        ]]>
+    <query-param name="countryCode" type="java.lang.String"/>
+    <query-param name="bankName" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="accountNumber" type="java.lang.String"/>
+    <query-param name="accountName" type="java.lang.String"/>
+    <query-param name="branch" type="java.lang.String"/>
+    <query-param name="currency" type="java.lang.String"/>
+    <query-param name="beneficiaryType" type="java.lang.String"/>
+    <query-param name="beneficiaryStatus" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTaxOverseas">
+        <![CDATA[
+        SELECT * FROM v_dataTaxOverseas
+WHERE UserName = :userName
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTaxOverseas__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_dataTaxOverseas
+WHERE UserName = :userName) wmTempTable
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdatePic">
+        <![CDATA[
+        UPDATE tl_ms_em
+SET 
+ab_name = :namePic,
+ab_emss = :emailPic,
+ab_mobile_phone = :phonePic,
+ab_position = :positionPic,
+ab_puon = :areaPic,
+ab_ron = :reason,
+ab_rfus = 50
+WHERE ab_idil = :idPIC
+        ]]>
+    <query-param name="namePic" type="java.lang.String"/>
+    <query-param name="emailPic" type="java.lang.String"/>
+    <query-param name="phonePic" type="java.lang.String"/>
+    <query-param name="positionPic" type="java.lang.String"/>
+    <query-param name="areaPic" type="java.lang.String"/>
+    <query-param name="reason" type="java.lang.String"/>
+    <query-param name="idPIC" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qRfusUpdateBank">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET 
+ab_rfus = 202
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getIvendorDataOverseas">
+        <![CDATA[
+        SELECT vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+mobilePhone,
+postalCode,
+region,
+rtRw,
+telephone,
+title,
+webAddress,
+catalogueUrl
+FROM v_ivendor WHERE GroupVendor IN ('ZNTO','ZNAO','ZTAO','ZTPO')
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetRegion">
+        <![CDATA[
+        select * from tl_ms_re
+where ab_coey = :country
+        ]]>
+    <query-param name="country" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetRegion__count">
+        <![CDATA[
+        select count(*) from (select * from tl_ms_re
+where ab_coey = :country) wmTempTable
+        ]]>
+    <query-param name="country" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateTaxKonfOverseeas">
+        <![CDATA[
+        UPDATE tl_ms_ta_konf
+SET ab_idax = :taxNumber,
+ab_coorsa = :sVeCodeOverseas,
+ab_effect = :taxEffective,
+ab_file_npwp = :taxFileUpload,
+ab_filename_npwp = :taxFileName,
+ab_file_certidom = :certiDomUpload,
+ab_filename_certidom = :certiDomFileName,
+ab_vafrom = :validFrom,
+ab_vato = :validTo
+WHERE ab_id = :id
+        ]]>
+    <query-param name="taxNumber" type="java.lang.String"/>
+    <query-param name="sVeCodeOverseas" type="java.lang.String"/>
+    <query-param name="taxEffective" type="java.lang.String"/>
+    <query-param name="taxFileUpload" type="java.lang.String"/>
+    <query-param name="taxFileName" type="java.lang.String"/>
+    <query-param name="certiDomUpload" type="java.lang.String"/>
+    <query-param name="certiDomFileName" type="java.lang.String"/>
+    <query-param name="validFrom" type="java.lang.String"/>
+    <query-param name="validTo" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetVVendor">
+        <![CDATA[
+        select * from v_vendor
+where (:VCode IS NULL OR VendorCode LIKE CONCAT('%', :VCode, '%')) OR (:VName IS NULL OR VendorName LIKE CONCAT('%', :VName, '%'))
+        ]]>
+    <query-param name="VCode" type="java.lang.String"/>
+    <query-param name="VName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetVVendor__count">
+        <![CDATA[
+        select count(*) from (select * from v_vendor
+where (:VCode IS NULL OR VendorCode LIKE CONCAT('%', :VCode, '%')) OR (:VName IS NULL OR VendorName LIKE CONCAT('%', :VName, '%'))) wmTempTable
+        ]]>
+    <query-param name="VCode" type="java.lang.String"/>
+    <query-param name="VName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankNameByCountry">
+        <![CDATA[
+        Select * FROM tl_ms_ba WHERE ab_coey = :countryCode
+        ]]>
+    <query-param name="countryCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankNameByCountry__count">
+        <![CDATA[
+        select count(*) from (Select * FROM tl_ms_ba WHERE ab_coey = :countryCode) wmTempTable
+        ]]>
+    <query-param name="countryCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="svUpdateUserTax">
+        <![CDATA[
+        UPDATE tl_ms_ta
+SET ab_ume = :userName
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateUserPIC">
+        <![CDATA[
+        UPDATE tl_ms_em
+SET ab_ume = :userName
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetDocBank">
+        <![CDATA[
+        select * from tl_tr_door where ab_nant = '17' AND ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetDocBank__count">
+        <![CDATA[
+        select count(*) from (select * from tl_tr_door where ab_nant = '17' AND ab_coorsa = :vendorCode) wmTempTable
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertPIC">
+        <![CDATA[
+        INSERT INTO tl_ms_em (ab_name, ab_emss, ab_mobile_phone, ab_position, ab_puon, ab_password, ab_ume)
+VALUES (:namePIC, :emailPIC, :phonePIC, :selectPositionPIC, :selectAreaPIC, :password, :userName)
+        ]]>
+    <query-param name="namePIC" type="java.lang.String"/>
+    <query-param name="emailPIC" type="java.lang.String"/>
+    <query-param name="phonePIC" type="java.lang.String"/>
+    <query-param name="selectPositionPIC" type="java.lang.String"/>
+    <query-param name="selectAreaPIC" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateDataBank">
+        <![CDATA[
+        INSERT INTO tl_ms_acnk_temp (ab_coorsa, ab_coey, ab_baey, ab_ume, ab_acer, ab_acme, ab_bch, ab_ccy, ab_bepe, ab_beus, ab_flag)
+Values (:vendorCode, :countryCode, :bankKey, :userName, :accountNumber, :accountName, :branch, :currency, :beneficiaryType, :beneficiaryStatus, 0)
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="countryCode" type="java.lang.String"/>
+    <query-param name="bankKey" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="accountNumber" type="java.lang.String"/>
+    <query-param name="accountName" type="java.lang.String"/>
+    <query-param name="branch" type="java.lang.String"/>
+    <query-param name="currency" type="java.lang.String"/>
+    <query-param name="beneficiaryType" type="java.lang.String"/>
+    <query-param name="beneficiaryStatus" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorDataForgotUser">
+        <![CDATA[
+        SELECT idVendor,
+vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+picName,
+mobilePhone,
+postalCode,
+province,
+region,
+country,
+nib,
+doi,
+rtRw,
+telephone,
+webAddress,
+npwpName,
+npwpNumber,
+npwpType,
+effectiveSince,
+idNpwp,
+fileNameNpwp,
+fileNpwp,
+statusSppkp,
+sppkpNumber,
+serviceOffice,
+serviceOfficeAddress,
+fileSppkp,
+catalogueUrl,
+catalogueName
+
+FROM v_ivendor WHERE
+(:npwpNumber IS NULL OR npwpNumber = :npwpNumber)
+AND (:idDirector IS NULL OR idDirector = :idDirector)
+        ]]>
+    <query-param name="npwpNumber" type="java.lang.String"/>
+    <query-param name="idDirector" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getVendorDataForgotUser__count">
+        <![CDATA[
+        select count(*) from (SELECT idVendor,
+vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+picName,
+mobilePhone,
+postalCode,
+province,
+region,
+country,
+nib,
+doi,
+rtRw,
+telephone,
+webAddress,
+npwpName,
+npwpNumber,
+npwpType,
+effectiveSince,
+idNpwp,
+fileNameNpwp,
+fileNpwp,
+statusSppkp,
+sppkpNumber,
+serviceOffice,
+serviceOfficeAddress,
+fileSppkp,
+catalogueUrl,
+catalogueName
+
+FROM v_ivendor WHERE
+(:npwpNumber IS NULL OR npwpNumber = :npwpNumber)
+AND (:idDirector IS NULL OR idDirector = :idDirector)) wmTempTable
+        ]]>
+    <query-param name="npwpNumber" type="java.lang.String"/>
+    <query-param name="idDirector" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertDocBank">
+        <![CDATA[
+        INSERT INTO tl_tr_door (ab_idor, ab_nant, ab_nale, ab_stnt, ab_pathfile)
+VALUES (:idVendor, '17', :fileName, 'Aktif', :fileUrl)
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="fileUrl" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updateIVendorData">
+        <![CDATA[
+        UPDATE v_ivendor
+SET Title = :selectTitle, 
+VendorName = :veName, 
+Address = :officeAddress, 
+RtRw = :rtRw, 
+Kelurahan = :kelurahan, 
+Kecamatan=:kecamatan, 
+PostalCode = :pos, 
+City = :city, 
+PicUrl = :picUpload, 
+Telephone = :telephone, 
+MobilePhone = :mobilePhone, 
+WebAddress = :webCompany, 
+EmailDirector = :directorEmail, 
+DirectorName = :directorName, 
+IdDirector = :idDirector, 
+Email = :companyEmail, 
+Location = :location, 
+BusinessFieldSector = :businessFieldSector,
+CatalogueUrl = :catUpload,
+Domicilie = 'Local'
+Where VendorCode = :sVeCodeLocal
+        ]]>
+    <query-param name="selectTitle" type="java.lang.String"/>
+    <query-param name="veName" type="java.lang.String"/>
+    <query-param name="officeAddress" type="java.lang.String"/>
+    <query-param name="rtRw" type="java.lang.String"/>
+    <query-param name="kelurahan" type="java.lang.String"/>
+    <query-param name="kecamatan" type="java.lang.String"/>
+    <query-param name="pos" type="java.lang.String"/>
+    <query-param name="city" type="java.lang.String"/>
+    <query-param name="picUpload" type="java.lang.String"/>
+    <query-param name="telephone" type="java.lang.String"/>
+    <query-param name="mobilePhone" type="java.lang.String"/>
+    <query-param name="webCompany" type="java.lang.String"/>
+    <query-param name="directorEmail" type="java.lang.String"/>
+    <query-param name="directorName" type="java.lang.String"/>
+    <query-param name="idDirector" type="java.lang.String"/>
+    <query-param name="companyEmail" type="java.lang.String"/>
+    <query-param name="location" type="java.lang.String"/>
+    <query-param name="businessFieldSector" type="java.lang.String"/>
+    <query-param name="catUpload" type="java.lang.String"/>
+    <query-param name="sVeCodeLocal" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getPic">
+        <![CDATA[
+        SELECT * FROM v_PIC
+WHERE ab_ume = :userName
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getPic__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM v_PIC
+WHERE ab_ume = :userName) wmTempTable
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateDocBank">
+        <![CDATA[
+        UPDATE tl_tr_door
+SET 
+ab_nale = :fileName,
+ab_pathFile = :filePath
+WHERE ab_idnt = :idDocBank
+        ]]>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="filePath" type="java.lang.String"/>
+    <query-param name="idDocBank" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdatePassword">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET ab_ume = :userName,
+ab_emss = :email,
+ab_prd = :password
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateVendor">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET
+ab_tle = :tittle, 
+ab_naor = :veName, 
+ab_emss = :companyEmail, 
+ab_ofss = :officeAddress, 
+ab_cty = :city, 
+ab_nib =  :nib, 
+ab_doi = :doi, 
+ab_tne = :telephone, 
+ab_mone = :mobilePhone, 
+ab_rt = :rtRw, 
+ab_klrhn = :kelurahan, 
+ab_kcmtn = :kecamatan, 
+ab_pode = :pos,
+ab_ron = :province, 
+ab_emdir = :directorEmail, 
+ab_dirme = :nameDirector, 
+ab_notp = :idDirector, 
+ab_wess = :webCompany, 
+ab_bfs = :businessFieldSector, 
+ab_lsi = :radioLocation, 
+ab_picurl = :picUpload, 
+ab_caturl = :catUpload, 
+ab_prd = :password, 
+ab_picname = :picName, 
+ab_catname = :catName, 
+ab_ume = :companyEmail,
+ab_rfus = 2,
+ab_license = 1
+
+WHERE ab_coorsa = :vendorCode AND ab_ume = :username
+        ]]>
+    <query-param name="tittle" type="java.lang.String"/>
+    <query-param name="veName" type="java.lang.String"/>
+    <query-param name="companyEmail" type="java.lang.String"/>
+    <query-param name="officeAddress" type="java.lang.String"/>
+    <query-param name="city" type="java.lang.String"/>
+    <query-param name="nib" type="java.lang.String"/>
+    <query-param name="doi" type="java.lang.String"/>
+    <query-param name="telephone" type="java.lang.String"/>
+    <query-param name="mobilePhone" type="java.lang.String"/>
+    <query-param name="rtRw" type="java.lang.String"/>
+    <query-param name="kelurahan" type="java.lang.String"/>
+    <query-param name="kecamatan" type="java.lang.String"/>
+    <query-param name="pos" type="java.lang.String"/>
+    <query-param name="province" type="java.lang.String"/>
+    <query-param name="directorEmail" type="java.lang.String"/>
+    <query-param name="nameDirector" type="java.lang.String"/>
+    <query-param name="idDirector" type="java.lang.String"/>
+    <query-param name="webCompany" type="java.lang.String"/>
+    <query-param name="businessFieldSector" type="java.lang.String"/>
+    <query-param name="radioLocation" type="java.lang.String"/>
+    <query-param name="picUpload" type="java.lang.String"/>
+    <query-param name="catUpload" type="java.lang.String"/>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="picName" type="java.lang.String"/>
+    <query-param name="catName" type="java.lang.String"/>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="username" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qForgotPassVen">
+        <![CDATA[
+        UPDATE tl_ms_ve
+SET ab_prd = :password
+WHERE ab_emss = :username and ab_emss = :email
+        ]]>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="username" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertHistory">
+        <![CDATA[
+        INSERT INTO tl_hr (ab_inby, ab_cute, ab_aon)
+VALUES (:inputBy, GETDATE(), :History)
+        ]]>
+    <query-param name="inputBy" type="java.lang.String"/>
+    <query-param name="History" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateSupDoc">
+        <![CDATA[
+        UPDATE tl_tr_door
+SET 
+ab_nale = :fileName,
+ab_pathFile = :filePath,
+ab_don = :remark
+WHERE ab_idnt = :idSupDoc
+        ]]>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="filePath" type="java.lang.String"/>
+    <query-param name="remark" type="java.lang.String"/>
+    <query-param name="idSupDoc" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getEmailList">
+        <![CDATA[
+        SELECT * FROM tl_ms_notif_email where ab_location = :puon
+        ]]>
+    <query-param name="puon" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getEmailList__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM tl_ms_notif_email where ab_location = :puon) wmTempTable
+        ]]>
+    <query-param name="puon" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GRTrackingVendorInfo">
+        <![CDATA[
+        SELECT
+    DISTINCT
+	a.ab_coorsa as vendor_code,
+	RTRIM(a.ab_tle) + ' ' + RTRIM(a.ab_naor) as vendor_name,
+	a.ab_ofss as address,
+	a.ab_tne as telephone,
+	a.ab_emss as email,
+	b.ab_name as name
+FROM
+	tl_ms_ve a
+	JOIN tl_ms_em b ON a.ab_coorsa = b.ab_coorsa
+WHERE
+	a.ab_coorsa = :vendorcode
+        ]]>
+    <query-param name="vendorcode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GRTrackingVendorInfo__count">
+        <![CDATA[
+        select count(*) from (SELECT
+    DISTINCT
+	a.ab_coorsa as vendor_code,
+	RTRIM(a.ab_tle) + ' ' + RTRIM(a.ab_naor) as vendor_name,
+	a.ab_ofss as address,
+	a.ab_tne as telephone,
+	a.ab_emss as email,
+	b.ab_name as name
+FROM
+	tl_ms_ve a
+	JOIN tl_ms_em b ON a.ab_coorsa = b.ab_coorsa
+WHERE
+	a.ab_coorsa = :vendorcode) wmTempTable
+        ]]>
+    <query-param name="vendorcode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qInsertTaxOverseas">
+        <![CDATA[
+        INSERT INTO tl_ms_ta (ab_coorsa, ab_ume, ab_dafrom, ab_dato, ab_cc
+)
+VALUES (:vendorCode, :userName, :dateFrom, :dateTo, :companyCode
+)
+        ]]>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="dateFrom" type="java.lang.String"/>
+    <query-param name="dateTo" type="java.lang.String"/>
+    <query-param name="companyCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetCurrencyData">
+        <![CDATA[
+        SELECT * FROM tl_ms_cu
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetCurrencyData__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM tl_ms_cu) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qInsertSppkp">
+        <![CDATA[
+        INSERT INTO tl_tr_door (ab_idor, ab_nant, ab_nale, ab_stnt, ab_pathfile)
+VALUES (:idVendor, '12', :fileName, 'Aktif', :fileUrl)
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="fileUrl" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="updateVendorData">
+        <![CDATA[
+        UPDATE v_vendor 
+SET VendorName = :veName, Title = :selectTitle, City = :city, Email = :directorEmail, Telephone = :telephone, MobilePhone = :mobilePhone
+WHERE VendorCode = :sVeCodeLocal
+        ]]>
+    <query-param name="veName" type="java.lang.String"/>
+    <query-param name="selectTitle" type="java.lang.String"/>
+    <query-param name="city" type="java.lang.String"/>
+    <query-param name="directorEmail" type="java.lang.String"/>
+    <query-param name="telephone" type="java.lang.String"/>
+    <query-param name="mobilePhone" type="java.lang.String"/>
+    <query-param name="sVeCodeLocal" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankNameByBankey">
+        <![CDATA[
+        Select * FROM tl_ms_ba WHERE ab_coey = :countryCode AND ab_baey = :bankCode
+        ]]>
+    <query-param name="countryCode" type="java.lang.String"/>
+    <query-param name="bankCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetBankNameByBankey__count">
+        <![CDATA[
+        select count(*) from (Select * FROM tl_ms_ba WHERE ab_coey = :countryCode AND ab_baey = :bankCode) wmTempTable
+        ]]>
+    <query-param name="countryCode" type="java.lang.String"/>
+    <query-param name="bankCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateBank">
+        <![CDATA[
+        UPDATE tl_ms_acnk
+SET ab_coey = :sCountryCode,
+ab_baey = :bankName,
+ab_acer = :accountNumber,
+ab_acme = :accountName,
+ab_bch = :branch,
+ab_ccy = :currency,
+ab_bepe = :beneficiaryType,
+ab_beus = :beneficiaryStatus
+WHERE ab_idng = :id
+        ]]>
+    <query-param name="sCountryCode" type="java.lang.String"/>
+    <query-param name="bankName" type="java.lang.String"/>
+    <query-param name="accountNumber" type="java.lang.String"/>
+    <query-param name="accountName" type="java.lang.String"/>
+    <query-param name="branch" type="java.lang.String"/>
+    <query-param name="currency" type="java.lang.String"/>
+    <query-param name="beneficiaryType" type="java.lang.String"/>
+    <query-param name="beneficiaryStatus" type="java.lang.String"/>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetCountyData">
+        <![CDATA[
+        SELECT * FROM tl_ms_co
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetCountyData__count">
+        <![CDATA[
+        select count(*) from (SELECT * FROM tl_ms_co) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qUpdateUserBank">
+        <![CDATA[
+        UPDATE tl_ms_acnk
+SET ab_ume = :userName
+WHERE ab_coorsa = :vendorCode
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    <query-param name="vendorCode" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qUpdateCertiDom">
+        <![CDATA[
+        UPDATE tl_tr_door
+SET 
+ab_nale = :fileName,
+ab_pathFile = :filePath
+WHERE ab_idnt = :idCertiDom
+        ]]>
+    <query-param name="fileName" type="java.lang.String"/>
+    <query-param name="filePath" type="java.lang.String"/>
+    <query-param name="idCertiDom" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getSupDoc">
+        <![CDATA[
+        Select * From v_supDoc
+where ab_idor = :idVendor
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getSupDoc__count">
+        <![CDATA[
+        select count(*) from (Select * From v_supDoc
+where ab_idor = :idVendor) wmTempTable
+        ]]>
+    <query-param name="idVendor" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getIvendorData">
+        <![CDATA[
+        SELECT idVendor,
+vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+picName,
+mobilePhone,
+postalCode,
+province,
+region,
+country,
+nib,
+doi,
+rtRw,
+telephone,
+webAddress,
+companyDomicilie,
+puon,
+license,
+npwpName,
+npwpNumber,
+npwpType,
+effectiveSince,
+idNpwp,
+fileNameNpwp,
+fileNpwp,
+statusSppkp,
+sppkpNumber,
+serviceOffice,
+serviceOfficeAddress,
+fileSppkp,
+catalogueUrl,
+catalogueName
+FROM v_ivendor WHERE email = :email
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getIvendorData__count">
+        <![CDATA[
+        select count(*) from (SELECT idVendor,
+vendorCode,
+Username,
+Password,
+Title,
+vendorName,
+add1,
+add2,
+add3,
+address,
+businessFieldSector,
+city,
+directorName,
+email,
+emailDirector,
+groupVendor,
+idDirector,
+kecamatan,
+kelurahan,
+location,
+picUrl,
+picName,
+mobilePhone,
+postalCode,
+province,
+region,
+country,
+nib,
+doi,
+rtRw,
+telephone,
+webAddress,
+companyDomicilie,
+puon,
+license,
+npwpName,
+npwpNumber,
+npwpType,
+effectiveSince,
+idNpwp,
+fileNameNpwp,
+fileNpwp,
+statusSppkp,
+sppkpNumber,
+serviceOffice,
+serviceOfficeAddress,
+fileSppkp,
+catalogueUrl,
+catalogueName
+FROM v_ivendor WHERE email = :email) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qDeleteBankKonf">
+        <![CDATA[
+        DELETE FROM tl_ms_acnk_konf WHERE ab_id_acnk_konf = :id
+        ]]>
+    <query-param name="id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTax">
+        <![CDATA[
+        Select * From v_dataTaxLocal
+where UserName = :userName
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getTax__count">
+        <![CDATA[
+        select count(*) from (Select * From v_dataTaxLocal
+where UserName = :userName) wmTempTable
+        ]]>
+    <query-param name="userName" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GetDataVendorByCode">
+        <![CDATA[
+        SELECT CONCAT(ADD1, ADD2, ADD3) as address, * FROM v_vendor where VendorCode LIKE CONCAT('%', :vendor_code, '%')
+        ]]>
+    <query-param name="vendor_code" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GetDataVendorByCode__count">
+        <![CDATA[
+        select count(*) from (SELECT CONCAT(ADD1, ADD2, ADD3) as address, * FROM v_vendor where VendorCode LIKE CONCAT('%', :vendor_code, '%')) wmTempTable
+        ]]>
+    <query-param name="vendor_code" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qGetRegIndo">
+        <![CDATA[
+        select * from tl_ms_re
+where ab_coey = 'ID'
+        ]]>
+    </sql-query>
+
+    <sql-query name="qGetRegIndo__count">
+        <![CDATA[
+        select count(*) from (select * from tl_ms_re
+where ab_coey = 'ID') wmTempTable
+        ]]>
+    </sql-query>
+</hibernate-mapping>

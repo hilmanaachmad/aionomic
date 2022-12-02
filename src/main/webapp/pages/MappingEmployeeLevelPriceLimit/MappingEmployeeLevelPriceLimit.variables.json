@@ -1,0 +1,778 @@
+{
+  "data_Action" : {
+    "_id" : "wm-data_Action-wm.Variable-1609915037432",
+    "name" : "data_Action",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Creator",
+      "dataValue" : "Creator"
+    }, {
+      "name" : "Approver",
+      "dataValue" : "Approver"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "data_EmployeLevel" : {
+    "_id" : "wm-data_EmployeLevel-wm.Variable-1609914895435",
+    "name" : "data_EmployeLevel",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "S1",
+      "dataValue" : "S1"
+    }, {
+      "name" : "S2",
+      "dataValue" : "S2"
+    }, {
+      "name" : "S3",
+      "dataValue" : "S3"
+    }, {
+      "name" : "M1",
+      "dataValue" : "M1"
+    }, {
+      "name" : "M2",
+      "dataValue" : "M2"
+    }, {
+      "name" : "M3",
+      "dataValue" : "M3"
+    }, {
+      "name" : "D1",
+      "dataValue" : "D1"
+    }, {
+      "name" : "D2",
+      "dataValue" : "D2"
+    }, {
+      "name" : "D3",
+      "dataValue" : "D3"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "deleteEmpPriceLimit" : {
+    "_id" : "wm-deleteEmpPriceLimit-wm.LiveVariable-1610012736879",
+    "name" : "deleteEmpPriceLimit",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "delete",
+    "dataSet" : [ ],
+    "type" : "TblMEmpPriceLimit",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "eplId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "eplId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "epl_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplEmployeeLevel",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_employee_level",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplAction",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_action",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "epl_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMax",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_max",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMin",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_min",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "TblMEmpPriceLimit",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "eplId" ]
+    },
+    "tableName" : "tbl_m_emp_price_limit",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterExpressions" : { },
+    "inputFields" : { },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit"
+  },
+  "forCheckData" : {
+    "_id" : "wm-forCheckData-wm.LiveVariable-1610461239401",
+    "name" : "forCheckData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblMEmpPriceLimit",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "eplId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "eplId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "epl_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplEmployeeLevel",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_employee_level",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplAction",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_action",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "epl_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMax",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_max",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMin",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_min",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "TblMEmpPriceLimit",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "eplId" ]
+    },
+    "tableName" : "tbl_m_emp_price_limit",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : { },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit"
+  },
+  "insertEmpPriceLimit" : {
+    "_id" : "wm-insertEmpPriceLimit-wm.LiveVariable-1610585259688",
+    "name" : "insertEmpPriceLimit",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "insert",
+    "dataSet" : [ ],
+    "type" : "TblMEmpPriceLimit",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "eplId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "eplId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "epl_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplEmployeeLevel",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_employee_level",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplAction",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_action",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "epl_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMax",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_max",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMin",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_min",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "TblMEmpPriceLimit",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "eplId" ]
+    },
+    "tableName" : "tbl_m_emp_price_limit",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : { },
+    "inputFields" : { },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit"
+  },
+  "model_add_approx_max" : {
+    "_id" : "wm-model_add_approx_max-wm.Variable-1612708527225",
+    "name" : "model_add_approx_max",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "model_add_approx_min" : {
+    "_id" : "wm-model_add_approx_min-wm.Variable-1612708508921",
+    "name" : "model_add_approx_min",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "model_edit_approx_max" : {
+    "_id" : "wm-model_edit_approx_max-wm.Variable-1612710026339",
+    "name" : "model_edit_approx_max",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "model_edit_approx_min" : {
+    "_id" : "wm-model_edit_approx_min-wm.Variable-1612710040878",
+    "name" : "model_edit_approx_min",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "readEmpPriceLimit" : {
+    "_id" : "wm-readEmpPriceLimit-wm.LiveVariable-1609903898921",
+    "name" : "readEmpPriceLimit",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblMEmpPriceLimit",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 10,
+    "designMaxResults" : 2,
+    "onSuccess" : "readEmpPriceLimitonSuccess(variable, data, options)",
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "eplId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "eplId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "epl_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplEmployeeLevel",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_employee_level",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplAction",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_action",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedAt",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "epl_created_at",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "epl_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMax",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_max",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "eplApproxMin",
+        "type" : "big_integer",
+        "fullyQualifiedType" : "big_integer",
+        "columnName" : "epl_approx_min",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "TblMEmpPriceLimit",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "eplId" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "tbl_m_emp_price_limit",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "eplEmployeeLevel",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      }, {
+        "target" : "eplAction",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      }, {
+        "target" : "eplApproxMin",
+        "type" : "integer",
+        "matchMode" : "exact",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      }, {
+        "target" : "eplApproxMax",
+        "type" : "integer",
+        "matchMode" : "exact",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      }, {
+        "target" : "eplStatus",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit"
+  },
+  "sotirNumber" : {
+    "_id" : "wm-sotirNumber-wm.Variable-1606885526861",
+    "name" : "sotirNumber",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "dataValue" : "10"
+    }, {
+      "name" : "30 Rows",
+      "dataValue" : "30"
+    }, {
+      "name" : "50 Rows",
+      "dataValue" : "50"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "updateEmpPriceLimit" : {
+    "_id" : "wm-updateEmpPriceLimit-wm.ServiceVariable-1610071093977",
+    "name" : "updateEmpPriceLimit",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.aio_ptp.TblMEmpPriceLimit",
+    "service" : "aio_ptp",
+    "operation" : "editTblMEmpPriceLimit",
+    "operationId" : "TblMEmpPriceLimitController_editTblMEmpPriceLimit",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "TblMEmpPriceLimit"
+  },
+  "vmErrorMessage" : {
+    "_id" : "wm-vmErrorMessage-wm.Variable-1608795426298",
+    "name" : "vmErrorMessage",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "divisionErrorMessage" : "",
+      "departmentErrorMessage" : "",
+      "costCenterErrorMessage" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmSearchMapping" : {
+    "_id" : "wm-vmSearchMapping-wm.Variable-1606398316276",
+    "name" : "vmSearchMapping",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Level",
+      "dataValue" : "1"
+    }, {
+      "name" : "Action",
+      "dataValue" : "2"
+    }, {
+      "name" : "Approx. Min Price",
+      "dataValue" : "3"
+    }, {
+      "name" : "Approx. Max Price",
+      "dataValue" : "4"
+    }, {
+      "name" : "Status",
+      "dataValue" : "5"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

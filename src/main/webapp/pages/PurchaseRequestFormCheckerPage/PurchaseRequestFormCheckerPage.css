@@ -1,0 +1,131 @@
+.aio-p2p-detail-container {
+    max-width: 781px;
+    margin: auto;
+}
+
+.aio-p2p-detail-container2 {
+    width: 50%;
+}
+
+.aio-p2p-btn-upload {
+    color: #026CB6;
+    background: rgba(2, 108, 182, 0.16);
+    border-radius: 4px;
+}
+
+.aio-p2p-form-container {
+    position: relative;
+}
+
+.aio-p2p-icon-down {
+    position: absolute;
+    right: 18px;
+    top: 38px;
+}
+.aio-p2p-icon-date {
+    position: absolute;
+    right: 18px;
+    top: 10px;
+}
+
+/*FORM ERROR*/
+.aio-p2p-form-container .aio-p2p-error-message {
+		display: none;
+}
+.aio-p2p-form-container.form-error .aio-p2p-error-message {
+	display: block;
+	color: #FF5756;
+	font-size: 12px;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-input {
+    border-color: #FF5756;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-field > input {
+    border-color: #FF5756;
+}
+.form-input-error {
+    border: 1px solid #FF5756;
+}
+
+/*MODAL*/
+.aio-p2p-modal .dialog-heading {
+    color: #404143;
+}
+
+.top-spinner{
+    z-index: 9999;
+}
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+
+.aio-p2p-btn-outline {
+    border: 1px solid #026CB6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: white;
+    color: #026CB6;
+    padding: 10px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: initial;
+}
+
+.aio-p2p-linear{
+  display: flex !important;
+}
+
+.pdf-scroll{
+    height: 980px;
+    overflow: auto;
+}
+
+/*DATEPICKER*/
+.aio-date {
+    width: 100%;
+    max-width: 100%;
+}
+.aio-date .form-control.app-textbox {
+    background: #d8d8d8;
+}
+
+.aio-pr-notes {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: #BA0D2B;
+}
+
+.aio-container-save-detail{
+    background: #F5F5F5;
+    border: 1px solid #E1E4E7;
+    border-radius: 4px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.aio-p2p-form-field {
+    border-color: #FF5756;
+    background-color: #ffffff;
+}
+
+/*content and pdf scroll*/
+.aio-p2p-page-content {
+    height: calc(100% - 52px) !important;
+}
+
+.aio-p2p-page-content .aio-p2p-detail-container2,
+.aio-p2p-page-content .aio-ptp-pdf-viewer{
+    height: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+}
+
+.pdfobject-container { height: 35rem; border: 1rem solid rgba(0,0,0,.1); }

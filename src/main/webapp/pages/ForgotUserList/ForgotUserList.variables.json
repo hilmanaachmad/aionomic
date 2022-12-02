@@ -1,0 +1,405 @@
+{
+  "dvGetForgotUser" : {
+    "_id" : "wm-dvGetForgotUser-wm.LiveVariable-1639725469181",
+    "name" : "dvGetForgotUser",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TlMsForgotUser",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 10,
+    "designMaxResults" : 10,
+    "onSuccess" : "dvGetForgotUseronSuccess(variable, data, options)",
+    "inFlightBehavior" : "executeAll",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "AVM2",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "abId desc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "abId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ab_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abUsername",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_username",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 55,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abCompanyName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_company_name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 55,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abCompanyNpwp",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_company_npwp",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 55,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abCompanyEmail",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_company_email",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 55,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abKtp",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_ktp",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 25,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abStatus",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_status",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 15,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abPuon",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ab_puon",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 5,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abApprovalDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "ab_approval_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "abCreatedDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "ab_created_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TlMsForgotUser",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.avm2.TlMsForgotUser",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "abId" ]
+    },
+    "bindCount" : 4,
+    "tableName" : "tl_ms_forgot_user",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "abStatus",
+        "type" : "string",
+        "matchMode" : "exact",
+        "value" : "bind:Widgets.select3.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      }, {
+        "target" : "abCompanyName",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind:Widgets.searchCompany.datavalue",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.avm2.TlMsForgotUser"
+  },
+  "filterLocation" : {
+    "_id" : "wm-filterLocation-wm.Variable-1650587005293",
+    "name" : "filterLocation",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Head Office",
+      "dataValue" : "PHOF"
+    }, {
+      "name" : "Factory Sukabumi",
+      "dataValue" : "PSKB"
+    }, {
+      "name" : "Factory Kejayan",
+      "dataValue" : "PKJY"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "filterStatus" : {
+    "_id" : "wm-filterStatus-wm.Variable-1642144851242",
+    "name" : "filterStatus",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "New",
+      "dataValue" : "New"
+    }, {
+      "name" : "Approved",
+      "dataValue" : "Approved"
+    }, {
+      "name" : "Rejected",
+      "dataValue" : "Rejected"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "modelDataVendor" : {
+    "_id" : "wm-modelDataVendor-wm.Variable-1663548338759",
+    "name" : "modelDataVendor",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "modelNull" : {
+    "_id" : "wm-modelNull-wm.Variable-1651192267436",
+    "name" : "modelNull",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "null"
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "modelPageList" : {
+    "_id" : "wm-modelPageList-wm.Variable-1663551539584",
+    "name" : "modelPageList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : 1
+    },
+    "type" : "number",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "naAcctionSuccess" : {
+    "_id" : "wm-naAcctionSuccess-wm.NotificationVariable-1636969809468",
+    "name" : "naAcctionSuccess",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Action Success",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "sortirNumber" : {
+    "_id" : "wm-sortirNumber-wm.Variable-1642126661931",
+    "name" : "sortirNumber",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10 Rows",
+      "dataValue" : 10
+    }, {
+      "name" : "30 Rows",
+      "dataValue" : 30
+    }, {
+      "name" : "50 Rows",
+      "dataValue" : 50
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetDataVendor" : {
+    "_id" : "wm-svGetDataVendor-wm.ServiceVariable-1637649723576",
+    "name" : "svGetDataVendor",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetVendorDataForgotUserResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetVendorDataForgotUser",
+    "operationId" : "QueryExecutionController_executeGetVendorDataForgotUser",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "svGetDataVendoronSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetForgotUser" : {
+    "_id" : "wm-svGetForgotUser-wm.ServiceVariable-1636939787821",
+    "name" : "svGetForgotUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QgetForgotUserResponse",
+    "service" : "AVM2",
+    "operation" : "executeQGetForgotUser",
+    "operationId" : "QueryExecutionController_executeQGetForgotUser",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 10000,
+    "orderBy" : "abId desc",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svNotifyVendorForgotUser" : {
+    "_id" : "wm-svNotifyVendorForgotUser-wm.ServiceVariable-1637551515477",
+    "name" : "svNotifyVendorForgotUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "RequestBody",
+      "value" : "{\n    \"to\" : [\"driyadi@aio.co.id\"],\n    \"subject\": \"Notification from Admin Otsuka GO\",\n    \"text\": \"Test Body\",\n    \"cc\": null,\n    \"html\": null\n}",
+      "type" : "java.lang.String"
+    } ],
+    "type" : "svNotifyEmailVendor.RootResponse",
+    "service" : "svNotifyEmailVendor",
+    "operation" : "invoke",
+    "operationId" : "svNotifyEmailVendor_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svUpdateStatus" : {
+    "_id" : "wm-svUpdateStatus-wm.ServiceVariable-1636963236579",
+    "name" : "svUpdateStatus",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQUpdateStatusForgot",
+    "operationId" : "QueryExecutionController_executeQUpdateStatusForgot",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Widgets.ApproveForgotUser.close();Actions.naAcctionSuccess.invoke();svUpdateStatusonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

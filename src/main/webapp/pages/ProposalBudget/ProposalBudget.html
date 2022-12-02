@@ -1,0 +1,502 @@
+<wm-page name="mainpage" pagetitle="bind:appLocale.MENU_BUD_PROPOSAL_BUDGET" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="proposalBudget" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.MENU_BUD_PROPOSAL_BUDGET" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
+                        <wm-container name="background" backgroundcolor="#fff" conditionalstyle="bind:{
+    maxWidth: &quot;1200px&quot;,
+    minWidth: &quot;600px&quot;
+}">
+                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container">
+                                <wm-container name="container15">
+                                    <wm-layoutgrid name="layoutgrid2">
+                                        <wm-gridrow name="gridrow2">
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn5_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite2">
+                                                    <wm-container class="col-md-9" name="container15_1" width="100%">
+                                                        <wm-select name="selectSearchBy" dataset="bind:Variables.vmSearchCriteria.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY" on-change="selectSearchByChange($event, widget, newVal, oldVal)"></wm-select>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" padding="unset 16px unset unset">
+                                                <wm-composite name="composite3">
+                                                    <wm-container class="col-md-9" name="container16_1" width="100%">
+                                                        <wm-text name="searchValue" type="search" disabled="bind:Widgets.selectSearchBy.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" on-keyup="searchValueKeyup($event, widget)"
+                                                            show="bind:Widgets.selectSearchBy.datavalue === 7 ? false : Widgets.selectSearchBy.datavalue === 8 ? false : true" updateon="default"></wm-text>
+                                                        <wm-date placeholder="bind:appLocale.LANG_SELECT_DATE" datepattern="dd/MM/yyyy" name="date5" show="bind:Widgets.selectSearchBy.datavalue === 7 ? true : false" on-change="date5Change($event, widget, newVal, oldVal)"></wm-date>
+                                                        <wm-date placeholder="bind:appLocale.LANG_SELECT_DATE" datepattern="dd/MM/yyyy" name="date6" show="bind:Widgets.selectSearchBy.datavalue === 8 ? true : false" on-change="date6Change($event, widget, newVal, oldVal)"></wm-date>
+                                                    </wm-container>
+                                                </wm-composite>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-spinner show="false" name="spinner2" class="spinner-show" servicevariabletotrack="FileServiceDeleteFile,qdeleteAdditionalHistory,qDeleteTaskListByParamId"></wm-spinner>
+                                <wm-container name="container99_1" padding="unset unset 16px unset">
+                                    <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_PROPOSAL_BUDGET" type="button" name="buttonAdd" on-click="buttonAddClick($event, widget)" color="#fff" show="false"></wm-button>
+                                    <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_PROPOSAL_BUDGET" type="button" on-click="Actions.goToPage_ProposalBudgetForm.invoke()" color="#fff" name="button8_1" margin="unset unset unset 10px"></wm-button>
+                                </wm-container>
+                                <wm-layoutgrid name="layoutgridFilter">
+                                    <wm-gridrow name="gridrow8_1" padding="10px unset 25px unset">
+                                        <wm-gridcolumn columnwidth="9" name="gridcolumn22_1">
+                                            <wm-container backgroundcolor="#ffffff" name="container32" class="aio-p2p-border-filter">
+                                                <wm-layoutgrid name="layoutgrid5_1">
+                                                    <wm-gridrow name="gridrow11">
+                                                        <wm-gridcolumn columnwidth="9" name="gridcolumn39" padding="unset unset unset 13px">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_FILTER" fontweight="bold" name="label22"></wm-label>
+                                                            <wm-picture name="picturered" picturesource="resources/images/imagelists/filter-red.png" show="bind:Widgets.checkboxset3.datavalue.length > 0 ? true : Widgets.checkboxset2.datavalue.length > 0 ? true  : Widgets.checkboxset4.datavalue.length > 0 ? true : Widgets.checkboxset5.datavalue.length > 0 ? true  : Widgets.checkboxset6.datavalue.length > 0 ? true : Widgets.checkboxset7.datavalue.length > 0 ? true  : Widgets.date3.datavalue !== &quot;&quot; ? true:  Widgets.date2.datavalue !== &quot;&quot; ? true:  Widgets.text3.datavalue !== &quot;&quot; ? true : false"></wm-picture>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="3" name="gridcolumn19_2" horizontalalign="right" padding="unset 17px unset unset">
+                                                            <wm-picture name="picture11_1" picturesource="resources/images/logos/icon-filter-down3.png" show="bind:!Variables.varFilterShow.dataSet.dataValue" on-click="picture11_1Click($event, widget)" class="aio-p2p-clickable"></wm-picture>
+                                                            <wm-picture picturesource="resources/images/logos/icon-filter-up.png" name="picture12_1" on-click="picture12_1Click($event, widget)" show="bind:Variables.varFilterShow.dataSet.dataValue"
+                                                                class="aio-p2p-clickable"></wm-picture>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow12">
+                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn41">
+                                                            <wm-layoutgrid columns="4" name="layoutgrid3" show="bind:Variables.varFilterShow.dataSet.dataValue">
+                                                                <wm-gridrow name="gridrow5_1" padding="20px unset">
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                                                                        <wm-container margin="unset 5px unset 10px" name="container36" class="aio-ptp-dropdown" on-click="container36Click($event, widget)">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DOCUMENT_NUMBER" margin="5px unset unset unset" name="label19"></wm-label>
+                                                                            <wm-container width="100%" name="container42_1">
+                                                                                <wm-container name="container43_2">
+                                                                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_DOCUMENT_NUMBER" autocomplete="false" name="text5" on-click="text5Click($event, widget)" datavalue="bind:Widgets.checkbox1.datavalue === true ? &quot;All&quot; : Widgets.checkboxset2.datavalue.toString()"></wm-text>
+                                                                                    <wm-container name="container60_1" class="aio-p2p-icon-down" height="100%">
+                                                                                        <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" name="picture15"></wm-picture>
+                                                                                    </wm-container>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                            <wm-container name="container42_2" class="aio-ptp-dropdown-menu">
+                                                                                <wm-container class="aio-p2p-box-filter" width="100%" name="container41_1" show="true">
+                                                                                    <wm-checkbox caption="All" name="checkbox1" on-change="checkbox1Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox"></wm-checkbox>
+                                                                                    <wm-checkboxset name="checkboxset2" dataset="bind:Variables.varFilter.dataSet.documentNumber" datafield="All Fields" on-change="checkboxset2Change($event, widget, newVal, oldVal)"
+                                                                                        class="aio-p2p-max-height"></wm-checkboxset>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn16">
+                                                                        <wm-container margin="unset 5px" name="container37_1" class="aio-ptp-dropdown" on-click="container37_1Click($event, widget)">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PROJECT_NAME" margin="5px unset unset unset" name="label20_1"></wm-label>
+                                                                            <wm-container width="100%" name="container44_1">
+                                                                                <wm-container name="container45_1">
+                                                                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_PROJECT_NAME" autocomplete="false" on-click="text4Click($event, widget)" datavalue="bind:Widgets.checkbox3.datavalue === true ? &quot;All&quot; : Widgets.checkboxset3.datavalue.toString()"
+                                                                                        name="text4"></wm-text>
+                                                                                    <wm-container class="aio-p2p-icon-down" height="100%" name="container61">
+                                                                                        <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" name="picture19_1"></wm-picture>
+                                                                                    </wm-container>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                            <wm-container name="container46" class="aio-ptp-dropdown-menu">
+                                                                                <wm-container class="aio-p2p-box-filter" width="100%" show="true" name="container47">
+                                                                                    <wm-checkbox caption="All" on-change="checkbox3Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox" name="checkbox3"></wm-checkbox>
+                                                                                    <wm-checkboxset dataset="bind:Variables.varFilter.dataSet.projectName" datafield="All Fields" on-change="checkboxset3Change($event, widget, newVal, oldVal)"
+                                                                                        class="aio-p2p-max-height" name="checkboxset3"></wm-checkboxset>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn17">
+                                                                        <wm-container margin="unset 10px unset 5px" name="container38_1">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_YEAR" margin="5px unset unset unset" name="label21"></wm-label>
+                                                                            <wm-container class="col-md-9" width="100%" name="container39_1">
+                                                                                <wm-text placeholder="bind:appLocale.LANG_SELECT_YEAR" name="text3" autocomplete="false"></wm-text>
+                                                                                <wm-picture picturesource="resources/images/logos/date.png" class="aio-p2p-icon-date" name="picture10_2"></wm-picture>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow name="gridrow6" padding="unset unset 20px unset">
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn19">
+                                                                        <wm-container margin="unset 5px unset 10px" name="container43_1" class="aio-ptp-dropdown" on-click="container43_1Click($event, widget)">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_IO_NUMBER" margin="5px unset unset unset" name="label20"></wm-label>
+                                                                            <wm-container width="100%" name="container48">
+                                                                                <wm-container name="container49">
+                                                                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_IO_NUMBER" autocomplete="false" on-click="text6Click($event, widget)" datavalue="bind:Widgets.checkbox4.datavalue === true ? &quot;All&quot; : Widgets.checkboxset4.datavalue.toString()"
+                                                                                        name="text6"></wm-text>
+                                                                                    <wm-container class="aio-p2p-icon-down" height="100%" name="container62_1">
+                                                                                        <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" name="picture20_1"></wm-picture>
+                                                                                    </wm-container>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                            <wm-container name="container50_1" class="aio-ptp-dropdown-menu">
+                                                                                <wm-container class="aio-p2p-box-filter" width="100%" show="true" name="container51_1">
+                                                                                    <wm-checkbox caption="All" on-change="checkbox4Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox" name="checkbox4"></wm-checkbox>
+                                                                                    <wm-checkboxset dataset="bind:Variables.varFilter.dataSet.iONumber" datafield="All Fields" on-change="checkboxset4Change($event, widget, newVal, oldVal)"
+                                                                                        class="aio-p2p-max-height" name="checkboxset4"></wm-checkboxset>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn20">
+                                                                        <wm-container margin="unset 5px" name="container56_1" class="aio-ptp-dropdown" on-click="container56_1Click($event, widget)">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_IO_DESCRIPTION" margin="5px unset unset unset" name="label30"></wm-label>
+                                                                            <wm-container width="100%" name="container52_1">
+                                                                                <wm-container name="container53_1">
+                                                                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_IO_DESCRIPTION" autocomplete="false" on-click="text7Click($event, widget)" datavalue="bind:Widgets.checkbox5.datavalue === true ? &quot;All&quot; : Widgets.checkboxset5.datavalue.toString()"
+                                                                                        name="text7"></wm-text>
+                                                                                    <wm-container class="aio-p2p-icon-down" height="100%" name="container63_1">
+                                                                                        <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" name="picture21_1"></wm-picture>
+                                                                                    </wm-container>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                            <wm-container name="container54_1" class="aio-ptp-dropdown-menu">
+                                                                                <wm-container class="aio-p2p-box-filter" width="100%" show="true" name="container55_1">
+                                                                                    <wm-checkbox caption="All" on-change="checkbox5Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox" name="checkbox5"></wm-checkbox>
+                                                                                    <wm-checkboxset dataset="bind:Variables.varFilter.dataSet.iODescription" datafield="All Fields" on-change="checkboxset5Change($event, widget, newVal, oldVal)"
+                                                                                        class="aio-p2p-max-height" name="checkboxset5"></wm-checkboxset>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn21">
+                                                                        <wm-container margin="unset 5px" name="container72_1" class="aio-ptp-dropdown" on-click="container72_1Click($event, widget)">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_AMOUNT" margin="5px unset unset unset" name="label31"></wm-label>
+                                                                            <wm-container width="100%" name="container73">
+                                                                                <wm-container name="container74">
+                                                                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_CRITERIA" autocomplete="false" on-click="text8_1Click($event, widget)" datavalue="bind:Widgets.checkbox7.datavalue === true ? &quot;All&quot; : Widgets.checkboxset7.datavalue.toString()"
+                                                                                        name="text8_1"></wm-text>
+                                                                                    <wm-container class="aio-p2p-icon-down" height="100%" name="container75">
+                                                                                        <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" name="picture22_2"></wm-picture>
+                                                                                    </wm-container>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                            <wm-container name="container76" class="aio-ptp-dropdown-menu">
+                                                                                <wm-container class="aio-p2p-box-filter" width="100%" show="true" name="container77">
+                                                                                    <wm-checkbox caption="All" on-change="checkbox7Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox" name="checkbox7"></wm-checkbox>
+                                                                                    <wm-checkboxset dataset="bind:Variables.varFilter.dataSet.amount" datafield="All Fields" on-change="checkboxset7Change($event, widget, newVal, oldVal)" class="aio-p2p-max-height"
+                                                                                        name="checkboxset7"></wm-checkboxset>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow name="gridrow9" padding="unset unset 20px unset">
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn22_2">
+                                                                        <wm-container margin="unset 5px" name="container78">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_START_DATE" margin="5px unset unset unset" name="label32_1"></wm-label>
+                                                                            <wm-date name="date2" placeholder="bind:appLocale.LANG_SELECT_DATE" datepattern="dd/MM/yyyy"></wm-date>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn23_2">
+                                                                        <wm-container margin="unset 5px" name="container80">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_END_DATE" margin="5px unset unset unset" name="label33_1"></wm-label>
+                                                                            <wm-date name="date3" placeholder="bind:appLocale.LANG_SELECT_DATE" datepattern="dd/MM/yyyy"></wm-date>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn columnwidth="4" name="gridcolumn24_1">
+                                                                        <wm-container margin="unset 5px" name="container56_2" class="aio-ptp-dropdown" on-click="container56_2Click($event, widget)">
+                                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_STATUS" margin="5px unset unset unset" name="label23"></wm-label>
+                                                                            <wm-container width="100%" name="container57_1">
+                                                                                <wm-container name="container58">
+                                                                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_STATUS" autocomplete="false" on-click="text8Click($event, widget)" datavalue="bind:Widgets.checkbox6.datavalue === true ? &quot;All&quot; : Widgets.checkboxset6.datavalue.toString()"
+                                                                                        name="text8"></wm-text>
+                                                                                    <wm-container class="aio-p2p-icon-down" height="100%" name="container64_1">
+                                                                                        <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" name="picture22"></wm-picture>
+                                                                                    </wm-container>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                            <wm-container name="container59" class="aio-ptp-dropdown-menu">
+                                                                                <wm-container class="aio-p2p-box-filter" width="100%" show="true" name="container60">
+                                                                                    <wm-checkbox caption="All" on-change="checkbox6Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox" name="checkbox6"></wm-checkbox>
+                                                                                    <wm-checkboxset dataset="bind:Variables.varFilter.dataSet.status" datafield="All Fields" on-change="checkboxset6Change($event, widget, newVal, oldVal)" class="aio-p2p-max-height"
+                                                                                        name="checkboxset6"></wm-checkboxset>
+                                                                                </wm-container>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow name="gridrow10">
+                                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn26" horizontalalign="right" padding="unset unset 10px unset">
+                                                                        <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_APPLY" type="button" margin="unset 0.5em" color="#fff" name="button3" on-click="button3Click($event, widget)"></wm-button>
+                                                                        <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_CLEAR_FILTER" type="button" margin="unset 0.5em" name="button4" on-click="button4Click($event, widget)"></wm-button>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn23_1" horizontalalign="right">
+                                            <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="unset 0.5em" name="button2" iconurl="resources/images/logos/icon-export.png" on-click="button2Click($event, widget)"></wm-button>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                                <wm-container class="aio-p2p-scroll-x" name="container37">
+                                    <wm-container width="1800" name="container38">
+                                        <wm-container class="aio-p2p-table-header" padding="16px" name="container39">
+                                            <wm-container display="inline-block" width="3%" name="container40_1" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_NO" name="label22_1"></wm-label>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="12%" class="aio-p2p-clickable" on-click="container41Click($event, widget)" name="container41" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DOCUMENT_NUMBER" name="label23_1" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbDocumentNumber ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbDocumentNumber DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture10" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="11%" class="aio-p2p-clickable" on-click="container42Click($event, widget)" name="container42" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_PROJECT_NAME" name="label24" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbProjectName ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbProjectName DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture20_2" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="7%" class="aio-p2p-clickable" on-click="container43Click($event, widget)" name="container43" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_YEAR" name="label25" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbYear ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbYear DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture12" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="8%" class="aio-p2p-clickable" on-click="container44Click($event, widget)" name="container44" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_IO_NUMBER" name="label26" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbIoNumber ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbIoNumber DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture13" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="13%" class="aio-p2p-clickable" on-click="container45Click($event, widget)" name="container45" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_IO_DESCRIPTION" name="label27" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbIoDesc ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbIoDesc DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture14" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="11%" class="aio-p2p-clickable" on-click="container50Click($event, widget)" name="container50" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_AMOUNT_PROPOSAL_BUDGET" name="label32" class="aio-p2p-clickable"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbAmount ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbAmount DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    name="picture19" width="16" height="16"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="8%" class="aio-p2p-clickable" on-click="container65Click($event, widget)" name="container65" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_START_DATE" class="aio-p2p-clickable" name="label23_2"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbStartDate ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbStartDate DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16" height="16" name="picture19_2"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="8%" class="aio-p2p-clickable" on-click="container66Click($event, widget)" name="container66" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_END_DATE" class="aio-p2p-clickable" name="label24_1"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbEndDate ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbEndDate DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16" height="16" name="picture20_3"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="8%" class="aio-p2p-clickable" on-click="container67Click($event, widget)" name="container67" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_CREATED_DATE" class="aio-p2p-clickable" name="label25_1"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbCreatedAt ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbCreatedAt DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16" height="16" name="picture21_2"></wm-picture>
+                                            </wm-container>
+                                            <wm-container display="inline-block" width="6%" class="aio-p2p-clickable" on-click="container68Click($event, widget)" name="container68" horizontalalign="center">
+                                                <wm-label padding="unset 0.5em unset unset" caption="bind:appLocale.LANG_STATUS" class="aio-p2p-clickable" name="label26_1"></wm-label>
+                                                <wm-picture picturesource="bind:Variables.dbTblTProposalBudget.orderBy === &quot;pbStatus ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.dbTblTProposalBudget.orderBy === &quot;pbStatus DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
+                                                    width="16" height="16" name="picture22_1"></wm-picture>
+                                            </wm-container>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.dbTblTProposalBudget.dataSet" navigation="Basic"
+                                            on-beforedatarender="list3Beforedatarender(widget, $data)" name="list3" statehandler="none">
+                                            <wm-listtemplate layout="media" name="listtemplate3">
+                                                <wm-container padding="unset 8px" name="container51">
+                                                    <wm-container display="inline-block" width="3%" name="container52" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.nomor" name="label33"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="12%" name="container53" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbDocumentNumber" name="label34"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="11%" name="container54" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbProjectName" name="label35"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="7%" name="container55" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbYear" name="label36"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="8%" name="container56" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbIoNumber" name="label37"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="13%" name="container57" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbIoDesc" name="label38"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="11%" name="container62" horizontalalign="right">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbAmount  | toCurrency: ''" name="label43"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="8%" name="container69" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbStartDate | toDate: 'dd/MM/yyyy'" name="label27_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="8%" name="container70" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbEndDate | toDate: 'dd/MM/yyyy'" name="label28"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="8%" name="container71" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbCreatedAt | toDate: 'dd/MM/yyyy'" name="label29"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="6%" name="container72" horizontalalign="center">
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.list3.currentItem.pbStatus" name="label30_1"></wm-label>
+                                                    </wm-container>
+                                                    <wm-container display="inline-block" width="5%" horizontalalign="right" name="container63">
+                                                        <wm-picture picturesource="resources/images/logos/icon-eye.png" on-click="Actions.navigationForm.invoke()" margin="unset 8px unset unset" class="aio-p2p-clickable" name="buttonView" show="true"></wm-picture>
+                                                        <wm-picture picturesource="resources/images/logos/icon-trash.png" on-click="Widgets.dialogDelete.open()" class="aio-p2p-clickable" name="picture21" show="false"></wm-picture>
+                                                    </wm-container>
+                                                </wm-container>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container margin="25px unset unset unset" name="container64">
+                                    <wm-layoutgrid name="layoutgrid5">
+                                        <wm-gridrow name="gridrow5">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn23"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn24">
+                                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_SHOW" padding="2px unset" margin="8px unset unset unset" name="label44"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn25">
+                                                <wm-select name="select9" datavalue="10" dataset="bind:Variables.sortirNumber.dataSet" datafield="dataValue" displayfield="name" on-change="select9Change($event, widget, newVal, oldVal)"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-confirmdialog on-ok="dialogDeleteOk($event, widget)" on-cancel="Widgets.dialogDelete.close()" name="dialogDelete" title="bind:appLocale.LANG_DELETE_CONFIRMATION" message="bind:appLocale.LANG_ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_ACTION_CAN_T_BE_UNDONE_AND_THE_DATA_CAN_T_BE_RESTORED"
+        oktext="bind:appLocale.LANG_DELETE" class="aio-p2p-modal aio-p2p-modal-delete" canceltext="bind:appLocale.LANG_CANCEL" modal="false" iconclass=""></wm-confirmdialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:Variables.modelProposalBudget.dataSet.pbId ? appLocale[&quot;LANG_VIEW_PROPOSAL_BUDGET&quot;] : appLocale[&quot;LANG_ADD_PROPOSAL_BUDGET&quot;] " iconclass="" name="dialogItem"
+        class="aio-p2p-modal" on-opened="dialogItemOpened($event, widget)">
+        <wm-layoutgrid name="layoutgrid1">
+            <wm-gridrow name="gridrow2">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                    <wm-container backgroundcolor="#fff" margin="unset unset 24px unset" fontsize="14" name="container80_1">
+                        <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.ubCatId ? 'form-error' : ''" name="container81">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite6">
+                                <wm-label caption="bind:appLocale.LANG_BUDGET_YEAR_V" name="label42"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.pbYear ? 'form-error' : ''" name="container89">
+                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_YEAR" disabled="bind:Variables.modelProposalBudget.dataSet.pbId ? true : false" name="textYear" class="aio-p2p-form-input" datavalue="bind:Widgets.list3.selecteditem.pbYear"></wm-text>
+                                    <wm-picture class="aio-p2p-icon-date" picturesource="resources/images/logos/date.png" name="picture24"></wm-picture>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.pbYear" show="bind:Variables.vmErrorMessage.dataSet.pbYear" class="aio-p2p-error-message" name="label50"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container name="container105">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composites42">
+                                <wm-layoutgrid name="layoutgrid8">
+                                    <wm-gridrow name="gridrow12_1">
+                                        <wm-gridcolumn columnwidth="5" name="gridcolumn26_1">
+                                            <wm-label caption="bind:appLocale.LANG_START_DATE_V" name="label52"></wm-label>
+                                            <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.pbStartDate? 'form-error' : ''" name="container102_1">
+                                                <wm-date datepattern="dd/MM/yyyy" class="aio-p2p-form-field" datavalue="bind:Widgets.list3.selecteditem.pbStartDate" placeholder="bind:appLocale.LANG_SELECT_DATE" name="date8" disabled="bind:Variables.modelProposalBudget.dataSet.pbId ? true : false"
+                                                    on-change="date8Change($event, widget, newVal, oldVal)"></wm-date>
+                                                <wm-label caption="bind:Variables.vmErrorMessage.dataSet.pbStartDate" show="bind:Variables.vmErrorMessage.dataSet.pbStartDate" class="aio-p2p-error-message" name="label52_1"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="1" name="gridcolumn25_1" horizontalalign="center">
+                                            <wm-label caption="-" name="label48_1" margin="30px unset unset unset"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn29">
+                                            <wm-label caption="bind:appLocale.LANG_END_DATE_V" name="label53"></wm-label>
+                                            <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.pbEndDate? 'form-error' : ''" name="container101_1">
+                                                <wm-date name="date7" class="aio-p2p-form-field" datepattern="dd/MM/yyyy" datavalue="bind:Widgets.list3.selecteditem.pbEndDate" placeholder="bind:appLocale.LANG_SELECT_DATE" disabled="bind:Variables.modelProposalBudget.dataSet.pbId ? true : false"
+                                                    on-change="date7Change($event, widget, newVal, oldVal)"></wm-date>
+                                                <wm-label caption="bind:Variables.vmErrorMessage.dataSet.pbEndDate" show="bind:Variables.vmErrorMessage.dataSet.pbEndDate" class="aio-p2p-error-message" name="label50_1"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container name="container84">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite4">
+                                <wm-label caption="bind:appLocale.LANG_PROJECT_NAME_V" name="label38_1"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.pbProjectName ? 'form-error' : ''" name="container85">
+                                    <wm-text placeholder="bind:appLocale.LANG_SELECT_PROJECT_NAME" maxchars="100" type="text" class="aio-p2p-form-input" maxvalue="15" disabled="bind:Variables.modelProposalBudget.dataSet.pbId ? true : false" updateon="default"
+                                        name="textProjName" datavalue="bind:Widgets.list3.selecteditem.pbProjectName"></wm-text>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.pbProjectName" show="bind:Variables.vmErrorMessage.dataSet.pbProjectName" class="aio-p2p-error-message" name="label39"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container name="container86">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite5">
+                                <wm-label caption="bind:appLocale.LANG_AMOUNT_PROPOSAL_BUDGET_V" name="label40"></wm-label>
+                                <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.pbAmount ? 'form-error':''" name="container87">
+                                    <wm-text placeholder="bind:appLocale.LANG_ENTER_AMOUNT" maxchars="19" type="text" class="aio-p2p-form-input" maxvalue="15" disabled="bind:Variables.modelProposalBudget.dataSet.pbId ? true : false" updateon="default" on-change="textAmountChange($event, widget, newVal, oldVal)"
+                                        name="textAmount" datavalue="bind:Widgets.list3.selecteditem.pbAmount | toCurrency: ''" on-keyup="textAmountKeyup($event, widget)"></wm-text>
+                                    <wm-label caption="bind:Variables.vmErrorMessage.dataSet.pbAmount" show="bind:Variables.vmErrorMessage.dataSet.pbAmount" class="aio-p2p-error-message" name="label41"></wm-label>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.pbIoNumber ? 'form-error' : ''" name="container90">
+                            <wm-label caption="bind:appLocale.LANG_IO_NUMBER_V" name="label43_1"></wm-label>
+                            <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SEARCH_IO_NUMBER" dataset="bind:Variables.getIOBudgetHeader.dataSet" searchkey="ioNumber,ioName" displaylabel="bind:$[ioNumber] + ' - ' + $[ioName]"
+                                datafield="All Fields" class="aio-p2p-form-field" disabled="bind:Variables.modelProposalBudget.dataSet.pbId ? true : false" name="search2" on-select="search2Select($event, widget, selectedValue)" datavalue="bind:{&quot;ioNumber&quot;: Widgets.list3.selecteditem.pbIoNumber}"></wm-search>
+                            <wm-label caption="bind:Variables.vmErrorMessage.dataSet.pbIoNumber" show="bind:Variables.vmErrorMessage.dataSet.pbIoNumber" class="aio-p2p-error-message" name="label44_1"></wm-label>
+                        </wm-container>
+                        <wm-container name="container91">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite7">
+                                <wm-label caption="bind:appLocale.LANG_IO_DESCRIPTION" name="label45"></wm-label>
+                                <wm-container class="col-md-9" width="100%" name="container92">
+                                    <wm-text placeholder="" disabled="true" datavalue="bind:Widgets.list3.selecteditem.pbIoDesc? Widgets.list3.selecteditem.pbIoDesc : Widgets.search2.datavalue.ioName" name="text12"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container name="container93">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite8">
+                                <wm-label caption="bind:appLocale.LABEL_AVAILABLE_BUDGET" name="label46"></wm-label>
+                                <wm-container class="col-md-9" width="100%" name="container94">
+                                    <wm-text placeholder="" disabled="true" datavalue="bind:(Variables.modelProposalBudget.dataSet.pbAvailableBudget? Variables.modelProposalBudget.dataSet.pbAvailableBudget : Widgets.list3.selecteditem.pbAvailableBudget) | toCurrency: ''"
+                                        name="textAvailableBudget"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
+                        <wm-container horizontalalign="left" name="container97">
+                            <wm-label caption="bind:appLocale.LANG_ATTACHMENT_V" name="label48"></wm-label>
+                            <wm-container name="container98" show="true">
+                                <wm-container display="flex" class="aio-p2p-upload-container" name="container99" show="bind:Variables.modelProposalBudget.dataSet.pbId ? false : true">
+                                    <wm-button class="btn-default aio-p2p-btn-upload" caption="bind:appLocale.LANG_SELECT_FILE" type="button" iconurl="resources/images/logos/icon-file.png" on-click="button6Click($event, widget)" name="button6"></wm-button>
+                                </wm-container>
+                                <wm-container margin="5px unset unset unset" name="container101">
+                                    <wm-layoutgrid name="layoutgrid7">
+                                        <wm-gridrow name="gridrow11_1">
+                                            <wm-gridcolumn columnwidth="11" horizontalalign="left" name="gridcolumn23_3">
+                                                <wm-label caption="bind:appLocale.LANG_FILE_FORMAT" color="#666666" name="label49" show="bind:Variables.modelProposalBudget.dataSet.pbId ? false : true"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow13">
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn28" padding="15px unset unset unset">
+                                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Action List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" statehandler="URL" name="varListFileList1" dataset="bind:Variables.varListFile.dataSet"
+                                                    navigation="None" nodatamessage="">
+                                                    <wm-listtemplate layout="inline" name="listtemplate2">
+                                                        <wm-layoutgrid name="layoutgrid9" show="true">
+                                                            <wm-gridrow name="gridrow14">
+                                                                <wm-gridcolumn columnwidth="10" name="gridcolumn29_1">
+                                                                    <wm-label caption="bind:Widgets.varListFileList1.currentItem.name" name="label54" class="aio-p2p-clickable" on-click="label54Click($event, widget, item, currentItemWidgets)" color="#404143"></wm-label>
+                                                                </wm-gridcolumn>
+                                                                <wm-gridcolumn columnwidth="2" name="gridcolumn30" horizontalalign="right">
+                                                                    <wm-picture picturesource="resources/images/logos/icon-trash.png" on-click="picture25Click($event, widget, item, currentItemWidgets)" class="aio-p2p-clickable" show="bind:Variables.modelProposalBudget.dataSet.pbId ? false : true"
+                                                                        name="picture25"></wm-picture>
+                                                                </wm-gridcolumn>
+                                                            </wm-gridrow>
+                                                        </wm-layoutgrid>
+                                                    </wm-listtemplate>
+                                                </wm-list>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                            <wm-fileupload on-select="fileupload1Select($event, widget, selectedFiles)" caption="Select File" iconclass="wi wi-file-text" contenttype=".jpeg .jpg .pdf .docx .doc .xlsx .xls" show="false" name="fileupload1"></wm-fileupload>
+                        </wm-container>
+                        <wm-container name="container103" color="#BA0D2B" margin="24px unset unset unset">
+                            <wm-composite captionposition="top" horizontalalign="left" name="composite10">
+                                <wm-label caption="bind:appLocale[&quot;LANG_NOTES&quot;]+&quot;:&quot;" name="label53_1" class="col-md-12"></wm-label>
+                                <wm-label caption="bind:appLocale.LANG_1_AVAILABLE_BUDGET_AMOUNT_BASED_ON_LAST_POSITION_IT_MIGHT_BE_CHANGED_PLEASE_MONITOR_IO_USAGE_REGULARLY" class="col-md-12" name="label54_1"></wm-label>
+                                <wm-label caption="bind:appLocale.LANG_2_IF_AVAILABLE_BUDGET_BELOW_PROPOSAL_BUDGET_PLEASE_SUBMIT_RECLASS_OR_ADDITIONAL_BUDGET_FORM" class="col-md-12" name="label55"></wm-label>
+                            </wm-composite>
+                        </wm-container>
+                    </wm-container>
+                    <wm-label padding="unset 0.5em" name="label60" caption="bind:appLocale.LANG_ISREQUIRED" fontweight="bold" fontstyle="italic"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-spinner show="false" name="spinner2_1" deferload="false"></wm-spinner>
+        <wm-dialogactions name="dialogactions2">
+            <wm-button class="btn-outline" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button8" disabled="bind:Variables.varLoading.dataSet.loadingSubmit"></wm-button>
+            <wm-button class="btn-primary" caption="bind:appLocale.LANG_SAVE" on-click="button11Click($event, widget)" name="button11" margin="unset unset unset 10px" disabled="bind:Variables.varLoading.dataSet.loadingSubmit" show="bind:Variables.modelProposalBudget.dataSet.pbId ? false : true"></wm-button>
+        </wm-dialogactions>
+    </wm-dialog>
+</wm-page>

@@ -1,0 +1,71 @@
+{
+  "FileServiceUploadFile" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1607932132411",
+    "name" : "FileServiceUploadFile",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload1.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onResult" : "FileServiceUploadFileonResult(variable, data, options)",
+    "onProgress" : "FileServiceUploadFileonProgress(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File"
+  },
+  "vmUploadData" : {
+    "_id" : "wm-vmUploadData-wm.Variable-1607934078712",
+    "name" : "vmUploadData",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "fileName",
+      "value" : "bind:pageParams.fileName"
+    }, {
+      "target" : "fileUrl",
+      "value" : "bind:pageParams.fileUrl"
+    }, {
+      "target" : "fileSize",
+      "value" : "bind:pageParams.fileSize"
+    } ],
+    "dataSet" : {
+      "fileName" : null,
+      "fileUrl" : null,
+      "fileSize" : null
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmUploadProgress" : {
+    "_id" : "wm-vmUploadProgress-wm.Variable-1607933103435",
+    "name" : "vmUploadProgress",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : 0
+    },
+    "type" : "number",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

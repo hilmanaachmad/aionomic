@@ -1,0 +1,403 @@
+{
+  "dbTblMUserData" : {
+    "_id" : "wm-dbTblMUserData-wm.LiveVariable-1608081188209",
+    "name" : "dbTblMUserData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblMUserData",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeAll",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "udatId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "udatId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "udat_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatUsername",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "udat_username",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatProfilePic",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "udat_profile_pic",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatLastLogin",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "udat_last_login",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatLastChangePass",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "udat_last_change_pass",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatLastAccess",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "udat_last_access",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatInboxLastSeen",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "udat_inbox_last_seen",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "udatNotificationLastSeen",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "udat_notification_last_seen",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblMUserData",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblMUserData",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "udatId" ]
+    },
+    "tableName" : "tbl_m_user_data",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "udatUsername",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "bind: App.Variables.loggedInUserData.dataSet.username",
+        "required" : false,
+        "secondvalue" : "",
+        "isFirst" : true
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblMUserData"
+  },
+  "FileServiceDeleteFile" : {
+    "_id" : "wm-FileServiceDeleteFile-wm.ServiceVariable-1614752466615",
+    "name" : "FileServiceDeleteFile",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "boolean",
+    "service" : "FileService",
+    "operation" : "deleteFile",
+    "operationId" : "FileController_deleteFile",
+    "operationType" : "delete",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "File"
+  },
+  "FileServiceUploadFile" : {
+    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1610016029923",
+    "name" : "FileServiceUploadFile",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : true,
+      "target" : "files",
+      "value" : "bind:Widgets.fileupload1.selectedFiles",
+      "type" : "file"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.fileservice.FileService.FileUploadResponse",
+    "service" : "FileService",
+    "operation" : "uploadFile",
+    "operationId" : "FileController_uploadFile",
+    "operationType" : "post",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "FileServiceUploadFileonSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "File",
+    "spinnerContext" : "PageContent",
+    "spinnerMessage" : "Uploading file ...."
+  },
+  "loginError" : {
+    "_id" : "wm-loginError-wm.NotificationVariable-1607995703112",
+    "name" : "loginError",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "page",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom left",
+      "type" : "string"
+    } ],
+    "operation" : "toast",
+    "dataSet" : [ ]
+  },
+  "notificationAction1" : {
+    "_id" : "wm-notificationAction1-wm.NotificationVariable-1610017205783",
+    "name" : "notificationAction1",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "Success set profile picture",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "7000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "qChangePassEmpl" : {
+    "_id" : "wm-qChangePassEmpl-wm.ServiceVariable-1607999613825",
+    "name" : "qChangePassEmpl",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "aio_xspeed_user",
+    "operation" : "executeQChangePassEmpl",
+    "operationId" : "QueryExecutionController_executeQChangePassEmpl",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "qChangePasswordVen" : {
+    "_id" : "wm-qChangePasswordVen-wm.ServiceVariable-1608008024339",
+    "name" : "qChangePasswordVen",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQChangePasswordVen",
+    "operationId" : "QueryExecutionController_executeQChangePasswordVen",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "qCheckUserNikPass" : {
+    "_id" : "wm-qCheckUserNikPass-wm.ServiceVariable-1607994087812",
+    "name" : "qCheckUserNikPass",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.aio_xspeed_user.models.query.QcheckUserNikPassResponse",
+    "service" : "aio_xspeed_user",
+    "operation" : "executeQCheckUserNikPass",
+    "operationId" : "QueryExecutionController_executeQCheckUserNikPass",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "qCheckUserVendor" : {
+    "_id" : "wm-qCheckUserVendor-wm.ServiceVariable-1608007977093",
+    "name" : "qCheckUserVendor",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.QcheckUserVendorResponse",
+    "service" : "AVM2",
+    "operation" : "executeQCheckUserVendor",
+    "operationId" : "QueryExecutionController_executeQCheckUserVendor",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vdbqSetProfilePic" : {
+    "_id" : "wm-vdbqSetProfilePic-wm.ServiceVariable-1610015999029",
+    "name" : "vdbqSetProfilePic",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "username",
+      "value" : "bind:Variables.loggedInUserData.dataSet.username",
+      "type" : "string"
+    }, {
+      "target" : "imageUrl",
+      "value" : "bind:Variables.FileServiceUploadFile.dataSet.path",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "aio_ptp",
+    "operation" : "executeSetUserProfilePic",
+    "operationId" : "QueryExecutionController_executeSetUserProfilePic",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onResult" : "vdbqSetProfilePiconResult(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "vmErrorMessages" : {
+    "_id" : "wm-vmErrorMessages-wm.Variable-1606695126237",
+    "name" : "vmErrorMessages",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "userPassword" : "",
+      "newPassword" : "",
+      "confirmPassword" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "vmPassword" : {
+    "_id" : "wm-vmPassword-wm.Variable-1605841038633",
+    "name" : "vmPassword",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "userPassword",
+      "value" : "bind:Widgets.currentPassword.datavalue"
+    }, {
+      "target" : "newPassword",
+      "value" : "bind:Widgets.newPassword.datavalue"
+    }, {
+      "target" : "confirmPassword",
+      "value" : "bind:Widgets.confirmPassword.datavalue"
+    } ],
+    "dataSet" : {
+      "userPassword" : "",
+      "newPassword" : "",
+      "confirmPassword" : ""
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  }
+}

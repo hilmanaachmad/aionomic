@@ -1,0 +1,338 @@
+.wm-app {
+    font-family: Inter;
+    color: #404143;
+}
+
+.wm-app label {
+    font-weight: 400;
+}
+
+.aio-p2p-header {
+    font-weight: 600 !important;
+    color: #000000;
+}
+
+.aio-p2p-btn-primary {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.aio-p2p-btn-outline {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.wm-app .form-control,
+.wm-app .form-group+.form-control {
+    border: 1px solid #CBD5E0;
+    border-radius: 3px;
+    height: 41px;
+}
+
+.wm-app .form-control,
+.wm-app .app-search.dropdown-menu {
+    color: #333 !important;
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.wm-app .app-search.dropdown-menu span {
+    vertical-align: middle;
+    font-size: 15px;
+    line-height: normal;
+}
+
+.wm-app .app-search.dropdown-menu {
+    box-shadow: 5px 5px 15px rgba(100, 100, 100, .3);
+}
+
+.wm-app .app-serach.dropdown-menu li.active a,
+.wm-app .app-serach.dropdown-menu li a:hover {
+    background-color: #688da7 !important;
+}
+
+.wm-app .app-select {
+    background: white;
+}
+
+.wm-app .app-select-wrapper::after {
+    border: 1px solid #000000;
+    border-right: 0;
+    border-top: 0;
+    background: transparent;
+    /*background: white;*/
+}
+
+.app-content-row {
+    padding: 0px !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    overflow: auto !important;
+}
+
+.app-content-column {
+    padding: 0px !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    overflow: auto !important;
+    display: block !important;
+}
+
+.aio-p2p-header-container {
+    top: 0px;
+    display: block;
+    background: none;
+    /*z-index: 10;*/
+    min-height: 30px;
+    font-family: Inter;
+}
+
+.aio-p2p-main-container {
+    min-height: 100%;
+    width: 100%;
+    background: #F6F7F8;
+    display: flex;
+    flex-direction: row;
+}
+
+.aio-p2p-main-container .aio-p2p-sidebar-container {
+    flex: none;
+    width: 300px;
+    background: white !important;
+    height: 100vh;
+    /*background: #F6F7F8;*/
+    overflow: hidden;
+    /*height: 100vh;*/
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container {
+    flex: 1;
+    overflow: auto;
+    height: 100vh;
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-current-time-indicator {
+    float: right;
+    line-height: 20px;
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    width: 100%;
+    height: calc(100% - 106px);
+    float: none;
+    margin: auto !important;
+    overflow: auto;
+}
+
+.aio-p2p-sidebar-container+.aio-p2p-page-content-container .aio-p2p-page-content {
+    margin-left: 0px;
+}
+
+.aio-p2p-footer-container {
+    background: white;
+    display: none;
+    min-height: 30px;
+    box-shadow: 0px -1px 8px rgba(0, 0, 0, 0.05);
+}
+
+.aio-p2p-clickable {
+    cursor: pointer;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.global-spinner {
+    /*background-color: rgba(255, 255, 255, .5) !important;*/
+    background-color: white !important;
+    padding-top: 50vh;
+    top: -65px;
+    bottom: 0px;
+    height: auto;
+    z-index: 9999 !important;
+}
+
+.global-spinner::after {
+    content: "Loading page";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.24px;
+    /*margin-top: 50vh;*/
+    /*transform: translateX(-50%);*/
+    display: block;
+    /*float: none;*/
+    /*margin: 0px auto;*/
+    /*margin-left: 50vw;*/
+    margin: 0px;
+    margin-left: -8px;
+    padding: 0px;
+    /*text-align: left;*/
+}
+
+.global-spinner::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 5px solid #026CB6;
+    border-top-color: #eaeaea;
+    margin: auto;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    /*transform: translateY(-75px);*/
+    display: block;
+    animation: spin 1s linear infinite;
+    float: none;
+}
+
+.global-spinner .fa {
+    display: none !important;
+    font-size: 16pt;
+}
+
+.spinner-show {
+    z-index: 9999 !important;
+}
+
+
+/*table pagination*/
+
+.wm-app .app-datanavigator .pagination.basic li a,
+.wm-app .app-datanavigator .pagination.basic li:first-child a,
+.wm-app .app-datanavigator .pagination.basic li:last-child a {
+    background: #FFFFFF;
+    font-weight: 400 !important;
+    border: 1px solid #E1E4E7 !important;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 36px;
+    text-align: center;
+    color: #8D99A6;
+    margin: 4px;
+    width: 36px;
+    height: 36px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+.wm-app .app-datanavigator .pagination.basic li.active a {
+    background: #026CB6;
+}
+
+.wm-app .app-datanavigator .pagination.basic li:first-child a,
+.wm-app .app-datanavigator .pagination.basic li:last-child a {
+    text-indent: -1000em;
+    position: relative;
+    margin: 4px 12px;
+}
+
+.wm-app .app-datanavigator .pagination.basic li:first-child a {
+    margin-left: 0px;
+}
+
+.wm-app .app-datanavigator .pagination.basic li:first-child a:before,
+.wm-app .app-datanavigator .pagination.basic li:last-child a:before {
+    position: absolute;
+    left: 0px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    display: block;
+    text-indent: 0px;
+}
+
+.wm-app .panel-footer {
+    padding: 0px;
+}
+
+
+/* modal dialog */
+
+.modal-backdrop {
+    opacity: 1;
+    background: rgba(51, 51, 51, 0.7) !important;
+}
+
+.aio-p2p-modal .modal-content {
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.aio-p2p-modal .modal-content .modal-header {
+    border-bottom: 1px solid #CBD5E0;
+    padding: 16px 24px;
+}
+
+.aio-p2p-modal .modal-content .modal-header .modal-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 17px;
+    color: #404143;
+}
+
+.aio-p2p-modal .modal-content .modal-body {
+    padding: 24px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 137.5%;
+    letter-spacing: 0.25px;
+    color: #404143;
+}
+
+.aio-p2p-modal .modal-content .modal-footer {
+    padding: 24px;
+    padding-top: 0px;
+}
+
+.aio-p2p-modal .modal-content .modal-footer button {
+    padding: 9px 16px;
+    width: 124px;
+    height: auto;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+
+/* dialog delete */
+
+.aio-p2p-modal.aio-p2p-modal-delete .btn.ok-action {
+    background: #FF5756;
+    border-width: 0px;
+    color: white;
+}
+
+.aio-p2p-modal.aio-p2p-modal-delete .btn.cancel-action {
+    background: #F6F7F8;
+    border-width: 0px;
+    color: #97A7AD;
+}
+
+.bottom-right {
+    width: 150px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+}

@@ -1,0 +1,740 @@
+{
+  "DBAnnouncement" : {
+    "_id" : "wm-DBAnnouncement-wm.LiveVariable-1661308762973",
+    "name" : "DBAnnouncement",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTAnnouncement",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "name",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "name",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "startDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "start_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "endDate",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "end_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "isValid",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "is_valid",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "page",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "page",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "content",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "content",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "type",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "type",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "_desc",
+        "type" : "text",
+        "fullyQualifiedType" : "text",
+        "columnName" : "desc",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 65535,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "TblTAnnouncement",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTAnnouncement",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "tableName" : "tbl_t_announcement",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTAnnouncement"
+  },
+  "goToLoadingScreen" : {
+    "_id" : "wm-goToLoadingScreen-wm.NavigationVariable-1606901307639",
+    "name" : "goToLoadingScreen",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "AppLoadingScreen",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToMainPage" : {
+    "_id" : "wm-goToMainPage-wm.NavigationVariable-1606899624593",
+    "name" : "goToMainPage",
+    "owner" : "Page",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Main",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "loginAction" : {
+    "_id" : "wm-loginAction-wm.LoginVariable-1606118426822",
+    "name" : "loginAction",
+    "owner" : "Page",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ {
+      "target" : "j_username",
+      "value" : "bind:Widgets.UsernameInp.datavalue.split(\" \").join(\"_\")"
+    }, {
+      "target" : "j_password",
+      "value" : "bind:Widgets.passwordInp.datavalue"
+    } ],
+    "dataSet" : {
+      "j_username" : "",
+      "j_password" : "",
+      "j_rememberme" : false
+    },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "onSuccess" : "loginActiononSuccess(variable, data, options)",
+    "onError" : "loginActiononError(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : false
+  },
+  "loginError" : {
+    "_id" : "wm-logginError-wm.NotificationVariable-1606899704169",
+    "name" : "loginError",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "page",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "0",
+      "type" : "number"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom left",
+      "type" : "string"
+    } ],
+    "operation" : "toast",
+    "dataSet" : [ ]
+  },
+  "ModelAnnouncement" : {
+    "_id" : "wm-ModelAnnouncement-wm.Variable-1661309800059",
+    "name" : "ModelAnnouncement",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ ],
+    "type" : "entry",
+    "isList" : true,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "modelGeneral" : {
+    "_id" : "wm-modelGeneral-wm.Variable-1636526722799",
+    "name" : "modelGeneral",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "npwpNumber" : null
+    },
+    "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "naAddSuccess" : {
+    "_id" : "wm-naAddSuccess-wm.NotificationVariable-1636526940121",
+    "name" : "naAddSuccess",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_DATA_ADD_SUCCESS",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naKtpMismatch" : {
+    "_id" : "wm-naKtpMismatch-wm.NotificationVariable-1638154068827",
+    "name" : "naKtpMismatch",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_KTP",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "naNpwpMismatch" : {
+    "_id" : "wm-naNpwpMismatch-wm.NotificationVariable-1638255016048",
+    "name" : "naNpwpMismatch",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "bind:appLocale.LANG_NPWP_MISMATCH",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "4000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "top right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "svGetDataVendor" : {
+    "_id" : "wm-svGetDataVendor-wm.LiveVariable-1642554930132",
+    "name" : "svGetDataVendor",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "VVendor",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "AVM2",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "vendorCode asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "vendorCode",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "VendorCode",
+        "isPrimaryKey" : true,
+        "notNull" : false,
+        "length" : 10,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "vendorName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "VendorName",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 140,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "email",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Email",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "add1",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ADD1",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 60,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "add2",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ADD2",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 40,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "add3",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "ADD3",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 40,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "city",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "City",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 35,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "groupVendor",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "GroupVendor",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 4,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "title",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Title",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 15,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "npwp",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "npwp",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 30,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "region",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Region",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "country",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Country",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "email1",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Email1",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "email2",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Email2",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "telephone",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "Telephone",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "mobilePhone",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "MobilePhone",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 20,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "directorName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "DirectorName",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 55,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      } ],
+      "entityName" : "VVendor",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.avm2.VVendor",
+      "tableType" : "VIEW",
+      "primaryFields" : [ "vendorCode" ]
+    },
+    "tableName" : "v_vendor",
+    "tableType" : "VIEW",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.avm2.VVendor"
+  },
+  "svGetDataVendorByName" : {
+    "_id" : "wm-svGetDataVendorByName-wm.ServiceVariable-1645754925505",
+    "name" : "svGetDataVendorByName",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "vendorName",
+      "value" : "bind:Widgets.sCompanyName.query",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetVendorDataByNamesResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetVendorDataByNames",
+    "operationId" : "QueryExecutionController_executeGetVendorDataByNames",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataVendorByNames" : {
+    "_id" : "wm-svGetDataVendorByName-wm.ServiceVariable-1638150927405",
+    "name" : "svGetDataVendorByNames",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "vendorName",
+      "value" : "bind:Widgets.sCompanyName.query",
+      "type" : "string"
+    } ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetVendroDataByNameResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetVendroDataByName",
+    "operationId" : "QueryExecutionController_executeGetVendroDataByName",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetDataVendorUme" : {
+    "_id" : "wm-svGetDataVendorUme-wm.ServiceVariable-1630913246224",
+    "name" : "svGetDataVendorUme",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "id.co.aio.procure_to_pay.avm2.models.query.GetVendorUmeResponse",
+    "service" : "AVM2",
+    "operation" : "executeGetVendorUme",
+    "operationId" : "QueryExecutionController_executeGetVendorUme",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svInsertForgotUser" : {
+    "_id" : "wm-svInsertForgotUser-wm.ServiceVariable-1636525848394",
+    "name" : "svInsertForgotUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "ktp",
+      "value" : "bind:Widgets.citizenId.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "companyName",
+      "value" : "bind:Widgets.sCompanyName.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "companyNpwp",
+      "value" : "bind:Variables.modelGeneral.dataSet.npwpNumber",
+      "type" : "string"
+    }, {
+      "target" : "companyEmail",
+      "value" : "bind:Widgets.companyEmail.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "userName",
+      "value" : "bind:Widgets.userName.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "location",
+      "value" : "bind:(Variables.svGetDataVendorByName.dataSet[0].puon == null ? \"PHOF\" : Variables.svGetDataVendorByName.dataSet[0].puon)",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "AVM2",
+    "operation" : "executeQInsertForgotUser",
+    "operationId" : "QueryExecutionController_executeQInsertForgotUser",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "Actions.naAddSuccess.invoke();Widgets.forgot_user_form.close();svInsertForgotUseronSuccess(variable, data, options)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svNotifyAdminForgotUser" : {
+    "_id" : "wm-svNotifyAdminForgotUser-wm.ServiceVariable-1637313893454",
+    "name" : "svNotifyAdminForgotUser",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "isList" : false,
+      "target" : "RequestBody",
+      "value" : "{\n    \"to\" : [\"driyadi@aio.co.id\"],\n    \"subject\": \"Notification from Admin Otsuka GO\",\n    \"text\": \"Test Body\",\n    \"cc\": null,\n    \"html\": null\n}",
+      "type" : "svNotifyEmailVendor.RootRequest"
+    } ],
+    "type" : "svNotifyEmailVendor.RootResponse",
+    "service" : "svNotifyEmailVendor",
+    "operation" : "invoke",
+    "operationId" : "svNotifyEmailVendor_RestServiceVirtualController-invoke",
+    "operationType" : "post",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

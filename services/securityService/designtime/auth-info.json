@@ -1,0 +1,65 @@
+{
+  "enforceSecurity" : true,
+  "loginConfig" : {
+    "type" : "PAGE",
+    "pageName" : "LoginAIO",
+    "cookieMaxAge" : -1,
+    "sessionTimeout" : {
+      "type" : "PAGE",
+      "pageName" : "LoginAIO",
+      "timeoutValue" : 30
+    },
+    "sessionConcurrencyConfig" : {
+      "maxSessionsAllowed" : -1
+    }
+  },
+  "rememberMeConfig" : {
+    "enabled" : false,
+    "tokenValiditySeconds" : 1296000
+  },
+  "tokenAuthConfig" : {
+    "enabled" : true,
+    "parameter" : "WM_AUTH_TOKEN",
+    "tokenValiditySeconds" : 1800
+  },
+  "csrfConfig" : {
+    "enforceCsrfSecurity" : true,
+    "headerName" : "X-WM-XSRF-TOKEN"
+  },
+  "sessionPersistenceConfig" : {
+    "enabledType" : "JDBC",
+    "config" : {
+      "REDIS" : {
+        "hostName" : "",
+        "port" : "",
+        "database" : "0",
+        "password" : "7b6a43524a78700d662158",
+        "type" : "REDIS"
+      },
+      "JDBC" : {
+        "serviceName" : "aio_ptp",
+        "type" : "JDBC"
+      }
+    }
+  },
+  "authProviders" : {
+    "DEMO" : {
+      "enabled" : false,
+      "users" : [ {
+        "userid" : "user",
+        "password" : "user",
+        "roles" : [ "user" ]
+      }, {
+        "userid" : "admin",
+        "password" : "admin",
+        "roles" : [ "admin" ]
+      } ],
+      "type" : "DEMO"
+    },
+    "CUSTOM" : {
+      "enabled" : true,
+      "fqCustomAuthenticationManagerClassName" : "AIOPtpLogin",
+      "type" : "CUSTOM"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+.app-container {
+    position: relative;
+    /*border-radius: 5px;*/
+}
+
+.aio-p2p-table-header {
+    background: #F6F7F8;
+}
+
+.aio-p2p-table-header .app-label{
+    font-weight: 500 !important;
+}
+
+.aio-ptp-total-box{
+    border-radius: 0;
+    padding-top: 10px;
+    box-shadow: 0px -2px 6px rgb(218 218 218);
+}
+
+.aio-p2p-nav-tab .nav-tabs {
+    border-bottom: none;
+}
+
+.aio-p2p-nav-tab .nav-tabs > li {
+    padding: 12px 24px 0 24px;
+}
+
+.aio-p2p-nav-tab .nav-tabs > li > a {
+    padding: 12px 4px;
+}
+
+.aio-p2p-grid-container {
+    padding: 0 24px;
+}
+
+.aio-p2p-grid-container .app-grid-column {
+    padding-right: 24px;
+}
+
+.aio-p2p-btn-primary {
+    padding: 10px 12px;
+    background: #026CB6;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    color: white;
+    text-transform: initial;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.aio-p2p-btn-primary:hover, .aio-p2p-btn-primary:focus {
+    color: white;
+}
+
+.aio-p2p-btn-outline {
+    border: 1px solid #026CB6;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: white;
+    color: #026CB6;
+    padding: 10px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: initial;
+}
+
+.aio-p2p-field-input {
+    position: relative;
+}
+
+.aio-p2p-field-input .aio-p2p-icon-date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.aio-p2p-field-input .aio-p2p-icon-down {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.aio-p2p-input-date {
+    width: 100%;
+    max-width: 100%;
+}
+
+.app-icon.wi-calendar {
+    color: #BDBDBD;
+}
+
+.aio-p2p-box-filter{
+    background: #FFFFFF;
+    border: 1px solid #E1E4E7;
+    box-sizing: border-box;
+    border-radius: 3px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    z-index: 99;
+    box-shadow: 2px 2px 20px;
+}
+
+.aio-p2p-all-checkbox{
+    background-color: #026CB6;
+    color: #FFF;
+}
+
+.wm-app .radio, .wm-app .checkbox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.wm-app .checkbox .caption:before {
+    border-radius: 6px;
+    background-color: #E5F1FF;
+    border: 1px #ccc #E5F1FF;
+}
+
+.wm-app .checkbox input:checked + .caption:before {
+    -moz-box-shadow: inset 0 0 0 13px #E5F1FF;
+    -webkit-box-shadow: inset 0 0 0 13px #E5F1FF;
+    box-shadow: inset 0 0 0 13px #E5F1FF;
+    background-color: #F7F8FA;
+    border-color: #E5F1FF;
+    border-top-style: none;
+    border-right-style: none;
+    padding: 0 1px;
+    color: #026CB6;
+    font-weight: bold;
+    font-family: wavicon;
+    content: "\f1cf";
+    text-shadow: 1px 1px 1px #E5F1FF;
+}
+
+.checkbox label, .radio label{
+    font-size: 14px;
+}
+
+/*::-webkit-scrollbar {*/
+/*    width: 12px;*/
+/*}*/
+ 
+/*::-webkit-scrollbar-track {*/
+/*    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+/*    border-radius: 10px;*/
+/*}*/
+ 
+/*::-webkit-scrollbar-thumb {*/
+/*    border-radius: 10px;*/
+/*    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+/*}*/
+
+
+.wm-app .modal-header .modal-title {
+    color: #000;
+}
+
+.aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
+    width: 100%;
+    height: calc(100%);
+    float: none;
+    margin: auto !important;
+    overflow: unset;
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li.active > a {
+    background: white;
+    color: #026CB6;
+    border-bottom: 4px solid #026CB6;
+    font-weight: bold;
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li.active > a:hover, .wm-app .app-tabs .nav.nav-tabs > li.active > a:focus {
+     color: #026CB6; 
+     background-color: white; 
+}
+
+.wm-app .app-tabs .nav.nav-tabs > li > a:hover, .wm-app .app-tabs .nav.nav-tabs > li > a:focus {
+    color: #026CB6; 
+    background-color: white; 
+}
+
+
+/*.app-picture {*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    position: absolute;*/
+/*    cursor: default;*/
+/*    width: auto;*/
+/*    height: auto;*/
+    /*bottom: 2px;*/
+    /*right: 5px;*/
+    /*width: 24px;*/
+    /*height: 24px;*/
+/*}*/
+
+
+/*Custom*/
+.aio-p2p-scroll-x {
+    overflow-x: scroll;
+}
+
+/*dropdown*/
+.aio-ptp-dropdown .aio-ptp-dropdown-menu {
+    display: none;
+}
+
+.aio-ptp-dropdown.active .aio-ptp-dropdown-menu {
+    display: block;
+}
+
+.aio-p2p-max-height {
+    max-height: 250px;
+    overflow: auto;
+}

@@ -1,0 +1,6 @@
+{
+  "id" : "aio_employee",
+  "type" : "DataService",
+  "packageNames" : [ "id.co.aio.procure_to_pay.aio_employee" ],
+  "title" : "aio_employee"
+}

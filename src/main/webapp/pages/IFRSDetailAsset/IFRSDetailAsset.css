@@ -1,0 +1,254 @@
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.center-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.app-grid-row {
+    padding: 5px!important;
+}
+
+.flex-gap {
+    display: flex;
+    flex-direction: row;
+  align-items: center;
+  align-content: space-around;
+    gap: 10px;
+}
+
+
+.aio-p2p-page-content {
+    padding: 0px 32px;
+}
+
+.aio-p2p-ub-main-container {
+    background: white;
+    min-width: 100%;
+    padding: 24px 28px;
+}
+
+/*input field*/
+
+.app-input-wrapper,
+.app-select-wrapper {
+    width: 100% !important;
+}
+.aio-p2p-input-field {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 137.5%;
+    padding: 10px 16px;
+    letter-spacing: 0.25px;
+    border: 1px solid #CBD5E0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: white;
+    height: 100% !important;
+}
+
+/*button*/
+.aio-ptp-button {
+    padding: 12px 16px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+.aio-ptp-primary-btn {
+    background: #026CB6;
+    border-width: 0px;
+    color: white;
+}
+
+.aio-ptp-alternate-btn {
+    background: #F6F7F8;
+    border-width: 0px;
+    color: #97A7AD;
+}
+
+.aio-ptp-primary-btn:hover,
+.aio-ptp-primary-btn:active {
+    color: white !important;
+}
+
+.aio-ptp-secondary-btn {
+    border: 1px solid #026CB6;
+    color: #026CB6;
+    background: white;
+}
+
+/*table*/
+.aio-ptp-table-container {
+    width: 100%;
+}
+
+.aio-ptp-table-row {
+    white-space: nowrap;
+    border-bottom: 1px solid #EDEEEF;
+    display: block;
+}
+
+.aio-ptp-table-header {
+    background: #F6F7F8;
+    border-radius: 2px 2px 0px 0px;
+}
+
+.aio-ptp-table-cell {
+    display: inline-flex;
+    white-space: normal;
+    padding: 12px;
+    vertical-align: top;
+}
+
+.aio-ptp-table-cell label {
+    font-family: Inter;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 16px;
+    align-items: center;
+    color: #404143;
+    font-weight: 400;
+}
+
+.aio-ptp-table-header .aio-ptp-table-cell label{
+    font-weight: 500;
+}
+
+
+/*table page*/
+.panel-footer {
+    display: block !important;
+}
+.wm-app .app-datanavigator .pagination.basic li a,
+.wm-app .app-datanavigator .pagination.basic li:first-child a,
+.wm-app .app-datanavigator .pagination.basic li:last-child a
+{
+    background: #FFFFFF;
+    font-weight: 400 !important;
+    border: 1px solid #E1E4E7 !important;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 36px;
+    text-align: center;
+    color: #8D99A6;
+    margin: 4px;
+    width: 36px;
+    height: 36px;
+    padding: 0px;
+    vertical-align: middle;
+}
+.wm-app .app-datanavigator .pagination.basic li.active a {
+    background: #026CB6;   
+}
+.wm-app .app-datanavigator .pagination.basic li:first-child a,
+.wm-app .app-datanavigator .pagination.basic li:last-child a {
+    text-indent: -1000em;
+    position: relative;
+    margin: 4px 12px;
+}
+
+.wm-app .app-datanavigator .pagination.basic li:first-child a {
+    margin-left: 0px;
+}
+
+.wm-app .app-datanavigator .pagination.basic li:first-child a:before,
+.wm-app .app-datanavigator .pagination.basic li:last-child a:before{
+    position: absolute;
+    left: 0px;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    display: block;
+    text-indent: 0px;
+}
+
+.wm-app .panel-footer {
+    padding: 0px;
+}
+
+/*dialog*/
+.modal-backdrop {
+    opacity: 1;
+    background: rgba(51, 51, 51, 0.7) !important;
+}
+
+.aio-ptp-dialog .modal-content {
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: none;
+    max-width: 100vw;
+}
+
+.aio-ptp-dialog .modal-content .modal-header {
+    border-bottom: 1px solid #CBD5E0;
+    padding: 16px 24px;
+}
+
+.aio-ptp-dialog .modal-content .modal-header .modal-title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 17px;
+    color: #404143;
+}
+
+.aio-ptp-dialog .modal-content .modal-body {
+    padding: 24px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 137.5%;
+    letter-spacing: 0.25px;
+    color: #404143;
+    min-height: 400px;
+}
+
+.aio-ptp-dialog .modal-content .modal-footer {
+    padding: 24px;
+    padding-top: 0px;
+}
+
+.aio-ptp-dialog .modal-content .modal-footer .aio-ptp-button {
+    padding: 9px 16px;
+}
+
+/*field group*/
+.aio-input-group {
+    
+}
+
+.aio-input-group label {
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 137.5%;
+    letter-spacing: 0.25px;
+    color: #404143;
+}
+
+/*loading*/
+.aio-loading {
+    z-index: 9999;
+}

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 767px) and (min-width: 299px) {
+    .wm-app .app-content {
+        margin-top: 0 !important;
+    }
+}
+
+.aio-p2p-form-container .aio-p2p-error-message {
+	display: none;
+}
+.aio-p2p-form-container.form-error .aio-p2p-error-message {
+	display: block;
+	color: #FF5756;
+	font-size: 12px;
+}
+.aio-p2p-form-container.form-error .aio-p2p-form-input {
+    border-color: #FF5756;
+}

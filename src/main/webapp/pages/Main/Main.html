@@ -1,0 +1,39 @@
+<wm-page name="mainpage" pagetitle="Main" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar"></wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="Page" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content">
+                        <wm-layoutgrid name="layoutgrid1" show="bind:Variables.loggedInUserData.dataSet.username.includes('ven:') &amp;&amp; Variables.ModelAnnouncement.dataSet.length > 0 ? true : false">
+                            <wm-gridrow name="gridrow1" padding="5px unset 30px unset">
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                                    <wm-container name="container7" backgroundcolor="#ffffff" margin="unset 20px">
+                                        <wm-layoutgrid name="layoutgrid2">
+                                            <wm-gridrow name="gridrow3">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn5" padding="10px unset 10px 10px">
+                                                    <wm-label padding="unset 0.5em" name="announcement" caption="bind:Variables.ModelAnnouncement.dataSet.length > 0 ? Variables.ModelAnnouncement.dataSet[0].name : 'Announcement'" fontweight="bold" fontsize="35"></wm-label>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow4">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn7" padding="unset unset 20px 20px">
+                                                    <wm-label padding="unset 0.5em" name="label2" caption="bind:Variables.ModelAnnouncement.dataSet.length > 0 ? Variables.ModelAnnouncement.dataSet[0]._desc : '-'"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn8"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                </wm-gridcolumn>
+                            </wm-gridrow>
+                        </wm-layoutgrid>
+                        <div id="pdf-canvas-container" class="center-block"></div>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

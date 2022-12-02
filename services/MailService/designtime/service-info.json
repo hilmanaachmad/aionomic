@@ -1,0 +1,7 @@
+{
+  "id" : "MailService",
+  "type" : "JavaService",
+  "packageNames" : [ "id.co.aio.procure_to_pay.mailservice" ],
+  "serviceClassNames" : [ "id.co.aio.procure_to_pay.mailservice.MailService" ],
+  "title" : "MailService"
+}

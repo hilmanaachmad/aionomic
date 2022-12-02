@@ -1,0 +1,250 @@
+<wm-page name="mainpage" pagetitle="Mapping Division to BOD" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar">
+                    <wm-param name="activeMenu" value="mapDivisionToBod" type="string"></wm-param>
+                </wm-container>
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeader">
+                        <wm-param name="pageTitle" value="bind:appLocale.LANG_MAPPING_DIVISION_TO_BOD" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px">
+                        <wm-container name="background" backgroundcolor="#ffffff">
+                            <wm-container name="container7" padding="24px" backgroundcolor="#ffffff" margin="unset unset 24px unset" bordercolor="#ffffff" width="1100">
+                                <wm-layoutgrid name="layoutgrid5">
+                                    <wm-gridrow name="gridrow8">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn18" padding="unset 7px">
+                                            <wm-composite name="composite1" backgroundcolor="#ffffff">
+                                                <wm-container class="col-md-12" name="container26">
+                                                    <wm-select name="select1" show="true" dataset="bind:Variables.vmSearchMapping.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY" on-change="select1Change($event, widget, newVal, oldVal)"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn19" padding="unset unset unset 7px">
+                                            <wm-search name="search_data" on-submit="search_dataSubmit($event, widget)" searchon="typing" disabled="bind:Widgets.select1.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD"></wm-search>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn22"></wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn23"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                                <wm-container name="container8" margin="20px unset unset unset">
+                                    <wm-layoutgrid name="layoutgrid6">
+                                        <wm-gridrow name="gridrow10">
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn22_1">
+                                                <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_MAPPING_DIVISION_TO_BOD" type="button" margin="unset 0.5em" name="button_add" backgroundcolor="#026CB6" bordercolor="#026CB6" on-click="Widgets.dialogAdd.open()"
+                                                    color="#ffffff"></wm-button>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn23_1" horizontalalign="right">
+                                                <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="unset 0.5em" name="button_excel" iconclass="fa fa-upload" color="#026CB6" on-click="button_excelClick($event, widget)"></wm-button>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-container name="container9" margin="20px unset unset unset" backgroundcolor="#F6F7F8">
+                                    <wm-layoutgrid name="layoutgrid6_1">
+                                        <wm-gridrow name="gridrow21" padding="16px">
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn31_1">
+                                                <wm-container name="container14_1">
+                                                    <wm-label padding="unset 0.5em" name="label16_1" class="bold" caption="bind:appLocale.LANG_NO" fontsize="13"></wm-label>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn30">
+                                                <wm-container name="kolom_division" on-click="kolom_divisionClick($event, widget)">
+                                                    <wm-label padding="unset 0.5em" name="label12_1" caption="bind:appLocale.LANG_DIVISION" class="bold" fontsize="13"></wm-label>
+                                                    <wm-picture name="picture_division" picturesource="resources/images/logos/icon-up-down.png" width="18" margin="unset unset unset 5px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn29">
+                                                <wm-container name="kolom_bod1" on-click="kolom_bod1Click($event, widget)">
+                                                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BOD_1_NAME" class="bold" name="label13_1" fontsize="13"></wm-label>
+                                                    <wm-picture name="picture_bod1" picturesource="resources/images/logos/icon-up-down.png" width="18" margin="unset unset unset 5px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn31">
+                                                <wm-container name="kolom_bod2" on-click="kolom_bod2Click($event, widget)">
+                                                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BOD_2_NAME" class="bold" name="label14" fontsize="13"></wm-label>
+                                                    <wm-picture picturesource="resources/images/logos/icon-up-down.png" name="picture_bod2" width="18" margin="unset unset unset 5px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn32">
+                                                <wm-container name="kolom_status" on-click="kolom_statusClick($event, widget)">
+                                                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_STATUS" class="bold" name="label15" fontsize="13"></wm-label>
+                                                    <wm-picture picturesource="resources/images/logos/icon-up-down.png" name="picture_status" width="18" margin="unset unset unset 5px"></wm-picture>
+                                                </wm-container>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn38"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="table" dataset="bind:Variables.read_divisionBod.dataSet"
+                                    navigation="Basic" color="#ededed" on-beforedatarender="tableBeforedatarender(widget, $data)" enablereorder="true" showrecordcount="false">
+                                    <wm-listtemplate layout="media" name="listtemplate1">
+                                        <wm-layoutgrid name="layoutgrid4">
+                                            <wm-gridrow name="gridrow5_1">
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn32_1">
+                                                    <wm-label padding="unset 0.5em" name="label18" color="#160e0e" caption="bind:Widgets.table.currentItem.num" fontsize="13"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn13_1">
+                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.table.currentItem.divBodTitle" name="label11" color="#4b4b4b" fontsize="13"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn14">
+                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.table.currentItem.divBodName1" name="label12" color="#4b4b4b" fontsize="13"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn39">
+                                                    <wm-label padding="unset 0.5em" caption="bind:Widgets.table.currentItem.divBodName2" color="#4b4b4b" fontsize="13" name="label23"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn34">
+                                                    <wm-label padding="unset 0.5em" name="label16" caption="bind:Widgets.table.currentItem.divBodStatus" color="#4b4b4b" fontsize="13"></wm-label>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="1" name="gridcolumn35" horizontalalign="right">
+                                                    <wm-button class="btn-default" caption="" type="button" name="btn_trigger_edit" iconclass="" backgroundcolor="#f0f0f0" padding="unset 0.5px" on-click="btn_trigger_editClick($event, widget, item, currentItemWidgets)"
+                                                        iconurl="resources/images/logos/icon-pencil.png" iconwidth="30" iconheight="30" margin="unset 5px unset unset"></wm-button>
+                                                    <wm-button class="aio-p2p-clickable" caption="" type="button" name="btn_trigger_delete" iconclass="" backgroundcolor="#f0f0f0" on-click="btn_trigger_deleteClick($event, widget, item, currentItemWidgets)"
+                                                        iconurl="resources/images/logos/icon-trash.png" iconwidth="30" iconheight="30" iconposition="right" backgroundposition="right"></wm-button>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-listtemplate>
+                                </wm-list>
+                                <wm-container name="container16" margin="15px unset unset unset">
+                                    <wm-layoutgrid name="layoutgrid7">
+                                        <wm-gridrow name="gridrow18">
+                                            <wm-gridcolumn columnwidth="9" name="gridcolumn33_1"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="1" name="gridcolumn37">
+                                                <wm-label class="col-md-3 control-label" name="label19" caption="bind:appLocale.LANG_SHOW" padding="2px unset" margin="8px unset unset unset"></wm-label>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="2" name="gridcolumn34_1">
+                                                <wm-select name="select_data" datavalue="10" dataset="bind:Variables.sotirNumber.dataSet" datafield="dataValue" displayfield="name" on-change="select_dataChange($event, widget, newVal, oldVal)"></wm-select>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-container>
+                            </wm-container>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_ADD_MAPPING_DIVISION_TO_BOD" iconclass="" name="dialogAdd" showheader="true" width="614" on-opened="dialogAddOpened($event, widget)" class="aio-p2p-modal">
+        <wm-dialogactions name="dialogactions2"></wm-dialogactions>
+        <wm-layoutgrid name="layoutgrid3">
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn8" padding="8px unset unset unset">
+                    <wm-label padding="unset 0.5em" name="label1" caption="bind:appLocale.LANG_DIVISION_V"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn10">
+                    <wm-container name="container20" class="col-md-12 aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.divisionErrorMessage ? &quot;form-error&quot; : &quot;&quot;" margin="2px unset 12px unset">
+                        <wm-select name="add_division" placeholder="bind:appLocale.LANG_SELECT_DIVISION" dataset="bind:Variables.get_division.dataSet" datafield="All Fields" displayfield="divisionTitle" on-change="add_divisionChange($event, widget, newVal, oldVal)"
+                            orderby="divisionId:desc"></wm-select>
+                    </wm-container>
+                    <wm-label padding="unset 0.5em" name="add_label_divison" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" show="false"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow5">
+                <wm-gridcolumn columnwidth="12" name="Action">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BOD_1" name="label5"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow6">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                    <wm-container name="container18" margin="unset unset 12px unset">
+                        <wm-search name="add_bod1" type="autocomplete" dataset="bind:Variables.get_employee.dataSet" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="All Fields" matchmode="startignorecase" searchkey="employeeName,nik"
+                            on-select="add_bod1Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH"></wm-search>
+                    </wm-container>
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" name="add_label_bod1" show="false"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow7">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn14_1">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BOD_2" name="label7"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow29">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn60">
+                    <wm-search type="autocomplete" name="add_bod2" dataset="bind:Variables.get_employee.dataSet" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="All Fields" matchmode="startignorecase" searchkey="employeeName,nik"
+                        on-select="add_bod2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH"></wm-search>
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REQUIRED" color="#ff0000" name="add_label_bod2" show="false"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow20">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn37_1">
+                    <wm-label padding="unset 0.5em" name="label25" caption="bind:appLocale.LANG_ISREQUIRED" fontweight="bold" fontstyle="italic"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-container name="container20_1" margin="30px unset unset unset" horizontalalign="right">
+            <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button4" backgroundcolor="#F6F7F8" color="#97A7AD" bordercolor="#F6F7F8" width="124" height="auto"></wm-button>
+            <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_SAVE" type="button" margin="unset 0.5em" name="btn_save" on-click="btn_saveClick($event, widget)" width="124" height="auto"></wm-button>
+        </wm-container>
+        <wm-spinner show="false" name="add_spinner"></wm-spinner>
+    </wm-dialog>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_EDIT_MAPPING_DIVISION_TO_BOD" iconclass="" name="EditDialog" on-opened="EditDialogOpened($event, widget)" class="aio-p2p-modal" width="614">
+        <wm-dialogactions name="dialogactions2_1" show="true"></wm-dialogactions>
+        <wm-layoutgrid name="layoutgrid5_1">
+            <wm-gridrow name="gridrow17">
+                <wm-gridcolumn columnwidth="2" name="gridcolumn24">
+                    <wm-checkbox caption="Toggle" type="toggle" name="toggle1" checkedvalue="Active" uncheckedvalue="Inactive" backgroundcolor="#2DCA8C" class="aio-p2p-toggle" width="48" height="24"></wm-checkbox>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="10" name="gridcolumn26">
+                    <wm-label padding="unset 0.5em" name="label13" caption="bind:Widgets.toggle1.datavalue" margin="12px unset unset unset"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow11">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn17">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DIVISION_V" name="label8"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow12">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn18_1">
+                    <wm-composite show="true" name="composite5_1">
+                        <wm-select width="100%" name="edit_division" dataset="bind:Variables.get_division.dataSet" datafield="divisionId" placeholder="bind:appLocale.LANG_SELECT_DIVISION" displayfield="divisionTitle" on-change="edit_divisionChange($event, widget, newVal, oldVal)"
+                            orderby="divisionId:desc"></wm-select>
+                        <wm-label padding="unset 0.5em" name="edit_label_division" caption="This is required" color="#ff0000" show="false"></wm-label>
+                    </wm-composite>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow13">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn19_1">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BOD_1" name="label9"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow14">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn20">
+                    <wm-composite name="composite6_1">
+                        <wm-search name="edit_bod1" type="autocomplete" dataset="bind:Variables.get_employee.dataSet" searchkey="employeeName,nik" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="nik" matchmode="startignorecase" datavalue="bind:Variables.selected_bod1.dataSet.dataValue"
+                            on-select="edit_bod1Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH"></wm-search>
+                        <wm-label padding="unset 0.5em" name="edit_label_bod1" caption="This is required" color="#ff0000" show="false"></wm-label>
+                    </wm-composite>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow15">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn21">
+                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BOD_2" name="label10"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow16">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn22_2">
+                    <wm-search type="autocomplete" dataset="bind:Variables.get_employee.dataSet" searchkey="employeeName,nik" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="nik" matchmode="startignorecase" name="edit_bod2" datavalue="bind:Variables.selected_bod2.dataSet.dataValue"
+                        on-select="edit_bod2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH"></wm-search>
+                    <wm-label padding="unset 0.5em" caption="This is required" color="#ff0000" name="edit_label_bod2" show="false"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow20_1">
+                <wm-gridcolumn columnwidth="12" name="gridcolumn37_2">
+                    <wm-label padding="0.75em 0.5em unset 0.5em" caption="bind:appLocale.LANG_ISREQUIRED" fontweight="bold" fontstyle="italic" name="label26"></wm-label>
+                </wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+        <wm-container name="container21" horizontalalign="right" margin="20px unset unset unset">
+            <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button5" bordercolor="#F6F7F8" backgroundcolor="#F6F7F8" color="#97A7AD" width="124" height="auto"></wm-button>
+            <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_SAVE" type="button" margin="unset 0.5em" name="btn_update" on-click="btn_updateClick($event, widget)" width="124" height="auto"></wm-button>
+        </wm-container>
+        <wm-spinner show="false" name="edit_spinner"></wm-spinner>
+    </wm-dialog>
+    <wm-confirmdialog on-ok="deleteConfirmOk($event, widget)" on-cancel="Widgets.deleteConfirm.close()" name="deleteConfirm" message="bind:appLocale.LANG_ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_ACTION_CAN_T_BE_UNDONE_AND_THE_DATA_CAN_T_BE_RESTORED" oktext="bind:appLocale.LANG_DELETE"
+        title="bind:appLocale.LANG_DELETE_CONFIRMATION" iconclass="" class="aio-p2p-modal aio-p2p-modal-delete" canceltext="bind:appLocale.LANG_CANCEL"></wm-confirmdialog>
+</wm-page>

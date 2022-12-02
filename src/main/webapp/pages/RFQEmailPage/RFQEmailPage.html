@@ -1,0 +1,51 @@
+<wm-page pagetitle="Submit RFQ" name="page1">
+    <wm-header name="header1" class="hidden"></wm-header>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" name="left_panel1" class="hidden"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1" backgroundcolor="#F6F6F6">
+            <wm-container name="container1" conditionalstyle="bind:{
+    width: &quot;520px&quot;,
+    height: &quot;620px&quot;,
+    background: &quot;#FFFFFF&quot;,
+    borderRadius: &quot;20px&quot;,
+    margin: &quot;120px auto&quot;,
+    overflow: &quot;hidden&quot;,
+    position: &quot;relative&quot;
+}">
+                <wm-container name="container2" padding="unset 80px">
+                    <wm-container name="container3" horizontalalign="center" padding="32px unset 24px unset">
+                        <wm-picture name="picture1" picturesource="resources/images/logos/login-otsuka.png" width="200"></wm-picture>
+                    </wm-container>
+                    <wm-container name="container4" horizontalalign="center">
+                        <wm-label padding="unset 0.5em" name="label1" caption="Please enter your email" color="#000" fontsize="14"></wm-label>
+                    </wm-container>
+                    <wm-container horizontalalign="center" name="container5">
+                        <wm-label padding="unset 0.5em" name="label2" caption="Silahkan masukkan email anda" color="#666"></wm-label>
+                    </wm-container>
+                    <wm-container name="container6" padding="32px unset unset unset">
+                        <wm-composite name="composite1" captionposition="top">
+                            <wm-label name="label3" caption="Email"></wm-label>
+                            <wm-container class="col-md-9 aio-p2p-form-container" name="container7" width="100%" conditionalclass="bind:Variables.modelErrors.dataSet.email ? 'form-error' : ''">
+                                <wm-text name="text1" placeholder="Enter Email" on-change="text1Change($event, widget, newVal, oldVal)" updateon="default" class="aio-p2p-form-input"></wm-text>
+                                <wm-label name="label5" caption="bind:Variables.modelErrors.dataSet.email" class="aio-p2p-error-message"></wm-label>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-container>
+                    <wm-container name="container8">
+                        <wm-button class="btn-primary" caption="Submit Email" type="button" name="button1" width="100%" padding="12px unset" fontweight="bold" on-click="button1Click($event, widget)"></wm-button>
+                    </wm-container>
+                </wm-container>
+                <wm-container name="container9" horizontalalign="center" backgroundcolor="#026CB6" conditionalstyle="bind:{
+    position: &quot;absolute&quot;,
+    bottom: &quot;0px&quot;,
+    width: &quot;100%&quot;
+}" padding="12px unset">
+                    <wm-picture name="picture2" picturesource="resources/images/logos/icon-heart.png" width="20"></wm-picture>
+                    <wm-label padding="unset 0.5em" name="label4" color="#fff" caption="Team Procure to Pay"></wm-label>
+                </wm-container>
+            </wm-container>
+        </wm-page-content>
+        <wm-spinner show="false" name="spinner1"></wm-spinner>
+    </wm-content>
+    <wm-footer name="footer1" class="hidden"></wm-footer>
+</wm-page>

@@ -1,0 +1,5 @@
+{
+  "id" : "logAudit",
+  "type" : "RestService",
+  "title" : "logAudit"
+}

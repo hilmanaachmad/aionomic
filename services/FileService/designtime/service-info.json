@@ -1,0 +1,7 @@
+{
+  "id" : "FileService",
+  "type" : "JavaService",
+  "packageNames" : [ "id.co.aio.procure_to_pay.fileservice" ],
+  "serviceClassNames" : [ "id.co.aio.procure_to_pay.fileservice.FileService" ],
+  "title" : "FileService"
+}

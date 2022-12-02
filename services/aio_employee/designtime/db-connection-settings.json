@@ -1,0 +1,48 @@
+{
+  "username" : "root",
+  "password" : "7b6a43524a17241e6e7e3422205d7670477c612a43",
+  "url" : "jdbc:mysql://202.158.62.54:3307/aio_employee?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "aio_employee",
+  "packageName" : "id.co.aio.procure_to_pay.aio_employee",
+  "dbType" : "MySQL",
+  "host" : "202.158.62.54",
+  "dbName" : "aio_employee",
+  "port" : "3307",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "employee",
+    "schema" : null
+  }, {
+    "table" : "employee_data",
+    "schema" : null
+  }, {
+    "table" : "employee_ramco",
+    "schema" : null
+  }, {
+    "table" : "mst_worklocn",
+    "schema" : null
+  }, {
+    "table" : "v_employee_active",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null,
+    "reImport" : false
+  },
+  "readOnly" : false,
+  "metadataDialect" : null
+}

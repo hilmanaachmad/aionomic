@@ -1,0 +1,5 @@
+{
+  "id" : "aioEmailService",
+  "type" : "RestService",
+  "title" : "aioEmailService"
+}

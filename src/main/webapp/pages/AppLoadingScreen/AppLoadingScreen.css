@@ -1,0 +1,24 @@
+.aio-p2p-page-loading-container {
+    margin-top: 50vh;
+    transform: translateY(-100%);
+}
+
+.aio-p2p-page-loading-container .aio-p2p-loading-message {
+    /*font-family: Futura Md BT;*/
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.24px;
+}
+
+.aio-p2p-page-loading-container .aio-p2p-loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 5px solid #026CB6;
+    border-top-color: #eaeaea;
+    animation: spin 1s linear infinite;
+}

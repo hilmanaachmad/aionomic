@@ -1,0 +1,629 @@
+[ {
+  "name" : "AdditionalBudgetPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "AppLoadingScreen",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "BudgetDetail",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "BudgetDetail2",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "ionumber",
+    "type" : "string"
+  }, {
+    "name" : "id",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "CompanyDomicilie",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Delegation",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "DelegationBudget",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "DelegationHistory",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "DelegationPurchaseRequest",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "DelegationRFQ",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "DetailDeliveryOrder",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "company_code",
+    "type" : "string"
+  }, {
+    "name" : "id_po",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "DetailPurchaseOrder",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "company_code",
+    "type" : "string"
+  }, {
+    "name" : "id_po",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "ForgotPassword",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ForgotUserList",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "vendorCode",
+    "type" : "integer"
+  }, {
+    "name" : "statusNew",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FormAdditional",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "baId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FormAdditionalApprove",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "baId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "FormAdditionalChecker",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "baId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "FormNewPassword",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "vendorCode",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "FormReclass",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "bdRcId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FormReclassApproval",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "bdRcId",
+    "type" : "string"
+  }, {
+    "name" : "tlId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "FormReclassChecker",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "bdRcId",
+    "type" : "string"
+  }, {
+    "name" : "tlId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "GRConfirm",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "GRForm",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "id",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "GRFormAssign",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "id",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "GRFormConfirm",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "id",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "GRTracking",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "id",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "HeaderForBudgetPage",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "page",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "HeadforBudget",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "HeadforRegVendor",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "IFRSAssetCheck",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "IFRSDetailAsset",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "IFRSLeaseForecasting",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "IFRSListAsset",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Inbox",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "InboxVendor",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "LandingPageUser",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "vendorCode",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "LoginAIO",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "status",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "LoginIVendor",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MapDepartUser",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MapPurchaseGroupUser",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MappingDepartmentToApproval",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MappingDeptDivCostCenter",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MappingDivisionToBOD",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MappingEmployeeLevelPriceLimit",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MappingIO",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MasterAnnouncement",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MasterRequestForQuotation",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MasterRole",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MaterialToCoa",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MaterialToVendor",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "POForm",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "item",
+    "type" : "string"
+  }, {
+    "name" : "processPurchase",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "POFormEdit",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "id",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "POFormView",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "id",
+    "type" : "string"
+  }, {
+    "name" : "action",
+    "type" : "string"
+  }, {
+    "name" : "tasklist",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "POList",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "POReadyForGR",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "POTracking",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PRReadyforPurchase",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PageFooter",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "PageHeader",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "pageTitle",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "PageHeaderDetail",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "page",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "PageSidebar",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "activeMenu",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "ProposalBudget",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ProposalBudgetForm",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pbId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "ProposalBudgetTrackingPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PurchaseRequestForm",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PurchaseRequestFormApproval",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "prId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "PurchaseRequestFormCheckerPage",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "prId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "PurchaseRequestFormEdit",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "prId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "PurchaseRequestFormPage",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "baId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "PurchaseRequestFormView",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "prId",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "PurchaseRequestInterface",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PurchaseRequestPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PurchaseRequestTracking",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "QuotationForm",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "rfqvId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "QuotationFormVendor",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "rfqvId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "QuotationFormVendorDone",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "rfqvId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "QuotationFormView",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "rfqvId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RFQEmailPage",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "rfqvId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RFQSelectVendor",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "Materialid",
+    "type" : "string"
+  }, {
+    "name" : "Liid",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RFQSummaryPage",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "rfqId",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RFQTrackingPage",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "cachecontrol",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RFQlist",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ReclassPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "RegVendorSucces",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "RegistrationVendorLocal",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "vendorType",
+    "type" : "string"
+  }, {
+    "name" : "selectLanguage",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RegistrationVendorLocalEdit",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "vendorType",
+    "type" : "string"
+  }, {
+    "name" : "selectLanguage",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RegistrationVendorLocalRevise",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "vendorType",
+    "type" : "string"
+  }, {
+    "name" : "selectLanguage",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "RegistrationVendorOverseas",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "RegistrationVendorOverseasEdit",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Riset",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TaskListCheckerPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TaskListPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TestPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TopBar",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "TopNavIvendor",
+  "type" : "TOPNAV",
+  "params" : [ ]
+}, {
+  "name" : "UploadBudget",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UploadBudgetAdjustment",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserMapHistory",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserMapping",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "UserProfile",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "VendorOrderList",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "company_code",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "VendorQuotationPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "VendorTrackingOrderReport",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "company_code",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+}, {
+  "name" : "uploadFile",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "fileName",
+    "type" : "string"
+  }, {
+    "name" : "fileUrl",
+    "type" : "string"
+  }, {
+    "name" : "fileSize",
+    "type" : "integer"
+  }, {
+    "name" : "disabled",
+    "type" : "boolean"
+  } ]
+} ]

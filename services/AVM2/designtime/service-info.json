@@ -1,0 +1,6 @@
+{
+  "id" : "AVM2",
+  "type" : "DataService",
+  "packageNames" : [ "id.co.aio.procure_to_pay.avm2" ],
+  "title" : "AVM2"
+}

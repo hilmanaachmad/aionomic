@@ -1,0 +1,751 @@
+<wm-page name="mainpage" pagetitle="Main" backgroundcolor="#ffffff">
+    <wm-content name="content1">
+        <wm-page-content name="pageContent1" columnwidth="12">
+            <wm-container name="MainContainer" class="aio-p2p-main-container">
+                <!--<wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar"></wm-container>-->
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                    <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail">
+                        <wm-param name="page" value="budget-detail2" type="string"></wm-param>
+                    </wm-container>
+                    <wm-container name="PageContent" class="aio-p2p-page-content">
+                        <wm-container name="bg" margin="unset unset 10px unset">
+                            <wm-container name="container38" margin="unset unset unset 130px" width="1102">
+                                <wm-label padding="unset 0.5em" name="label24" caption="bind:appLocale.LANG_BUDGET_DETAIL" class="h2" width="85%"></wm-label>
+                            </wm-container>
+                            <wm-container name="container7" backgroundcolor="#ffffff" width="85%" height="250" margin="unset 85px 24px 130px" padding="20px unset unset unset">
+                                <wm-layoutgrid name="layoutgrid1" columns="4">
+                                    <wm-gridrow name="gridrow71">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn162">
+                                            <wm-container name="container10_1">
+                                                <wm-container name="container8" margin="10px unset unset unset">
+                                                    <wm-label padding="unset 0.5em" name="label1" caption="bind:appLocale.LANG_BUDGET_YEAR" margin="5px unset unset 30px"></wm-label>
+                                                </wm-container>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn163">
+                                            <wm-container name="container16" margin="10px unset unset unset">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COMPANY" margin="5px unset unset unset" name="label2"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn164">
+                                            <wm-container name="container15">
+                                                <wm-container name="c" margin="10px unset unset unset">
+                                                    <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DEPARTMENT" margin="5px unset unset unset" name="label6"></wm-label>
+                                                </wm-container>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn165">
+                                            <wm-container margin="10px unset unset unset" name="container22">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BRAND" margin="5px unset unset unset" name="label3"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow72">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn166">
+                                            <wm-container name="container63_1" padding="unset 20px unset 30px">
+                                                <wm-text name="budgetYear" readonly="true" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].bhYear" placeholder="bind:appLocale.LANG_SELECT_YEAR"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn167">
+                                            <wm-container name="container65" padding="unset 20px unset unset">
+                                                <wm-text readonly="true" name="company" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].ctitle" placeholder="bind:appLocale.LANG_SELECT_COMPANY"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn168">
+                                            <wm-container name="container17" margin="unset 20px unset unset">
+                                                <wm-text readonly="true" name="department" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].department" placeholder="bind:appLocale.LANG_SELECT_DEPARTMENT"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn169">
+                                            <wm-container name="container18" padding="unset 20px unset unset">
+                                                <wm-text readonly="true" name="brand" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].brTitle" placeholder="bind:appLocale.LANG_SELECT_BRAND"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow73">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn170">
+                                            <wm-container name="container13_1">
+                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ACCOUNT_TYPE" margin="5px unset unset 30px" name="label4"></wm-label>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn171">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_IO_NUMBER" margin="5px unset unset unset" name="label24"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn172">
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CURRENCY" margin="5px unset unset unset" name="label25"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn173"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow74">
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn174">
+                                            <wm-container name="container64" padding="unset 20px unset 30px">
+                                                <wm-text readonly="true" name="accountType" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].accTitle" placeholder="bind:appLocale.LANG_SELECT_ACCOUNT_TYPE"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn175">
+                                            <wm-container name="container66" padding="unset 20px unset unset">
+                                                <wm-text readonly="true" name="IONumber" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].ioNumber" placeholder="bind:appLocale.LANG_SELECT_IO_NUMBER"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn176">
+                                            <wm-container name="container68" padding="unset 20px unset unset">
+                                                <wm-text readonly="true" name="currency" datavalue="bind:Variables.q_budgetHeader_Detail2.dataSet[$i].bhCurrency" placeholder="bind:appLocale.LANG_SELECT_CURRENCY"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="3" name="gridcolumn177"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                        </wm-container>
+                        <wm-container name="container19" width="85%" horizontalalign="center" margin="unset 85px unset 130px" backgroundcolor="#ffffff">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow7">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn64" horizontalalign="left" height="73">
+                                        <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_ADJUSTMENT" type="button" margin="16px unset unset 24px" name="btn_addAdjustment" height="41" textalign="left" on-click="btn_addAdjustmentClick($event, widget)"
+                                            show="bind:Variables.loggedInUser.dataSet.roles.indexOf('BUD-010') !== -1 ? true : false"></wm-button>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn26" horizontalalign="right">
+                                        <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="16px 24px unset unset" color="#026CB6" backgroundcolor="#ffffff" bordercolor="#026CB6" iconclass="fa fa-upload"
+                                            on-click="btn_excelClick($event, widget)" name="btn_excel" textalign="center" height="41"></wm-button>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-container>
+                        <wm-container name="container21" margin="20px 85px unset 130px" backgroundcolor="#ffffff" width="85%" height="200">
+                            <wm-tabs statehandler="URL" name="tabs1">
+                                <wm-tabpane name="tabpane1" title="bind:appLocale.LANG_TOTAL_ADJUSTMENT" badgetype="primary" backgroundcolor="#ffffff" class="aio-p2p-tab-budget-detail" on-select="tabpane1Select($event, widget)">
+                                    <wm-container name="container21_1" bordercolor="#e3e3e3" borderwidth="2px" borderstyle="solid" padding="unset unset 10px unset">
+                                        <wm-layoutgrid name="layoutgrid10_1">
+                                            <wm-gridrow name="gridrow26_1">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn133_2" height="49">
+                                                    <wm-label padding="unset 0.5em" name="label6_1" caption="bind:appLocale.LANG_FILTER" fontweight="bold" margin="10px unset unset 20px"></wm-label>
+                                                    <wm-picture name="picture3" pictureplaceholder="resources/images/imagelists/filter-red.png" picturesource="resources/images/imagelists/filter-red.png" show="bind:Widgets.tab1_type.datavalue.length > 0 ||
+Widgets.tab1_budgetOriginal.datavalue.length > 0 ||
+Widgets.tab1_reclass.datavalue.length > 0 ||
+Widgets.tab1_additional.datavalue.length > 0 ||
+Widgets.tab1_adjustment.datavalue.length > 0 ||
+Widgets.tab1_afterAdjustment.datavalue.length > 0 ||
+Widgets.tab1_createdBy.datavalue.length > 0 ||
+Widgets.tab1_createdAt.datavalue.length > 0 ||
+Widgets.tab1_coa.datavalue.length > 0"></wm-picture>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn134_2" horizontalalign="right" height="49">
+                                                    <wm-picture name="tab1_arrowbottom" pictureplaceholder="resources/images/logos/icon-filter-down3.png" picturesource="resources/images/logos/icon-filter-down3.png" margin="20px 20px unset unset" show="bind:!Variables.boolean_showTab1.dataSet.dataValue"
+                                                        on-click="tab1_arrowbottomClick($event, widget)"></wm-picture>
+                                                    <wm-picture name="tab1_arrowtop" pictureplaceholder="resources/images/logos/icon-filter-up.png" picturesource="resources/images/logos/icon-filter-up.png" margin="20px 20px unset unset" show="bind:Variables.boolean_showTab1.dataSet.dataValue"
+                                                        on-click="tab1_arrowtopClick($event, widget)"></wm-picture>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow27">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn135_2">
+                                                    <wm-layoutgrid name="layoutgrid3" show="bind:Variables.boolean_showTab1.dataSet.dataValue">
+                                                        <wm-gridrow name="gridrow8">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn26_1"></wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn27"></wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn30"></wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn31"></wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow10">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn34">
+                                                                <wm-label padding="unset 0.5em" name="label7" caption="bind:appLocale.LANG_TYPE" margin="unset unset unset 20px"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn36">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_ORIGINAL" name="label8" margin="unset unset unset 10px"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn37">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RECLASS" name="label9" margin="unset unset unset 10px"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn38">
+                                                                <wm-label padding="unset 0.5em" name="label10" caption="bind:appLocale.LANG_ADDITIONAL" margin="unset unset unset 10px"></wm-label>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow9">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn28">
+                                                                <wm-container name="container25" margin="unset 20px">
+                                                                    <wm-select name="tab1_type" dataset="bind:Variables.var_type.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Type"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn32">
+                                                                <wm-container name="container26" padding="unset 20px unset 10px">
+                                                                    <wm-select name="tab1_budgetOriginal" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Budget Original"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn33">
+                                                                <wm-container name="container27" padding="unset 20px unset 10px">
+                                                                    <wm-select name="tab1_reclass" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Reclass"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn29">
+                                                                <wm-container name="container28" padding="unset 20px unset 10px">
+                                                                    <wm-select name="tab1_additional" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Additional"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow12">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn42">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ADJUSTMENT" margin="15px unset unset 20px" name="label11"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn43">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_AFTER_ADJUSTMENT" margin="15px unset unset 10px" name="label12"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn44">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DATE" margin="15px unset unset 10px" name="label13"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn45">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_USER" margin="15px unset unset 10px" name="label29"></wm-label>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow13">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn46">
+                                                                <wm-container name="container27_1" padding="unset 20px">
+                                                                    <wm-select name="tab1_adjustment" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Adjustment"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn47">
+                                                                <wm-container name="container28_1" padding="unset 20px unset 10px">
+                                                                    <wm-select name="tab1_afterAdjustment" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select After Adjustment"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn48">
+                                                                <wm-container name="container29" padding="unset 20px unset 10px">
+                                                                    <wm-text name="tab1_createdAt" class="flatpickr" placeholder="bind:appLocale.LANG_SELECT_DATE" autocomplete="false"></wm-text>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn49">
+                                                                <wm-container name="container30" padding="unset 20px unset 10px">
+                                                                    <wm-select name="tab1_createdBy" dataset="bind:Variables.data_createdBy.dataSet" datafield="dataValue" displayfield="name" placeholder="Select User"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow18">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn65">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COA" margin="15px unset unset 10px" name="label31"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn66">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REMARKS" margin="15px unset unset 10px" name="label109"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn67">
+                                                                <wm-label padding="unset 0.5em" caption="bind:appLocale.LABEL_DOCUMENT_NUMBER" margin="15px unset unset 10px" name="label111"></wm-label>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn68"></wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow19">
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn69">
+                                                                <wm-container name="container44" padding="unset 20px">
+                                                                    <wm-select name="tab1_coa" dataset="bind:Variables.data_coa.dataSet" datafield="dataValue" displayfield="name" placeholder="Select COA"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn71">
+                                                                <wm-container name="container122_2" padding="unset 20px unset 10px">
+                                                                    <wm-text name="tab1_remarks" placeholder="bind:appLocale.LANG_REMARKS"></wm-text>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn72">
+                                                                <wm-container name="container124" padding="unset 20px unset 10px">
+                                                                    <wm-select dataset="bind:Variables.data_docno.dataSet" datafield="dataValue" placeholder="bind:appLocale.LABEL_SELECT_DOCUMENT_NUMBER" name="tab1_docno" displayfield="name"></wm-select>
+                                                                </wm-container>
+                                                            </wm-gridcolumn>
+                                                            <wm-gridcolumn columnwidth="3" name="gridcolumn70">
+                                                                <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_APPLY" type="button" margin="unset 0.5em" backgroundcolor="#026CB6" color="#ffffff" name="btn_filter" height="41" on-click="btn_filterClick($event, widget)"></wm-button>
+                                                                <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_CLEAR_FILTER" type="button" margin="unset 0.5em" name="btn_clearFilter" height="41" on-click="btn_clearFilterClick($event, widget)"
+                                                                    bordercolor="#026CB6"></wm-button>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
+                                    <wm-container name="container31" margin="40px unset unset unset" class="aio-p2p-scroll-x">
+                                        <wm-container name="container9" margin="20px unset unset unset" backgroundcolor="#F6F7F8" width="2353">
+                                            <wm-layoutgrid name="layoutgrid6_1">
+                                                <wm-gridrow name="gridrow38_2" padding="unset unset unset 10px">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn122">
+                                                        <wm-container name="container98_2" display="inline-block" width="50" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label16_1" class="bold" caption="bind:appLocale.LANG_NO" fontsize="13"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="120" name="container99_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" name="label12_1" caption="bind:appLocale.LANG_TYPE" class="bold" fontsize="13"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="120" name="container100_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DOCUMENT_NUMBER" class="bold" name="label13_1" fontsize="13"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="350" name="container101_1" horizontalalign="center">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REMARKSACTIVITIES" class="bold" name="label14" fontsize="13"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container102">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_ORIGINAL" class="bold" name="label15" fontsize="13"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container103">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_RECLASS" class="bold" fontsize="13" name="label48_1"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container104">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ADDITIONAL" class="bold" fontsize="13" name="label49_1"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container105">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_ADJUSTMENT" class="bold" fontsize="13" name="label50_1"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container106">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_AFTER_ADJUSTMENT" class="bold" fontsize="13" name="label51_1"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container107">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_DATE" class="bold" fontsize="13" name="label52"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container108">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_USER" class="bold" fontsize="13" name="label53"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="center" name="container109">
+                                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COA" class="bold" fontsize="13" name="label54"></wm-label>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="TblBudget" navigation="Scroll" color="#ededed" on-beforedatarender="TblBudgetBeforedatarender(widget, $data)"
+                                            enablereorder="true" showrecordcount="false" width="2353" dataset="bind:Variables.sp_BudgetDetails.dataSet.content" statehandler="none" pagesize="100">
+                                            <wm-listtemplate layout="media" name="listtemplate1">
+                                                <wm-layoutgrid name="layoutgrid4">
+                                                    <wm-gridrow name="gridrow39_2">
+                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn134">
+                                                            <wm-container display="inline-block" width="50" horizontalalign="center" name="container110">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.num" color="#4b4b4b" fontsize="13" name="label64_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="120" horizontalalign="center" name="container111" cursor="default">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.type" name="label11" color="#4b4b4b" fontsize="13"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="120" horizontalalign="center" name="container113">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.docNumber" color="#4b4b4b" fontsize="13" name="label65_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="350" horizontalalign="center" name="container114" on-click="container114Click($event, widget, item, currentItemWidgets)" cursor="pointer">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.remarks" name="label12" color="#000000" fontsize="13" on-click="label12Click($event, widget, item, currentItemWidgets)"
+                                                                    whitespace="normal"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="right" name="container115">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.TblBudget.currentItem.budgetOriginal)" color="#4b4b4b" fontsize="13" name="label63_1" show="bind:Widgets.TblBudget.currentItem.type == 'BEGINNING' ? true : false"></wm-label>
+                                                                <wm-label padding="unset 0.5em" name="label103_1" caption="bind:0 " show="bind:Widgets.TblBudget.currentItem.type == 'BEGINNING' ? false : true" color="#000000"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="right" name="container116">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.TblBudget.currentItem.reclass)" color="#4b4b4b" fontsize="13" name="label66_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="right" name="container117">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.TblBudget.currentItem.additional)" name="label13" color="#4b4b4b" fontsize="13"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="right" name="container118">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.TblBudget.currentItem.adjustment)" color="#4b4b4b" fontsize="13" name="label67_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="right" name="container119">
+                                                                <wm-label padding="unset 0.5em" name="label16" caption="bind:App.formatCurrency(Widgets.TblBudget.currentItem.budgetAfterAdjustment)" color="#4b4b4b" fontsize="13"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="center" name="container120">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.datetime  | toDate: 'dd-MMM-yyyy HH:mm:ss'" color="#4b4b4b" fontsize="13" name="label68_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="center" name="container121">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.createdBy" color="#4b4b4b" fontsize="13" name="label69_1"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container display="inline-block" width="200" horizontalalign="center" name="container122">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.TblBudget.currentItem.coa" color="#4b4b4b" fontsize="13" name="label70_1"></wm-label>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                        <wm-container name="container57_1" width="2353" class="aio-ptp-total-box">
+                                            <wm-layoutgrid name="layoutgrid9_1">
+                                                <wm-gridrow name="gridrow38_3">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn100_1">
+                                                        <wm-container name="container117_1" display="inline-block" width="660" horizontalalign="center" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" name="label69_2" caption="bind:appLocale.LANG_TOTAL" color="#000000" fontweight="bold"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container118_1" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" name="label70_2" color="#000000" caption="bind:App.formatCurrency(Variables.totalBudgetOriginal.dataSet.dataValue)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container119_1" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" name="label71_1" caption="bind:App.formatCurrency(Variables.totalBudgetReclass.dataSet.dataValue)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container120_1" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" name="label72" caption="bind:App.formatCurrency(Variables.totalBudgetAdditional.dataSet.dataValue)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container121_1" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" name="label73" caption="bind:App.formatCurrency(Variables.totalBudgetAdjustment.dataSet.dataValue)"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container122_1" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Variables.totalBudgetAfterAdjustment.dataSet.dataValue)" name="label108"></wm-label>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-spinner show="false" name="spinner_table_adjustment"></wm-spinner>
+                                </wm-tabpane>
+                                <wm-tabpane name="tabpane2" title="bind:appLocale.LANG_SPENDUSAGE" on-select="tabpane2Select($event, widget)">
+                                    <wm-container bordercolor="#e3e3e3" borderwidth="2px" borderstyle="solid" name="container45" padding="unset unset 10px unset">
+                                        <wm-container name="container98_1">
+                                            <wm-layoutgrid name="layoutgrid17">
+                                                <wm-gridrow name="gridrow39_1" height="49">
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn125">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_FILTER" fontweight="bold" margin="10px unset unset 20px" name="label103"></wm-label>
+                                                        <wm-picture pictureplaceholder="resources/images/imagelists/filter-red.png" picturesource="resources/images/imagelists/filter-red.png" show="bind:Widgets.tab2_type.datavalue.length > 0 ||
+Widgets.tab2_budgetOriginal.datavalue.length > 0 ||
+Widgets.tab2_budgetAdjustment.datavalue.length > 0 ||
+Widgets.tab2_reserve.datavalue.length > 0 ||
+Widgets.tab2_commitment.datavalue.length > 0 ||
+Widgets.tab2_actual.datavalue.length > 0 ||
+Widgets.tab2_available.datavalue.length > 0 ||
+Widgets.tab2_user.datavalue.length > 0 ||
+Widgets.tab2_date.datavalue.length > 0 ||
+Widgets.tab2_coa.datavalue.length > 0" name="picture4"></wm-picture>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn126" horizontalalign="right">
+                                                        <wm-picture pictureplaceholder="resources/images/logos/icon-filter-down3.png" picturesource="resources/images/logos/icon-filter-down3.png" margin="20px 20px unset unset" show="bind:!Variables.boolean_showTab2.dataSet.dataValue"
+                                                            on-click="tab2_arrowbottomClick($event, widget)" name="tab2_arrowbottom"></wm-picture>
+                                                        <wm-picture pictureplaceholder="resources/images/logos/icon-filter-up.png" picturesource="resources/images/logos/icon-filter-up.png" margin="20px 20px unset unset" show="bind:Variables.boolean_showTab2.dataSet.dataValue"
+                                                            on-click="tab2_arrowtopClick($event, widget)" name="tab2_arrowtop"></wm-picture>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-container name="container97_1" show="bind:Variables.boolean_showTab2.dataSet.dataValue">
+                                            <wm-layoutgrid name="layoutgrid6">
+                                                <wm-gridrow name="gridrow21_1">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn77">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_TYPE" margin="unset unset unset 20px" name="label33"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn78">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_BUDGET_ORIGINAL" margin="unset unset unset 10px" name="label34"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn79">
+                                                        <wm-label padding="unset 0.5em" caption="Budget Adjustment" margin="unset unset unset 10px" name="label35"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn80">
+                                                        <wm-label padding="unset 0.5em" caption="Reserve" margin="unset unset unset 10px" name="label36"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow22">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn81">
+                                                        <wm-container margin="unset 20px" name="container47">
+                                                            <wm-select name="tab2_type" dataset="bind:Variables.var_type_tab2.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Type"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn82">
+                                                        <wm-container margin="unset 20px unset 10px" name="container48">
+                                                            <wm-select name="tab2_budgetOriginal" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Budget Original"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn83">
+                                                        <wm-container margin="unset 20px unset 10px" name="container49">
+                                                            <wm-select name="tab2_budgetAdjustment" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Budget Adjustment"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn84">
+                                                        <wm-container margin="unset 20px unset 10px" name="container50">
+                                                            <wm-select name="tab2_reserve" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Reserve"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow23">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn85">
+                                                        <wm-label padding="unset 0.5em" caption="Commitment" margin="15px unset unset 20px" name="label37"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn86">
+                                                        <wm-label padding="unset 0.5em" caption="Actual" margin="15px unset unset 10px" name="label38"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn87">
+                                                        <wm-label padding="unset 0.5em" caption="Available" margin="15px unset unset 10px" name="label39"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn88">
+                                                        <wm-label padding="unset 0.5em" caption="Date" margin="15px unset unset 10px" name="label40"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow24">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn89">
+                                                        <wm-container margin="unset 20px" name="container51">
+                                                            <wm-select name="tab2_commitment" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Commitment"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn90">
+                                                        <wm-container margin="unset 20px unset 10px" name="container52">
+                                                            <wm-select name="tab2_actual" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Actual"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn91">
+                                                        <wm-container margin="unset 20px unset 10px" name="container53">
+                                                            <wm-select name="tab2_available" dataset="bind:Variables.var_filtervalue.dataSet" datafield="dataValue" displayfield="name" placeholder="Select Available"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn92">
+                                                        <wm-container name="container54" margin="unset 20px unset 10px">
+                                                            <wm-text class="flatpickr_tab2" placeholder="Select Date" autocomplete="false" name="tab2_date"></wm-text>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow25">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn93">
+                                                        <wm-label padding="unset 0.5em" caption="User" margin="15px unset unset 10px" name="label41"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn94">
+                                                        <wm-label padding="unset 0.5em" caption="COA" margin="15px unset unset 10px" name="label93"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn95">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REMARKS" margin="15px unset unset 10px" name="label109_1"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn96">
+                                                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LABEL_DOCUMENT_NUMBER" margin="15px unset unset 10px" name="label110"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow26">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn97">
+                                                        <wm-container margin="unset 20px" name="container55">
+                                                            <wm-select name="tab2_user" dataset="bind:Variables.data_createdBy.dataSet" datafield="dataValue" displayfield="name" placeholder="Select User"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn98">
+                                                        <wm-container margin="unset 20px unset 10px" name="container67">
+                                                            <wm-select name="tab2_coa" dataset="bind:Variables.data_coa_tab2.dataSet" datafield="dataValue" displayfield="name" placeholder="Select COA"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn100">
+                                                        <wm-container name="container123" padding="unset 20px unset 10px">
+                                                            <wm-text placeholder="bind:appLocale.LANG_REMARKS" name="tab2_remarks"></wm-text>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn99">
+                                                        <wm-container name="container125" padding="unset 20px unset 10px">
+                                                            <wm-select dataset="bind:Variables.data_docno_tab2.dataSet" datafield="dataValue" placeholder="bind:appLocale.LABEL_SELECT_DOCUMENT_NUMBER" name="tab2_docno" displayfield="name"></wm-select>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow36_1">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn90_1"></wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn91_1"></wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn92_1"></wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn93_1"></wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow37_1">
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn94_1" padding="20px unset unset unset">
+                                                        <wm-button class="aio-p2p-btn-primary" caption="Apply" type="button" margin="unset 0.5em" backgroundcolor="#026CB6" color="#ffffff" height="41" name="btn_filter_tab2" on-click="btn_filter_tab2Click($event, widget)"></wm-button>
+                                                        <wm-button class="aio-p2p-btn-outline" caption="Clear Filter" type="button" margin="unset 0.5em" height="41" name="btn_clearFilter_tab2" on-click="btn_clearFilter_tab2Click($event, widget)"></wm-button>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn95_1"></wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn96_1"></wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="3" name="gridcolumn97_1"></wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-container margin="40px unset unset unset" class="aio-p2p-scroll-x" name="container57">
+                                        <wm-container margin="20px unset unset unset" backgroundcolor="#F6F7F8" width="2553" name="container58">
+                                            <wm-layoutgrid name="layoutgrid9">
+                                                <wm-gridrow name="gridrow40" padding="unset unset unset 5px">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn145">
+                                                        <wm-container width="35" display="inline-block" horizontalalign="center" name="container82_1">
+                                                            <wm-label padding="unset 0.5em" class="bold" caption="No" fontsize="13" name="label55"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="120" display="inline-block" horizontalalign="center" name="container83_1">
+                                                            <wm-label padding="unset 0.5em" caption="Type" class="bold" fontsize="13" name="label56"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="120" display="inline-block" horizontalalign="center" name="container84_1">
+                                                            <wm-label padding="unset 0.5em" caption="Document Number" class="bold" fontsize="13" name="label57"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="350" display="inline-block" horizontalalign="center" name="container85_1">
+                                                            <wm-label padding="unset 0.5em" caption="Remarks / Activities" class="bold" fontsize="13" name="label58"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container86_1">
+                                                            <wm-label padding="unset 0.5em" caption="Budget Original" class="bold" fontsize="13" name="label106"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container87">
+                                                            <wm-label padding="unset 0.5em" caption="Budget After Adjustment" class="bold" fontsize="13" name="label59"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container88">
+                                                            <wm-label padding="unset 0.5em" caption="Reserved" class="bold" fontsize="13" name="label60"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container89">
+                                                            <wm-label padding="unset 0.5em" caption="Commitment" class="bold" fontsize="13" name="label61"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container90">
+                                                            <wm-label padding="unset 0.5em" caption="Actual" class="bold" fontsize="13" name="label62"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container91">
+                                                            <wm-label padding="unset 0.5em" caption="Available" class="bold" fontsize="13" name="label63"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container92">
+                                                            <wm-label padding="unset 0.5em" caption="Date" class="bold" fontsize="13" name="label64"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container93">
+                                                            <wm-label padding="unset 0.5em" caption="User" class="bold" fontsize="13" name="label65"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container width="200" display="inline-block" horizontalalign="center" name="container94">
+                                                            <wm-label padding="unset 0.5em" caption="COA" class="bold" fontsize="13" name="label66"></wm-label>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                        <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" navigation="Scroll" color="#ededed" on-beforedatarender="table_spendUsageBeforedatarender(widget, $data)"
+                                            enablereorder="true" showrecordcount="false" width="2553" name="table_spendUsage" dataset="bind:Variables.sp_UsageBudgetDetails.dataSet.content" statehandler="none" pagesize="10000">
+                                            <wm-listtemplate layout="media" name="listtemplate3">
+                                                <wm-layoutgrid name="layoutgrid19">
+                                                    <wm-gridrow name="gridrow43">
+                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn178">
+                                                            <wm-container name="container72" width="35" display="inline-block" horizontalalign="center">
+                                                                <wm-label padding="unset 0.5em" color="#160e0e" caption="bind:Widgets.table_spendUsage.currentItem.num" fontsize="13" name="label130"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="120" display="inline-block" name="container75" horizontalalign="center">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.table_spendUsage.currentItem.type" color="#4b4b4b" fontsize="13" name="label134"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="120" display="inline-block" horizontalalign="center" name="container76">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.table_spendUsage.currentItem.docNumber" color="#4b4b4b" fontsize="13" name="label137"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="350" display="inline-block" horizontalalign="center" name="container77" cursor="pointer" on-click="container77Click($event, widget, item, currentItemWidgets)">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.table_spendUsage.currentItem.remarks" color="#4b4b4b" fontsize="13" name="label139" on-click="label139Click($event, widget, item, currentItemWidgets)"
+                                                                    whitespace="normal"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="right" name="container78">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.table_spendUsage.currentItem.budgetOriginal)" color="#4b4b4b" fontsize="13" name="label87" show="bind:Widgets.table_spendUsage.currentItem.type == 'BEGINNING' ? true : false"></wm-label>
+                                                                <wm-label padding="unset 0.5em" caption="bind:0" show="bind:Widgets.table_spendUsage.currentItem.type == 'BEGINNING' ? false : true" color="#000000" name="label104"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="right" name="container79">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.table_spendUsage.currentItem.budgetAfterAdjustment)" color="#4b4b4b" fontsize="13" name="label141"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="right" name="container80">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.table_spendUsage.currentItem.reserved)" color="#4b4b4b" fontsize="13" name="label88"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="right" name="container81">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.table_spendUsage.currentItem.commitment)" color="#4b4b4b" fontsize="13" name="label70"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="right" name="container82">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.table_spendUsage.currentItem.actual)" color="#4b4b4b" fontsize="13" name="label89"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="right" name="container83">
+                                                                <wm-label padding="unset 0.5em" caption="bind:App.formatCurrency(Widgets.table_spendUsage.currentItem.available)" color="#4b4b4b" fontsize="13" name="label71"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="center" name="container84">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.table_spendUsage.currentItem.datetime | toDate: 'dd-MMM-yyyy HH:mm:ss'" color="#4b4b4b" fontsize="13" name="label147"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="center" name="container85">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.table_spendUsage.currentItem.createdBy" color="#4b4b4b" fontsize="13" name="label149"></wm-label>
+                                                            </wm-container>
+                                                            <wm-container width="200" display="inline-block" horizontalalign="center" name="container86">
+                                                                <wm-label padding="unset 0.5em" caption="bind:Widgets.table_spendUsage.currentItem.coa" color="#4b4b4b" fontsize="13" name="label92"></wm-label>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-listtemplate>
+                                        </wm-list>
+                                        <wm-container width="2553" name="container68_1" class="aio-ptp-total-box">
+                                            <wm-layoutgrid name="layoutgrid16_1">
+                                                <wm-gridrow name="gridrow38_1">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn146_1">
+                                                        <wm-container name="container95" display="inline-block" width="645" horizontalalign="right" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" caption="Total" color="#000000" fontweight="bold" name="label94"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" name="container96" horizontalalign="right" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" color="#000000" caption="bind:App.formatCurrency(Variables.totalUsageBudgetOriginal.dataSet.dataValue)" name="label95"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container97" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" color="#000000" caption="bind:App.formatCurrency(Variables.totalUsageBudgetAfterAdjustment.dataSet.dataValue)" name="label118"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container98" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" color="#000000" caption="bind:App.formatCurrency(Variables.totalUsageReserved.dataSet.dataValue)" name="label119"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container99" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" color="#000000" caption="bind:App.formatCurrency(Variables.totalUsageCommitment.dataSet.dataValue)" name="label120"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container100" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" color="#000000" caption="bind:App.formatCurrency(Variables.totalUsageActual.dataSet.dataValue)" name="label121"></wm-label>
+                                                        </wm-container>
+                                                        <wm-container display="inline-block" width="200" horizontalalign="right" name="container101" padding="15px unset">
+                                                            <wm-label padding="unset 0.5em" color="#000000" caption="bind:App.formatCurrency(Variables.totalUsageAvailable.dataSet.dataValue)" name="label122"></wm-label>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-container>
+                                    <wm-spinner show="false" name="spinner_table_usage"></wm-spinner>
+                                </wm-tabpane>
+                            </wm-tabs>
+                        </wm-container>
+                    </wm-container>
+                </wm-container>
+            </wm-container>
+            <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
+        </wm-page-content>
+    </wm-content>
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_ADD_ADJUSTMENT" iconclass="" name="modal_addAdjustment" class="aio-ptp-dialog" on-opened="modal_addAdjustmentOpened($event, widget)">
+        <wm-dialogactions name="dialogactions1"></wm-dialogactions>
+        <wm-container name="container59_1" margin="27px unset unset unset">
+            <wm-layoutgrid name="layoutgrid13">
+                <wm-gridrow name="gridrow32">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn144">
+                        <wm-label padding="unset 0.5em" name="label103_2" caption="*"></wm-label>
+                        <wm-label padding="unset 0.5em" name="label80" caption="bind:appLocale.LANG_ESTIMATE_MONTH"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow33">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn146">
+                        <wm-text name="add_month" placeholder="Select Month" type="month" class="month-picker" on-change="add_monthChange($event, widget, newVal, oldVal)"></wm-text>
+                        <wm-label padding="unset 0.5em" caption="This Field is required" color="#ff0000" fontweight="bold" name="label_add_month" show="false"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container margin="27px unset unset unset" name="container60_1">
+            <wm-layoutgrid name="layoutgrid14">
+                <wm-gridrow name="gridrow34">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn148">
+                        <wm-label padding="unset 0.5em" caption="*" name="label104_1"></wm-label>
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_REMARKSACTIVITIES" name="label81"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow35">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn149">
+                        <wm-text name="add_remarks" placeholder="bind:appLocale.LANG_ADJUSTMENT_YEE" readonly="false" on-keypress="add_remarksKeypress($event, widget)" maxchars="100"></wm-text>
+                        <wm-label padding="unset 0.5em" caption="This Field is required" color="#ff0000" fontweight="bold" name="label_add_remarks" show="false"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container margin="27px unset unset unset" name="container61_1">
+            <wm-layoutgrid name="layoutgrid15">
+                <wm-gridrow name="gridrow36">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn150">
+                        <wm-label padding="unset 0.5em" caption="*" name="label105"></wm-label>
+                        <wm-label padding="unset 0.5em" caption="Adjustment Amount" name="label82"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow37">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn151">
+                        <wm-text name="add_amount" type="text" on-keypress="add_amountKeypress($event, widget)" on-keyup="add_amountKeyup($event, widget)" datavalue="bind:App.formatCurrency(Variables.model_add_amount.dataSet.dataValue)" on-change="add_amountChange($event, widget, newVal, oldVal)"
+                            updateon="default" maxchars="19" class="only_number" placeholder="bind:appLocale.LANG_ENTER_KEYWORD"></wm-text>
+                        <wm-label padding="unset 0.5em" caption="This Field is required" color="#ff0000" fontweight="bold" name="label_add_amount" show="false"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-container>
+        <wm-container margin="27px unset unset unset" name="container62_1">
+            <wm-layoutgrid name="layoutgrid16">
+                <wm-gridrow name="gridrow38">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn152">
+                        <wm-label padding="unset 0.5em" caption="*" name="label106_1"></wm-label>
+                        <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_COA" name="label83"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow39">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn153">
+                        <wm-search name="add_coa" type="autocomplete" dataset="bind:Variables.v_listCoa.dataSet" searchkey="glLongText,glNumber" displaylabel="bind:$[glNumber] + ' - ' + $[glLongText]" datafield="glNumber" matchmode="startignorecase" placeholder="Search COA"></wm-search>
+                        <wm-label padding="unset 0.5em" caption="This Field is required" color="#ff0000" fontweight="bold" name="label_add_coa" show="false"></wm-label>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+            <wm-label padding="unset 0.5em" name="label107" caption="bind:appLocale.LANG_ISREQUIRED" fontstyle="italic" fontweight="bold" margin="5px unset unset unset"></wm-label>
+        </wm-container>
+        <wm-spinner show="false" name="spinner_modal"></wm-spinner>
+        <wm-container name="container62_2" margin="40px unset unset unset" horizontalalign="right">
+            <wm-button class="aio-ptp-button aio-ptp-alternate-btn" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button7_1" width="111" height="auto"></wm-button>
+            <wm-button class="aio-ptp-button aio-ptp-primary-btn" caption="bind:appLocale.LANG_SAVE" type="button" margin="unset 0.5em" name="btn_add" on-click="btn_addClick($event, widget)" width="111" height="auto"></wm-button>
+        </wm-container>
+    </wm-dialog>
+</wm-page>
