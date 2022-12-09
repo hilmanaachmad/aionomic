@@ -14,7 +14,7 @@ Page.onReady = function() {
      * e.g. to get value of text widget named 'username' use following script
      * 'Page.Widgets.username.datavalue'
      */
-
+    Page.Variables.DBUserRole.listRecords();
     Page.$page[0].addEventListener("click", function() {
         $('.aio-ptp-dropdown:not(.clicked)').removeClass("active")
         $('.aio-ptp-dropdown').removeClass("clicked")
@@ -131,7 +131,8 @@ Page.container113Click = function($event, widget) {
 };
 
 Page.button3Click = function($event, widget) {
-    Page.Variables.dbTblTPr.invoke()
+    Page.Variables.dbTblTPr.invoke();
+    // Page.Variables.dbTblTPr.listRecords();
 };
 
 Page.button4Click = function($event, widget) {
@@ -165,58 +166,58 @@ Page.button4Click = function($event, widget) {
 
 
 Page.dbTblPrAllonBeforeDatasetReady = async function(variable, data) {
-    var arr = []
-    var company = Page.Variables.varFilter.dataSet.company
-    var department = Page.Variables.varFilter.dataSet.department
-    var pepresentative = Page.Variables.varFilter.dataSet.pepresentative
-    var purchaseBy = Page.Variables.varFilter.dataSet.purchaseBy
-    var paymentMethod = Page.Variables.varFilter.dataSet.paymentMethod
-    var projectName = Page.Variables.varFilter.dataSet.projectName
-    var accountType = Page.Variables.varFilter.dataSet.accountType
-    var status = Page.Variables.varFilter.dataSet.status
+    // var arr = []
+    // var company = Page.Variables.varFilter.dataSet.company
+    // var department = Page.Variables.varFilter.dataSet.department
+    // var pepresentative = Page.Variables.varFilter.dataSet.pepresentative
+    // var purchaseBy = Page.Variables.varFilter.dataSet.purchaseBy
+    // var paymentMethod = Page.Variables.varFilter.dataSet.paymentMethod
+    // var projectName = Page.Variables.varFilter.dataSet.projectName
+    // var accountType = Page.Variables.varFilter.dataSet.accountType
+    // var status = Page.Variables.varFilter.dataSet.status
 
-    // console.log("data", data)
+    // // console.log("data", data)
 
-    var loopingData = await data.forEach((dt) => {
-        company.push(dt.tblMcompany.ctitle)
-        department.push(dt.tblMdepartment.departmentTitle)
-        pepresentative.push(dt.prRepUserName)
-        purchaseBy.push(dt.prPurchaseBy)
-        paymentMethod.push(dt.prPaymentMethod)
-        projectName.push(dt.prProject)
-        accountType.push(dt.tblMaccountType.accTitle)
-        status.push(dt.prStatus)
-        arr.push(dt)
-    })
+    // var loopingData = await data.forEach((dt) => {
+    //     company.push(dt.tblMcompany.ctitle)
+    //     department.push(dt.tblMdepartment.departmentTitle)
+    //     pepresentative.push(dt.prRepUserName)
+    //     purchaseBy.push(dt.prPurchaseBy)
+    //     paymentMethod.push(dt.prPaymentMethod)
+    //     projectName.push(dt.prProject)
+    //     accountType.push(dt.tblMaccountType.accTitle)
+    //     status.push(dt.prStatus)
+    //     arr.push(dt)
+    // })
 
-    Promise.all([loopingData]).then((result) => {
-        console.log(result);
-    });
+    // Promise.all([loopingData]).then((result) => {
+    //     console.log(result);
+    // });
 
-    company = [...new Set(company)];
-    department = [...new Set(department)];
-    pepresentative = [...new Set(pepresentative)];
-    purchaseBy = [...new Set(purchaseBy)];
-    paymentMethod = [...new Set(paymentMethod)];
-    projectName = [...new Set(projectName)];
-    accountType = [...new Set(accountType)];
-    status = [...new Set(status)];
+    // company = [...new Set(company)];
+    // department = [...new Set(department)];
+    // pepresentative = [...new Set(pepresentative)];
+    // purchaseBy = [...new Set(purchaseBy)];
+    // paymentMethod = [...new Set(paymentMethod)];
+    // projectName = [...new Set(projectName)];
+    // accountType = [...new Set(accountType)];
+    // status = [...new Set(status)];
 
-    Page.Variables.varFilter.dataSet.company = company
-    Page.Variables.varFilter.dataSet.department = department
-    Page.Variables.varFilter.dataSet.pepresentative = pepresentative.filter((x) => {
-        return x !== null
-    })
-    Page.Variables.varFilter.dataSet.purchaseBy = purchaseBy
-    Page.Variables.varFilter.dataSet.paymentMethod = paymentMethod
-    Page.Variables.varFilter.dataSet.projectName = projectName.filter((x) => {
-        return x !== null
-    })
-    Page.Variables.varFilter.dataSet.accountType = accountType
-    Page.Variables.varFilter.dataSet.status = status
+    // Page.Variables.varFilter.dataSet.company = company
+    // Page.Variables.varFilter.dataSet.department = department
+    // Page.Variables.varFilter.dataSet.pepresentative = pepresentative.filter((x) => {
+    //     return x !== null
+    // })
+    // Page.Variables.varFilter.dataSet.purchaseBy = purchaseBy
+    // Page.Variables.varFilter.dataSet.paymentMethod = paymentMethod
+    // Page.Variables.varFilter.dataSet.projectName = projectName.filter((x) => {
+    //     return x !== null
+    // })
+    // Page.Variables.varFilter.dataSet.accountType = accountType
+    // Page.Variables.varFilter.dataSet.status = status
 
-    console.log(Page.Variables.varFilter.dataSet)
-    return arr
+    // console.log(Page.Variables.varFilter.dataSet)
+    // return arr
 };
 // export excel
 Page.button2Click = function($event, widget) {
@@ -245,7 +246,7 @@ Page.button2Click = function($event, widget) {
         data = data.data
         data.forEach(item => {
             var dataItem = [
-                item.tblMcompany.cCode + " - " + item.tblMcompany.ctitle,
+                item.tblMcompany.ccode + " - " + item.tblMcompany.ctitle,
                 item.tblMdepartment.departmentTitle,
                 item.prRepUserName,
                 item.prPurchaseBy,
@@ -594,6 +595,7 @@ Page.button5Click = function($event, widget) {
 Page.DBUserRoleonSuccess = function(variable, data) {
     Page.Variables.MODELConditionPurchase.dataSet = []
     Page.Variables.MODELConditionPurchaseAdmin.dataSet = []
+
     for (var i = 0; i < data.length; i++) {
         if (data[i].roleId == 1) {
             Page.Variables.MODELConditionPurchaseAdmin.dataSet.push(data[i].roleId)
@@ -602,4 +604,44 @@ Page.DBUserRoleonSuccess = function(variable, data) {
             Page.Variables.MODELConditionPurchase.dataSet.push(data[i].roleId)
         }
     }
+
+    // Execute this variable after on success
+    setTimeout(function() {
+        console.log('oi2', Page.Variables.MODELConditionPurchaseAdmin.getData());
+        Page.Variables.dbTblTPr.invoke();
+        Page.Variables.dbTblPrAll.invoke();
+    }, 500);
+};
+Page.TblTPrTable1_updaterowAction = function($event, row) {
+    App.Actions.goToPage_PurchaseRequestFormEdit.invoke({
+        data: {
+            'prId': Page.Widgets.TblTPrTable1.selecteditem.prId
+        }
+    })
+};
+
+Page.TblTPrTable1_customRowAction = function($event, row) {
+    App.Actions.goToPage_PurchaseRequestFormView.invoke({
+        data: {
+            'prId': Page.Widgets.TblTPrTable1.selecteditem.prId
+        }
+    })
+};
+
+Page.TblTPrTable1_customRow1Action = function($event, row) {
+    return Page.Variables.qPrChangeStatus.invoke({
+        "inputFields": {
+            'prId': Page.Widgets.list2.selecteditem.prId,
+            "prModifiedAt": new Date().toISOString(),
+            "prModifiedBy": App.Variables.loggedInUserData.dataSet.username,
+            'prStatus': "Closed"
+        }
+    }).then(() => {
+        Page.Variables.dbTblTPr.update()
+        Page.Variables.dbTblPrAll.update()
+        App.Actions.appNotification.setMessage(App.appLocale.NOTIF_DATA_SUCCESS)
+        App.Actions.appNotification.setToasterClass("success")
+        App.Actions.appNotification.getToasterDuration(5000)
+        App.Actions.appNotification.invoke()
+    })
 };

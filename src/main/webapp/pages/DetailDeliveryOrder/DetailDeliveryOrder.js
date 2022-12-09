@@ -330,7 +330,6 @@ Page.button11Click = async function($event, widget) {
             }
         }
         Page.Widgets.spinner1.show = false;
-        Page.notify('Delivery Confirmation Successfully', 'success');
     } catch (err) {
         Page.Widgets.spinner1.show = false
         Page.notify(`Submitting item Failed`, 'please check your browser console!');

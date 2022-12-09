@@ -424,9 +424,9 @@
     <properties>
         <wavemaker.artifactType>wmapp</wavemaker.artifactType>
         <profile.props.file>development.properties</profile.props.file>
-        <wavemaker.app.runtime.services.version>10.15.4</wavemaker.app.runtime.services.version>
-        <wavemaker.app.runtime.ui.version>10.15.4-rc.602</wavemaker.app.runtime.ui.version>
-        <wavemaker.studio.version>10.15.4</wavemaker.studio.version>
+        <wavemaker.app.runtime.services.version>10.15.5</wavemaker.app.runtime.services.version>
+        <wavemaker.app.runtime.ui.version>10.15.5-rc.604</wavemaker.app.runtime.ui.version>
+        <wavemaker.studio.version>10.15.5</wavemaker.studio.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.lib.directory>${basedir}/lib</project.lib.directory>
     </properties>

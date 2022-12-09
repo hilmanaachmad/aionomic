@@ -162,3 +162,9 @@
     border-radius: 4px;
     z-index: 5;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

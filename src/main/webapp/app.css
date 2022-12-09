@@ -336,3 +336,27 @@
     bottom: 25px;
     right: 25px;
 }
+
+
+/*START CUSTOM TABLE CSS*/
+
+.wm-app .app-grid .table thead :not(.filter-row) th,
+.wm-app .custom-table-header {
+    /*font-family: Inter;*/
+    background: #F6F7F8;
+    color: #404143;
+}
+
+.wm-app .custom-table-header .app-grid-column {
+    padding: 12px 8px;
+}
+
+.wm-app .app-grid .table thead th .header-data,
+.wm-app .custom-table-header label {
+    text-transform: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/*END CUSTOM TABLE CSS*/
