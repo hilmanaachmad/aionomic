@@ -1,7 +1,7 @@
 <wm-page name="mainpage" pagetitle="bind:appLocale.LANG_FORM_PURCHASE_REQUEST_DETAIL" backgroundcolor="#ffffff">
     <wm-content name="content1">
         <wm-page-content name="pageContent1">
-            <wm-container name="MainContainer" class="aio-p2p-main-container">
+            <wm-container name="MainContainer">
                 <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
                     <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail"></wm-container>
                     <wm-container name="PageContent" class="aio-p2p-page-content aio-p2p-linear" horizontalalign="center">
@@ -12,7 +12,7 @@
                             <wm-container name="formBody" padding="24px" backgroundcolor="#fff" margin="unset unset 24px unset">
                                 <wm-container name="container11" horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.cid ? 'form-error' : ''">
                                     <wm-label name="label2" caption="bind:appLocale.LANG_COMPANY" class="col-md-3 control-label"></wm-label>
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COMPANY" dataset="bind:Variables.vCompany.dataSet" displaylabel="ctitle" datafield="All Fields" matchmode="anywhereignorecase" class="aio-p2p-form-field"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COMPANY" dataset="bind:Variables.vCompany.dataSet" displaylabel="ctitle" datafield="All Fields" matchmode="startignorecase" class="aio-p2p-form-field"
                                         disabled="true" name="searchCompany" datacompletemsg="bind:''" datavalue="bind:Variables.vmPRModel.dataSet.tblMcompany"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.cid" show="bind:Variables.vmErrorMessage.dataSet.cid ? true : false" name="label18" class="aio-p2p-error-message"></wm-label>
                                 </wm-container>
@@ -20,8 +20,8 @@
                                     <wm-composite captionposition="top" horizontalalign="left" name="composite7">
                                         <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_DEPARTMENT" name="label24_1"></wm-label>
                                         <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.departmentId ? 'form-error':''" name="container41">
-                                            <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_DEPARTMENT" dataset="bind:Variables.vDepartment.dataSet" displaylabel="departmentTitle" datafield="All Fields" matchmode="anywhereignorecase"
-                                                on-select="selectCategorySelect($event, widget, selectedValue)" class="aio-p2p-form-field" disabled="true" name="searchDepartment" datacompletemsg="bind:''" datavalue="bind:Variables.vmPRModel.dataSet.tblMdepartment"></wm-search>
+                                            <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_DEPARTMENT" dataset="bind:Variables.vDepartment.dataSet" displaylabel="departmentTitle" datafield="All Fields" matchmode="startignorecase" on-select="selectCategorySelect($event, widget, selectedValue)"
+                                                class="aio-p2p-form-field" disabled="true" name="searchDepartment" datacompletemsg="bind:''" datavalue="bind:Variables.vmPRModel.dataSet.tblMdepartment"></wm-search>
                                             <wm-label caption="bind:Variables.vmErrorMessage.dataSet.departmentId" show="bind:Variables.vmErrorMessage.dataSet.departmentId ? true : false" class="aio-p2p-error-message" name="label25_1"></wm-label>
                                         </wm-container>
                                     </wm-composite>
@@ -30,9 +30,8 @@
                                     <wm-composite name="composite1" captionposition="top" horizontalalign="left">
                                         <wm-label class="col-md-3 control-label" name="label4" caption="bind:appLocale.LANG_REPRESENTATIVE"></wm-label>
                                         <wm-container class="col-md-9 aio-p2p-form-container" name="container13" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.prRepUserId ? 'form-error' : ''">
-                                            <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_REPRESENTATIVE" dataset="bind:Variables.vEmployee.dataSet" displaylabel="employeeName" datafield="All Fields" matchmode="anywhereignorecase"
-                                                class="aio-p2p-form-field" disabled="true" name="searchRepresentative" datacompletemsg="bind:''" datavalue="bind:Variables.vPurchaseRequest.firstRecord.prRepUserNik ? Variables.vEmployeeDef.firstRecord : null"
-                                                searchkey="employeeName,nik"></wm-search>
+                                            <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_REPRESENTATIVE" dataset="bind:Variables.vEmployee.dataSet" displaylabel="employeeName" datafield="All Fields" matchmode="startignorecase" class="aio-p2p-form-field"
+                                                disabled="true" name="searchRepresentative" datacompletemsg="bind:''" datavalue="bind:Variables.vPurchaseRequest.firstRecord.prRepUserNik ? Variables.vEmployeeDef.firstRecord : null" searchkey="employeeName,nik"></wm-search>
                                             <wm-label caption="bind:Variables.vmErrorMessage.dataSet.prRepUserId" name="label14_1" show="bind:Variables.vmErrorMessage.dataSet.prRepUserId ? true : false" class="aio-p2p-error-message"></wm-label>
                                         </wm-container>
                                     </wm-composite>
@@ -313,7 +312,8 @@
             <wm-container name="FooterContainer" class="aio-p2p-footer-container" content="PageFooter"></wm-container>
         </wm-page-content>
     </wm-content>
-    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.LANG_HISTORY" iconclass="" name="dialogHistory" class="aio-p2p-modal" width="977">
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale[&quot;LANG_HISTORY&quot;] + ' ' + appLocale[&quot;LABEL_PR_NUMBER&quot;] +  ': (' + Variables.vmPRModel.dataSet.prRef  + ') '" iconclass="" name="dialogHistory" class="aio-p2p-modal"
+        width="977">
         <wm-dialogactions name="dialogactions1">
             <wm-button class="btn-primary" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button6_1"></wm-button>
         </wm-dialogactions>
@@ -358,7 +358,7 @@
                         <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liMaterialGroup ? 'form-error' : ''" name="container68">
                             <wm-label caption="bind:appLocale.LANG_MATERIAL_GROUP" class="col-md-3 control-label" name="label46"></wm-label>
                             <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_ENTER_MATERIAL_GROUP" dataset="bind:Variables.vViewMaterialGroup.dataSet" displaylabel="bind:$[materialGroup] + ' - ' + $[materialGroupDesc]" datafield="All Fields"
-                                matchmode="anywhereignorecase" class="aio-p2p-form-field" disabled="false" name="searchMaterialGroup" searchkey="materialGroup,materialGroupDesc"></wm-search>
+                                matchmode="startignorecase" class="aio-p2p-form-field" disabled="false" name="searchMaterialGroup" searchkey="materialGroup,materialGroupDesc"></wm-search>
                             <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liMaterialGroup" show="bind:Variables.vmErrorMessage.dataSet.liMaterialGroup ? true : false" class="aio-p2p-error-message" name="label47"></wm-label>
                         </wm-container>
                         <wm-container name="container69">
@@ -383,7 +383,7 @@
                             <wm-composite captionposition="top" horizontalalign="left" name="composite12">
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_UOM" name="label52"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liUOM ? 'form-error':''" name="container74">
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_UOM" dataset="bind:Variables.vViewUOM.dataSet" displaylabel="bind:$[uomChar3] + ' - ' + $[uomChar30]" datafield="All Fields" matchmode="anywhereignorecase"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_UOM" dataset="bind:Variables.vViewUOM.dataSet" displaylabel="bind:$[uomChar3] + ' - ' + $[uomChar30]" datafield="All Fields" matchmode="startignorecase"
                                         class="aio-p2p-form-field" disabled="false" name="searchUOM" searchkey="uomChar3,uomChar30"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liUOM" show="bind:Variables.vmErrorMessage.dataSet.liUOM ? true : false" class="aio-p2p-error-message" name="label53"></wm-label>
                                 </wm-container>
@@ -454,7 +454,7 @@
                             <wm-composite captionposition="top" horizontalalign="left" name="composite19">
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_COST_CENTER" name="label60_1"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container93" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liCostCenter ? 'form-error' : ''">
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COST_CENTER" dataset="bind:Variables.vViewCostCenter.dataSet" displaylabel="costCenter" datafield="All Fields" matchmode="anywhereignorecase" class="aio-p2p-form-field"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COST_CENTER" dataset="bind:Variables.vViewCostCenter.dataSet" displaylabel="costCenter" datafield="All Fields" matchmode="startignorecase" class="aio-p2p-form-field"
                                         disabled="false" name="searchCostCenter" searchkey="costCenter"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liCostCenter" show="bind:Variables.vmErrorMessage.dataSet.liCostCenter ? true : false" class="aio-p2p-error-message" name="label84"></wm-label>
                                 </wm-container>
@@ -464,7 +464,7 @@
                             <wm-composite captionposition="top" horizontalalign="left" name="composite20">
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_COA" name="label61_1"></wm-label>
                                 <wm-container class="col-md-9" width="100%" name="container95">
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COA" dataset="bind:Variables.vViewCoa.dataSet" displaylabel="glNumber" datafield="All Fields" matchmode="anywhereignorecase" class="aio-p2p-form-field"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COA" dataset="bind:Variables.vViewCoa.dataSet" displaylabel="glNumber" datafield="All Fields" matchmode="startignorecase" class="aio-p2p-form-field"
                                         disabled="false" name="searchCoa" searchkey="glLongText,glNumber"></wm-search>
                                 </wm-container>
                             </wm-composite>
@@ -500,7 +500,7 @@
                         <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liMaterialGroup ? 'form-error' : ''" name="container119">
                             <wm-label caption="bind:appLocale.LANG_MATERIAL_GROUP" class="col-md-3 control-label" name="label89"></wm-label>
                             <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_ENTER_MATERIAL_GROUP" dataset="bind:Variables.vViewMaterialGroup.dataSet" displaylabel="bind:$[materialGroup] + ' - ' + $[materialGroupDesc]" datafield="All Fields"
-                                matchmode="anywhereignorecase" class="aio-p2p-form-field" disabled="false" searchkey="materialGroup,materialGroupDesc" name="searchMaterialGroupEdit" datavalue="bind:Variables.vViewMaterialGroupDef.firstRecord"></wm-search>
+                                matchmode="startignorecase" class="aio-p2p-form-field" disabled="false" searchkey="materialGroup,materialGroupDesc" name="searchMaterialGroupEdit" datavalue="bind:Variables.vViewMaterialGroupDef.firstRecord"></wm-search>
                             <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liMaterialGroup" show="bind:Variables.vmErrorMessage.dataSet.liMaterialGroup ? true : false" class="aio-p2p-error-message" name="label90"></wm-label>
                         </wm-container>
                         <wm-container name="container120">
@@ -525,7 +525,7 @@
                             <wm-composite captionposition="top" horizontalalign="left" name="composite25">
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_UOM" name="label95"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liUOM ? 'form-error':''" name="container125">
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_UOM" dataset="bind:Variables.vViewUOM.dataSet" displaylabel="bind:$[uomChar3] + ' - ' + $[uomChar30]" datafield="All Fields" matchmode="anywhereignorecase"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_UOM" dataset="bind:Variables.vViewUOM.dataSet" displaylabel="bind:$[uomChar3] + ' - ' + $[uomChar30]" datafield="All Fields" matchmode="startignorecase"
                                         class="aio-p2p-form-field" disabled="false" searchkey="uomChar3,uomChar30" name="searchUOMEdit" datavalue="bind:Variables.vViewUOMDef.firstRecord"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liUOM" show="bind:Variables.vmErrorMessage.dataSet.liUOM ? true : false" class="aio-p2p-error-message" name="label96"></wm-label>
                                 </wm-container>
@@ -597,7 +597,7 @@
                             <wm-composite captionposition="top" horizontalalign="left" name="composite32">
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_COST_CENTER" name="label110"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liCostCenter ? 'form-error' : ''" name="container140">
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COST_CENTER" dataset="bind:Variables.vViewCostCenter.dataSet" displaylabel="costCenter" datafield="All Fields" matchmode="anywhereignorecase" class="aio-p2p-form-field"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COST_CENTER" dataset="bind:Variables.vViewCostCenter.dataSet" displaylabel="costCenter" datafield="All Fields" matchmode="startignorecase" class="aio-p2p-form-field"
                                         disabled="false" searchkey="costCenter" name="searchCostCenterEdit" datavalue="bind:Variables.vViewCostCenterDef.firstRecord"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liCostCenter" show="bind:Variables.vmErrorMessage.dataSet.liCostCenter ? true : false" class="aio-p2p-error-message" name="label111"></wm-label>
                                 </wm-container>
@@ -607,7 +607,7 @@
                             <wm-composite captionposition="top" horizontalalign="left" name="composite33">
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_COA" name="label112"></wm-label>
                                 <wm-container class="col-md-9" width="100%" name="container142">
-                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COA" dataset="bind:Variables.vViewCoa.dataSet" displaylabel="glNumber" datafield="All Fields" matchmode="anywhereignorecase" class="aio-p2p-form-field"
+                                    <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_COA" dataset="bind:Variables.vViewCoa.dataSet" displaylabel="glNumber" datafield="All Fields" matchmode="startignorecase" class="aio-p2p-form-field"
                                         disabled="false" searchkey="glLongText,glNumber" name="searchCoaEdit" datavalue="bind:Widgets.listLineItem.selecteditem.pliCoa? Variables.vViewCoa.firstRecord : null"></wm-search>
                                 </wm-container>
                             </wm-composite>

@@ -5,6 +5,34 @@
 
 /* perform any action on widgets/variables within this block */
 Page.onReady = function() {
+    // setTimeout(function() {
+    //     // When the user scrolls the page, execute myFunction
+    //     // window.onscroll = function() {
+    //     //     myFunction()
+    //     // };
+
+    //     // Get the header
+    //     var header = document.getElementById("myHeader");
+
+
+    //     // Get the offset position of the navbar
+    //     var sticky = header.offsetTop;
+
+
+
+    //     // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    //     $('.app-container').scroll(function() {
+    //        
+    //         let scrolled = $(this).scrollTop();
+    //        
+    //         if (scrolled > sticky) {
+    //             header.classList.add("sticky");
+    //         } else {
+    //             header.classList.remove("sticky");
+    //         }
+    //     });
+
+    // }, 1000);
     /*
      * variables can be accessed through 'Page.Variables' property here
      * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
@@ -166,58 +194,59 @@ Page.button4Click = function($event, widget) {
 
 
 Page.dbTblPrAllonBeforeDatasetReady = async function(variable, data) {
-    // var arr = []
-    // var company = Page.Variables.varFilter.dataSet.company
-    // var department = Page.Variables.varFilter.dataSet.department
-    // var pepresentative = Page.Variables.varFilter.dataSet.pepresentative
-    // var purchaseBy = Page.Variables.varFilter.dataSet.purchaseBy
-    // var paymentMethod = Page.Variables.varFilter.dataSet.paymentMethod
-    // var projectName = Page.Variables.varFilter.dataSet.projectName
-    // var accountType = Page.Variables.varFilter.dataSet.accountType
-    // var status = Page.Variables.varFilter.dataSet.status
 
-    // // console.log("data", data)
+    var arr = []
+    var company = Page.Variables.varFilter.dataSet.company
+    var department = Page.Variables.varFilter.dataSet.department
+    var pepresentative = Page.Variables.varFilter.dataSet.pepresentative
+    var purchaseBy = Page.Variables.varFilter.dataSet.purchaseBy
+    var paymentMethod = Page.Variables.varFilter.dataSet.paymentMethod
+    var projectName = Page.Variables.varFilter.dataSet.projectName
+    var accountType = Page.Variables.varFilter.dataSet.accountType
+    var status = Page.Variables.varFilter.dataSet.status
 
-    // var loopingData = await data.forEach((dt) => {
-    //     company.push(dt.tblMcompany.ctitle)
-    //     department.push(dt.tblMdepartment.departmentTitle)
-    //     pepresentative.push(dt.prRepUserName)
-    //     purchaseBy.push(dt.prPurchaseBy)
-    //     paymentMethod.push(dt.prPaymentMethod)
-    //     projectName.push(dt.prProject)
-    //     accountType.push(dt.tblMaccountType.accTitle)
-    //     status.push(dt.prStatus)
-    //     arr.push(dt)
-    // })
 
-    // Promise.all([loopingData]).then((result) => {
-    //     console.log(result);
-    // });
 
-    // company = [...new Set(company)];
-    // department = [...new Set(department)];
-    // pepresentative = [...new Set(pepresentative)];
-    // purchaseBy = [...new Set(purchaseBy)];
-    // paymentMethod = [...new Set(paymentMethod)];
-    // projectName = [...new Set(projectName)];
-    // accountType = [...new Set(accountType)];
-    // status = [...new Set(status)];
+    var loopingData = await data.forEach((dt) => {
+        company.push(dt.tblMcompany.ctitle)
+        department.push(dt.tblMdepartment.departmentTitle)
+        pepresentative.push(dt.prRepUserName)
+        purchaseBy.push(dt.prPurchaseBy)
+        paymentMethod.push(dt.prPaymentMethod)
+        projectName.push(dt.prProject)
+        accountType.push(dt.tblMaccountType.accTitle)
+        status.push(dt.prStatus)
+        arr.push(dt)
+    })
 
-    // Page.Variables.varFilter.dataSet.company = company
-    // Page.Variables.varFilter.dataSet.department = department
-    // Page.Variables.varFilter.dataSet.pepresentative = pepresentative.filter((x) => {
-    //     return x !== null
-    // })
-    // Page.Variables.varFilter.dataSet.purchaseBy = purchaseBy
-    // Page.Variables.varFilter.dataSet.paymentMethod = paymentMethod
-    // Page.Variables.varFilter.dataSet.projectName = projectName.filter((x) => {
-    //     return x !== null
-    // })
-    // Page.Variables.varFilter.dataSet.accountType = accountType
-    // Page.Variables.varFilter.dataSet.status = status
+    Promise.all([loopingData]).then((result) => {
+        console.log(result);
+    });
 
-    // console.log(Page.Variables.varFilter.dataSet)
-    // return arr
+    company = [...new Set(company)];
+    department = [...new Set(department)];
+    pepresentative = [...new Set(pepresentative)];
+    purchaseBy = [...new Set(purchaseBy)];
+    paymentMethod = [...new Set(paymentMethod)];
+    projectName = [...new Set(projectName)];
+    accountType = [...new Set(accountType)];
+    status = [...new Set(status)];
+
+    Page.Variables.varFilter.dataSet.company = company
+    Page.Variables.varFilter.dataSet.department = department
+    Page.Variables.varFilter.dataSet.pepresentative = pepresentative.filter((x) => {
+        return x !== null
+    })
+    Page.Variables.varFilter.dataSet.purchaseBy = purchaseBy
+    Page.Variables.varFilter.dataSet.paymentMethod = paymentMethod
+    Page.Variables.varFilter.dataSet.projectName = projectName.filter((x) => {
+        return x !== null
+    })
+    Page.Variables.varFilter.dataSet.accountType = accountType
+    Page.Variables.varFilter.dataSet.status = status
+
+
+    return arr
 };
 // export excel
 Page.button2Click = function($event, widget) {
@@ -226,11 +255,14 @@ Page.button2Click = function($event, widget) {
     var sheet = workbook.addWorksheet('Purchase Request');
     var xls_content = []
     var xls_header = [
+        'PR Number',
         App.appLocale.LANG_COMPANY,
         App.appLocale.LANG_DEPARTMENT,
+        'Creator',
         App.appLocale.LANG_REPRESENTATIVE,
         App.appLocale.LANG_PURCHASE_BY,
         App.appLocale.LANG_PAYMENT_METHOD,
+        'PR Amount',
         App.appLocale.LANG_PROPOSAL_BUDGET_AMOUNT,
         App.appLocale.LANG_PROJECT_NAME,
         App.appLocale.LANG_DATE,
@@ -241,20 +273,23 @@ Page.button2Click = function($event, widget) {
 
     Promise.resolve().then(() => {
         Page.Widgets.spinner2.show = true
-        return Page.Variables.dbTblTPr.invoke()
+        return Page.Variables.vPurchaseRequestExport.invoke()
     }).then((data) => {
         data = data.data
         data.forEach(item => {
             var dataItem = [
-                item.tblMcompany.ccode + " - " + item.tblMcompany.ctitle,
-                item.tblMdepartment.departmentTitle,
+                item.prRef,
+                item.ccode + " - " + item.ctitle,
+                item.departmentTitle,
+                item.prCreatedName,
                 item.prRepUserName,
                 item.prPurchaseBy,
                 item.prPaymentMethod,
-                item.tblTproposalBudget ? item.tblTproposalBudget.pbAmount : "",
+                item.totalAmount ? item.totalAmount : "",
+                item.pbAmount ? item.pbAmount : "",
                 item.prProject,
                 item.prDate.split("-")[2] + "-" + item.prDate.split("-")[1] + "-" + item.prDate.split("-")[0],
-                item.tblMaccountType.accTitle,
+                item.accTitle,
                 item.prStatus
             ]
             xls_content.push(dataItem)
@@ -297,7 +332,7 @@ Page.dialogDeleteOk = function($event, widget) {
     Promise.resolve().then(() => {
         return Page.Variables.qPrChangeStatus.invoke({
             "inputFields": {
-                'prId': Page.Widgets.list2.selecteditem.prId,
+                'prId': Page.Widgets.TblTPrTable1.selecteditem.prId,
                 "prModifiedAt": new Date().toISOString(),
                 "prModifiedBy": App.Variables.loggedInUserData.dataSet.username,
                 'prStatus': "Deleted"
@@ -307,7 +342,7 @@ Page.dialogDeleteOk = function($event, widget) {
         return Page.Variables.vdbPrLineItem.invoke({
             filterFields: {
                 prId: {
-                    value: Page.Widgets.list2.selecteditem.prId
+                    value: Page.Widgets.TblTPrTable1.selecteditem.prId
                 }
             }
         })
@@ -529,11 +564,14 @@ Page.button5Click = function($event, widget) {
     var sheet = workbook.addWorksheet('Purchase Request');
     var xls_content = []
     var xls_header = [
+        'PR Number',
         App.appLocale.LANG_COMPANY,
         App.appLocale.LANG_DEPARTMENT,
+        'Creator',
         App.appLocale.LANG_REPRESENTATIVE,
         App.appLocale.LANG_PURCHASE_BY,
         App.appLocale.LANG_PAYMENT_METHOD,
+        'PR Amount',
         App.appLocale.LANG_PROPOSAL_BUDGET_AMOUNT,
         App.appLocale.LANG_PROJECT_NAME,
         App.appLocale.LANG_DATE,
@@ -542,21 +580,72 @@ Page.button5Click = function($event, widget) {
     ]
     xls_content.push(xls_header)
 
+    // Page.Variables.dbTblPrAll.listRecords().then(function(res) {
+    //    
+    //     res.data.forEach(item => {
+    //        
+    //         var dataItem = [
+    //             item.tblMcompany.ccode + " - " + item.tblMcompany.ctitle,
+    //             item.tblMdepartment.departmentTitle,
+    //             item.prRepUserName,
+    //             item.prPurchaseBy,
+    //             item.prPaymentMethod,
+    //             item.tblTproposalBudget ? item.tblTproposalBudget.pbAmount : "",
+    //             item.prProject,
+    //             item.prDate.split("-")[2] + "-" + item.prDate.split("-")[1] + "-" + item.prDate.split("-")[0],
+    //             item.tblMaccountType.accTitle,
+    //             item.prStatus
+    //         ]
+    //         xls_content.push(dataItem)
+    //     })
 
+    //     sheet.addRows(xls_content)
 
-    Page.App.getVDBAllRecords(Page.Variables.dbTblPrAll).then(function(res) {
+    //     // styling
+    //     let columnWidth = [42, 32, 30, 30, 32, 32, 20, 20, 20, 12];
+    //     sheet.columns.forEach((col, index) => {
+    //         if (columnWidth[index]) {
+    //             col.width = columnWidth[index];
+    //         }
+    //     });
+    //     let alignCenter = {
+    //         vertical: 'middle',
+    //         'horizontal': 'center'
+    //     };
+    //     sheet.getRow(1).alignment = alignCenter;
+
+    //     // exporting
+    //     workbook.xlsx.writeBuffer().then(function(datas) {
+    //         var filename = "Purchase Request";
+    //         var blob = new Blob([datas], {
+    //             type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    //         });
+
+    //         let currentTime = new Date().getDate().toString().padStart(2, "0") + (Number(new Date().getMonth()) + 1).toString().padStart(2, "0") + new Date().getFullYear();
+    //         saveAs(blob, filename + currentTime + ".xlsx");
+    //     })
+
+    //     Page.Widgets.spinner2.show = false
+    // });
+
+    Page.App.getVDBAllRecords(Page.Variables.vPurchaseRequestExport).then(function(res) {
         res.forEach(item => {
-            console.log(item)
+            console.log({
+                item
+            })
             var dataItem = [
-                item.tblMcompany.cCode + " - " + item.tblMcompany.ctitle,
-                item.tblMdepartment.departmentTitle,
+                item.prRef,
+                item.ccode + " - " + item.ctitle,
+                item.departmentTitle,
+                item.prCreatedName,
                 item.prRepUserName,
                 item.prPurchaseBy,
                 item.prPaymentMethod,
-                item.tblTproposalBudget ? item.tblTproposalBudget.pbAmount : "",
+                item.totalAmount ? item.totalAmount : "",
+                item.pbAmount ? item.pbAmount : "",
                 item.prProject,
                 item.prDate.split("-")[2] + "-" + item.prDate.split("-")[1] + "-" + item.prDate.split("-")[0],
-                item.tblMaccountType.accTitle,
+                item.accTitle,
                 item.prStatus
             ]
             xls_content.push(dataItem)
@@ -607,7 +696,6 @@ Page.DBUserRoleonSuccess = function(variable, data) {
 
     // Execute this variable after on success
     setTimeout(function() {
-        console.log('oi2', Page.Variables.MODELConditionPurchaseAdmin.getData());
         Page.Variables.dbTblTPr.invoke();
         Page.Variables.dbTblPrAll.invoke();
     }, 500);
@@ -644,4 +732,26 @@ Page.TblTPrTable1_customRow1Action = function($event, row) {
         App.Actions.appNotification.getToasterDuration(5000)
         App.Actions.appNotification.invoke()
     })
+};
+
+Page.dbTblTPronSuccess = function(variable, data) {
+    let nik = data.map(item => {
+        return item.prCreatedBy.substr(5, 5);
+    });
+
+    if (nik.length > 0) {
+        Page.Variables.getEmployeeName.listRecords({
+            "filterFields": {
+                nik: {
+                    value: nik
+                }
+            }
+        }, function(res) {
+            for (let i = 0; i < data.length; i++) {
+                data[i].prCreatedByName = res.filter(el => el.nik === data[i].prCreatedBy.substr(5, 5)).length > 0 ? res.filter(el => el.nik === data[i].prCreatedBy.substr(5, 5))[0].employeeName : null;
+            }
+
+            Page.Widgets.TblTPrTable1.setGridData(data);
+        })
+    }
 };

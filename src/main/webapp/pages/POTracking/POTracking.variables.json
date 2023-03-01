@@ -1280,6 +1280,20 @@
     "twoWayBinding" : false,
     "saveInPhonegap" : false
   },
+  "mYear" : {
+    "_id" : "wm-mYear-wm.Variable-1672907427857",
+    "name" : "mYear",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
   "sortirNumber" : {
     "_id" : "wm-sortirNumber-wm.Variable-1607030584586",
     "name" : "sortirNumber",

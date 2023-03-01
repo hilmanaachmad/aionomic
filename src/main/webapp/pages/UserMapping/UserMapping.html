@@ -149,7 +149,7 @@
                 <wm-composite name="composite5" captionposition="top">
                     <wm-label class="col-md-3 control-label" name="label14" caption="bind:appLocale.LANG_EMPLOYEE"></wm-label>
                     <wm-container name="container18" width="100%">
-                        <wm-search name="searchEmployee" type="autocomplete" dataset="bind:Variables.vdbEmployeeList.dataSet" searchkey="employeeName,nik" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="All Fields" matchmode="anywhereignorecase"
+                        <wm-search name="searchEmployee" type="autocomplete" dataset="bind:Variables.vdbEmployeeList.dataSet" searchkey="employeeName,nik" displaylabel="bind:$[nik] + &quot; - &quot; + $[employeeName]" datafield="All Fields" matchmode="startignorecase"
                             datacompletemsg="bind:&quot;&quot;" on-select="search2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH_EMPLOYEE_NIK_OR_NAME" limit="20"></wm-search>
                     </wm-container>
                 </wm-composite>
@@ -159,7 +159,7 @@
                     <wm-label class="col-md-3 control-label" name="label15_1" caption="bind:appLocale.LANG_VENDOR"></wm-label>
                     <wm-container name="container18_1" width="100%">
                         <wm-search name="searchVendor" type="autocomplete" dataset="bind:Variables.qGetVendor.dataSet" searchkey="VCode,VName" displaylabel="bind:$[vendorCode] + ' - ' +$[vendorName]" datafield="All Fields" datacompletemsg="bind:&quot;&quot;"
-                            on-select="search2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH_VENDOR_ID_OR_VENDOR_NAME"></wm-search>
+                            on-select="search2Select($event, widget, selectedValue)" placeholder="bind:appLocale.LANG_SEARCH_VENDOR_ID_OR_VENDOR_NAME" matchmode="startignorecase"></wm-search>
                     </wm-container>
                 </wm-composite>
             </wm-container>

@@ -10,11 +10,8 @@
                         <wm-param name="pageTitle" value="bind:appLocale.LANG_INBOX" type="string"></wm-param>
                     </wm-container>
                     <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
-                        <wm-container name="background" backgroundcolor="#fff" conditionalstyle="bind:{
-    maxWidth: &quot;1200px&quot;,
-    minWidth: &quot;600px&quot;
-}">
-                            <wm-container name="contentContainer" padding="24px" width="941" class="aio-p2p-content-container">
+                        <wm-container name="background" backgroundcolor="#fff">
+                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container">
                                 <wm-container name="container15" padding="unset unset 16px 8px">
                                     <wm-layoutgrid name="layoutgrid2">
                                         <wm-gridrow name="gridrow2">
@@ -59,12 +56,13 @@
                                                 name="picture9" width="16" height="16"></wm-picture>
                                         </wm-container>
                                         <wm-container width="17%" display="inline-block" class="aio-p2p-clickable" on-click="container34Click($event, widget)" name="container34">
-                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_EMPLOYEE" name="label19_1" class="aio-p2p-clickable"></wm-label>
+                                            <wm-label padding="unset 0.5em" caption="bind:appLocale.LANG_CREATOR" name="label19_1" class="aio-p2p-clickable"></wm-label>
                                             <wm-picture picturesource="bind:Variables.vdbInbox.orderBy === &quot;inbCreatedBy ASC&quot; ? &quot;resources/images/logos/icon-up-down-asc.png&quot; : Variables.vdbInbox.orderBy === &quot;inbCreatedBy DESC&quot; ? &quot;resources/images/logos/icon-up-down-desc.png&quot; : &quot;resources/images/logos/icon-up-down.png&quot;"
                                                 name="picture7_1" width="16" height="16"></wm-picture>
                                         </wm-container>
                                     </wm-container>
-                                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="dataList" dataset="bind:Variables.vdbInbox.dataSet" navigation="Basic">
+                                    <wm-list listclass="list-group" itemclass="list-group-item" template="true" template-name="Media List" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="dataList" dataset="bind:Variables.vdbInbox.dataSet" navigation="Basic"
+                                        statehandler="none">
                                         <wm-listtemplate layout="media" name="listtemplate1">
                                             <wm-container padding="unset 8px" name="container35">
                                                 <wm-container width="8%" display="inline-block" name="container36" conditionalstyle="bind:{verticalAlign: &quot;top&quot;}">

@@ -2012,6 +2012,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "inbTaskType",

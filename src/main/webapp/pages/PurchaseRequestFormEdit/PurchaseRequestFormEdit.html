@@ -1,7 +1,7 @@
 <wm-page name="mainpage" pagetitle="bind:appLocale.LANG_FORM_PURCHASE_REQUEST" backgroundcolor="#ffffff">
     <wm-content name="content1">
         <wm-page-content name="pageContent1">
-            <wm-container name="MainContainer" class="aio-p2p-main-container">
+            <wm-container name="MainContainer">
                 <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
                     <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="PageHeaderDetail"></wm-container>
                     <wm-container name="PageContent" class="aio-p2p-page-content aio-p2p-linear" horizontalalign="center">
@@ -324,7 +324,8 @@
             <wm-spinner show="false" name="spinner1" class="top-spinner" servicevariabletotrack="svGeneratePrRef,svSendCheckerNotif,vdbActiveBudget,vdbqGetCurrencyByCode,vdbqInsertBudgetDetails,vEmployeeDef,vPrHistory,vPrLineItem"></wm-spinner>
         </wm-page-content>
     </wm-content>
-    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale[&quot;LANG_HISTORY&quot;] + ' (' + Variables.vmPRModel.dataSet.prRef  + ') '" iconclass="" name="dialogHistory" class="aio-p2p-modal" width="977">
+    <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale[&quot;LANG_HISTORY&quot;] + ' ' + appLocale[&quot;LABEL_PR_NUMBER&quot;] +  ': (' + Variables.vmPRModel.dataSet.prRef  + ') '" iconclass="" name="dialogHistory" class="aio-p2p-modal"
+        width="977">
         <wm-dialogactions name="dialogactions1">
             <wm-button class="btn-primary" caption="bind:appLocale.LANG_CLOSE" on-click="closeDialog()" name="button6_1"></wm-button>
         </wm-dialogactions>
@@ -416,7 +417,7 @@
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_CURRENCY" name="label57"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container79" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liCurrency ? 'form-error' : ''">
                                     <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_CURRENCY" dataset="bind:Variables.vmCurrency.dataSet" displaylabel="fromCurrency" datafield="All Fields" class="aio-p2p-form-field" disabled="false"
-                                        name="searchCurrency" searchkey="fromCurrency" matchmode="startignorecase"></wm-search>
+                                        name="searchCurrency" searchkey="fromCurrency"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liCurrency" show="bind:Variables.vmErrorMessage.dataSet.liCurrency ? true : false" class="aio-p2p-error-message" name="label80"></wm-label>
                                 </wm-container>
                             </wm-composite>
@@ -452,7 +453,7 @@
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_IO_NUMBER" name="label60"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" name="container85" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liIONumber ? 'form-error' : ''">
                                     <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SEARCH_IO_NUMBER" dataset="bind:Variables.svGetIONumber.dataSet" displaylabel="bind:$[ioNumber] + &quot; - &quot; + $[ioName]" datafield="All Fields" class="aio-p2p-form-field"
-                                        disabled="false" name="searchIONumber" searchkey="ioNumber,ioName" datacompletemsg="bind:''" matchmode="startignorecase"></wm-search>
+                                        disabled="false" name="searchIONumber" searchkey="ioNumber,ioName" datacompletemsg="bind:''"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liIONumber" show="bind:Variables.vmErrorMessage.dataSet.liIONumber ? true : false" class="aio-p2p-error-message" name="label83"></wm-label>
                                 </wm-container>
                             </wm-composite>
@@ -566,7 +567,7 @@
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_CURRENCY" name="label101"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liCurrency ? 'form-error' : ''" name="container130">
                                     <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SELECT_CURRENCY" dataset="bind:Variables.vmCurrency.dataSet" displaylabel="fromCurrency" datafield="All Fields" class="aio-p2p-form-field" disabled="false"
-                                        searchkey="fromCurrency" name="searchCurrencyEdit" datavalue="bind:Widgets.listLineItem.selecteditem.pliCurrency" matchmode="startignorecase"></wm-search>
+                                        searchkey="fromCurrency" name="searchCurrencyEdit" datavalue="bind:Widgets.listLineItem.selecteditem.pliCurrency"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liCurrency" show="bind:Variables.vmErrorMessage.dataSet.liCurrency ? true : false" class="aio-p2p-error-message" name="label102"></wm-label>
                                 </wm-container>
                             </wm-composite>
@@ -602,7 +603,7 @@
                                 <wm-label class="col-md-3 control-label" caption="bind:appLocale.LANG_IO_NUMBER" name="label107"></wm-label>
                                 <wm-container class="col-md-9 aio-p2p-form-container" width="100%" conditionalclass="bind:Variables.vmErrorMessage.dataSet.liIONumber ? 'form-error' : ''" name="container136">
                                     <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SEARCH_IO_NUMBER" dataset="bind:Variables.svGetIONumber.dataSet" displaylabel="bind:$[ioNumber] + &quot; - &quot; + $[ioName]" datafield="All Fields" class="aio-p2p-form-field"
-                                        disabled="false" searchkey="ioNumber,ioName" datacompletemsg="bind:''" name="searchIONumberEdit" datavalue="bind:Variables.svGetIONumberDef.firstRecord" matchmode="startignorecase"></wm-search>
+                                        disabled="false" searchkey="ioNumber,ioName" datacompletemsg="bind:''" name="searchIONumberEdit" datavalue="bind:Variables.svGetIONumberDef.firstRecord"></wm-search>
                                     <wm-label caption="bind:Variables.vmErrorMessage.dataSet.liIONumber" show="bind:Variables.vmErrorMessage.dataSet.liIONumber ? true : false" class="aio-p2p-error-message" name="label108"></wm-label>
                                 </wm-container>
                             </wm-composite>

@@ -9,7 +9,7 @@ var selectedItem;
 var Obj = [];
 var ObjFilter = [];
 var ObjSpend = [];
-let valBudgetYear, valCompany, valBrand, valDep, valAcc;
+let valBudgetYear, valCompany, valBrand, valDep, valAcc, valMonth;
 
 Page.onReady = async function() {
 
@@ -77,7 +77,8 @@ Page.onReady = async function() {
                 acc_type: "NULL",
                 comp: "NULL",
                 brand: "NULL",
-                admin: Page.Variables.isAdminBudget.dataSet.dataValue
+                admin: Page.Variables.isAdminBudget.dataSet.dataValue,
+                month: Page.Widgets.selectMonth.datavalue
             }
         }, function(data) {}, function(error) {
             // Error Callback
@@ -112,6 +113,11 @@ Page.onReady = async function() {
 
 }
 
+Page.getCurrentMonth = function() {
+    let month = new Date();
+    return (month.getMonth() + 1);
+}
+
 
 Page.btnApplyClick = async function($event, widget) {
     valBudgetYear = Page.Widgets.budgetYear.datavalue;
@@ -119,6 +125,10 @@ Page.btnApplyClick = async function($event, widget) {
     valBrand = Page.Widgets.slct_brand.datavalue;
     valDep = Page.Widgets.slct_department.datavalue;
     valAcc = Page.Widgets.slct_account_type.datavalue;
+    valMonth = Page.Widgets.selectMonth.datavalue;
+
+    console.log('oioi', valMonth);
+    console.log('oioi2', valBudgetYear);
 
     window.localStorage.setItem('session-year', valBudgetYear);
     window.localStorage.setItem('session-company', valCompany);
@@ -127,6 +137,7 @@ Page.btnApplyClick = async function($event, widget) {
     window.localStorage.setItem('session-acc', valAcc);
 
     if ((valBudgetYear == undefined || valBudgetYear == '') &&
+        // (valMonth == undefined || valMonth == '') &&
         (valCompany == undefined || valCompany == '') &&
         (valBrand == undefined || valBrand == '') &&
         (valDep == undefined || valDep == '') &&
@@ -139,6 +150,9 @@ Page.btnApplyClick = async function($event, widget) {
 
         if (valBudgetYear == undefined || valBudgetYear == '') {
             valBudgetYear = 'NULL';
+        }
+        if (valMonth == undefined || valMonth == '') {
+            valMonth = 'NULL';
         }
         if (valCompany == undefined || valCompany == '') {
             valCompany = 'NULL';
@@ -161,7 +175,8 @@ Page.btnApplyClick = async function($event, widget) {
                 acc_type: valAcc,
                 comp: valCompany,
                 brand: valBrand,
-                admin: Page.Variables.isAdminBudget.dataSet.dataValue
+                admin: Page.Variables.isAdminBudget.dataSet.dataValue,
+                month: valMonth
             }
         }, function(data) {}, function(error) {
             // Error Callback

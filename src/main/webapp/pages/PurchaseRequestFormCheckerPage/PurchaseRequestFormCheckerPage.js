@@ -791,6 +791,37 @@ Page.buttonApproveClick = async function($event, widget) {
             })
         }).then(function() {
             // return Page.Variables.svSendCheckerNotif.invoke()
+            // send notification to creator
+            Page.Variables.dbTblTInbox.createRecord({
+                row: {
+                    // "inbTimestamp": new Date().toISOString(),
+                    "inbTaskType": "PR",
+                    "inbSubject": "<b>PR</b> - PR baru telah dibuat",
+                    "userId": App.Variables.loggedInUser.dataSet.name,
+                    "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
+                }
+            });
+
+            // send notification to representative
+            if (Page.Widgets.searchRepresentative.datavalue) {
+                let representative = Page.Widgets.searchRepresentative.datavalue.employeeCode;
+                if (representative.length > 4) {
+                    let firstNik = representative.substring(0, 1);
+                    if (firstNik == "0") {
+                        representative = representative.substring(1, representative.length);
+                    }
+                }
+
+                Page.Variables.dbTblTInbox.createRecord({
+                    row: {
+                        // "inbTimestamp": new Date().toISOString(),
+                        "inbTaskType": "PR",
+                        "inbSubject": "<b>PR</b> - PR baru telah dibuat",
+                        "userId": "emp::" + representative,
+                        "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
+                    }
+                });
+            }
             return Page.Variables.dbTblTInbox.createRecord({
                 row: {
                     "inbTimestamp": new Date().toISOString(),

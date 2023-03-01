@@ -6,23 +6,6 @@
 /* perform any action on widgets/variables within this block */
 Partial.initial = ""
 Partial.onReady = function() {
-    console.log('AWWWWWWWWWWWWWWWWWWWWWW');
-    window.onscroll = function() {
-        myFunction()
-    };
-
-    var header = document.getElementsByClassName("myHeader");
-    console.log(header);
-    var sticky = header.offsetTop;
-
-    function myFunction() {
-        console.log('as');
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
-    }
     /*
      * variables can be accessed through 'Partial.Variables' property here
      * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script

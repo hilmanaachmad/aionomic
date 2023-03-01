@@ -767,6 +767,18 @@
         "generator" : "assigned",
         "isRelated" : false,
         "scale" : 0
+      }, {
+        "fieldName" : "requestBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "request_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
       } ],
       "entityName" : "VPoHeaderToGr",
       "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.VPoHeaderToGr",
@@ -1102,7 +1114,7 @@
         "precision" : 20,
         "generator" : "assigned",
         "isRelated" : false,
-        "scale" : 9
+        "scale" : 4
       }, {
         "fieldName" : "deliveryDate",
         "type" : "datetime",
@@ -1168,6 +1180,18 @@
         "type" : "datetime",
         "fullyQualifiedType" : "datetime",
         "columnName" : "paid_on",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "createdDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "created_date",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 0,
@@ -1622,6 +1646,18 @@
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 50,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "createdDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "created_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,

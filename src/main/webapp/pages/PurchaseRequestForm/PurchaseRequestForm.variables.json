@@ -1226,6 +1226,127 @@
     "saveInPhonegap" : false,
     "controller" : "QueryExecution"
   },
+  "TblTInbox" : {
+    "_id" : "wm-TblTInbox-wm.LiveVariable-1671158846834",
+    "name" : "TblTInbox",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TblTInbox",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "aio_ptp",
+    "ignoreCase" : true,
+    "matchMode" : "startignorecase",
+    "orderBy" : "inbId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "inbId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "inb_id",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbTimestamp",
+        "type" : "datetime",
+        "fullyQualifiedType" : "datetime",
+        "columnName" : "inb_timestamp",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "systemInserted" : true,
+        "systemUpdated" : true,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbTaskType",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "inb_task_type",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbSubject",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "inb_subject",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "userId",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "user_id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 100,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "inbCreatedBy",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "inb_created_by",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "SYSTEM",
+        "scale" : 0
+      } ],
+      "entityName" : "TblTInbox",
+      "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTInbox",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "inbId" ]
+    },
+    "tableName" : "tbl_t_inbox",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
+    "package" : "id.co.aio.procure_to_pay.aio_ptp.TblTInbox"
+  },
   "vAccountType" : {
     "_id" : "wm-vAccountType-wm.LiveVariable-1611577711362",
     "name" : "vAccountType",
@@ -2077,7 +2198,6 @@
     "liveSource" : "aio_ptp",
     "ignoreCase" : true,
     "matchMode" : "startignorecase",
-    "orderBy" : "bhId asc",
     "propertiesMap" : {
       "columns" : [ {
         "fieldName" : "bhId",
@@ -2148,7 +2268,6 @@
     "liveSource" : "aio_ptp",
     "ignoreCase" : true,
     "matchMode" : "startignorecase",
-    "orderBy" : "bhId asc",
     "propertiesMap" : {
       "columns" : [ {
         "fieldName" : "bhId",

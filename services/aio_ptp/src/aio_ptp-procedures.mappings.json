@@ -215,7 +215,7 @@
     } ]
   },
   "spBudgetDetail1" : {
-    "procedureString" : "CALL budget_detail1( ?, ?, ?, ?, ?, ?, ?)",
+    "procedureString" : "CALL budget_detail1( ?, ?, ?, ?, ?, ?, ?, ?)",
     "parameters" : [ {
       "name" : "acc_type",
       "type" : "string",
@@ -277,6 +277,15 @@
       "variableType" : "PROMPT",
       "variableName" : "",
       "testValue" : "TRUE",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "month",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
       "required" : true,
       "parameterType" : "IN"
     } ]

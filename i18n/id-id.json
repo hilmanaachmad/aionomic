@@ -812,7 +812,7 @@
     "LANG_MATERIAL_GROUP_CATEGORY" : "kelompok barang/kategori",
     "LANG_SEARCH_MATERIAL_GROUP_CATEGORY" : "Cari Pengelompokan barang/kategori",
     "LANG_EDIT_MATERIAL_GROUP_CATEGORY_TO_VENDOR" : "Tambahkan material group/, Departemen dan pusat biaya",
-    "LANG_MAPPING_DIVISION_DEPARTMENT_COST_CENTER" : "Centeent",
+    "LANG_MAPPING_DIVISION_DEPARTMENT_COST_CENTER" : "Mapping Divisi, Departemen & Pusat Biaya",
     "LANG_ADD_MAPPING_DIVISION_DEPARTMENT_COST_CENTER" : "Tambahkan mapping divisi, Departemen dan pusat biaya",
     "LANG_PURCHASING_ORGANIZATION" : "Organisasi Purchasing",
     "LANG_EDIT_MAPPING_DIVISION_DEPARTMENT_COST_CENTER" : "Tambahkan mapping divisi, Departemen dan pusat biaya",
@@ -938,7 +938,7 @@
   },
   "files" : {
     "angular" : "id",
-    "fullCalendar" : "id",
+    "fullCalendar" : null,
     "moment" : "id"
   },
   "prefabMessages" : { }

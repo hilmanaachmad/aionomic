@@ -3,7 +3,7 @@
     "name" : "spBudgetDetail1",
     "description" : "ambil budget detail 1",
     "version" : "V2",
-    "procedureString" : "CALL budget_detail1( :acc_type, :comp, :brand, :dep, :emp, :year, :admin)",
+    "procedureString" : "CALL budget_detail1( :acc_type, :comp, :brand, :dep, :emp, :year, :admin, :month)",
     "parameters" : [ {
       "name" : "acc_type",
       "type" : "string",
@@ -65,6 +65,15 @@
       "variableType" : "PROMPT",
       "variableName" : "",
       "testValue" : "TRUE",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "month",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
       "required" : true,
       "parameterType" : "IN"
     } ],

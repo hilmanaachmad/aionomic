@@ -259,12 +259,14 @@ Page.loginActiononSuccess = async function(variable, data) {
 // login action invoke on enter
 Page.UsernameInpKeyup = function($event, widget) {
     window.localStorage.setItem('unique-id', btoa(Page.Widgets.UsernameInp.datavalue));
+    window.localStorage.setItem('unique-token', btoa(Page.Widgets.passwordInp.datavalue));
     if ($event.key === "Enter") {
         // Page.Actions.loginAction.invoke()
         Page.doLogin(Page.Widgets.UsernameInp.datavalue, CryptoJS.MD5(Page.Widgets.passwordInp.datavalue).toString());
     }
 };
 Page.passwordInpKeyup = function($event, widget) {
+    window.localStorage.setItem('unique-id', btoa(Page.Widgets.UsernameInp.datavalue));
     window.localStorage.setItem('unique-token', btoa(Page.Widgets.passwordInp.datavalue));
     if ($event.key === "Enter") {
         // Page.Actions.loginAction.invoke()
@@ -386,4 +388,11 @@ Page.containerEyeClick = function($event, widget) {
         Page.Widgets.passwordInp.type = "password";
         Page.Widgets.icon1.iconclass = "far fa-eye-slash";
     }
+};
+
+Page.svGetDataVendorByNameonSuccess = function(variable, data) {
+    if (data[0].vendorCode === '0') {
+        Page.Widgets.btnSubmit.disabled = true;
+    }
+    console.log('ini data', data)
 };

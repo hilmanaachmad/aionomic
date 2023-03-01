@@ -346,6 +346,7 @@
     "isList" : true,
     "maxResults" : 10000,
     "orderBy" : "abId desc",
+    "onSuccess" : "svGetForgotUseronSuccess(variable, data, options)",
     "startUpdate" : false,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",

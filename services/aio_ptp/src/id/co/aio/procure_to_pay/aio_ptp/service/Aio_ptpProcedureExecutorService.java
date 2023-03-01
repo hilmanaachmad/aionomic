@@ -14,7 +14,7 @@ public interface Aio_ptpProcedureExecutorService {
 
     SpBudgetDetail2Response executeSp_budgetDetail2(String bhId, String typeData, String valueBeginning, String valueAdjustment, String valueReclass, String valueAdditional, String createdAtStart, String createdAtEnd, String createdBy, String coa);
 
-    SpBudgetDetail1Response executeSpBudgetDetail1(String accType, String comp, String brand, String dep, String emp, String year, String admin);
+    SpBudgetDetail1Response executeSpBudgetDetail1(String accType, String comp, String brand, String dep, String emp, String year, String admin, String month);
 
     SpBudgetDetailsResponse executeSp_budgetDetails(String bhId, String typeData, String valueBeginning, String valueAdjustment, String valueReclass, String valueAdditional, String createdAtStart, String createdAtEnd, String createdBy, String coa, String remarks, String docNumber);
 

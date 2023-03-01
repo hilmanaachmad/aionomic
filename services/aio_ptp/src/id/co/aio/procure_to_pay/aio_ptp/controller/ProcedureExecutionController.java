@@ -57,9 +57,9 @@ public class ProcedureExecutionController {
     @RequestMapping(value = "/procedure/execute/spBudgetDetail1", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "ambil budget detail 1")
-    public SpBudgetDetail1Response executeSpBudgetDetail1(@RequestParam(value = "acc_type") String accType, @RequestParam(value = "comp") String comp, @RequestParam(value = "brand") String brand, @RequestParam(value = "dep") String dep, @RequestParam(value = "emp") String emp, @RequestParam(value = "year") String year, @RequestParam(value = "admin") String admin, HttpServletRequest _request) {
+    public SpBudgetDetail1Response executeSpBudgetDetail1(@RequestParam(value = "acc_type") String accType, @RequestParam(value = "comp") String comp, @RequestParam(value = "brand") String brand, @RequestParam(value = "dep") String dep, @RequestParam(value = "emp") String emp, @RequestParam(value = "year") String year, @RequestParam(value = "admin") String admin, @RequestParam(value = "month") String month, HttpServletRequest _request) {
         LOGGER.debug("Executing named procedure: spBudgetDetail1");
-        SpBudgetDetail1Response _result = procedureService.executeSpBudgetDetail1(accType, comp, brand, dep, emp, year, admin);
+        SpBudgetDetail1Response _result = procedureService.executeSpBudgetDetail1(accType, comp, brand, dep, emp, year, admin, month);
         LOGGER.debug("got the result for named procedure: spBudgetDetail1, result:{}", _result);
         return _result;
     }

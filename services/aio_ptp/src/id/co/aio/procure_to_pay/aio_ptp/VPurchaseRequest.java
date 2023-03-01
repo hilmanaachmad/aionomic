@@ -43,9 +43,9 @@ public class VPurchaseRequest implements Serializable {
     private String rfqNumber;
     private String rfqStatus;
     private String poNumber;
-    private LocalDateTime poRequestDate;
+    private String poRequestDate;
     private String poStatus;
-    private BigDecimal poQty;
+    private String poQty;
     private String poCreatedBy;
     private String poCreatedByName;
     private String matGroupId;
@@ -233,7 +233,7 @@ public class VPurchaseRequest implements Serializable {
         this.rfqStatus = rfqStatus;
     }
 
-    @Column(name = "`po_number`", nullable = true, length = 20)
+    @Column(name = "`po_number`", nullable = false, length = 255)
     public String getPoNumber() {
         return this.poNumber;
     }
@@ -242,16 +242,16 @@ public class VPurchaseRequest implements Serializable {
         this.poNumber = poNumber;
     }
 
-    @Column(name = "`po_request_date`", nullable = true)
-    public LocalDateTime getPoRequestDate() {
+    @Column(name = "`po_request_date`", nullable = false, length = 255)
+    public String getPoRequestDate() {
         return this.poRequestDate;
     }
 
-    public void setPoRequestDate(LocalDateTime poRequestDate) {
+    public void setPoRequestDate(String poRequestDate) {
         this.poRequestDate = poRequestDate;
     }
 
-    @Column(name = "`po_status`", nullable = true, length = 39)
+    @Column(name = "`po_status`", nullable = false, length = 255)
     public String getPoStatus() {
         return this.poStatus;
     }
@@ -260,16 +260,16 @@ public class VPurchaseRequest implements Serializable {
         this.poStatus = poStatus;
     }
 
-    @Column(name = "`po_qty`", nullable = true, scale = 9, precision = 20)
-    public BigDecimal getPoQty() {
+    @Column(name = "`po_qty`", nullable = false, length = 255)
+    public String getPoQty() {
         return this.poQty;
     }
 
-    public void setPoQty(BigDecimal poQty) {
+    public void setPoQty(String poQty) {
         this.poQty = poQty;
     }
 
-    @Column(name = "`po_created_by`", nullable = true, length = 255)
+    @Column(name = "`po_created_by`", nullable = false, length = 255)
     public String getPoCreatedBy() {
         return this.poCreatedBy;
     }
@@ -278,7 +278,7 @@ public class VPurchaseRequest implements Serializable {
         this.poCreatedBy = poCreatedBy;
     }
 
-    @Column(name = "`po_created_by_name`", nullable = true, length = 100)
+    @Column(name = "`po_created_by_name`", nullable = false, length = 255)
     public String getPoCreatedByName() {
         return this.poCreatedByName;
     }

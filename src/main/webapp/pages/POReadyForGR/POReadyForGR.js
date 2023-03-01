@@ -24,6 +24,7 @@ Page.onReady = function() {
         $('.yearpicker').yearpicker()
         $('.yearpicker').change(function() {
             year_value = $(this).val()
+            Page.setYear(year_value)
         })
         $('.yearpicker').val(new Date().getFullYear())
         Page.Widgets.year.datavalue = new Date().getFullYear()
@@ -63,9 +64,6 @@ Page.onReady = function() {
         $('.flatpickr_delivery_date').val('');
 
     }, 1000);
-
-
-
 
 };
 
@@ -120,6 +118,7 @@ Page.select9Change = function($event, widget, newVal, oldVal) {
 
 //Filter
 Page.buttonApplyClick = function($event, widget) {
+    console.log(Page.Widgets.year.datavalue)
     Page.Variables.DBPOReadyToGR.invoke()
 };
 
@@ -285,3 +284,10 @@ Page.BypassVerification = function(data) {
 
     })
 }
+
+Page.setYear = function(year) {
+    Page.Variables.mYear.dataSet = year
+}
+Page.yearChange = function($event, widget, newVal, oldVal) {
+    Page.Variables.mYear.dataSet = newVal;
+};

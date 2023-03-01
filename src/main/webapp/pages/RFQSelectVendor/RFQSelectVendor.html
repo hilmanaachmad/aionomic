@@ -3,7 +3,7 @@
         <wm-page-content name="pageContent1" columnwidth="12">
             <wm-container name="MainContainer" class="aio-p2p-main-container">
                 <!--<wm-container name="SidebarContainer" class="aio-p2p-sidebar-container" content="PageSidebar"></wm-container>-->
-                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container">
+                <wm-container name="PageContentContainer" class="aio-p2p-page-content-container aio-p2p-header-container-full">
                     <wm-container name="HeaderContainer" class="aio-p2p-header-container" content="HeaderForBudgetPage">
                         <wm-param name="page" value="budget-detail1" type="string"></wm-param>
                     </wm-container>
@@ -274,7 +274,7 @@
                         <wm-container horizontalalign="left" class="form-group aio-p2p-form-container" conditionalclass="bind:Variables.vmErrorMessage.dataSet.vendorName ? 'form-error' : ''" name="container68">
                             <wm-label caption="bind:appLocale.LANG_VENDOR_NAME" class="col-md-3 control-label" name="label46"></wm-label>
                             <wm-search type="autocomplete" placeholder="bind:appLocale.LANG_SEARCH_VENDOR_ID_OR_VENDOR_NAME" dataset="bind:Variables.vVendorEV.dataSet" displaylabel="bind:$[vendorName] + &quot; - &quot; + $[vendorCode]" datafield="All Fields"
-                                matchmode="anywhereignorecase" on-select="selectCategorySelect($event, widget, selectedValue)" class="aio-p2p-form-field" disabled="false" name="searchVendorEV" searchkey="vendorCode,vendorName"></wm-search>
+                                matchmode="startignorecase" on-select="selectCategorySelect($event, widget, selectedValue)" class="aio-p2p-form-field" disabled="false" name="searchVendorEV" searchkey="vendorCode,vendorName"></wm-search>
                             <wm-label caption="bind:Variables.vmErrorMessage.dataSet.vendorName" show="bind:Variables.vmErrorMessage.dataSet.vendorName ? true : false" class="aio-p2p-error-message" name="label47"></wm-label>
                             <wm-picture picturesource="resources/images/logos/icon-chevron-down.png" class="aio-p2p-icon-down" name="picture10_1"></wm-picture>
                         </wm-container>

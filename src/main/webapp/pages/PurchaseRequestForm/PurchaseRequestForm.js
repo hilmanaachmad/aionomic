@@ -52,8 +52,6 @@ Page.onReady = function() {
             App.Actions.goToPage_Main.invoke()
         }
     }
-
-
 };
 
 Page.getDepartmentList = function(data) {
@@ -207,6 +205,7 @@ Page.picture6Click = function($event, widget) {
 };
 
 Page.buttonSaveClick = function($event, widget) {
+    Page.Widgets.spinner1.show = true
     // check availabel budget io
     var budget_spend = Page.Variables.vmListLineItem.dataSet.reduce(function(total, item) {
         if (!total[item.bhId]) {
@@ -284,7 +283,7 @@ Page.buttonSaveClick = function($event, widget) {
     }
 
     var attachment = btoa(JSON.stringify(Page.Variables.vmAttachmentList.dataSet))
-    Page.Widgets.spinner1.show = true
+    // Page.Widgets.spinner1.show = true
     Page.Variables.vPurchaseRequest.createRecord({
         row: {
             "cid": Page.Widgets.searchCompany.datavalue.cid,
@@ -378,8 +377,9 @@ Page.buttonSaveClick = function($event, widget) {
 };
 
 Page.buttonSubmitClick = function($event, widget) {
+    Page.Widgets.spinner1.show = true
     // check availabel budget io
-    debugger;
+    // debugger;
     var budget_spend = Page.Variables.vmListLineItem.dataSet.reduce(function(total, item) {
         if (!total[item.bhId]) {
             total[item.bhId] = 0
@@ -444,10 +444,12 @@ Page.buttonSubmitClick = function($event, widget) {
 
     if (!isValid) {
         alert("Please fill all mandatory field(s) to continue!")
+        Page.Widgets.spinner1.show = false;
         return
     }
 
     if (isBudgetEnough == false) {
+        Page.Widgets.spinner1.show = false;
         return alert("Budget is not enough")
     }
 
@@ -459,13 +461,17 @@ Page.buttonSubmitClick = function($event, widget) {
     }, 0)
 
     if (totalAmountPR > parseInt(Page.Variables.vEmpPriceLimit.firstRecord.eplApproxMax)) {
+
+        Page.Widgets.spinner1.show = false;
         return alert("Maximum budget amount " + App.formatCurrency(Page.Variables.vEmpPriceLimit.firstRecord.eplApproxMax))
     } else if (totalAmountPR < parseInt(Page.Variables.vEmpPriceLimit.firstRecord.eplApproxMin)) {
+
+        Page.Widgets.spinner1.show = false;
         return alert("Minimum budget amount " + App.formatCurrency(Page.Variables.vEmpPriceLimit.firstRecord.eplApproxMin))
     }
 
     var attachment = btoa(JSON.stringify(Page.Variables.vmAttachmentList.dataSet))
-    Page.Widgets.spinner1.show = true
+    // Page.Widgets.spinner1.show = true
     Page.Variables.vPurchaseRequest.createRecord({
         row: {
             "cid": Page.Widgets.searchCompany.datavalue.cid,

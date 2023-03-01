@@ -133,7 +133,7 @@ Page.btnProceedClick = async function($event, widget) {
         Page.Widgets.spinner.show = false;
         return 0;
     }
-    Page.Variables.DBGrLineItemAllData.invoke()
+    await Page.Variables.DBGrLineItemAllData.invoke()
 
     var poQty = dataList.reduce((prep, item) => prep + item.item.poQty, 0)
     var deliveryQty = Page.Variables.DBGrLineItemAllData.dataSet.reduce((prep, item) => prep + item.deliveryQty, 0)
@@ -153,7 +153,11 @@ Page.btnProceedClick = async function($event, widget) {
             App.Actions.appNotification.setToasterDuration(5000)
             App.Actions.appNotification.invoke()
         } else {
-            if (poQty <= deliveryQty) {
+            await Page.Variables.DBGrLineItemAll.invoke()
+            await Page.Variables.DBPoLineItem.invoke()
+            let grQtyCompare = Page.Variables.DBGrLineItemAll.dataSet.reduce((prep, item) => prep + item.deliveryQty, 0)
+            let poQtyCompare = Page.Variables.DBPoLineItem.dataSet.reduce((prep, item) => prep + item.poQty, 0)
+            if (poQtyCompare <= grQtyCompare) {
                 await Page.Variables.DBUpdatePO.invoke({
                     "inputFields": {
                         "status": 'Complete',

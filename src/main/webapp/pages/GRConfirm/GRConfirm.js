@@ -24,6 +24,7 @@ Page.onReady = function() {
         $('.yearpicker').yearpicker()
         $('.yearpicker').change(function() {
             year_value = $(this).val()
+            Page.setYear(year_value)
         })
         $('.yearpicker').val(new Date().getFullYear())
         Page.Widgets.year.datavalue = new Date().getFullYear()
@@ -170,4 +171,11 @@ Page.buttonConfirmClick = function($event, widget, item, currentItemWidgets) {
             'id': Page.Widgets.list2.selecteditem.id
         }
     })
+};
+
+Page.setYear = function(year) {
+    Page.Variables.mYear.dataSet = year
+}
+Page.yearChange = function($event, widget, newVal, oldVal) {
+    Page.Variables.mYear.dataSet = newVal;
 };

@@ -416,6 +416,10 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "PurchaseRequestPageNew",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "PurchaseRequestTracking",
   "type" : "PAGE",
   "params" : [ ]

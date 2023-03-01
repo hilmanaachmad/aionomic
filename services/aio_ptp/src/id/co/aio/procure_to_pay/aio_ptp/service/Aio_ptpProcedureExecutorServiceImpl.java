@@ -71,8 +71,8 @@ public class Aio_ptpProcedureExecutorServiceImpl implements Aio_ptpProcedureExec
 
     @Transactional(value = "aio_ptpTransactionManager")
     @Override
-    public SpBudgetDetail1Response executeSpBudgetDetail1(String accType, String comp, String brand, String dep, String emp, String year, String admin) {
-        Map<String, Object> params = new HashMap<>(7);
+    public SpBudgetDetail1Response executeSpBudgetDetail1(String accType, String comp, String brand, String dep, String emp, String year, String admin, String month) {
+        Map<String, Object> params = new HashMap<>(8);
 
         params.put("acc_type", accType);
         params.put("comp", comp);
@@ -81,6 +81,7 @@ public class Aio_ptpProcedureExecutorServiceImpl implements Aio_ptpProcedureExec
         params.put("emp", emp);
         params.put("year", year);
         params.put("admin", admin);
+        params.put("month", month);
 
         return procedureExecutor.executeNamedProcedure("spBudgetDetail1", params, SpBudgetDetail1Response.class);
     }

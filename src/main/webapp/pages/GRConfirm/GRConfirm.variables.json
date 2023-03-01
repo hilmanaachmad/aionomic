@@ -424,7 +424,7 @@
         "target" : "year",
         "type" : "integer",
         "matchMode" : "exact",
-        "value" : "bind:Widgets.year.datavalue",
+        "value" : "bind:Variables.mYear.dataSet.dataValue | stringToNumber",
         "required" : false,
         "secondvalue" : "",
         "isFirst" : true
@@ -540,6 +540,20 @@
       "delivery_date_end" : null
     },
     "type" : "entry",
+    "isList" : false,
+    "twoWayBinding" : false,
+    "saveInPhonegap" : false
+  },
+  "mYear" : {
+    "_id" : "wm-mYear-wm.Variable-1672994051523",
+    "name" : "mYear",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
     "isList" : false,
     "twoWayBinding" : false,
     "saveInPhonegap" : false

@@ -102,7 +102,7 @@ public class VPoTracking implements Serializable {
         this.department = department;
     }
 
-    @Column(name = "`pr_no_item`", nullable = true, length = 255)
+    @Column(name = "`pr_no_item`", nullable = true, length = 100)
     public String getPrNoItem() {
         return this.prNoItem;
     }
@@ -336,7 +336,7 @@ public class VPoTracking implements Serializable {
         this.amountNeedsInvoiced = amountNeedsInvoiced;
     }
 
-    @Column(name = "`received_by`", nullable = true, length = 16777215)
+    @Column(name = "`received_by`", nullable = true, length = 100)
     public String getReceivedBy() {
         return this.receivedBy;
     }

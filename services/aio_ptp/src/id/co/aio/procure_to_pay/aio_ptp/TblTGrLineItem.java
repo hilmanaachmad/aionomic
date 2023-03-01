@@ -7,6 +7,7 @@ package id.co.aio.procure_to_pay.aio_ptp;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -54,6 +55,7 @@ public class TblTGrLineItem implements Serializable {
     private String deliveryUom;
     private String deliveryNumber;
     private LocalDateTime paidOn;
+    private Timestamp createdDate;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -325,6 +327,15 @@ public class TblTGrLineItem implements Serializable {
 
     public void setPaidOn(LocalDateTime paidOn) {
         this.paidOn = paidOn;
+    }
+
+    @Column(name = "`created_date`", nullable = true)
+    public Timestamp getCreatedDate() {
+        return this.createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
 

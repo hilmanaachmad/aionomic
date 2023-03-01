@@ -1,6 +1,6 @@
 .aio-p2p-content-container {
     /*max-width: 941px !important;*/
-    max-width: 100% !important;
+    /*max-width: 100% !important;*/
 }
 
 .aio-p2p-space-between {
@@ -196,4 +196,15 @@
 .aio-date {
     width: 100%;
     max-width: 100%;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .content-fixed {
+  padding-top: 102px;
 }

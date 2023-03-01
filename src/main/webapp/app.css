@@ -88,6 +88,10 @@
     font-family: Inter;
 }
 
+.aio-p2p-header-container-full {
+    width: 100%!important;
+}
+
 .aio-p2p-main-container {
     min-height: 100%;
     width: 100%;
@@ -100,16 +104,17 @@
     flex: none;
     width: 300px;
     background: white !important;
-    height: 100vh;
+    /*height: 100vh;*/
     /*background: #F6F7F8;*/
     overflow: hidden;
     /*height: 100vh;*/
 }
 
 .aio-p2p-main-container .aio-p2p-page-content-container {
-    flex: 1;
-    overflow: auto;
-    height: 100vh;
+    /*flex: 1;*/
+    /*overflow: auto;*/
+    /*height: 100vh;*/
+    width: calc(100% - 300px);
 }
 
 .aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-current-time-indicator {
@@ -119,10 +124,10 @@
 
 .aio-p2p-main-container .aio-p2p-page-content-container .aio-p2p-page-content {
     width: 100%;
-    height: calc(100% - 106px);
+    /*height: calc(100% - 106px);*/
     float: none;
     margin: auto !important;
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .aio-p2p-sidebar-container+.aio-p2p-page-content-container .aio-p2p-page-content {

@@ -264,6 +264,9 @@
     "table" : "v_purchase_request",
     "schema" : null
   }, {
+    "table" : "v_purchase_request_export",
+    "schema" : null
+  }, {
     "table" : "v_purchase_request_header",
     "schema" : null
   }, {

@@ -10,47 +10,45 @@
                         <wm-param name="pageTitle" value="bind:appLocale.LANG_PURCHASE_REQUEST" type="string"></wm-param>
                     </wm-container>
                     <wm-container name="PageContent" class="aio-p2p-page-content" padding="unset 32px 32px 32px">
-                        <wm-container name="background" backgroundcolor="#fff" conditionalstyle="bind:{
-    maxWidth: &quot;1200px&quot;,
-    minWidth: &quot;600px&quot;
-}">
-                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container">
-                                <wm-container name="container15" padding="unset unset unset 8px">
-                                    <wm-layoutgrid name="layoutgrid2">
-                                        <wm-gridrow name="gridrow2">
-                                            <wm-gridcolumn columnwidth="3" name="gridcolumn5_1" padding="unset 16px unset unset">
-                                                <wm-composite name="composite2">
-                                                    <wm-container class="col-md-9" name="container15_1" width="100%">
-                                                        <wm-select name="selectSearchBy" dataset="bind:Variables.vmSearchCriteria.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY" on-change="selectSearchByChange($event, widget, newVal, oldVal)"></wm-select>
-                                                    </wm-container>
-                                                </wm-composite>
-                                            </wm-gridcolumn>
-                                            <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" padding="unset 16px unset unset">
-                                                <wm-composite name="composite3">
-                                                    <wm-container class="col-md-9" name="container16_1" width="100%">
-                                                        <wm-text name="searchValue" type="search" disabled="bind:Widgets.selectSearchBy.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" show="bind:Widgets.selectSearchBy.datavalue !== 10 ? true : false"
-                                                            on-keyup="searchValueKeyup($event, widget)"></wm-text>
-                                                        <wm-date name="date2" datepattern="dd/MM/yyyy" show="bind:Widgets.selectSearchBy.datavalue === 10 ? true : false" on-change="Variables.dbTblTPr.listRecords()" placeholder="bind:appLocale.LANG_SELECT_DATE"></wm-date>
-                                                    </wm-container>
-                                                </wm-composite>
-                                            </wm-gridcolumn>
-                                            <wm-gridcolumn columnwidth="6" name="gridcolumn9"></wm-gridcolumn>
-                                        </wm-gridrow>
-                                    </wm-layoutgrid>
-                                </wm-container>
-                                <wm-container name="container16" display="flex" class="aio-p2p-space-between" padding="unset unset 30px unset">
-                                    <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_PURCHASE_REQUEST" type="button" margin="unset 0.5em" name="buttonAdd" on-click="buttonAddClick($event, widget)" color="#fff"></wm-button>
-                                    <wm-container conditionalstyle="bind:{
-  &quot;display&quot;: &quot;flex&quot;,
-  &quot;justifyContent&quot;: center
-}" name="container98_1">
-                                        <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_ALL" type="button" margin="unset 0.5px" iconurl="resources/images/logos/icon-export.png" on-click="button5Click($event, widget)" name="button5"></wm-button>
-                                        <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="unset 0.5em" name="button2" iconurl="resources/images/logos/icon-export.png" on-click="button2Click($event, widget)"></wm-button>
-                                    </wm-container>
-                                </wm-container>
+                        <wm-container name="background" backgroundcolor="#fff">
+                            <wm-container name="contentContainer" padding="24px" class="aio-p2p-content-container" id="myHeader" backgroundcolor="#fff">
                                 <wm-container name="container17">
+                                    <wm-container name="container15" padding="unset unset unset 8px">
+                                        <wm-layoutgrid name="layoutgrid2">
+                                            <wm-gridrow name="gridrow2">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn5_1" padding="unset 16px unset unset">
+                                                    <wm-composite name="composite2">
+                                                        <wm-container class="col-md-9" name="container15_1" width="100%">
+                                                            <wm-select name="selectSearchBy" dataset="bind:Variables.vmSearchCriteria.dataSet" datafield="dataValue" displayfield="name" placeholder="bind:appLocale.LANG_SEARCH_BY" on-change="selectSearchByChange($event, widget, newVal, oldVal)"></wm-select>
+                                                        </wm-container>
+                                                    </wm-composite>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn6_1" padding="unset 16px unset unset">
+                                                    <wm-composite name="composite3">
+                                                        <wm-container class="col-md-9" name="container16_1" width="100%">
+                                                            <wm-text name="searchValue" type="search" disabled="bind:Widgets.selectSearchBy.datavalue ? &quot;false&quot; : &quot;true&quot;" placeholder="bind:appLocale.LANG_ENTER_KEYWORD" show="bind:Widgets.selectSearchBy.datavalue !== 10 ? true : false"
+                                                                on-keyup="searchValueKeyup($event, widget)"></wm-text>
+                                                            <wm-date name="date2" datepattern="dd/MM/yyyy" show="bind:Widgets.selectSearchBy.datavalue === 10 ? true : false" on-change="Variables.dbTblTPr.listRecords()" placeholder="bind:appLocale.LANG_SELECT_DATE"></wm-date>
+                                                        </wm-container>
+                                                    </wm-composite>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn9" class="aio-p2p-space-between"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow12_2" padding="10px unset unset unset">
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn25_2">
+                                                    <wm-button class="aio-p2p-btn-primary" caption="bind:appLocale.LANG_ADD_PURCHASE_REQUEST" type="button" margin="unset 0.5em" name="buttonAdd" on-click="buttonAddClick($event, widget)" color="#fff"></wm-button>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="3" name="gridcolumn26"></wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn27_1" horizontalalign="right">
+                                                    <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_ALL" type="button" margin="unset 0.5px" iconurl="resources/images/logos/icon-export.png" on-click="button5Click($event, widget)"
+                                                        name="button5"></wm-button>
+                                                    <wm-button class="aio-p2p-btn-outline" caption="bind:appLocale.LANG_EXPORT_TO_EXCEL" type="button" margin="unset 0.5em" name="button2" iconurl="resources/images/logos/icon-export.png" on-click="button2Click($event, widget)"></wm-button>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-container>
                                     <wm-layoutgrid name="layoutgrid5_2">
-                                        <wm-gridrow name="gridrow10_1">
+                                        <wm-gridrow name="gridrow10_1" padding="10px unset unset unset">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn23_1">
                                                 <wm-container backgroundcolor="#ffffff" margin="unset unset 25px unset" name="container32" class="aio-p2p-border-filter">
                                                     <wm-layoutgrid name="layoutgrid5_1">
@@ -271,7 +269,7 @@
                                                                                     <wm-container class="aio-p2p-box-filter" width="100%" show="true" name="container70">
                                                                                         <wm-checkbox caption="All" on-change="checkbox10Change($event, widget, newVal, oldVal)" class="aio-p2p-all-checkbox" name="checkbox10"></wm-checkbox>
                                                                                         <wm-checkboxset dataset="bind:Variables.varFilter.dataSet.status" datafield="All Fields" on-change="checkboxset10Change($event, widget, newVal, oldVal)"
-                                                                                            class="aio-p2p-max-height" name="checkboxset10"></wm-checkboxset>
+                                                                                            class="aio-p2p-max-height" name="checkboxset10" show="true"></wm-checkboxset>
                                                                                     </wm-container>
                                                                                 </wm-container>
                                                                             </wm-container>
@@ -292,47 +290,7 @@
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow12_1">
-                                            <wm-gridcolumn columnwidth="12" name="gridcolumn25_1">
-                                                <wm-table statehandler="none" name="TblTPrTable1" title="" dataset="bind:Variables.dbTblTPr.dataSet" navigation="Basic" showrecordcount="true">
-                                                    <wm-table-column binding="customNoField" caption="No." widget-type="label" width="50px" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false">
-                                                        <wm-label caption="bind:App.getTableNumbering(Variables.dbTblTPr, Widgets.TblTPrTable1.currentItem, &quot;prId&quot;)" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
-                                                    </wm-table-column>
-                                                    <wm-table-column binding="tblMcompany.ccode" caption="Company" widget-type="label" width="150px" primary-key="false" edit-widget-type="text" related-entity-name="TblMCompany" type="string" generator="assigned"
-                                                        readonly="true" show="true">
-                                                        <wm-label caption="bind:row.getProperty('tblMcompany.ccode') + ' - ' + (row.getProperty('tblMcompany.ctitle') == 'PT. Amerta Indah Otsuka' ? 'AIO' : row.getProperty('tblMcompany.ctitle') == 'PT. Otsuka Distribution Indonesia' ? 'ODI' : row.getProperty('tblMcompany.ctitle'))"
-                                                            class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
-                                                    </wm-table-column>
-                                                    <wm-table-column binding="tblMdepartment.departmentTitle" caption="Department" width="150px" primary-key="false" edit-widget-type="text" related-entity-name="TblMDepartment" type="string" generator="assigned"
-                                                        readonly="true" show="true"></wm-table-column>
-                                                    <wm-table-column binding="prRef" caption="PR Number" width="150px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
-                                                    <wm-table-column binding="prDate" caption="PR Date" widget-type="label" width="150px" primary-key="false" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false">
-                                                        <wm-label caption="bind:row.getProperty('prDate') | toDate: 'dd/MM/yyyy'" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
-                                                    </wm-table-column>
-                                                    <wm-table-column binding="prProject" caption="Project Name" width="150px" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
-                                                    <wm-table-column binding="prCreatedBy" caption="Creator" widget-type="label" width="100px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false">
-                                                        <wm-label caption="bind:row.getProperty('prCreatedBy').substr(5, 5)" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
-                                                    </wm-table-column>
-                                                    <wm-table-column binding="prRepUserName" caption="Representative" width="150px" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
-                                                    <wm-table-column binding="prPurchaseBy" caption="Purchase By" width="110px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
-                                                    <wm-table-column binding="prPaymentMethod" caption="Payment Method" width="150px" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
-                                                    <wm-table-column binding="tblTproposalBudget.pbAmount" caption="Proposal Budget" widget-type="label" width="100px" primary-key="false" edit-widget-type="number" related-entity-name="TblTProposalBudget"
-                                                        type="big_decimal" generator="assigned" readonly="true" show="true">
-                                                        <wm-label caption="bind:App.formatCurrency(row.getProperty('tblTproposalBudget.pbAmount'))" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
-                                                    </wm-table-column>
-                                                    <wm-table-column binding="tblMaccountType.accTitle" caption="Account Type" width="100px" primary-key="false" edit-widget-type="text" related-entity-name="TblMAccountType" type="string" generator="assigned"
-                                                        readonly="true" show="true"></wm-table-column>
-                                                    <wm-table-column binding="prStatus" caption="Status" width="150px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
-                                                    <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
-                                                    <wm-table-row-action key="updaterow" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Draft&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Revise&quot;) !== -1 ? true : false"
-                                                        class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="TblTPrTable1_updaterowAction($event, row)" disabled="false" widget-type="button"></wm-table-row-action>
-                                                    <wm-table-row-action key="customRow" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Deleted&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Waiting Approval&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Ordered&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Closed&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Rejected&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Partial Ordered&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Submitted&quot;) !== -1 ? true : false"
-                                                        class="btn-transparent" iconclass="wi wi-eye" title="View" action="TblTPrTable1_customRowAction($event, row)" disabled="false" widget-type="button"></wm-table-row-action>
-                                                    <wm-table-row-action key="customRow1" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Partial Ordered&quot;) !== -1 ? true : false" class="btn-transparent"
-                                                        iconclass="wi wi-disabled" title="Disable" action="TblTPrTable1_customRow1Action($event, row)" disabled="false" widget-type="button"></wm-table-row-action>
-                                                    <wm-table-row-action key="deleterow" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Draft&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Waiting Approval&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Closed&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Revise&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Submitted&quot;) !== -1 ? true : false"
-                                                        class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="Widgets.dialogDelete.open()" disabled="false" widget-type="button"></wm-table-row-action>
-                                                </wm-table>
-                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="12" name="gridcolumn25_1"></wm-gridcolumn>
                                         </wm-gridrow>
                                     </wm-layoutgrid>
                                 </wm-container>
@@ -459,6 +417,45 @@
                                     </wm-layoutgrid>
                                 </wm-container>
                             </wm-container>
+                        </wm-container>
+                        <wm-container name="container100" class="content-fixed">
+                            <wm-table statehandler="none" name="TblTPrTable1" title="" dataset="bind:Variables.dbTblTPr.dataSet" navigation="Basic" showrecordcount="true">
+                                <wm-table-column binding="customNoField" caption="No." widget-type="label" width="50px" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false">
+                                    <wm-label caption="bind:App.getTableNumbering(Variables.dbTblTPr, Widgets.TblTPrTable1.currentItem, &quot;prId&quot;)" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                </wm-table-column>
+                                <wm-table-column binding="tblMcompany.ccode" caption="Company" widget-type="label" width="150px" primary-key="false" edit-widget-type="text" related-entity-name="TblMCompany" type="string" generator="assigned" readonly="true"
+                                    show="true">
+                                    <wm-label caption="bind:row.getProperty('tblMcompany.ccode') + ' - ' + (row.getProperty('tblMcompany.ctitle') == 'PT. Amerta Indah Otsuka' ? 'AIO' : row.getProperty('tblMcompany.ctitle') == 'PT. Otsuka Distribution Indonesia' ? 'ODI' : row.getProperty('tblMcompany.ctitle'))"
+                                        class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                </wm-table-column>
+                                <wm-table-column binding="tblMdepartment.departmentTitle" caption="Department" width="150px" primary-key="false" edit-widget-type="text" related-entity-name="TblMDepartment" type="string" generator="assigned" readonly="true"
+                                    show="true"></wm-table-column>
+                                <wm-table-column binding="prRef" caption="PR Number" width="150px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                                <wm-table-column binding="prDate" caption="PR Date" widget-type="label" width="150px" primary-key="false" edit-widget-type="date" type="date" generator="assigned" show="true" readonly="false">
+                                    <wm-label caption="bind:row.getProperty('prDate') | toDate: 'dd/MM/yyyy'" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                </wm-table-column>
+                                <wm-table-column binding="prProject" caption="Project Name" width="150px" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                                <wm-table-column binding="prCreatedByName" caption="Creator" type="string" searchable="false" show="true" readonly="undefined"></wm-table-column>
+                                <wm-table-column binding="prRepUserName" caption="Representative" width="150px" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                                <wm-table-column binding="prPurchaseBy" caption="Purchase By" width="110px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                                <wm-table-column binding="prPaymentMethod" caption="Payment Method" width="150px" primary-key="false" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                                <wm-table-column binding="tblTproposalBudget.pbAmount" caption="Proposal Budget" widget-type="label" width="100px" primary-key="false" edit-widget-type="number" related-entity-name="TblTProposalBudget"
+                                    type="big_decimal" generator="assigned" readonly="true" show="true">
+                                    <wm-label caption="bind:App.formatCurrency(row.getProperty('tblTproposalBudget.pbAmount'))" class="" conditionalclass="" condtionalstyle="" conditionalstyle=""></wm-label>
+                                </wm-table-column>
+                                <wm-table-column binding="tblMaccountType.accTitle" caption="Account Type" width="100px" primary-key="false" edit-widget-type="text" related-entity-name="TblMAccountType" type="string" generator="assigned" readonly="true"
+                                    show="true"></wm-table-column>
+                                <wm-table-column binding="prStatus" caption="Status" width="150px" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false"></wm-table-column>
+                                <wm-table-column binding="rowOperations" caption="Actions" width="120px" edit-widget-type="text" type="custom" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column>
+                                <wm-table-row-action key="updaterow" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Draft&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Revise&quot;) !== -1 ? true : false"
+                                    class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="TblTPrTable1_updaterowAction($event, row)" disabled="false" widget-type="button"></wm-table-row-action>
+                                <wm-table-row-action key="customRow" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Deleted&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Waiting Approval&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Ordered&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Closed&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Rejected&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Partial Ordered&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Submitted&quot;) !== -1 ? true : false"
+                                    class="btn-transparent" iconclass="wi wi-eye" title="View" action="TblTPrTable1_customRowAction($event, row)" disabled="false" widget-type="button"></wm-table-row-action>
+                                <wm-table-row-action key="customRow1" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Partial Ordered&quot;) !== -1 ? true : false" class="btn-transparent" iconclass="wi wi-disabled"
+                                    title="Disable" action="TblTPrTable1_customRow1Action($event, row)" disabled="false" widget-type="button"></wm-table-row-action>
+                                <wm-table-row-action key="deleterow" display-name="" show="bind:Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Draft&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Waiting Approval&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Closed&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Approved&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Revise&quot;) !== -1 ? true : Widgets.TblTPrTable1.currentItem.prStatus.indexOf(&quot;Submitted&quot;) !== -1 ? true : false"
+                                    class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="Widgets.dialogDelete.open()" disabled="false" widget-type="button"></wm-table-row-action>
+                            </wm-table>
                         </wm-container>
                     </wm-container>
                     <wm-spinner show="false" name="spinner2" class="spinner-show" servicevariabletotrack="qPrChangeStatus,vdbqReverseLineItemBudget,vdbPrLineItem"></wm-spinner>

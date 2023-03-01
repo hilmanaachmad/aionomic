@@ -800,6 +800,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_PurchaseRequestPageNew" : {
+    "_id" : "wm-goToPage_PurchaseRequestPageNew-wm.NavigationVariable-1670923566053",
+    "name" : "goToPage_PurchaseRequestPageNew",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "PurchaseRequestPageNew",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_PurchaseRequestTracking" : {
     "_id" : "wm-goToPage_PurchaseRequestTracking-wm.NavigationVariable-1611646178485",
     "name" : "goToPage_PurchaseRequestTracking",
@@ -2771,6 +2782,8 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "systemInserted" : true,
+        "systemUpdated" : true,
         "scale" : 0
       }, {
         "fieldName" : "inbTaskType",

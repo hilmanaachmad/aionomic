@@ -23,7 +23,7 @@
                                                     <wm-composite name="composite3">
                                                         <wm-label class="col-md-3 control-label" name="label22" caption="PO Year"></wm-label>
                                                         <wm-container class="col-md-9" name="container39">
-                                                            <wm-text name="year" class="yearpicker" placeholder="bind:appLocale.LABEL_SELECT_YEAR"></wm-text>
+                                                            <wm-text name="year" class="yearpicker" placeholder="bind:appLocale.LABEL_SELECT_YEAR" on-change="yearChange($event, widget, newVal, oldVal)"></wm-text>
                                                             <wm-picture name="picture11" picturesource="resources/images/logos/date.png" class="aio-p2p-icon-date"></wm-picture>
                                                         </wm-container>
                                                     </wm-composite>

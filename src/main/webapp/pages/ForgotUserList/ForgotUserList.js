@@ -102,6 +102,14 @@ Page.sendEmailReject = function($event, widget) {
 
 Page.svGetDataVendoronSuccess = function(variable, data) {
     Page.pageParams.vendorCode = btoa(Page.Variables.svGetDataVendor.dataSet[0].vendorCode)
+    if (Page.Variables.svGetDataVendor.dataSet[0].vendorCode == '0         ') {
+        Page.Widgets.btnApprove.show = false;
+        App.Actions.appNotification.invoke({
+            'message': 'Vendor ini belum terdaftar',
+            'position': 'top right',
+            'class': 'warning'
+        })
+    }
 };
 
 Page.svUpdateStatusonSuccess = function(variable, data) {
@@ -180,6 +188,3 @@ Page.listForgotUserSelect = function(widget, $data) {
 Page.dvGetForgotUseronSuccess = function(variable, data) {
     Page.Variables.modelPageList.dataSet = data.pagination.number + 1
 }
-Page.button4Click = function($event, widget) {
-    console.log('hey', Page.Variables.modelDataVendor.dataSet)
-};

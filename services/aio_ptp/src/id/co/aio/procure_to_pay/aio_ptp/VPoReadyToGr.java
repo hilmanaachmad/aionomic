@@ -36,6 +36,7 @@ public class VPoReadyToGr implements Serializable {
     private LocalDateTime deliveryDate;
     private String status;
     private String statusGr;
+    private String vendorCode;
     private String vendorName;
     private BigDecimal poItem;
     private BigDecimal deliveryItem;
@@ -47,6 +48,9 @@ public class VPoReadyToGr implements Serializable {
     private String createdBy;
     private Integer departmentId = 0;
     private String purchaseBy;
+    private String prNoItem;
+    private LocalDateTime eta;
+    private String prRepUserNik;
 
     @Id
     @Column(name = "`id`", nullable = false, scale = 0, precision = 10)
@@ -166,6 +170,15 @@ public class VPoReadyToGr implements Serializable {
         this.statusGr = statusGr;
     }
 
+    @Column(name = "`vendor_code`", nullable = true, length = 50)
+    public String getVendorCode() {
+        return this.vendorCode;
+    }
+
+    public void setVendorCode(String vendorCode) {
+        this.vendorCode = vendorCode;
+    }
+
     @Column(name = "`vendor_name`", nullable = true, length = 255)
     public String getVendorName() {
         return this.vendorName;
@@ -263,6 +276,33 @@ public class VPoReadyToGr implements Serializable {
 
     public void setPurchaseBy(String purchaseBy) {
         this.purchaseBy = purchaseBy;
+    }
+
+    @Column(name = "`pr_no_item`", nullable = true, length = 255)
+    public String getPrNoItem() {
+        return this.prNoItem;
+    }
+
+    public void setPrNoItem(String prNoItem) {
+        this.prNoItem = prNoItem;
+    }
+
+    @Column(name = "`eta`", nullable = true)
+    public LocalDateTime getEta() {
+        return this.eta;
+    }
+
+    public void setEta(LocalDateTime eta) {
+        this.eta = eta;
+    }
+
+    @Column(name = "`pr_rep_user_nik`", nullable = true, length = 100)
+    public String getPrRepUserNik() {
+        return this.prRepUserNik;
+    }
+
+    public void setPrRepUserNik(String prRepUserNik) {
+        this.prRepUserNik = prRepUserNik;
     }
 
 

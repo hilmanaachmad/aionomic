@@ -934,7 +934,7 @@
   },
   "files" : {
     "angular" : "ja",
-    "fullCalendar" : "ja",
+    "fullCalendar" : null,
     "moment" : "ja"
   },
   "prefabMessages" : { }

@@ -715,11 +715,33 @@ Page.buttonRejectClick = function($event, widget) {
         })
     }).then(function(res) {
         console.log("create inbox")
+        // send notification to representative
+        if (Page.Widgets.searchRepresentative.datavalue) {
+            let representative = Page.Widgets.searchRepresentative.datavalue.employeeCode;
+            if (representative.length > 4) {
+                let firstNik = representative.substring(0, 1);
+                if (firstNik == "0") {
+                    representative = representative.substring(1, representative.length);
+                }
+            }
+
+            Page.Variables.vInbox.createRecord({
+                row: {
+                    // "inbTimestamp": new Date().toISOString(),
+                    "inbTaskType": "PR",
+                    // "inbSubject": "<b>PR</b> - PR telah ditolak, untuk informasi lebih detail silahkan memngecek email yang telah dikirim",
+                    "inbSubject": "<b>PR</b> - (Reject) Segera melakukan Submitted kembali pada halaman purchase request",
+                    "userId": "emp::" + representative,
+                    "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
+                }
+            });
+        }
+
         return Page.Variables.vInbox.createRecord({
             row: {
                 "inbTimestamp": new Date().toISOString(),
                 "inbTaskType": "PR",
-                "inbSubject": "<b>PR</b> - Segera melakukan Submitted kembali pada halaman purchase request",
+                "inbSubject": "<b>PR</b> - (Reject) Segera melakukan Submitted kembali pada halaman purchase request",
                 "userId": Page.Variables.vPurchaseRequest.firstRecord.prCreatedBy,
                 "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
             }
@@ -770,6 +792,39 @@ Page.buttonRejectClick = function($event, widget) {
         } catch {
             console.log('ERROR API')
         }
+
+        // // send notification to creator
+        // Page.Variables.vInbox.createRecord({
+        //     row: {
+        //         // "inbTimestamp": new Date().toISOString(),
+        //         "inbTaskType": "PR",
+        //         "inbSubject": "<b>PR</b> - PR telah ditolak, untuk informasi lebih detail silahkan memngecek email yang telah dikirim",
+        //         "userId": Page.Variables.vPurchaseRequest.firstRecord.prCreatedBy,
+        //         "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
+        //     }
+        // });
+
+        // // send notification to representative
+        // if (Page.Widgets.searchRepresentative.datavalue) {
+        //     let representative = Page.Widgets.searchRepresentative.datavalue.employeeCode;
+        //     if (representative.length > 4) {
+        //         let firstNik = representative.substring(0, 1);
+        //         if (firstNik == "0") {
+        //             representative = representative.substring(1, representative.length);
+        //         }
+        //     }
+
+        //     Page.Variables.vInbox.createRecord({
+        //         row: {
+        //             // "inbTimestamp": new Date().toISOString(),
+        //             "inbTaskType": "PR",
+        //             "inbSubject": "<b>PR</b> - PR telah ditolak, untuk informasi lebih detail silahkan memngecek email yang telah dikirim",
+        //             "userId": "emp::" + representative,
+        //             "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
+        //         }
+        //     });
+        // }
+
         App.Actions.appNotification.setMessage(App.appLocale.NOTIF_DATA_SAVED)
         App.Actions.appNotification.setToasterClass("success")
         App.Actions.appNotification.getToasterDuration(5000)
@@ -822,11 +877,33 @@ Page.buttonReviseClick = function($event, widget) {
         })
     }).then(function(res) {
         console.log("create inbox")
+        // send notification to representative
+        if (Page.Widgets.searchRepresentative.datavalue) {
+            let representative = Page.Widgets.searchRepresentative.datavalue.employeeCode;
+            if (representative.length > 4) {
+                let firstNik = representative.substring(0, 1);
+                if (firstNik == "0") {
+                    representative = representative.substring(1, representative.length);
+                }
+            }
+
+            Page.Variables.vInbox.createRecord({
+                row: {
+                    // "inbTimestamp": new Date().toISOString(),
+                    "inbTaskType": "PR",
+                    // "inbSubject": "<b>PR</b> - PR telah direvisi, untuk informasi lebih detail silahkan memngecek email yang telah dikirim",
+                    "inbSubject": "<b>PR</b> - (Revise) Segera melakukan Submitted kembali pada halaman purchase request",
+                    "userId": "emp::" + representative,
+                    "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
+                }
+            });
+        }
+
         return Page.Variables.vInbox.createRecord({
             row: {
                 "inbTimestamp": new Date().toISOString(),
                 "inbTaskType": "PR",
-                "inbSubject": "<b>PR</b> - Segera melakukan Submitted kembali pada halaman purchase request",
+                "inbSubject": "<b>PR</b> - (Revise) Segera melakukan Submitted kembali pada halaman purchase request",
                 "userId": Page.Variables.vPurchaseRequest.firstRecord.prCreatedBy,
                 "inbCreatedBy": App.Variables.loggedInUserData.dataSet.user_full_name
             }
@@ -877,7 +954,8 @@ Page.buttonReviseClick = function($event, widget) {
         } catch {
             console.log('ERROR API')
         }
-        console.log("notif")
+        console.log('notif');
+
         App.Actions.appNotification.setMessage(App.appLocale.NOTIF_DATA_SAVED)
         App.Actions.appNotification.setToasterClass("success")
         App.Actions.appNotification.getToasterDuration(5000)

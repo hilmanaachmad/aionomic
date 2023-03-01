@@ -487,6 +487,18 @@
         "generator" : "assigned",
         "isRelated" : false,
         "scale" : 0
+      }, {
+        "fieldName" : "createdDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "created_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
       } ],
       "entityName" : "TblTGrLineItem",
       "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTGrLineItem",
@@ -1701,7 +1713,11 @@
     "name" : "getPOLineItem",
     "owner" : "Page",
     "category" : "wm.ServiceVariable",
-    "dataBinding" : [ ],
+    "dataBinding" : [ {
+      "target" : "id_po",
+      "value" : "bind:pageParams.id_po",
+      "type" : "string"
+    } ],
     "type" : "id.co.aio.procure_to_pay.aio_ptp.models.query.GetPolineitemResponse",
     "service" : "aio_ptp",
     "operation" : "executeGetPOLineitem",
@@ -2123,6 +2139,18 @@
         "generator" : "assigned",
         "isRelated" : false,
         "scale" : 0
+      }, {
+        "fieldName" : "createdDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "created_date",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
       } ],
       "entityName" : "TblTGrLineItem",
       "fullyQualifiedName" : "id.co.aio.procure_to_pay.aio_ptp.TblTGrLineItem",
@@ -2522,6 +2550,18 @@
         "type" : "datetime",
         "fullyQualifiedType" : "datetime",
         "columnName" : "paid_on",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "createdDate",
+        "type" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "created_date",
         "isPrimaryKey" : false,
         "notNull" : false,
         "length" : 0,

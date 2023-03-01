@@ -233,7 +233,7 @@
         </wm-table>
     </wm-dialog>
     <wm-dialog dialogtype="design-dialog" modal="true" title="" iconclass="" name="dialogExport" class="aio-p2p-modal" width="900">
-        <wm-container name="containerExportBg" fontsize="12" color="#000000" bordercolor="#ffffff" show="true">
+        <wm-container name="containerExportBg" fontsize="12" color="#000000" bordercolor="#ffffff" show="true" class="html2pdf__page-break">
             <wm-container name="container152" margin="8px unset unset unset">
                 <wm-container name="container156" horizontalalign="left" backgroundcolor="#ffffff" bordercolor="#eaeaea" borderwidth="0px 0px 8px 0px" borderstyle="outset">
                     <wm-container name="container172_2" width="65%" display="inline-block">
@@ -420,7 +420,7 @@
                         </wm-container>
                         <wm-container name="container180">
                             <wm-container display="inline-block" width="78%" horizontalalign="right" name="container180_1" bordercolor="#c4c4c4" borderstyle="solid" borderwidth="0px" padding="2px unset unset unset">
-                                <wm-label caption="Grand Total" name="label136"></wm-label>
+                                <wm-label caption="bind:&quot;Grand Total (&quot; + Variables.DataHeaderPO.dataSet[$i].currency + &quot;)&quot;" name="label136"></wm-label>
                             </wm-container>
                             <wm-container display="inline-block" width="20%" horizontalalign="right" name="container182" bordercolor="#c4c4c4" borderstyle="solid" borderwidth="2px 0px 0px 0px" padding="2px 4px unset unset">
                                 <wm-label name="label151" caption="bind:App.formatCurrencyPTP(Variables.totalLineItem.dataSet.grandtotal)"></wm-label>
